@@ -32,3 +32,10 @@ Search map: docs/reference/SEARCH-INDEX.md
 Dependency authority: docs/reference/DEPENDENCIES.md
 Machine dependency lock: assets/dependencies.lock.json
 Initial candidate tuple: z-debian-13.6-amd64-ch53-v1 (selected; not certified)
+
+Operational references:
+- docs/reference/IMPLEMENTATION-HOST.md: sanitized shared OVH implementation-host settings; not certification evidence.
+- docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md: non-normative operational strategy.
+
+Implementation boundary:
+- Baby and the Z GitHub Authority application are implementation infrastructure only and are not Z components or runtime/offline dependencies.

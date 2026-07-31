@@ -37,3 +37,15 @@ Status: **Discovery aid; not normative authority**
 ## Indexing rule
 
 When adding a new architectural term, capability, or variant, update this file and `docs/MANIFEST.md` in the same change.
+
+## Operational completeness and implementation host
+
+| Question or alias | Read |
+|---|---|
+| OVH VPS settings, implementation host, host readiness, storage cleanup | `IMPLEMENTATION-HOST.md` |
+| competing operations, ENOSPC, OOM, interruption, crash consistency | `../INVARIANTS.md`, `../ARCHITECTURE.md`, `../CERTIFICATION.md` |
+| update, rollback, tuple transition, offline bundle | `../VARIANTS.md`, `../BUILD.md`, `../CERTIFICATION.md` |
+| backup, disaster recovery, independent restore | `../INVARIANTS.md`, `../VARIANTS.md`, `../CERTIFICATION.md` |
+| support bundle, diagnostics, telemetry | `../VARIANTS.md`, `../SECURITY.md`, `../CERTIFICATION.md` |
+| Baby boundary, GitHub authority, implementation tooling | `../../AGENTS.md`, `../ARCHITECTURE.md`, `../DECISIONS.md` |
+| operational upgrade strategy | `../research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md` |

@@ -150,3 +150,39 @@ Serial is independent recovery when SSH is unavailable. Cleanup removes only exa
 ## 10. Zero-at-rest property
 
 When every machine and optional edge is stopped, no Z process, relay, watcher, timer, socket activator, or helper remains. Host systemd itself is not a Z process.
+
+## 11. Operational integrity
+
+### 11.1 Per-machine mutation coordination
+
+Z uses the smallest local coordination primitive that prevents concurrent mutation of one machine. The coordination record is ephemeral and recoverable; it is not a controller, durable job database, or duplicate lifecycle state machine. Runtime and durable truth remain in the machine directory, systemd, cgroups, exact processes, sockets, VMM evidence, disks, and authenticated SSH.
+
+### 11.2 Durable mutation protocol
+
+Every durable replacement follows the same shape:
+
+1. resolve and validate exact owner-visible paths using descriptor-relative operations;
+2. calculate required capacity and failure headroom;
+3. create a uniquely owned staging object in the correct filesystem;
+4. write and validate complete content;
+5. synchronize the file and containing directory where required by the claim;
+6. atomically install the replacement;
+7. retain or exactly remove staging residue according to the recorded outcome.
+
+A failed stage cannot replace prior committed truth. Cleanup cannot infer ownership from a prefix, age, or appearance.
+
+### 11.3 Offline tuple transition
+
+Update is a foreground composition of ordinary files and verified assets. A plan binds source tuple, destination tuple, exact inputs, disk impact, machine-format changes, compatibility scope, and rollback boundary. Apply verifies the plan immediately before mutation. Rollback restores only what the plan proves reversible. There is no updater process at rest.
+
+### 11.4 Backup and disaster recovery
+
+Backup produces an owner-visible export plus manifest and digests. The artifact records whether restoration is same-computer recovery or import-as-new. Restore validates content before installing durable authority. Certification exercises restoration on an independently prepared host; a same-filesystem clone alone does not satisfy the claim.
+
+### 11.5 Local support evidence
+
+A support-bundle command is read-only with respect to machine state. It displays the intended collection set, gathers declared host and machine evidence, redacts credentials and unnecessary payloads, writes a local archive and manifest, and exits. It neither uploads nor leaves a service, watcher, or socket.
+
+### 11.6 Implementation infrastructure boundary
+
+Baby and repository automation may construct, test, and publish Z. They are external implementation infrastructure. No Baby executable, protocol, service, credential, GitHub application, repository connector, or implementation job record is part of the Z runtime, guest, release verifier, machine identity, or offline product path.

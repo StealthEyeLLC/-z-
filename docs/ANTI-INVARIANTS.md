@@ -546,3 +546,27 @@ Every proposal that adds a component, process, schema, protocol, service, durabl
 5. How is it certified end to end?
 
 A weak answer prohibits baseline inclusion.
+
+## 71. No competing mutation race
+
+Two create, start, stop, rename, snapshot, restore, fork, import, update, backup, or delete attempts must not both believe they own the same mutation. Timestamp order, PID presence, or last-writer-wins metadata is not sufficient authority.
+
+## 72. No success after interruption or exhaustion
+
+ENOSPC, OOM, SIGKILL, host loss, partial copy, failed synchronization, failed rename, or incomplete cleanup must never be normalized into success. The product must not destroy the previous committed state merely to make an interrupted operation appear clean.
+
+## 73. No snapshot-as-backup theater
+
+A local snapshot or reflink is not called a backup without independent storage authority, a manifest, integrity verification, identity semantics, and a proven restore.
+
+## 74. No updater daemon or silent tuple mutation
+
+Z must not poll for updates, install in the background, change a machine format silently, rewrite a dependency identity in place, or require a hosted update service. Update planning, verification, application, rollback, and machine migration are explicit foreground operations.
+
+## 75. No automatic support upload or telemetry collector
+
+A diagnostic command must not become a resident collector, hidden metrics service, automatic crash uploader, or support backchannel. A bundle is local, declared, redacted, owner-visible, and shared only through a separate owner action.
+
+## 76. No implementation tool in the product
+
+Baby, the Z GitHub Authority application, CI systems, repository connectors, build workers, and implementation-only credentials must not be shipped as Z components or become runtime, identity, update, verification, or offline-operability dependencies. Implementation convenience cannot amend product architecture.

@@ -620,6 +620,38 @@ Cleanup MUST remove only exact owned resources and MUST be idempotent.
 
 When uncertain, preserve disks, identity artifacts, metadata, snapshots, and exports. A broken state is preferable to destructive guesswork.
 
+### 11.6 Competing operations have one mutation authority
+
+Mutating operations are serialized per machine. A transient advisory lock, file descriptor, or systemd ownership token may coordinate the attempt, but it is not durable machine truth. Concurrent losers fail or retry with bounded, truthful results. Read-only inspection never acquires mutation authority and never changes state.
+
+No operation may silently steal ownership because another CLI exited, a PID disappeared, a socket exists, or a timeout elapsed. Adoption remains evidence-based.
+
+### 11.7 Interruption and resource exhaustion preserve truth
+
+ENOSPC, inode exhaustion, OOM, cgroup kill, signal, host reboot, power loss, VMM/helper exit, partial copy, failed `fsync`, failed directory `fsync`, failed rename, clock discontinuity, or cleanup failure cannot produce success.
+
+Every durable mutation has a preflighted space requirement, an explicitly owned staging location, a commit boundary, and an interruption result. The previous committed truth remains authoritative until the replacement is completely written, synchronized where required, and atomically installed. Unknown or incomplete output is retained or removed only by exact ownership.
+
+### 11.8 Capacity is a safety boundary
+
+Machine creation, clone, transfer, snapshot, restore, import, update, backup, and evidence generation preflight both operation-specific capacity and bounded failure headroom. A nearly full host fails before mutation where possible. Apparent sparse size is not substituted for allocated-size and filesystem-behavior evidence.
+
+### 11.9 Updates are explicit tuple transitions
+
+Z has no updater daemon and performs no silent binary, asset, image, package, machine-format, or dependency transition. An update is a foreground, owner-authorized transition from one exact tuple to another with a plan, verified inputs, space preflight, durable-format impact, rollback boundary, and retained result.
+
+Persistent machines are not silently converted. A source tuple remains identifiable after a failed or rolled-back transition.
+
+### 11.10 Backup is proven by independent restore
+
+A snapshot, clone, reflink, or second path on the same storage authority is not automatically a backup. A backup claim requires an owner-visible artifact, content manifest, digests, identity treatment, documented prerequisites, and a successful restore on an independently prepared host or storage authority.
+
+Same-computer recovery preserves machine identity. Import-as-new or fork rotates every collision-prone identity.
+
+### 11.11 Support evidence is local and owner-controlled
+
+A support bundle is a foreground, non-mutating collection of declared local evidence. It previews what will be collected, excludes or redacts secrets and unnecessary payloads, writes an owner-visible archive, uploads nothing, and leaves no resident collector or telemetry service. Sharing is a separate explicit owner action.
+
 ## 12. Variant invariants
 
 Every variant MUST:

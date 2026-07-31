@@ -83,3 +83,27 @@ The host kernel and KVM security-fix state are part of every compatibility tuple
 The first implementation candidate is `z-debian-13.6-amd64-ch53-v1`, defined by `docs/reference/DEPENDENCIES.md` and `assets/dependencies.lock.json`. It uses one signed Debian 13.6 snapshot for the x86-64 reference host and guest, Cloud Hypervisor v53.0's verified static binary, the matching Cloud Hypervisor EDK2 `CLOUDHV.fd` release, Debian's patched kernel/systemd/OpenSSH/`passt` packages, and Rust 1.97.1.
 
 The selection optimizes end-to-end coherence and reproducibility rather than independently maximizing every version number. It is a candidate, not a support claim. Any dependency, package, asset, digest, configuration-sensitive fact, source crate, or snapshot change creates a new tuple and repeats affected certification.
+
+## D021 — Implementation infrastructure is not product architecture
+
+Baby, GitHub applications, CI, build workers, and repository connectors may implement and publish Z but are excluded from the runtime, guest, owner identity, update path, release verifier, and offline-operability contract.
+
+## D022 — Competing operations and interrupted mutations
+
+Each machine has one mutation authority at a time. Coordination is ephemeral rather than a durable controller. Durable replacement is staged, validated, synchronized as required, and atomically installed. Resource exhaustion or interruption cannot report success or erase prior committed truth.
+
+## D023 — Explicit offline tuple transition
+
+Z has no updater daemon. Tuple planning, verification, application, status, rollback, and any persistent-machine migration are explicit foreground operations bound to exact source and destination tuples.
+
+## D024 — Backup requires independent restore
+
+Snapshot and clone are not automatically backup. A backup claim requires an owner-visible export, manifest, digests, identity policy, and successful restoration on an independently prepared host or storage authority.
+
+## D025 — Local support evidence without telemetry
+
+Support collection is a foreground, read-only, redacted local bundle. It uploads nothing and creates no resident collector, metrics service, support listener, or remote authority.
+
+## D026 — Implementation-host profile does not confer certification
+
+The current OVH VPS is a shared implementation host. Its observed settings are recorded in `docs/reference/IMPLEMENTATION-HOST.md`. Successful work on that host is scoped to its exact profile and does not certify the selected Debian reference-host tuple or bare-metal properties.

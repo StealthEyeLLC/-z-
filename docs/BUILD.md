@@ -4,6 +4,8 @@ Status: **Normative implementation order**
 
 ## Dependency gate
 
+The current implementation-host profile is recorded in [`reference/IMPLEMENTATION-HOST.md`](reference/IMPLEMENTATION-HOST.md). It is an input to preflight, not certification evidence and not an override of the selected reference-host tuple.
+
 Before source implementation or asset construction:
 
 1. Verify [`reference/DEPENDENCIES.md`](reference/DEPENDENCIES.md) and [`../assets/dependencies.lock.json`](../assets/dependencies.lock.json) agree.
@@ -93,6 +95,28 @@ Add one at a time with certification:
 - SSH TUN/TAP.
 - Live snapshots and migration.
 - QEMU compatibility only after a concrete need.
+
+## Operational completeness requirements
+
+Before the first large Z mutation on an implementation host:
+
+- capture the sanitized implementation-host profile;
+- prove sufficient operation-specific storage and bounded failure headroom;
+- resolve pending reboot or package state that would invalidate evidence;
+- distinguish nested development evidence from release-certification evidence;
+- allocate separate Z source, build, machine, runtime, cache, and evidence roots;
+- preserve unrelated project state and never clean by age, prefix, or size alone.
+
+The first usable computer implementation must include the smallest machine-scoped mutation coordination and durable staging protocol needed to prevent two writers or an interrupted writer from corrupting identity or disk truth. It must test ENOSPC, OOM, signals, abrupt VMM/helper loss, partial copy, failed synchronization, and cleanup obstruction.
+
+The complete local baseline adds:
+
+- foreground offline tuple plan, verify, apply, status, and rollback;
+- independently verifiable backup and restoration on a separately prepared host;
+- a local non-uploading support bundle with redaction tests;
+- exact storage-capacity reporting and refusal before unsafe mutation.
+
+Device passthrough, encrypted storage, virtiofs, confidential computing, and live migration remain separately promoted variants and cannot delay the first real computer.
 
 ## Engineering rules
 

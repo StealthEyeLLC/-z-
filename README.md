@@ -35,6 +35,9 @@ The baseline requires:
 - [`docs/reference/SEARCH-INDEX.md`](docs/reference/SEARCH-INDEX.md) — aliases and question-to-document lookup.
 - [`docs/reference/DEPENDENCIES.md`](docs/reference/DEPENDENCIES.md) — official dependency authority and initial candidate tuple.
 - [`assets/dependencies.lock.json`](assets/dependencies.lock.json) — exact machine-readable versions, sources, digests, packages, and configuration bindings.
+
+- [`docs/reference/IMPLEMENTATION-HOST.md`](docs/reference/IMPLEMENTATION-HOST.md) — sanitized point-in-time OVH implementation-host settings and readiness.
+- [`docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md`](docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md) — non-normative operational upgrade strategy.
 - [`llms.txt`](llms.txt) — compact machine-readable discovery surface.
 
 ## Normative precedence

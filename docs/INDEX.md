@@ -29,6 +29,7 @@ Read these in order. Earlier documents control later ones.
 - [reference/GLOSSARY.md](reference/GLOSSARY.md) — canonical terms.
 - [reference/COMPATIBILITY.md](reference/COMPATIBILITY.md) — support and certification tuple policy.
 - [reference/DEPENDENCIES.md](reference/DEPENDENCIES.md) — official dependency authority and initial candidate tuple.
+- [reference/IMPLEMENTATION-HOST.md](reference/IMPLEMENTATION-HOST.md) — sanitized settings and readiness record for the shared OVH implementation host.
 - [`../assets/dependencies.lock.json`](../assets/dependencies.lock.json) — exact machine-readable dependency and asset lock.
 - [reference/SEARCH-INDEX.md](reference/SEARCH-INDEX.md) — aliases and question-to-document map.
 
@@ -39,6 +40,7 @@ Research explains why decisions were made but does not override governing law.
 - [research/INDEX.md](research/INDEX.md)
 - [research/SSH-RESEARCH-AND-ARCHITECTURE.md](research/SSH-RESEARCH-AND-ARCHITECTURE.md)
 - [research/FINAL-DELTA-RESEARCH-2026-07-31.md](research/FINAL-DELTA-RESEARCH-2026-07-31.md)
+- [research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md](research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md) — non-normative operational failure and upgrade strategy.
 - [research/SOURCES.md](research/SOURCES.md)
 - [research/CHANGES-FROM-ORIGINAL.md](research/CHANGES-FROM-ORIGINAL.md)
 

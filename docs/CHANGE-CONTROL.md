@@ -44,3 +44,16 @@ Accepted decisions receive the next `D###` entry in `DECISIONS.md`. A superseded
 ## 5. No implementation-first amendment
 
 Code, tests, benchmarks, convenience, or upstream behavior cannot amend governing law retroactively. A conflicting implementation is a defect until the owner explicitly approves the architectural change.
+
+## 6. Operational and host-profile changes
+
+A change affecting concurrency, durable commit boundaries, disk-space preflight, update/rollback, backup/restore, support collection, implementation tooling, certification-host eligibility, or device passthrough must identify:
+
+- the exact new process, descriptor, path, durable state, privilege, network authority, cleanup authority, and failure mode;
+- how prior committed truth survives interruption and capacity exhaustion;
+- how the change affects zero-at-rest;
+- whether the implementation-host profile or compatibility tuple changes;
+- the positive and negative tests added to `docs/CERTIFICATION.md`;
+- whether the claim is baseline, variant, research, or implementation-host-only.
+
+A point-in-time host or strategy document cannot amend normative law by itself.

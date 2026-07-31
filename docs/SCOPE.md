@@ -75,3 +75,21 @@ After the baseline is certified, concrete variants may add:
 ## 5. Product test
 
 A feature belongs in Z only when it helps the owner obtain, connect to, preserve, recover, or explicitly extend the real computer. Ordinary Linux behavior remains inside Linux.
+
+## 6. Operational completeness
+
+The baseline includes truthful behavior under competing operations, host capacity pressure, abrupt interruption, partial durable writes, helper loss, and cleanup failure. These are not future enterprise features.
+
+The following owner-visible operations are supported after their exact gates pass:
+
+- explicit offline tuple plan, verification, application, status, and rollback;
+- independently verifiable backup and restore;
+- a local, redacted, non-uploading support bundle;
+- exact device passthrough only as an explicit post-baseline variant.
+
+The following remain out of scope:
+
+- an updater daemon or silent machine migration;
+- automatic telemetry, crash upload, or remote support access;
+- treating a snapshot as a backup without independent restore evidence;
+- using implementation infrastructure as a product dependency.

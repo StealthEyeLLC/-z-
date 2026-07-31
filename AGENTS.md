@@ -45,6 +45,14 @@ Lower-precedence documents, tests, upstream defaults, implementation convenience
 
 The first checkpoint must boot the real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change. Repository structure, interfaces, schemas, protocols, mocks, and placeholder commands are not a product checkpoint.
 
+## Implementation tooling boundary
+
+Baby may be used as the private implementation executor for Z. Baby must never become part of Z: do not add Baby code, protocol, services, credentials, job records, or runtime assumptions to the product, guest, release verifier, machine state, or offline path.
+
+Use the Z GitHub Authority application for authorized repository verification and Git object transport. It is implementation infrastructure, not product architecture.
+
+When working on the shared OVH host, read `docs/reference/IMPLEMENTATION-HOST.md` first. Do not clean storage, reboot, alter services, packages, networking, firewall, KVM settings, or other project state without a separately authorized, exact maintenance plan.
+
 ## Indexing and search
 
 Use `docs/reference/SEARCH-INDEX.md` to map terms or questions to authoritative documents. Use `docs/research/SSH-RESEARCH-AND-ARCHITECTURE.md` only for rationale; it is not higher authority than the normative hierarchy.

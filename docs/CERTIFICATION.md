@@ -603,7 +603,65 @@ Release evidence MUST contain:
 
 Any mismatch creates a different candidate tuple and blocks release.
 
-## 28. Release decision
+## 28. Gate Z — operational completeness and recovery truth
+
+Prove on the exact claimed tuple:
+
+### Competing operation tests
+
+- simultaneous create, start, stop, reboot, rename, snapshot, restore, fork, import, update, backup, and delete attempts;
+- duplicate starts and competing CLIs;
+- one mutation winner with bounded truthful loser results;
+- read-only status, inspect, doctor, and support planning cause no mutation.
+
+### Interruption and capacity tests
+
+- ENOSPC and inode exhaustion at every durable staging and commit boundary;
+- OOM, cgroup kill, SIGTERM, SIGKILL, CLI exit, VMM exit, and helper exit;
+- abrupt host restart or equivalent crash-consistency test;
+- partial reflink, sparse copy, transfer, snapshot, backup, and import;
+- failed file `fsync`, directory `fsync`, atomic rename, and cleanup;
+- suspend/resume and wall-clock discontinuity where the host supports them;
+- CPU, memory, PID, descriptor, socket, unit-name, CID, disk, inode, and I/O pressure;
+- simultaneous multi-machine starts and transfers.
+
+Expected result: no identity reuse, cross-machine mutation, durable corruption, fabricated success, or destructive guessing. Previous committed truth survives until a replacement is fully committed. Unknown remains unknown.
+
+### Offline tuple transition tests
+
+- plan identifies exact source and destination tuples, assets, capacity, format impact, compatibility, and rollback boundary;
+- verification rejects missing, substituted, unsigned where signing is required, or digest-mismatched input;
+- apply re-verifies immediately before mutation;
+- interrupted apply preserves an identifiable source tuple and truthful recovery path;
+- rollback succeeds only inside the declared boundary and refuses otherwise;
+- persistent machines are not silently converted;
+- zero updater processes, timers, watchers, or hosted dependencies remain at rest.
+
+### Backup and disaster-recovery tests
+
+- export contains the declared disk, identity/configuration material, manifest, digests, and source tuple;
+- corruption, truncation, substitution, and missing components are detected before installation;
+- same-computer restore preserves UUID and SSH host identity;
+- import-as-new rotates UUID, SSH host key, CID, MAC where applicable, and every collision-prone identifier;
+- restoration succeeds on an independently prepared host with the required tuple and without the source host;
+- a same-filesystem reflink alone cannot satisfy the backup claim.
+
+### Local support-bundle tests
+
+- collection plan is displayed before writing;
+- seeded private keys, credentials, environment secrets, command payloads, and unrelated file contents are absent or correctly redacted;
+- no network upload occurs;
+- no machine state changes;
+- no collector, listener, watcher, timer, or temporary secret residue remains;
+- deleting the bundle does not affect machine truth.
+
+### Implementation-boundary tests
+
+- release artifacts, guest images, installed files, offline verifier, machine state, and runtime dependencies contain no Baby component, GitHub application credential, repository connector, CI worker dependency, or implementation-only authority;
+- the recorded implementation host is distinguished from the actual certification host and does not inherit claims it did not prove;
+- every claimed VFIO or USB variant proves group ownership, bind/unbind, reset, host recovery, DMA/interrupt assumptions, and exact absence when disabled.
+
+## 29. Release decision
 
 A failure in identity, host verification, exact execution truth, confinement, data preservation, or cleanup is a release blocker.
 

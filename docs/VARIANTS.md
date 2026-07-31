@@ -777,6 +777,10 @@ Status: **Advanced hardware-dependent**
 
 Supports selected GPU, accelerator, storage controller, NIC, or USB controller with exact IOMMU and recovery certification.
 
+#### Required passthrough certification
+
+A claimed PCI/VFIO profile must additionally prove exact IOMMU-group membership, owner authorization for every grouped function, deterministic host-driver unbind and rebind, device reset behavior, multifunction-device handling, DMA and interrupt isolation assumptions, preservation of required host console/storage/network devices, VMM crash recovery, guest reboot behavior, and exact device absence when the variant is disabled. A device that cannot be safely reset or returned to the host is unsupported for that tuple.
+
 ## 11.3 Device: mediated or virtual function
 
 Status: **Hardware-dependent experimental or supported after proof**
@@ -989,7 +993,7 @@ Status: **Supported according to certified tuple**
 
 Applicable systemd `--host` tools may target `root@z-work` through the same SSH alias.
 
-## 18. Development and certification variants
+## 18. Development, operations, and certification variants
 
 ## 18.1 Build: developer assets
 
@@ -1014,6 +1018,52 @@ Results record the nested environment and every unavailable hardware feature.
 Status: **Required release testing**
 
 Tests exact host-client and guest-server versions, native tools, IDE clients, and configured variants.
+
+### 18.5 Operations: explicit offline tuple transition
+
+Purpose: move installed Z assets or declared machine formats from one exact tuple to another without a daemon or hosted dependency.
+
+Required behavior:
+
+- foreground `plan`, `verify`, `apply`, `status`, and `rollback` semantics;
+- source and destination tuple identities;
+- signed or otherwise exact offline input verification;
+- operation-specific space and failure-headroom preflight;
+- explicit durable-format and machine-compatibility impact;
+- no silent conversion of persistent machines;
+- exact retained evidence and truthful rollback limitations.
+
+Certification includes interrupted application, insufficient space, wrong signature or digest, incompatible machine format, rollback success and refusal cases, and zero updater processes at rest.
+
+### 18.6 Recovery: independently restorable backup
+
+Purpose: create an owner-visible recovery artifact that is not dependent on the source host or source filesystem remaining available.
+
+Required contents:
+
+- exported disk and required identity/configuration artifacts;
+- content manifest and digests;
+- source tuple and machine UUID;
+- explicit same-computer versus import-as-new policy;
+- restoration prerequisites and capacity requirements;
+- no ambient or hosted secret authority.
+
+Certification restores onto an independently prepared host, verifies persistent guest content, verifies the correct host-key behavior, and detects truncation, substitution, and corruption.
+
+### 18.7 Diagnostics: local support bundle
+
+Purpose: collect owner-controlled evidence without telemetry.
+
+Behavior:
+
+- non-mutating collection plan shown before write;
+- exact tuple, host, systemd, cgroup, VMM, socket, disk, SSH, and recent operation evidence where available;
+- private keys, credentials, command payloads, environment secrets, and unnecessary file contents excluded or redacted;
+- owner-readable archive plus manifest;
+- no upload, background process, listener, or persistent support authority;
+- deletion of the bundle does not affect machine truth.
+
+Certification seeds recognizable secrets and proves their absence, proves no network upload, and proves no mutation or residue beyond the requested archive.
 
 ## 19. Variant composition
 

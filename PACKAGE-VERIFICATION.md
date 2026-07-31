@@ -4,9 +4,9 @@
 - Product mark: **-Z-**
 - Spoken name: **Z**
 - CLI: `z`
-- Repository files including checksum manifest: **41**
-- Markdown documents including root `INDEX.md`: **38**
-- Checksum entries: **40**
+- Repository files including checksum manifest: **43**
+- Markdown documents including root `INDEX.md`: **40**
+- Checksum entries: **42**
 - Pending manual uploads: **0**
 - Documentation initialization: **complete**
 - Identity normalization: **complete**

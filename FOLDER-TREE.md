@@ -32,11 +32,13 @@
 │   │   ├── GLOSSARY.md
 │   │   ├── COMPATIBILITY.md
 │   │   ├── DEPENDENCIES.md
+│   │   ├── IMPLEMENTATION-HOST.md
 │   │   └── SEARCH-INDEX.md
 │   └── research/
 │       ├── INDEX.md
 │       ├── SSH-RESEARCH-AND-ARCHITECTURE.md
 │       ├── FINAL-DELTA-RESEARCH-2026-07-31.md
+│       ├── OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md
 │       ├── SOURCES.md
 │       └── CHANGES-FROM-ORIGINAL.md
 ├── assets/

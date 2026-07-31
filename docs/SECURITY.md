@@ -78,7 +78,31 @@ Network None attaches no virtual NIC. AF_VSOCK SSH remains available.
 
 The host kernel and KVM are active isolation boundaries. Every certified tuple records the exact host kernel build and relevant security-fix state. For x86 KVM, certification must prove the host is not vulnerable to CVE-2026-53359 (Januscape), including the applicable upstream or distribution fix. Cloud Hypervisor's x86 `nested` CPU option defaults to `on` in current releases, so the baseline MUST set the pinned-version equivalent of `nested=off` explicitly and prove the effective guest CPU exposure. Nested virtualization requires a separate variant and security gate.
 
-## 10. Failure rules
+## 10. Threat coverage by profile
+
+| Adversary or failure | Baseline | Hardened confinement | Encrypted storage | Confidential-computing variant |
+|---|---|---|---|---|
+| Malicious guest root | host/VMM boundary is relied upon | stronger path, descriptor, device, and syscall containment | no additional running-state protection | hardware-dependent improvement within a separate threat model |
+| Compromised VMM or helper | limited by baseline confinement | primary software mitigation | disk confidentiality only | partial hardware-backed mitigation |
+| Stolen powered-off disk | not necessarily protected | unchanged | primary mitigation | depends on key design |
+| Malicious host administrator | not protected | not protected | unlocked state is generally observable | addressed only within explicit attestation limits |
+| Compromised host kernel | not protected | not protected by Landlock or seccomp | limited | partially addressed only when separately proven |
+| Malicious firmware | not protected | not protected | not protected | depends on measured-boot and platform assumptions |
+| Supply-chain compromise | exact tuple, provenance, and verification | same | same | enlarged hardware and firmware chain must be included |
+| Resource exhaustion or interruption | truthful failure and data preservation | same | same plus key-state handling | same plus attestation and recovery handling |
+
+Sandboxed, encrypted, and confidential are separate claims.
+
+## 11. Operational security
+
+- Competing mutations must have one machine-scoped authority.
+- Capacity exhaustion, OOM, signal, host loss, partial copy, failed synchronization, and failed cleanup are security-relevant failure modes because they can corrupt identity or durable truth.
+- Update bundles are verified offline and applied only by explicit foreground action.
+- A backup is trusted only after manifest verification and independent restore evidence.
+- Support bundles are local, declared, redacted, non-uploading, and non-mutating.
+- Implementation tools and repository credentials are excluded from release artifacts and runtime authority.
+
+## 12. Failure rules
 
 - Unknown is never success.
 - Connection loss before exact outcome is unknown/recoverable.
@@ -86,6 +110,6 @@ The host kernel and KVM are active isolation boundaries. Every certified tuple r
 - Cleanup preserves durable data when ownership is ambiguous.
 - Read-only inspection never repairs or rotates identity.
 
-## 11. Nonclaims
+## 13. Nonclaims
 
 Z does not claim perfect containment, resistance to host compromise, universal snapshot portability, universal SSH-client compatibility, or confidential-computing protection from a malicious hypervisor.
