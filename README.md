@@ -11,7 +11,7 @@ CLI: **`z`**
 
 ## Current state
 
-This repository initializes the governing architecture and documentation system. Six large governing or research documents are pending the initial manual upload described in [`UPLOAD-TO-GITHUB.md`](UPLOAD-TO-GITHUB.md). **Implementation has not started and no runtime capability is claimed.** The first valid implementation checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change.
+This repository contains the complete governing architecture and documentation system. Documentation initialization is complete. **Implementation has not started and no runtime capability is claimed.** The first valid implementation checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change.
 
 ## Product contract
 
