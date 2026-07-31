@@ -43,4 +43,4 @@ Read the governing documents in the precedence order defined by [`docs/INDEX.md`
 
 ## Current initialization status
 
-The small documentation and repository-control files have been migrated. Six large source documents remain pending manual upload at the exact paths listed in [`UPLOAD-TO-GITHUB.md`](UPLOAD-TO-GITHUB.md). Documentation initialization is not implementation, and no runtime capability is claimed.
+Documentation initialization and identity migration are complete. All governing, reference, research, and repository-control documents are present. Documentation is not implementation, and no runtime capability is claimed.
