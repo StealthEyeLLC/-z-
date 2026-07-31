@@ -21,6 +21,7 @@ This file classifies documents. It cannot change their content or precedence.
 | `docs/CERTIFICATION.md` | Normative | Current | Release evidence requirements. |
 | `docs/CHANGE-CONTROL.md` | Governance | Current | Procedure for changes to normative law. |
 | `docs/reference/*` | Reference | Current | Terms, support policy, and search map. |
+| `docs/research/FINAL-DELTA-RESEARCH-2026-07-31.md` | Research | Current dated audit | Final targeted upstream delta, corrections, and freeze recommendation; not independently normative. |
 | `docs/research/*` | Research | Historical/current rationale | Source-backed reasoning; not normative. |
 | `evidence/*` | Evidence | Empty at initialization | Future checkpoint and release proof. |
 | `.github/*` | Workflow | Current | Review and agent guidance. |

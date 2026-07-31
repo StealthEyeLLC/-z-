@@ -15,10 +15,10 @@ The architecture report draws primarily from upstream documentation and source c
 
 - System and service credentials: <https://systemd.io/CREDENTIALS/>
 - VM interface: <https://systemd.io/VM_INTERFACE/>
-- `systemd.socket(5)`: <https://www.freedesktop.org/software/systemd/man/latest/systemd.socket.html>
-- `systemd-ssh-proxy(1)`: <https://www.freedesktop.org/software/systemd/man/latest/systemd-ssh-proxy.html>
-- `systemd-stdio-bridge(1)`: <https://www.freedesktop.org/software/systemd/man/latest/systemd-stdio-bridge.html>
-- `systemd-run(1)`: <https://www.freedesktop.org/software/systemd/man/latest/systemd-run.html>
+- `systemd.socket(5)`: <https://github.com/systemd/systemd/blob/main/man/systemd.socket.xml>
+- `systemd-ssh-proxy(1)`: <https://github.com/systemd/systemd/blob/main/man/systemd-ssh-proxy.xml>
+- `systemd-stdio-bridge(1)`: <https://github.com/systemd/systemd/blob/main/man/systemd-stdio-bridge.xml>
+- `systemd-run(1)`: <https://github.com/systemd/systemd/blob/main/man/systemd-run.xml>
 
 ## Cloud Hypervisor
 
@@ -33,10 +33,52 @@ The architecture report draws primarily from upstream documentation and source c
 - JetBrains remote development: <https://www.jetbrains.com/help/idea/remote-development-overview.html>
 - Lima SSH configuration export implementation: <https://github.com/lima-vm/lima>
 - Vagrant `ssh-config`: <https://developer.hashicorp.com/vagrant/docs/cli/ssh_config>
-- Coder SSH configuration: <https://coder.com/docs/user-guides/workspace-access/ssh>
+- Coder SSH configuration: <https://coder.com/docs/reference/cli/config-ssh>
 
 ## Kernel and confinement
 
 - Landlock: <https://docs.kernel.org/userspace-api/landlock.html>
 - `openat2(2)`: <https://man7.org/linux/man-pages/man2/openat2.2.html>
 - AF_VSOCK: <https://man7.org/linux/man-pages/man7/vsock.7.html>
+
+## Final delta audit — accessed 2026-07-31
+
+### OpenSSH and SSH protocol
+
+- OpenSSH release notes: <https://www.openssh.com/releasenotes.html>
+- Current `ssh_config(5)`: <https://man.openbsd.org/ssh_config.5>
+- Current `sshd(8)`: <https://man.openbsd.org/sshd.8>
+- SSH Connection Protocol, RFC 4254: <https://www.rfc-editor.org/rfc/rfc4254.html>
+
+### systemd
+
+- Credentials: <https://systemd.io/CREDENTIALS/>
+- VM interface: <https://systemd.io/VM_INTERFACE/>
+- `systemd.socket(5)`: <https://github.com/systemd/systemd/blob/main/man/systemd.socket.xml>
+- `systemd-stdio-bridge(1)`: <https://github.com/systemd/systemd/blob/main/man/systemd-stdio-bridge.xml>
+- `systemd-run(1)`: <https://github.com/systemd/systemd/blob/main/man/systemd-run.xml>
+
+### Cloud Hypervisor
+
+- v53.0 release: <https://www.cloudhypervisor.org/blog/cloud-hypervisor-v53.0-released/>
+- v52.0 release and CVE-2026-45782 fix: <https://www.cloudhypervisor.org/blog/cloud-hypervisor-v52.0-released/>
+- v50.0 release documenting the x86 `nested=on` default: <https://www.cloudhypervisor.org/blog/cloud-hypervisor-v50.0-released/>
+- v53.0 Unix vsock mux source: <https://github.com/cloud-hypervisor/cloud-hypervisor/blob/v53.0/virtio-devices/src/vsock/unix/muxer.rs>
+- v53.0 SMBIOS source: <https://github.com/cloud-hypervisor/cloud-hypervisor/blob/v53.0/arch/src/x86_64/smbios.rs>
+- Stability policy: <https://github.com/cloud-hypervisor/cloud-hypervisor#3-status>
+
+### Linux, KVM, AF_VSOCK, and confinement
+
+- `vsock(7)`: <https://man7.org/linux/man-pages/man7/vsock.7.html>
+- Virtio 1.3 specification: <https://docs.oasis-open.org/virtio/virtio/v1.3/virtio-v1.3.html>
+- Landlock userspace API: <https://docs.kernel.org/userspace-api/landlock.html>
+- CVE-2026-53359 Januscape disclosure: <https://www.openwall.com/lists/oss-security/2026/07/06/7>
+- Upstream Januscape fix: <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=81ccda30b4e83d8f5cc4fd50503c44e3a33abfeb>
+
+### Networking and native clients
+
+- Current `passt(1)`: <https://passt.top/builds/latest/web/passt.1.html>
+- Upstream `passt-user` record of residual host-external-address reachability: <https://lists.passt.top/hyperkitty/list/passt-user%40passt.top/thread/ZMG4ZWRAYYYRS3UEAUVYJKVYWJOI5GIP/>
+- VS Code Remote SSH: <https://code.visualstudio.com/docs/remote/ssh>
+- JetBrains Gateway SSH workflow: <https://www.jetbrains.com/help/idea/remote-development-a.html>
+- JetBrains SSH configurations: <https://www.jetbrains.com/help/idea/settings-tools-ssh-configurations.html>

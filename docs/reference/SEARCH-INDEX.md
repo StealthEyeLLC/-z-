@@ -13,6 +13,7 @@ Status: **Discovery aid; not normative authority**
 | What is Z? | `README.md`, `docs/SCOPE.md` |
 | What can never be changed casually? | `docs/INVARIANTS.md`, `docs/ANTI-INVARIANTS.md` |
 | Why SSH? | `docs/ARCHITECTURE.md`, `docs/research/SSH-RESEARCH-AND-ARCHITECTURE.md` |
+| What changed in the final upstream audit? | `docs/research/FINAL-DELTA-RESEARCH-2026-07-31.md` |
 | How does SSH reach a machine without an IP? | `docs/ARCHITECTURE.md`, search `AF_VSOCK`, `vsock mux` |
 | Why does Z exit after connection? | Search `ProxyUseFdpass`, `descriptor handoff`, `fd passing` |
 | How are IDEs supported? | `docs/VARIANTS.md`, search `compatibility profile`, `stdio relay` |

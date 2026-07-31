@@ -200,15 +200,16 @@ At each boot, Z starts the pinned Cloud Hypervisor process with a private machin
 
 The guest's static socket-activated SSH service imports the credentials with `ImportCredential=` and launches stock `sshd -i` with explicit credential-file paths under `$CREDENTIALS_DIRECTORY`.
 
-Recommended credential names:
+Recommended baseline credential names:
 
 ```text
 z.ssh.hostkey.ed25519
 z.ssh.authorized_keys.root
-vmm.notify_socket
 ```
 
-The `vmm.notify_socket` credential may point to a host listener through AF_VSOCK so PID 1 can send boot progress and `READY=1`. This is useful boot evidence, but authenticated SSH remains the final readiness authority.
+Delta correction, 2026-07-31: systemd's `vmm.notify_socket` uses AF_VSOCK datagram and then sequenced-packet transport. Cloud Hypervisor v52.0 and v53.0 use a stream-only Unix vsock mux, so this readiness channel is not available in those candidate tuples. Authenticated SSH remains the final readiness authority. A future tuple may add the credential only after exact transport certification.
+
+Cloud Hypervisor's SMBIOS Type 11 representation is count- and size-bounded. Z must preflight the encoded OEM-string set and prove exact binary round-trip before launch rather than relying only on systemd's larger aggregate service-credential limit.
 
 This design deletes:
 

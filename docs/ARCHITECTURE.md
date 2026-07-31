@@ -93,11 +93,13 @@ Z generates machine identity before first boot. On start:
 1. Create and verify private API/runtime sockets.
 2. Start the pinned VMM process under systemd.
 3. Submit the complete VM configuration over the API socket.
-4. Include SMBIOS Type 11 system credentials for SSH host key, authorized keys, and optional boot notify socket.
+4. Preflight the selected VMM's SMBIOS Type 11 OEM-string count and encoded table size, then include system credentials for the SSH host key and authorized keys.
 5. Boot the VM.
 6. PID 1 imports system credentials.
 7. Static AF_VSOCK socket activation launches stock `sshd -i` per connection.
 8. Z requires a strict authenticated SSH handshake before reporting ready.
+
+The Cloud Hypervisor v52.0 and v53.0 Unix vsock mux accepts stream connections only. systemd's `vmm.notify_socket` uses datagram and then sequenced-packet AF_VSOCK, so that credential is not part of the Cloud Hypervisor v52.0/v53.0 candidate baseline. A future tuple may use it only after exact end-to-end transport certification. VMM events and serial output remain observational; authenticated SSH is the final readiness authority.
 
 ## 7. SSH profiles
 

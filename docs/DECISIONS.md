@@ -65,3 +65,15 @@ Support attaches to an exact tuple of Z, Cloud Hypervisor, firmware, image, gues
 ## D016 — Remote and AI access
 
 Any MCP or remote edge invokes the same local Z binary and SSH paths. No second executor or machine database is permitted.
+
+## D017 — Cloud Hypervisor readiness notification boundary
+
+For Cloud Hypervisor v52.0 and v53.0, `vmm.notify_socket` is not a baseline credential because systemd sends readiness over AF_VSOCK datagram or sequenced-packet sockets while the VMM's Unix mux accepts stream traffic only. Authenticated SSH remains the final readiness authority. A later tuple may enable notification only after exact transport certification.
+
+## D018 — No implicit host mapping in the connected profile
+
+The certified `passt` profile disables host-loopback, gateway, and guest-address convenience mappings, explicitly disables inbound TCP/UDP publication, and does not allow sandbox fallback. These controls do not claim to block outbound access to services bound on the host's real external addresses. The connected profile records that residual authority; Network None is required for host-network isolation.
+
+## D019 — Patched host kernel and no baseline nested virtualization
+
+The host kernel and KVM security-fix state are part of every compatibility tuple. The x86 baseline must prove it is not vulnerable to CVE-2026-53359. Because Cloud Hypervisor's x86 `nested` option defaults to `on` in current releases, the baseline explicitly sets `nested=off` (or the exact pinned-version equivalent) and proves the effective configuration. Nested virtualization requires separate authorization and certification.

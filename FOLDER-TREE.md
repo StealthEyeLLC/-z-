@@ -35,6 +35,7 @@
 │   └── research/
 │       ├── INDEX.md
 │       ├── SSH-RESEARCH-AND-ARCHITECTURE.md
+│       ├── FINAL-DELTA-RESEARCH-2026-07-31.md
 │       ├── SOURCES.md
 │       └── CHANGES-FROM-ORIGINAL.md
 ├── assets/README.md

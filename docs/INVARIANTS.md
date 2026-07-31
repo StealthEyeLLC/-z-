@@ -355,7 +355,8 @@ The baseline MUST:
 - Import credentials into the socket-activated SSH service with standard systemd `ImportCredential=` semantics.
 - Pass explicit host-key and authorized-key paths to stock `sshd -i`.
 - Ensure credentials are unavailable to unrelated guest services through service credential isolation where supported.
-- Treat authenticated SSH as final readiness evidence even when a `vmm.notify_socket` boot notification is used.
+- Preflight the selected VMM's SMBIOS Type 11 OEM-string count and encoded table size before launch, reject overflow or truncation, and prove exact binary round-trip for every credential in the certified tuple.
+- Treat authenticated SSH as final readiness evidence. A `vmm.notify_socket` boot notification MAY be used only in a separately certified tuple whose AF_VSOCK backend supports the datagram or sequenced-packet socket type required by systemd. Cloud Hypervisor v52.0 and v53.0 use a stream-only Unix vsock mux and therefore do not supply this notification path.
 
 A separate read-only standard credential medium MAY exist only as a certified fallback variant when the exact VMM, firmware, kernel, systemd, or distribution tuple cannot consume the required SMBIOS credentials.
 

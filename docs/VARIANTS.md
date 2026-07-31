@@ -564,9 +564,12 @@ Provide low-friction outbound networking and explicit inbound publishing.
 
 ### Requirements
 
-- No implicit inbound forwarding.
-- Conservative host reachability settings.
-- Explicit published ports.
+- No implicit inbound forwarding; the baseline invocation explicitly uses the pinned-version equivalents of `--tcp-ports none` and `--udp-ports none`.
+- Host-loopback, gateway, and guest-address convenience mappings are disabled with the exact pinned-version equivalents of `--map-host-loopback none`, `--no-map-gw`, and `--map-guest-addr none`.
+- The stricter `pivot_root()` sandbox must succeed; `--chroot-fallback` is prohibited in the certified baseline.
+- Explicit published ports only.
+- Negative tests prove the convenience aliases above do not reach host services and inventory direct reachability to every real host address.
+- These options do not establish host-network isolation. Current upstream documentation exposes no destination filter for services bound to the host's real external addresses; such services may remain reachable as ordinary outbound destinations. Network None is required when the guest must have no general network path to host services.
 - Exact process and socket cleanup.
 
 ### Limitation
@@ -643,7 +646,7 @@ Status: **Required baseline**
 
 ### Purpose
 
-Provide unique machine SSH identity, owner authorization, and optional boot notification without a guest agent, reusable image secret, command-line secret, or extra block device.
+Provide unique machine SSH identity and owner authorization without a guest agent, reusable image secret, command-line secret, or extra block device.
 
 ### Durable authority
 
@@ -660,9 +663,10 @@ Z submits the complete machine configuration to the private Cloud Hypervisor API
 
 - `z.ssh.hostkey.ed25519`.
 - `z.ssh.authorized_keys.root`.
-- Optional `vmm.notify_socket`.
 
-The guest imports the credentials into the stock socket-activated SSH service.
+The guest imports the credentials into the stock socket-activated SSH service. The implementation must preflight the selected VMM's OEM-string count and encoded table size and reject any value that could truncate, wrap, or exceed the certified tuple's limits.
+
+`vmm.notify_socket` is not available in the Cloud Hypervisor v52.0/v53.0 candidate baseline because systemd requires AF_VSOCK datagram or sequenced-packet support while the VMM's Unix mux is stream-only. It remains a future exact-tuple option, never readiness authority.
 
 ### Security consequences
 

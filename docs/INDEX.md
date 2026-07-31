@@ -36,6 +36,7 @@ Research explains why decisions were made but does not override governing law.
 
 - [research/INDEX.md](research/INDEX.md)
 - [research/SSH-RESEARCH-AND-ARCHITECTURE.md](research/SSH-RESEARCH-AND-ARCHITECTURE.md)
+- [research/FINAL-DELTA-RESEARCH-2026-07-31.md](research/FINAL-DELTA-RESEARCH-2026-07-31.md)
 - [research/SOURCES.md](research/SOURCES.md)
 - [research/CHANGES-FROM-ORIGINAL.md](research/CHANGES-FROM-ORIGINAL.md)
 

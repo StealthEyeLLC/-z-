@@ -8,9 +8,10 @@ Status: **Normative implementation order**
 2. Prove compatibility stdio relay against one embedded SSH client.
 3. Prove strict prebound host-key lookup.
 4. Prove static AF_VSOCK `sshd -i` service.
-5. Prove SMBIOS system credentials through the private VMM API.
-6. Prove exact noninteractive systemd argv and result semantics.
-7. Prove serial reconnect across reboot.
+5. Prove SMBIOS system credentials through the private VMM API, including OEM-string count/size preflight and exact binary round-trip; do not depend on `vmm.notify_socket` for Cloud Hypervisor v52.0/v53.0.
+6. Prove the exact host kernel is patched for applicable KVM isolation advisories, including CVE-2026-53359 on x86; explicitly configure the pinned Cloud Hypervisor x86 equivalent of `nested=off` and prove the effective guest CPU exposure.
+7. Prove exact noninteractive systemd argv and result semantics.
+8. Prove serial reconnect across reboot.
 
 No architecture scaffold counts as completion without a real booted computer.
 
@@ -51,7 +52,7 @@ Add:
 - Explicit shell mode.
 - Status, inspect, doctor, and explicit repair.
 - Network None.
-- `passt` connected profile.
+- `passt` connected profile with `--tcp-ports none`, `--udp-ports none`, convenience host mappings disabled, strict sandbox setup required, and direct host-address reachability inventoried as residual authority.
 - Cold snapshot, restore, fork, export, and import.
 - Serial console and logs.
 

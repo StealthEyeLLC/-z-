@@ -59,3 +59,9 @@ SSHFS may fail open operations when connections break and must not become author
 ## 12. Firmware behavior is only what is certified
 
 Persistent UEFI-variable behavior is not claimed until proven for the exact firmware and Cloud Hypervisor tuple. A standard fallback boot path may be used and any missing NVRAM behavior remains an explicit limitation.
+
+## 13. The `passt` connected profile does not isolate host external-address services
+
+Disabling `--map-host-loopback`, gateway mapping, guest-address mapping, and automatic port publication removes convenience exposure but does not create a destination firewall. A guest may still reach a service bound to a real host external or wildcard address as an ordinary outbound destination.
+
+Z accepts this limitation only for the ordinary connected profile and records the resulting host-network authority during certification. Network None is the required profile when no general guest-to-host network-service path is acceptable. Z does not add a permanent firewall manager or silently claim that `passt` provides hostile-code containment.

@@ -42,7 +42,10 @@ Prove:
 - `/dev/kvm` is available and usable by the selected identity.
 - Required host kernel floor is satisfied.
 - Required seccomp behavior is available.
-- Required Landlock ABI is available.
+- Required Landlock ABI and every relied-upon access right are available.
+- Pre-sandbox file descriptors are inventoried and no undeclared descriptor retains ambient host authority.
+- The exact host-kernel build includes applicable KVM isolation fixes, including CVE-2026-53359 on x86.
+- The pinned Cloud Hypervisor x86 equivalent of `nested=off` is explicit and nested virtualization is absent from the effective baseline guest CPU exposure.
 - Unix descriptor passing works.
 - Host systemd user or system manager can own transient services as designed.
 - User lingering behavior is explicitly configured and verified if user services must survive logout.
@@ -77,8 +80,9 @@ Prove before first authenticated connection:
 - Metadata writes are crash-safe.
 - Cloud Hypervisor receives the complete VM configuration through the exact private API socket.
 - Reusable secret material is absent from process arguments, environment dumps, public logs, and unit descriptions.
+- SMBIOS Type 11 OEM-string count and encoded table size are preflighted before launch; overflow, truncation, count wrap, or over-limit data fail before machine mutation.
 - SMBIOS Type 11 binary credentials preserve the exact host key and authorized-keys bytes.
-- Optional `vmm.notify_socket` boot notification reaches only the exact owned listener.
+- Cloud Hypervisor v52.0/v53.0 does not configure or depend on `vmm.notify_socket`; any future notification tuple proves the required datagram or sequenced-packet transport separately.
 
 Negative tests:
 
@@ -438,8 +442,12 @@ Guest root attempts to create or enable an undeclared virtual interface must not
 Prove:
 
 - Outbound TCP, UDP, DNS, IPv4, and IPv6 as claimed.
-- Conservative host reachability configuration.
-- No inbound listeners without explicit publication.
+- Host-loopback, gateway, and guest-address convenience mappings are disabled with the exact pinned-version options.
+- Guest attempts through those convenience aliases fail to reach host services.
+- The exact pinned-version equivalents of `--tcp-ports none` and `--udp-ports none` are active; no inbound listeners exist without explicit publication.
+- The stricter `pivot_root()` sandbox succeeds and no `--chroot-fallback` equivalent is active.
+- Direct connection attempts to every real host address and relevant wildcard-bound host service are tested and recorded. Reachability is treated as residual connected-profile authority, not false isolation.
+- The Network None profile proves absence of any general IP path to host services.
 - Explicit host-port publication.
 - Collision failure.
 - Correct cleanup.
@@ -535,6 +543,7 @@ Exercise the exact pinned Cloud Hypervisor release with:
 - Stale socket replacement.
 - Multiple concurrent SSH connections.
 - Serial plus SSH plus SFTP plus portal load.
+- Non-stream vsock requests are handled exactly as documented by the pinned VMM; Cloud Hypervisor v52.0/v53.0 must not be treated as supporting systemd's datagram/sequenced-packet readiness channel.
 
 No input sequence may panic the VMM or corrupt the disk.
 
@@ -553,6 +562,8 @@ Attempt:
 - Bind-mount escape.
 - Renamed path race.
 - Hard-link confusion where applicable.
+- Access through every descriptor opened before Landlock restriction.
+- Missing Landlock rights, older ABI behavior, and exhausted ruleset-layer capacity.
 
 Certification must show fail-closed behavior when Landlock or required confinement cannot be installed.
 

@@ -54,6 +54,8 @@ Per-machine keys and hardware-backed keys are supported variants. Agent forwardi
 
 The VMM and helpers receive only exact paths, descriptors, sockets, devices, and network authority. The baseline requires effective seccomp and fail-closed Landlock or equivalent certified confinement.
 
+Each certified tuple declares the minimum Landlock ABI and every access right relied upon. It inventories and closes or deliberately retains all file descriptors opened before sandboxing because Landlock does not retroactively restrict them. Unsupported rights, exhausted ruleset layers, or failed confinement are hard failures rather than best-effort degradation.
+
 Managed paths use descriptor-relative operations and `openat2()`-style beneath/no-symlink/no-magic-link resolution where available. PID or pathname alone never proves ownership.
 
 ## 8. Portal security
@@ -70,7 +72,11 @@ Managed paths use descriptor-relative operations and `openat2()`-style beneath/n
 
 Network None attaches no virtual NIC. AF_VSOCK SSH remains available.
 
-`passt` is convenient connectivity, not hostile-code containment. Bridge/TAP, TUN/TAP, and passthrough expand host authority and require separate certification.
+`passt` is convenient connectivity, not hostile-code containment. The certified connected profile disables host-loopback, gateway, and guest-address convenience mappings, explicitly disables TCP/UDP publication, and fails if the stricter filesystem sandbox cannot be installed. Those controls do not block ordinary outbound connections to services bound on the host's real external addresses. The connected profile must inventory and disclose that residual authority; Network None is the required profile when no general guest-to-host network-service path is acceptable. Bridge/TAP, TUN/TAP, and passthrough expand host authority and require separate certification.
+
+## 9.1 Host-kernel isolation state
+
+The host kernel and KVM are active isolation boundaries. Every certified tuple records the exact host kernel build and relevant security-fix state. For x86 KVM, certification must prove the host is not vulnerable to CVE-2026-53359 (Januscape), including the applicable upstream or distribution fix. Cloud Hypervisor's x86 `nested` CPU option defaults to `on` in current releases, so the baseline MUST set the pinned-version equivalent of `nested=off` explicitly and prove the effective guest CPU exposure. Nested virtualization requires a separate variant and security gate.
 
 ## 10. Failure rules
 
