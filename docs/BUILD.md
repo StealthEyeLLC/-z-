@@ -6,16 +6,18 @@ Status: **Normative implementation order**
 
 Point-in-time host facts are recorded in [`reference/IMPLEMENTATION-HOST.md`](reference/IMPLEMENTATION-HOST.md). They route implementation work and do not certify the selected release tuple.
 
-As of `2026-07-31T19:10:10Z`:
+As of `2026-07-31T20:07:01Z`:
 
 - Z GitHub Authority has repository-wide write/admin authority for `StealthEyeLLC/-z-`, and an ordinary Git temporary branch create/read/delete cycle passed.
 - The implementation host has root, usable KVM API version 12, `/dev/vhost-vsock`, AF_VSOCK stream sockets, Unix descriptor passing, transient systemd units, TAP create/delete, loop attach/detach, mount namespaces, and OpenSSH `ProxyUseFdpass=yes` support.
 - No additional GitHub or host permission is required to begin Z implementation.
 - Repository-level commit and tag signing is intentionally not required. Account-level SSH signing-key registration is outside GitHub App repository authority and is not a build blocker.
 - The host has Rust/Cargo `1.88.0`, not the locked Rust `1.97.1`. Cloud Hypervisor, `passt`, `mmdebstrap`, and `qemu-img` are not globally installed.
+- Node `24.18.0` is retained as implementation infrastructure for Baby MCP and the Z GitHub App credential helper; global `node`, `npm`, and `npx` resolve into that exact retained runtime.
 - The root filesystem is ext4 and does not support reflink. Sparse-copy fallback is therefore the implementation-host baseline.
-- The host has `36,604,243,968` bytes available, which is `4,391,989,248` bytes above the provisional 30 GiB maintenance floor. The floor now passes, but every large image or clone mutation still MUST pass its exact operation-specific capacity and failure-headroom preflight immediately before mutation.
+- The host has `97,421,074,432` bytes available, which is `65,208,819,712` bytes above the provisional 30 GiB maintenance floor. The independent reclamation certification recorded `60,817,604,608` net bytes recovered from its pre-cleanup baseline. Every large image or clone mutation still MUST pass its exact operation-specific capacity and failure-headroom preflight immediately before mutation.
 - The authorized controlled host reboot completed successfully. The boot ID changed to `4f39061a-161e-434a-af57-a2554feb2207`, the `libc6` runtime is `2.39-0ubuntu8.8`, `/var/run/reboot-required` is absent, systemd reports zero failed units, and the host profile has been recaptured on the new boot.
+- The host is now a certified Baby-plus-Z implementation appliance. Baby Quirt, its socket, its MCP edge, the required `fix-mcp` runtime identity, the Baby-only Caddy route, SSH access, the base operating system, one authoritative Z workspace, and required build/virtualization primitives remain. SMP, the Fix execution/operator/OAuth stack, StealthEye Shell/Quirt/CI, Baby-X, EHJINT, Index, Docker, containerd, and snapd are absent.
 
 Missing ambient binaries are materialization work, not authority blockers. Implementation MUST use the locked candidate tuple and MUST NOT silently inherit global host versions.
 

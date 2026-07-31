@@ -2,11 +2,11 @@
 
 Status: **Point-in-time operational reference; not normative; not certification evidence**
 
-Captured: `2026-07-31T19:10:10Z`
+Captured: `2026-07-31T20:07:01Z`
 
 Host label: `vps-c9f04f5e`
 
-Role: shared private implementation host
+Role: dedicated private Baby-and-Z implementation host
 
 ## 1. Purpose and boundary
 
@@ -80,13 +80,13 @@ These facts establish development feasibility, not release certification. Landlo
 | Setting | Current value |
 |---|---:|
 | Root filesystem total | `102,888,095,744` bytes |
-| Root filesystem used | `66,267,074,560` bytes |
-| Root filesystem available | `36,604,243,968` bytes |
-| Reported use | 65% |
+| Root filesystem used | `5,450,244,096` bytes |
+| Root filesystem available | `97,421,074,432` bytes |
+| Reported use | 6% |
 | Provisional maintenance floor | `32,212,254,720` bytes (30 GiB) |
-| Difference from floor | **4,391,989,248 bytes above** |
+| Difference from floor | **65,208,819,712 bytes above** |
 
-The host is above the provisional maintenance floor after EHJINT retirement and the controlled reboot. This does not waive the stronger operation-specific gate: no large image, clone, snapshot, package, or build mutation may start until its exact capacity plan proves that temporary data, durable output, rollback material, evidence, and failure reserve fit simultaneously.
+The host is above the provisional maintenance floor after the authorized exact-manifest reclamation. Independent certification recorded `36,603,695,104` bytes available before cleanup, `97,421,299,712` bytes available at certification, and `60,817,604,608` net bytes recovered. This does not waive the stronger operation-specific gate: no large image, clone, snapshot, package, or build mutation may start until its exact capacity plan proves that temporary data, durable output, rollback material, evidence, and failure reserve fit simultaneously.
 
 Because ext4 reflink is unavailable, this host must use sparse-copy fallback where the design permits it. Tests must verify logical and allocated size, data identity, interrupted-copy behavior, synchronization, atomic installation, and cleanup. A same-filesystem reflink must never be reported as available here.
 
@@ -100,6 +100,7 @@ Because ext4 reflink is unavailable, this host must use sparse-copy fallback whe
 - nftables `1.0.9`;
 - `debootstrap` `1.0.134ubuntu1`;
 - `sfdisk`, `mkfs.ext4`, Git, curl, jq, and ordinary filesystem utilities.
+- Node `24.18.0`, retained only as implementation infrastructure for Baby MCP and the Z GitHub App credential helper; `/usr/local/bin/node`, `npm`, and `npx` resolve into `/opt/node-v24.18.0-linux-x64`.
 
 ### Not globally installed
 
@@ -107,6 +108,8 @@ Because ext4 reflink is unavailable, this host must use sparse-copy fallback whe
 - `passt`;
 - `mmdebstrap`;
 - `qemu-img`.
+
+Docker, containerd, and snapd are intentionally absent. They are not Z prerequisites and MUST NOT be silently reintroduced as implementation or runtime dependencies.
 
 ### Build consequence
 
@@ -124,21 +127,22 @@ No selected tool may be inherited silently from the global PATH.
 
 The fresh authoritative implementation workspace was clean at:
 
-- commit `cab0d4d6447fb2c87fc59953a9f27701c155782e`;
-- tree `2ec2125d46e0a98cb35c839e7e0cfbc631275923`;
+- commit `44236b1c5c189925d81393945921dddc2dd1ad9c`;
+- tree `1f935f374b417a90642846e4df80adf94f0d1c37`;
 - origin `https://github.com/StealthEyeLLC/-z-.git`.
 
 The repository contains the canonical architecture, dependency lock, build plan, and certification plan. Z source implementation has not started. The first source checkpoint must deliver a real KVM computer rather than schemas, interfaces, mocks, or placeholder commands.
 
-## 8. Shared-host boundaries
+## 8. Appliance boundaries
 
-Baby Quirt, its socket, and its MCP edge were active and healthy during capture. Containerd, SSH socket activation, and Caddy were active. The obsolete local EHJINT workspaces and VM roots were retired before reboot after a verified compact recovery archive was created; Z has no EHJINT dependency. Two separately owned Fix execution units each used one configured automatic restart while `/run/user/987` was created, then remained active with `Result=success`; Z must not modify them.
+Baby Quirt, its socket, its MCP edge, SSH socket activation, and the Baby-only Caddy route were active and healthy during capture. Baby MCP runs as the retained `fix-mcp` Unix identity and requires the credentials and state owned by that identity; the legacy name does not make it part of the retired Fix stack. Baby durable jobs, streams, deployment records, maintenance/recovery material, and rollback releases remain because removing them would weaken Baby operation, audit, or recovery. Exactly one Baby workspace remains: the authoritative Z workspace. SMP, Fix execution/operator/OAuth, StealthEye Shell/Quirt/CI, Baby-X, EHJINT, Index, Docker, containerd, and snapd are positively absent.
 
 Z implementation must:
 
 - create and record distinct source, build, asset, machine, runtime, cache, staging, and evidence roots;
 - use exact owner, mode, quota or headroom, and cleanup rules;
-- avoid unrelated Baby, SMP, Fix, EHJINT, containerd, user-home, service, firewall, and machine state;
+- avoid mutating Baby runtime, credentials, durable records, retained recovery material, the public edge, administrative access, or base-host security state;
+- do not reintroduce any retired project stack or inherit its former paths, users, services, packages, listeners, mounts, loops, interfaces, routes, or certificates;
 - never infer cleanup authority from age, name, prefix, or size;
 - keep implementation credentials and executors out of release artifacts and runtime authority.
 
