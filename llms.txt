@@ -1,0 +1,31 @@
+# -Z-
+
+Canonical repository: https://github.com/StealthEyeLLC/-z-
+Product mark: -Z-
+Spoken name: Z
+CLI: z
+Category: SSH-native sovereign local Linux computers
+Status: architecture documented; implementation not started
+
+Primary entry points:
+- README.md
+- AGENTS.md
+- docs/INDEX.md
+- docs/MANIFEST.md
+
+Normative order:
+1. docs/INVARIANTS.md
+2. docs/ANTI-INVARIANTS.md
+3. docs/SACRIFICES.md
+4. docs/SCOPE.md
+5. docs/ARCHITECTURE.md
+6. docs/VARIANTS.md
+7. docs/SECURITY.md
+8. docs/DECISIONS.md
+9. docs/BUILD.md
+10. docs/CERTIFICATION.md
+
+Core concepts: OpenSSH over AF_VSOCK; Cloud Hypervisor; descriptor handoff; native and compatibility SSH profiles; static sshd socket activation; SMBIOS system credentials; exact argv through guest systemd; SFTP; SSH capability portals; no guest agent; no custom protocol; no product database; zero Z processes at rest.
+
+Research: docs/research/SSH-RESEARCH-AND-ARCHITECTURE.md
+Search map: docs/reference/SEARCH-INDEX.md
