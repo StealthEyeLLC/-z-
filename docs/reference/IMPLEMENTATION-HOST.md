@@ -2,230 +2,163 @@
 
 Status: **Point-in-time operational reference; not normative; not certification evidence**
 
-Captured: `2026-07-31T15:20:08Z`
+Captured: `2026-07-31T18:30:16Z`
+
 Host label: `vps-c9f04f5e`
-Role: shared private implementation host for Baby and Z
 
-## 1. Purpose and disclosure boundary
+Role: shared private implementation host
 
-This document records the sanitized settings and storage state of the OVH VPS selected for Z implementation work. It exists to prevent hidden environmental assumptions and to make host-readiness decisions reviewable.
+## 1. Purpose and boundary
 
-It deliberately excludes public IP addresses, MAC addresses, credentials, private keys, tokens, encrypted systemd credentials, exact secret-bearing paths, and raw configuration that would create unnecessary attack-surface disclosure. A public repository is not the authority for secrets.
+This document records the sanitized current state of the OVH VPS selected for Z implementation. It prevents hidden host assumptions and routes work to the correct preflight gates.
 
-This host profile does not certify Z. A release claim remains bound to the exact host, kernel, CPU exposure, filesystem, VMM, guest, client, dependency, and evidence tuple exercised by `docs/CERTIFICATION.md`.
+It deliberately excludes public addresses, MAC addresses, credentials, private keys, tokens, encrypted credential paths, and secret-bearing configuration.
 
-## 2. Current host identity
+This host profile does not certify Z. Release claims remain bound to the exact host, kernel, CPU exposure, filesystem, VMM, firmware, guest, client, dependency, and evidence tuple exercised by [`../CERTIFICATION.md`](../CERTIFICATION.md).
+
+Baby and GitHub applications may implement and publish Z, but they are implementation infrastructure only. They are not Z components, release dependencies, guest contents, runtime authority, update authority, or offline-operation dependencies.
+
+## 2. Authority verdict
+
+**No additional authority or permission is required to begin implementation.**
+
+Verified authority:
+
+- Z GitHub Authority App ID `4380878`, installation ID `148647330`, account `StealthEyeLLC`, repository selection `all`.
+- Repository authority includes write access for contents, workflows, actions, checks, statuses, issues, pull requests, deployments, environments, packages, secrets, hooks, administration, security events, attestations, and related repository controls.
+- Repository `StealthEyeLLC/-z-`, default branch `main`.
+- Ordinary Git created, read, and deleted a temporary remote branch successfully.
+- The host execution identity is root and can access the required KVM, vhost-vsock, TUN/TAP, systemd, loop, mount-namespace, and Unix descriptor-passing primitives.
+
+Repository rulesets and branch protection were absent at capture time. GitHub Actions were enabled with allowed actions set to `all`; the default workflow token permission was read-only and pull-request approval by workflows was disabled. These settings do not block local implementation or authenticated Git publication.
+
+The GitHub App cannot register an account-level SSH signing key. Commit and tag signing are intentionally not required for implementation, so this is not a blocker. Repository commits remain bound by exact Git object IDs and remote verification.
+
+## 3. Host identity
 
 | Setting | Observed value |
 |---|---|
 | Provider role | OVH-hosted KVM VPS |
-| Virtualization observed by guest | KVM, full virtualization |
 | Distribution | Ubuntu 24.04.4 LTS |
 | Architecture | `x86_64` |
 | Kernel | `6.8.0-136-generic` |
 | systemd | `255.4-1ubuntu8.16` |
 | CPU model exposed | Intel Core Processor, Haswell, no TSX |
 | vCPUs | 6 |
-| NUMA nodes | 1 |
-| Memory | 12,243,673,088 bytes |
-| Swap | 0 bytes |
+| Memory | `11,956,712 kB` |
+| Swap | `0 kB` |
 | Time zone | UTC |
 | NTP synchronized | yes |
-| Pending reboot | yes |
+| Pending reboot | **yes** |
 
-## 3. Virtualization and kernel settings
+The pending reboot means evidence that depends on the loaded kernel or package state must not be treated as final after package changes. Reboot requires a separately authorized maintenance action and a fresh host-profile capture.
 
-| Setting | Observed value | Z consequence |
-|---|---|---|
-| `/dev/kvm` | present, character device | nested development tests are possible |
-| `/dev/kvm` ownership | `root:kvm`, mode `0660` | selected execution identity must be explicitly authorized |
-| Intel nested KVM | `Y` | development-host fact only; baseline certification requires the effective Z guest configuration to prove nested virtualization absent unless separately authorized |
-| AMD nested KVM | unavailable | not applicable to this host exposure |
-| Landlock LSM | present | exact ABI and relied-upon rights still require runtime preflight |
-| AppArmor | enabled | host profile must account for effective policy |
-| Kernel lockdown | not active | no Secure Boot or measured-boot claim follows |
-| cgroup hierarchy | unified cgroup v2 | compatible with transient systemd ownership |
-| IPv4 forwarding | enabled | existing host networking must not be silently treated as Z authority |
-| IPv6 forwarding | enabled | same constraint as IPv4 |
+## 4. Proven implementation primitives
 
-Loaded kernel facilities include KVM/KVM-Intel, nftables/netfilter, overlayfs, and the existing host networking modules. Presence is not proof of correct Z confinement or certification.
-
-## 4. Storage and filesystem
-
-| Setting | Observed value |
+| Primitive | Current result |
 |---|---|
-| Block device | virtual QEMU hard disk |
-| Nominal disk size | 107,374,182,400 bytes |
-| Root partition | 106,299,375,104 bytes |
-| Root filesystem | ext4 1.0 |
-| Root mount | `rw,relatime,discard,errors=remount-ro,commit=30` |
-| Root filesystem total | 102,888,095,744 bytes |
-| Root filesystem used | 102,460,608,512 bytes |
-| Root filesystem available | 410,710,016 bytes |
-| Reported use | 100% |
-| Inode use | 17% |
+| `/dev/kvm` | present, `root:kvm`, mode `0660` |
+| KVM API | version 12 |
+| `/dev/vhost-vsock` | present, `root:kvm`, mode `0660`; open succeeded |
+| `/dev/net/tun` | present, mode `0666` |
+| AF_VSOCK stream socket | creation succeeded |
+| Unix `SCM_RIGHTS` descriptor handoff | succeeded |
+| OpenSSH `ProxyUseFdpass=yes` | parsed and effective |
+| Transient systemd unit | create/wait/collect succeeded |
+| TAP lifecycle | create/delete succeeded |
+| Loop lifecycle | attach/detach succeeded |
+| Mount namespace | creation succeeded |
+| Root filesystem | ext4 |
+| Reflink | unsupported |
 
-**Current verdict: the host is storage-blocked for safe Z image construction and certification work.** No large image, clone, snapshot, package, or build operation should begin at this capacity.
+These facts establish development feasibility, not release certification. Landlock ABI/rights, seccomp behavior, pre-opened descriptor inventory, exact KVM security-fix state, Cloud Hypervisor effective CPU configuration, and every negative gate still require implementation-time proof.
 
-### 4.1 Top-level allocated storage
+## 5. Storage and copy behavior
 
-| Path | Approximate allocated bytes | Ownership note |
-|---|---:|---|
-| `/var` | 53,016,924,160 | mixed Baby, container, SMP, Fix, logs, and package state |
-| `/home` | 41,022,210,048 | separate user/application build ownership; not a Z cleanup target by default |
-| `/usr` | 4,029,689,856 | operating-system packages |
-| `/root` | 2,121,379,840 | administrator-owned state; preserve unless individually proven disposable |
-| `/opt` | 1,161,445,376 | installed releases and tools |
-| `/tmp` | 1,033,134,080 | mixed temporary build state |
-
-### 4.2 Major `/var` owners
-
-| Path | Approximate allocated bytes | Initial classification |
-|---|---:|---|
-| `/var/lib/baby-quirt` | 22,257,135,616 | preserve active release, jobs, streams, credentials, and authoritative work; classify workspace-by-workspace |
-| `/var/lib/containerd` | 11,368,849,408 | high-value cleanup candidate only after active consumers and snapshots are proven absent |
-| `/var/lib/baby-quirt-nspawn` | 9,589,415,936 | high-value candidate only after nspawn evidence and active mounts are reconciled |
-| `/var/lib/stealtheye-fix-execution` | 2,974,486,528 | separate project authority; do not delete from a Z cleanup pass |
-| `/var/lib/smp` | 2,848,874,496 | separate project assets and persistent machine state; require SMP-specific approval |
-| `/var/log` | 1,436,348,416 | journal is about 1.1 GiB and may be bounded through normal retention policy |
-| `/var/cache` | 453,226,496 | package/cache cleanup candidate after package operations are idle |
-
-### 4.3 Baby storage
-
-| Area | Approximate allocated bytes |
+| Setting | Current value |
 |---|---:|
-| Workspaces | 11,396,947,968 |
-| Streams | 147,279,872 |
-| Jobs | 9,433,088 |
-| Installed Baby release | 48,295,936 |
+| Root filesystem total | `102,888,095,744` bytes |
+| Root filesystem used | `70,732,722,176` bytes |
+| Root filesystem available | `32,138,596,352` bytes |
+| Reported use | 69% |
+| Provisional maintenance floor | `32,212,254,720` bytes (30 GiB) |
+| Difference from floor | **73,658,368 bytes below** |
 
-The largest Baby workspaces are older SMP and EHJINT missions. Size alone is not deletion authority. Every workspace must be checked for origin, HEAD, dirty/staged/untracked state, remote anchoring, retained evidence, active jobs, mounts, and explicit project ownership before removal.
+The host is no longer broadly storage-blocked, but it is slightly below the provisional floor after the final authority audit and fresh workspace. No large image, clone, snapshot, package, or build mutation may start until its exact capacity plan proves that temporary data, durable output, rollback material, evidence, and failure reserve fit simultaneously.
 
-The active Z documentation workspace is small and clean. A separate older Z audit workspace contains uncommitted state and must be preserved until reconciled.
+Because ext4 reflink is unavailable, this host must use sparse-copy fallback where the design permits it. Tests must verify logical and allocated size, data identity, interrupted-copy behavior, synchronization, atomic installation, and cleanup. A same-filesystem reflink must never be reported as available here.
 
-### 4.4 Large logical artifacts
+## 6. Tooling status
 
-The host contains large sparse or allocated disk images, including:
+### Present ambient tools
 
-- a 12 GiB StealthEye Fix execution filesystem;
-- a 12 GiB Baby nspawn pool device;
-- two 8 GiB SMP root filesystems;
-- several 4 GiB SMP build and smoke-test copies;
-- containerd blobs and snapshots;
-- user-owned CUDA, Python, Rust, browser, and build caches under `/home`.
+- Rust/Cargo `1.88.0` and rustup `1.26.0`;
+- OpenSSH `9.6p1` client and server;
+- systemd `255`;
+- nftables `1.0.9`;
+- `debootstrap` `1.0.134ubuntu1`;
+- `sfdisk`, `mkfs.ext4`, Git, curl, jq, and ordinary filesystem utilities.
 
-Logical file size and allocated disk usage are different for sparse files. Cleanup decisions must use allocated size, active mounts, open-file checks, and project ownership rather than filename or apparent size alone.
+### Not globally installed
 
-## 5. Network and firewall shape
+- Cloud Hypervisor;
+- `passt`;
+- `mmdebstrap`;
+- `qemu-img`.
 
-- Primary interface: one DHCP-managed Ethernet interface plus loopback.
-- Public addresses and MAC addresses are intentionally omitted.
-- UFW/nftables effective base policy: input drop, output accept, forward drop.
-- Host ingress currently permits SSH, HTTP, and HTTPS.
-- Additional project-owned nftables tables exist for StealthEye Fix, SMP, and other host services.
-- The host has active forwarding and NAT capability.
+### Build consequence
 
-Z must never assume ownership of unrelated host firewall tables or existing services. Any Z networking variant must use exact machine-scoped ownership markers, preflight conflicts, and exact cleanup.
+Ambient tools are not candidate-tuple authority.
 
-## 6. Relevant service state
+- Materialize and verify the locked Cloud Hypervisor v53.0 static binary and matching EDK2 `CLOUDHV.fd` under the dedicated Z asset root.
+- Materialize the locked Rust `1.97.1` toolchain and prove the channel-manifest digest before compiling Z. The installed Rust `1.88.0` is not an allowed substitute.
+- Materialize the locked Debian `mmdebstrap` package and builder closure from snapshot `20260731T120000Z`; the installed Ubuntu `debootstrap` is not the selected root-filesystem constructor.
+- Defer the locked `passt` package until the connected profile in Phase 2. The first computer uses Network None.
+- Do not add `qemu-img` merely because it is absent. The baseline uses independent raw disks and the locked builder closure; introducing a QEMU image dependency requires an explicit lock and tuple change.
 
-The host currently runs more than Baby. Active service families include:
+No selected tool may be inherited silently from the global PATH.
 
-- Baby Quirt, its MCP edge, and Baby-X components;
-- SMP;
-- StealthEye Fix execution, broker, operator, OAuth, and shell services;
-- containerd;
-- Caddy, SSH, fail2ban, cron, journald, timesync, networkd, and resolver services;
-- index and remote-browser worker services;
-- ordinary OVH/QEMU guest services.
+## 7. Repository and publication state
 
-Baby Quirt is socket activated: its socket is enabled and active; its service is active on demand. Docker is disabled and inactive, while containerd remains enabled and active. Therefore containerd storage is not presumed disposable.
+The fresh authoritative implementation workspace was clean at:
 
-Baby release observed during this capture:
+- commit `e90bac8b34b7736755a6f05809d5f46dd7e65a62`;
+- tree `34f428238dedde64c1ed2b344093acd6d2f7c15b`;
+- origin `https://github.com/StealthEyeLLC/-z-.git`.
 
-- version `0.1.0`;
-- commit `b3a7119fb9321d74fee9a730517f519ed0d351c4`;
-- tree `9ebab95f7f136c8480495f812796ac0bdc558a21`.
+The repository contains the canonical architecture, dependency lock, build plan, and certification plan. Z source implementation has not started. The first source checkpoint must deliver a real KVM computer rather than schemas, interfaces, mocks, or placeholder commands.
 
-Baby is an implementation executor only. It is not part of Z, is not shipped with Z, and is not a runtime or release-verification dependency.
+## 8. Shared-host boundaries
 
-## 7. Relevant installed packages
+Baby Quirt, its socket, and its MCP edge were active and healthy during capture. Containerd was active. Other project roots and persistent machines remain separately owned.
 
-Observed host packages include:
+Z implementation must:
 
-- OpenSSH `9.6p1-3ubuntu13.18`;
-- systemd `255.4-1ubuntu8.16`;
-- nftables `1.0.9-1build1` and iptables `1.8.10-3ubuntu2`;
-- AppArmor `4.0.1really4.0.1-0ubuntu0.24.04.7`;
-- cryptsetup `2.7.0-1ubuntu4.2`;
-- Git `2.43.0-1ubuntu7.3`;
-- rsync `3.2.7-1ubuntu1.5`;
-- curl, jq, xz, zstd, FUSE 3, and iproute2.
+- create and record distinct source, build, asset, machine, runtime, cache, staging, and evidence roots;
+- use exact owner, mode, quota or headroom, and cleanup rules;
+- avoid unrelated Baby, SMP, Fix, EHJINT, containerd, user-home, service, firewall, and machine state;
+- never infer cleanup authority from age, name, prefix, or size;
+- keep implementation credentials and executors out of release artifacts and runtime authority.
 
-Cloud Hypervisor, `passt`, and the pinned Rust toolchain are not established as system-package authorities by this snapshot. Z must use the locked candidate assets and exact verification rules rather than inheriting ambient host packages.
+## 9. Readiness decision
 
-## 8. Readiness decision
+The host is ready for:
 
-### 8.1 Suitable uses after storage remediation
-
-This VPS may be used for:
-
-- source editing and deterministic builds;
+- source implementation;
 - dependency and supply-chain verification;
-- unit, integration, and negative tests that do not claim bare-metal properties;
-- nested-KVM development and smoke tests explicitly labelled as nested;
-- evidence generation whose claim is scoped to this exact host profile.
+- bounded materialization after capacity preflight;
+- unit, integration, and negative tests scoped honestly to this host;
+- nested-KVM development and smoke evidence explicitly labelled as nested.
 
-### 8.2 Not automatically suitable for release certification
+The host is not yet ready for the first large image mutation until:
 
-This host is not the selected Debian 13.6 reference host. It is itself a KVM guest, exposes nested virtualization, has a pending reboot, and currently has insufficient storage headroom. It cannot inherit release-certification authority from successful development tests.
+1. the exact operation-specific capacity gate passes with bounded failure headroom;
+2. the pending reboot is resolved when loaded-kernel/package-state evidence would otherwise be invalid;
+3. the locked Rust, Cloud Hypervisor, firmware, `mmdebstrap`, and required builder closure are materialized and verified;
+4. dedicated Z roots and machine-scoped mutation/staging rules are installed.
 
-A release certification run must independently prove every Gate A host requirement, including exact kernel security-fix state, effective nested-virtualization absence for the baseline guest, seccomp, Landlock ABI and rights, filesystem behavior, CPU exposure, KVM usability, and sufficient storage.
+This host is not automatically a release-certification host. Release certification must independently prove every Gate A host prerequisite and label nested evidence truthfully.
 
-## 9. Required remediation before Z implementation
+## 10. Refresh rule
 
-1. Produce and approve an exact cleanup manifest; do not delete by age or size alone.
-2. Recover enough space for image construction plus bounded failure headroom. The provisional maintenance target is at least 30 GiB free; the implementation must calculate its exact operation-specific requirement.
-3. Preserve active Baby releases, credentials, jobs, streams, mounted paths, authoritative evidence, dirty worktrees, and unpushed commits.
-4. Reconcile containerd and nspawn consumers before pruning either store.
-5. Treat SMP, Fix, Baby-X, EHJINT, and user-home artifacts as separately owned.
-6. Complete the pending host reboot in a separately authorized maintenance window and re-capture this profile afterward.
-7. Create distinct Z source, build, machine, runtime, cache, and evidence roots with explicit owners, modes, quotas or headroom policy, and cleanup ownership.
-8. Re-run the dependency gate and host preflight before the first Z mutation.
-
-## 10. Cleanup classes
-
-### Class A — ordinary bounded maintenance
-
-Potentially reclaimable after confirming no package transaction or active diagnostic need:
-
-- package archives and stale package lists;
-- bounded journal retention;
-- stale `/tmp` and `/var/tmp` products with proven creators and no open files;
-- superseded kernels through normal package-manager removal after boot verification.
-
-### Class B — high-value, proof-required cleanup
-
-- containerd blobs, snapshots, and content;
-- Baby nspawn pool state;
-- old Baby workspaces;
-- duplicate SMP rootfs/build outputs;
-- old project build caches and browser artifacts.
-
-These require an ownership and remote/evidence check before deletion.
-
-### Class C — preserve
-
-- active service roots and mounted images;
-- Baby release and credential authorities;
-- current or dirty workspaces;
-- unpushed Git objects;
-- retained certification or mission evidence;
-- persistent SMP or other project machines;
-- any path whose authority is unknown.
-
-Unknown is preserve, not delete.
-
-## 11. Refresh rule
-
-Re-capture and review this document after any host kernel, distribution, hypervisor exposure, CPU profile, filesystem, disk layout, service, firewall, KVM, Landlock, AppArmor, package, reboot, or storage-remediation change. A changed host profile creates new test evidence; it never silently inherits the old profile's claims.
+Recapture this document after any host kernel, distribution, hypervisor exposure, CPU profile, filesystem, disk layout, service, firewall, KVM, Landlock, AppArmor, package, reboot, storage-remediation, or implementation-root change. A changed host profile creates new evidence; it never silently inherits the old profile's claims.
