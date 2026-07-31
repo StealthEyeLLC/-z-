@@ -43,7 +43,7 @@ Research explains why decisions were made but does not override governing law.
 
 - [`../AGENTS.md`](../AGENTS.md) — agent entry point.
 - [`../CONTRIBUTING.md`](../CONTRIBUTING.md) — contribution and review rules.
-- [`../UPLOAD-TO-GITHUB.md`](../UPLOAD-TO-GITHUB.md) — initial upload procedure.
+- [`../UPLOAD-TO-GITHUB.md`](../UPLOAD-TO-GITHUB.md) — completed documentation migration record.
 - [`../evidence/README.md`](../evidence/README.md) — evidence layout.
 - [`../assets/README.md`](../assets/README.md) — asset identity and provenance.
 
