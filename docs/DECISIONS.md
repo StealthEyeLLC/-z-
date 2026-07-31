@@ -77,3 +77,9 @@ The certified `passt` profile disables host-loopback, gateway, and guest-address
 ## D019 — Patched host kernel and no baseline nested virtualization
 
 The host kernel and KVM security-fix state are part of every compatibility tuple. The x86 baseline must prove it is not vulnerable to CVE-2026-53359. Because Cloud Hypervisor's x86 `nested` option defaults to `on` in current releases, the baseline explicitly sets `nested=off` (or the exact pinned-version equivalent) and proves the effective configuration. Nested virtualization requires separate authorization and certification.
+
+## D020 — Initial dependency and asset tuple
+
+The first implementation candidate is `z-debian-13.6-amd64-ch53-v1`, defined by `docs/reference/DEPENDENCIES.md` and `assets/dependencies.lock.json`. It uses one signed Debian 13.6 snapshot for the x86-64 reference host and guest, Cloud Hypervisor v53.0's verified static binary, the matching Cloud Hypervisor EDK2 `CLOUDHV.fd` release, Debian's patched kernel/systemd/OpenSSH/`passt` packages, and Rust 1.97.1.
+
+The selection optimizes end-to-end coherence and reproducibility rather than independently maximizing every version number. It is a candidate, not a support claim. Any dependency, package, asset, digest, configuration-sensitive fact, source crate, or snapshot change creates a new tuple and repeats affected certification.

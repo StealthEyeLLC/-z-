@@ -29,3 +29,6 @@ Core concepts: OpenSSH over AF_VSOCK; Cloud Hypervisor; descriptor handoff; nati
 
 Research: docs/research/SSH-RESEARCH-AND-ARCHITECTURE.md
 Search map: docs/reference/SEARCH-INDEX.md
+Dependency authority: docs/reference/DEPENDENCIES.md
+Machine dependency lock: assets/dependencies.lock.json
+Initial candidate tuple: z-debian-13.6-amd64-ch53-v1 (selected; not certified)

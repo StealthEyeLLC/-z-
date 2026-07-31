@@ -31,6 +31,7 @@
 │   ├── reference/
 │   │   ├── GLOSSARY.md
 │   │   ├── COMPATIBILITY.md
+│   │   ├── DEPENDENCIES.md
 │   │   └── SEARCH-INDEX.md
 │   └── research/
 │       ├── INDEX.md
@@ -38,7 +39,9 @@
 │       ├── FINAL-DELTA-RESEARCH-2026-07-31.md
 │       ├── SOURCES.md
 │       └── CHANGES-FROM-ORIGINAL.md
-├── assets/README.md
+├── assets/
+│   ├── README.md
+│   └── dependencies.lock.json
 ├── evidence/README.md
 ├── scripts/README.md
 ├── src/README.md

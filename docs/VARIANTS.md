@@ -1067,11 +1067,12 @@ A supported variant becomes baseline only when:
 
 ## 21. Initial frozen build selection
 
-Unless amended through normative change control, the first build should target:
+Unless amended through normative change control, the first build should target candidate tuple `z-debian-13.6-amd64-ch53-v1` from `docs/reference/DEPENDENCIES.md` and `assets/dependencies.lock.json`:
 
-- Pinned Cloud Hypervisor release selected by exact certification.
-- Pinned firmware after UEFI persistence testing.
-- One pinned ordinary Linux distribution.
+- Cloud Hypervisor v53.0 static x86-64 release asset at the locked digest.
+- Cloud Hypervisor EDK2 `CLOUDHV.fd` at tag `ch-1e1b96f126` and the locked digest, subject to the UEFI persistence gate.
+- Debian GNU/Linux 13.6 from snapshot `20260731T120000Z` for both the reference host and the first guest image.
+- Rust 1.97.1, edition 2024, for the initial Z implementation toolchain.
 - Raw persistent disk.
 - SMBIOS-to-systemd credential bootstrap through the private VMM API; read-only credential medium only as a certified fallback.
 - Reflink clone with sparse-copy fallback.

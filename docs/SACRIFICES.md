@@ -65,3 +65,15 @@ Persistent UEFI-variable behavior is not claimed until proven for the exact firm
 Disabling `--map-host-loopback`, gateway mapping, guest-address mapping, and automatic port publication removes convenience exposure but does not create a destination firewall. A guest may still reach a service bound to a real host external or wildcard address as an ordinary outbound destination.
 
 Z accepts this limitation only for the ordinary connected profile and records the resulting host-network authority during certification. Network None is the required profile when no general guest-to-host network-service path is acceptable. Z does not add a permanent firewall manager or silently claim that `passt` provides hostile-code containment.
+
+## 14. The initial certified tuple is one Debian x86-64 stack
+
+The first implementation candidate targets Debian GNU/Linux 13.6 on x86-64 for both the reference host and guest. Other Linux distributions and architectures remain possible, but they are not baseline-supported until a second exact tuple is implemented and certified.
+
+This narrows initial portability in exchange for one signed package universe, matching systemd and OpenSSH packaging, reproducible dependency closure, and lower interoperability ambiguity. It does not authorize a generic distribution abstraction before a second implementation exists.
+
+## 15. Secure Boot and measured boot are not initial-tuple claims
+
+The initial candidate uses a digest-verified Cloud Hypervisor EDK2 firmware asset and an ordinary EFI guest disk, but does not claim guest Secure Boot, measured boot, TPM-backed attestation, or protection of the guest boot chain from unrestricted guest root.
+
+Those mechanisms would add key-enrollment, signed-boot-chain, TPM, recovery, and update authority that does not protect the host from a malicious guest by itself. They remain explicit future security variants. The host still verifies every selected VMM, firmware, package, and image artifact before use.

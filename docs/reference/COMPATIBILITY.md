@@ -6,7 +6,13 @@ Status: **Normative support interpretation**
 
 A configuration option, successful build, or one manual connection does not make a stack supported. Support attaches only to an exact certified tuple recorded with evidence.
 
-## 2. Required tuple fields
+## 2. Dependency authority
+
+The selected initial candidate is defined by [`DEPENDENCIES.md`](DEPENDENCIES.md) and [`../../assets/dependencies.lock.json`](../../assets/dependencies.lock.json). The human document defines roles and policy; the JSON lock defines exact machine identities. A conflict fails closed and must be corrected before implementation proceeds.
+
+Selection is not certification. A lock change creates a new candidate tuple and cannot inherit support automatically.
+
+## 3. Required tuple fields
 
 Every certified tuple records at least:
 
@@ -23,7 +29,7 @@ Every certified tuple records at least:
 - Host filesystem and required reflink/sparse-copy behavior.
 - Effective seccomp mode and Landlock ABI, relied-upon rights, ruleset-layer behavior, and pre-sandbox descriptor inventory.
 
-## 3. SSH client classes
+## 4. SSH client classes
 
 - **Native supported client:** Invokes an OpenSSH client with the certified fd-passing configuration.
 - **Compatibility supported client:** Uses the generated inventory and certified transparent stdio relay.
@@ -31,17 +37,17 @@ Every certified tuple records at least:
 
 No client is described as supported merely because it implements an SSH protocol library.
 
-## 4. Initial state
+## 5. Initial state
 
-No tuple is certified at repository initialization. Candidate component selections in architecture or research documents remain implementation targets until evidence exists.
+No tuple is certified. The exact initial candidate `z-debian-13.6-amd64-ch53-v1` is selected and locked, but remains an implementation target until complete evidence exists.
 
-## 5. Compatibility changes
+## 6. Compatibility changes
 
 A component upgrade creates a new candidate tuple. It must not inherit certification automatically from an earlier tuple, especially for snapshots, credentials, SSH configuration, confinement, or serial recovery.
 
-## 6. Current candidate observations
+## 7. Current candidate observations
 
-As of 2026-07-31, no tuple is certified.
+As of 2026-07-31, no tuple is certified. The locked initial candidate uses Debian 13.6 for the reference host and guest, Cloud Hypervisor v53.0, Cloud Hypervisor EDK2 `CLOUDHV.fd`, Debian systemd 257.13, Debian OpenSSH 10.0p1 security packages, and Rust 1.97.1.
 
 - OpenSSH 10.4/10.4p1 is the current upstream release observed by this audit. Its Linux sandbox, packaging, forwarding, rekey, SFTP, and SCP fixes make the exact patched host/client and guest/server packages part of the tuple.
 - Cloud Hypervisor v53.0 is the current upstream release observed by this audit. It is a new candidate, not an inherited certification from v52.0.

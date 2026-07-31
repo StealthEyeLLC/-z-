@@ -20,6 +20,8 @@ This file classifies documents. It cannot change their content or precedence.
 | `docs/BUILD.md` | Normative | Current | Implementation sequence. |
 | `docs/CERTIFICATION.md` | Normative | Current | Release evidence requirements. |
 | `docs/CHANGE-CONTROL.md` | Governance | Current | Procedure for changes to normative law. |
+| `docs/reference/DEPENDENCIES.md` | Reference authority | Selected candidate; not certified | Official dependency roles, exclusions, selection rationale, and lock interpretation. |
+| `assets/dependencies.lock.json` | Machine-readable lock | Selected candidate; not certified | Exact tuple, archive metadata, packages, versions, sources, digests, and configuration bindings. |
 | `docs/reference/*` | Reference | Current | Terms, support policy, and search map. |
 | `docs/research/FINAL-DELTA-RESEARCH-2026-07-31.md` | Research | Current dated audit | Final targeted upstream delta, corrections, and freeze recommendation; not independently normative. |
 | `docs/research/*` | Research | Historical/current rationale | Source-backed reasoning; not normative. |

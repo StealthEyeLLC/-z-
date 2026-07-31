@@ -82,3 +82,28 @@ The architecture report draws primarily from upstream documentation and source c
 - VS Code Remote SSH: <https://code.visualstudio.com/docs/remote/ssh>
 - JetBrains Gateway SSH workflow: <https://www.jetbrains.com/help/idea/remote-development-a.html>
 - JetBrains SSH configurations: <https://www.jetbrains.com/help/idea/settings-tools-ssh-configurations.html>
+
+## Initial dependency tuple — accessed 2026-07-31
+
+### Debian reference host and guest
+
+- Debian 13.6 release announcement: <https://www.debian.org/News/2026/20260711>
+- Debian 13 release information: <https://www.debian.org/releases/trixie/>
+- Debian Snapshot service: <https://snapshot.debian.org/>
+- Debian archive signing keys and published fingerprints: <https://ftp-master.debian.org/keys.html>
+- Locked Debian archive state: <https://snapshot.debian.org/archive/debian/20260731T120000Z/>
+- Locked Debian security archive state: <https://snapshot.debian.org/archive/debian-security/20260731T120000Z/>
+- Debian security tracker for CVE-2026-53359: <https://security-tracker.debian.org/tracker/CVE-2026-53359>
+
+### Cloud Hypervisor and firmware
+
+- Cloud Hypervisor v53.0 release: <https://www.cloudhypervisor.org/blog/cloud-hypervisor-v53.0-released/>
+- Cloud Hypervisor v53.0 release assets: <https://github.com/cloud-hypervisor/cloud-hypervisor/releases/tag/v53.0>
+- Cloud Hypervisor v53.0 source identity: <https://github.com/cloud-hypervisor/cloud-hypervisor/tree/v53.0>
+- Cloud Hypervisor EDK2 release `ch-1e1b96f126`: <https://github.com/cloud-hypervisor/edk2/releases/tag/ch-1e1b96f126>
+
+### Rust toolchain
+
+- Rust 1.97.1 release: <https://blog.rust-lang.org/2026/07/16/Rust-1.97.1/>
+- Rust 1.97.1 channel manifest: <https://static.rust-lang.org/dist/channel-rust-1.97.1.toml>
+- Rust 1.97.1 channel-manifest digest: <https://static.rust-lang.org/dist/channel-rust-1.97.1.toml.sha256>

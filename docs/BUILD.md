@@ -2,6 +2,18 @@
 
 Status: **Normative implementation order**
 
+## Dependency gate
+
+Before source implementation or asset construction:
+
+1. Verify [`reference/DEPENDENCIES.md`](reference/DEPENDENCIES.md) and [`../assets/dependencies.lock.json`](../assets/dependencies.lock.json) agree.
+2. Verify signed Debian snapshot metadata, package-index hashes, Cloud Hypervisor, firmware, and Rust channel-manifest digests.
+3. Use candidate tuple `z-debian-13.6-amd64-ch53-v1` without live-mirror, backport, or floating-version substitution.
+4. Treat any version or digest change as a new candidate tuple.
+5. Record complete transitive package and Cargo closures when they first exist.
+
+Selection is not certification.
+
 ## Phase 0 — Semantics gates
 
 1. Prove native OpenSSH descriptor handoff against Cloud Hypervisor vsock mux.

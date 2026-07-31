@@ -11,7 +11,7 @@ CLI: **`z`**
 
 ## Current state
 
-This repository contains the complete governing architecture and documentation system. Documentation initialization is complete. **Implementation has not started and no runtime capability is claimed.** The first valid implementation checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change.
+This repository contains the complete governing architecture and documentation system. Documentation initialization is complete. Initial candidate dependency tuple `z-debian-13.6-amd64-ch53-v1` is selected and locked, but is not certified. **Implementation has not started and no runtime capability is claimed.** The first valid implementation checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change.
 
 ## Product contract
 
@@ -33,6 +33,8 @@ The baseline requires:
 - [`docs/INDEX.md`](docs/INDEX.md) — canonical documentation map.
 - [`docs/MANIFEST.md`](docs/MANIFEST.md) — document status and purpose.
 - [`docs/reference/SEARCH-INDEX.md`](docs/reference/SEARCH-INDEX.md) — aliases and question-to-document lookup.
+- [`docs/reference/DEPENDENCIES.md`](docs/reference/DEPENDENCIES.md) — official dependency authority and initial candidate tuple.
+- [`assets/dependencies.lock.json`](assets/dependencies.lock.json) — exact machine-readable versions, sources, digests, packages, and configuration bindings.
 - [`llms.txt`](llms.txt) — compact machine-readable discovery surface.
 
 ## Normative precedence

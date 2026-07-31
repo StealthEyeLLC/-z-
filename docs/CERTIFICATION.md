@@ -587,6 +587,22 @@ After stopping every machine and optional component, prove absence of:
 
 Persistent machine directories, disks, metadata, snapshots, authoritative identity files, and explicit SSH include configuration are durable state, not background runtime.
 
+## 27.1 Dependency and supply-chain gate
+
+Release evidence MUST contain:
+
+- Exact SHA-256 of `assets/dependencies.lock.json`.
+- Proof that every selected upstream asset matches its locked size and digest.
+- Valid signatures for the locked Debian `InRelease` metadata and matching package-index hashes.
+- Complete reference-host package manifest used during certification.
+- Complete guest `dpkg-query` manifest and proof that every package came from the locked snapshot.
+- Exact `Cargo.lock`, Rust compiler verbose identity, target triple, enabled features, and final binary digest.
+- Base-image recipe, package closure, partition/filesystem identities, and raw-image digest.
+- License inventory, SBOM, and security-advisory review for the final source and binary closures.
+- Positive absence evidence for live repositories, backports, testing/unstable packages, floating URLs, unverified assets, undeclared crates, and unrecorded guest packages.
+
+Any mismatch creates a different candidate tuple and blocks release.
+
 ## 28. Release decision
 
 A failure in identity, host verification, exact execution truth, confinement, data preservation, or cleanup is a release blocker.

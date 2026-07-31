@@ -20,3 +20,15 @@ Status: **Canonical terminology reference**
 - **Ready:** A strict authenticated SSH handshake succeeded against the prebound machine host key.
 - **Unknown:** The system cannot prove success or failure. Unknown must never be reported as success.
 - **Certified tuple:** The exact tested combination of Z, VMM, firmware, image, kernel, systemd, OpenSSH, helpers, host kernel floor, and filesystem behavior.
+
+## Candidate tuple
+
+An exact selected combination of source, toolchain, host, VMM, firmware, image, packages, helpers, configuration-sensitive facts, and digests that is eligible for implementation and certification but is not yet supported.
+
+## Dependency authority
+
+`docs/reference/DEPENDENCIES.md`, which defines dependency roles, selection rules, exclusions, and upgrade policy for the selected candidate tuple.
+
+## Dependency lock
+
+`assets/dependencies.lock.json`, the exact machine-readable identity of the selected candidate tuple, including immutable archive metadata, complete resolved package closures, upstream asset identities and digests, and configuration bindings. A lock is selection evidence, not certification evidence.

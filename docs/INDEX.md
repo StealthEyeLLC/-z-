@@ -28,6 +28,8 @@ Read these in order. Earlier documents control later ones.
 
 - [reference/GLOSSARY.md](reference/GLOSSARY.md) — canonical terms.
 - [reference/COMPATIBILITY.md](reference/COMPATIBILITY.md) — support and certification tuple policy.
+- [reference/DEPENDENCIES.md](reference/DEPENDENCIES.md) — official dependency authority and initial candidate tuple.
+- [`../assets/dependencies.lock.json`](../assets/dependencies.lock.json) — exact machine-readable dependency and asset lock.
 - [reference/SEARCH-INDEX.md](reference/SEARCH-INDEX.md) — aliases and question-to-document map.
 
 ## 4. Research

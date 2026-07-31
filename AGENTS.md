@@ -22,6 +22,8 @@ Z is an SSH-native sovereign local Linux computer runtime. This repository curre
 11. `docs/DECISIONS.md`
 12. `docs/BUILD.md`
 13. `docs/CERTIFICATION.md`
+14. `docs/reference/DEPENDENCIES.md`
+15. `assets/dependencies.lock.json`
 
 Lower-precedence documents, tests, upstream defaults, implementation convenience, or prior chat summaries cannot override higher-precedence law.
 

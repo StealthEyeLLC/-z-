@@ -24,13 +24,15 @@ Status: **Discovery aid; not normative authority**
 | What is prohibited? | `docs/ANTI-INVARIANTS.md` |
 | What limitations are accepted? | `docs/SACRIFICES.md` |
 | What should be built first? | `docs/BUILD.md` |
+| What are the official dependencies? | `docs/reference/DEPENDENCIES.md`, `assets/dependencies.lock.json` |
+| Which exact versions, packages, sources, and hashes are selected? | `assets/dependencies.lock.json` |
 | What proves a release? | `docs/CERTIFICATION.md`, `evidence/README.md` |
 | How do I amend architecture? | `docs/CHANGE-CONTROL.md` |
 | Is this implemented? | `docs/MANIFEST.md`, `evidence/README.md` |
 
 ## High-value keywords
 
-`OpenSSH`, `ProxyCommand`, `ProxyUseFdpass`, `HostKeyAlias`, `KnownHostsCommand`, `AF_VSOCK`, `vsock-mux`, `sshd -i`, `systemd socket activation`, `SMBIOS Type 11`, `ImportCredential`, `exact argv`, `SFTP`, `capability portal`, `Network None`, `passt`, `virtiofsd`, `Cloud Hypervisor`, `Landlock`, `seccomp`, `raw disk`, `reflink`, `cold snapshot`, `fork identity`, `unknown outcome`, `zero processes at rest`.
+`dependency lock`, `candidate tuple`, `Debian Snapshot`, `Rust 1.97.1`, `Cloud Hypervisor v53.0`, `CLOUDHV.fd`, `OpenSSH`, `ProxyCommand`, `ProxyUseFdpass`, `HostKeyAlias`, `KnownHostsCommand`, `AF_VSOCK`, `vsock-mux`, `sshd -i`, `systemd socket activation`, `SMBIOS Type 11`, `ImportCredential`, `exact argv`, `SFTP`, `capability portal`, `Network None`, `passt`, `virtiofsd`, `Cloud Hypervisor`, `Landlock`, `seccomp`, `raw disk`, `reflink`, `cold snapshot`, `fork identity`, `unknown outcome`, `zero processes at rest`.
 
 ## Indexing rule
 
