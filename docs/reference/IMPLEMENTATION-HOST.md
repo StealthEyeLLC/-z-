@@ -2,7 +2,7 @@
 
 Status: **Point-in-time operational reference; not normative; not certification evidence**
 
-Captured: `2026-07-31T18:30:16Z`
+Captured: `2026-07-31T19:10:10Z`
 
 Host label: `vps-c9f04f5e`
 
@@ -49,9 +49,11 @@ The GitHub App cannot register an account-level SSH signing key. Commit and tag 
 | Swap | `0 kB` |
 | Time zone | UTC |
 | NTP synchronized | yes |
-| Pending reboot | **yes** |
+| Boot ID | `4f39061a-161e-434a-af57-a2554feb2207` |
+| Loaded `libc6` | `2.39-0ubuntu8.8` |
+| Pending reboot | **no** |
 
-The pending reboot means evidence that depends on the loaded kernel or package state must not be treated as final after package changes. Reboot requires a separately authorized maintenance action and a fresh host-profile capture.
+The authorized controlled reboot completed before this capture. The boot ID changed, `/var/run/reboot-required` is absent, the loaded `libc6` matches the installed package, systemd reports zero failed units, and the previous boot reached `reboot.target` before shutdown synchronization.
 
 ## 4. Proven implementation primitives
 
@@ -78,13 +80,13 @@ These facts establish development feasibility, not release certification. Landlo
 | Setting | Current value |
 |---|---:|
 | Root filesystem total | `102,888,095,744` bytes |
-| Root filesystem used | `70,732,722,176` bytes |
-| Root filesystem available | `32,138,596,352` bytes |
-| Reported use | 69% |
+| Root filesystem used | `66,267,074,560` bytes |
+| Root filesystem available | `36,604,243,968` bytes |
+| Reported use | 65% |
 | Provisional maintenance floor | `32,212,254,720` bytes (30 GiB) |
-| Difference from floor | **73,658,368 bytes below** |
+| Difference from floor | **4,391,989,248 bytes above** |
 
-The host is no longer broadly storage-blocked, but it is slightly below the provisional floor after the final authority audit and fresh workspace. No large image, clone, snapshot, package, or build mutation may start until its exact capacity plan proves that temporary data, durable output, rollback material, evidence, and failure reserve fit simultaneously.
+The host is above the provisional maintenance floor after EHJINT retirement and the controlled reboot. This does not waive the stronger operation-specific gate: no large image, clone, snapshot, package, or build mutation may start until its exact capacity plan proves that temporary data, durable output, rollback material, evidence, and failure reserve fit simultaneously.
 
 Because ext4 reflink is unavailable, this host must use sparse-copy fallback where the design permits it. Tests must verify logical and allocated size, data identity, interrupted-copy behavior, synchronization, atomic installation, and cleanup. A same-filesystem reflink must never be reported as available here.
 
@@ -122,15 +124,15 @@ No selected tool may be inherited silently from the global PATH.
 
 The fresh authoritative implementation workspace was clean at:
 
-- commit `e90bac8b34b7736755a6f05809d5f46dd7e65a62`;
-- tree `34f428238dedde64c1ed2b344093acd6d2f7c15b`;
+- commit `cab0d4d6447fb2c87fc59953a9f27701c155782e`;
+- tree `2ec2125d46e0a98cb35c839e7e0cfbc631275923`;
 - origin `https://github.com/StealthEyeLLC/-z-.git`.
 
 The repository contains the canonical architecture, dependency lock, build plan, and certification plan. Z source implementation has not started. The first source checkpoint must deliver a real KVM computer rather than schemas, interfaces, mocks, or placeholder commands.
 
 ## 8. Shared-host boundaries
 
-Baby Quirt, its socket, and its MCP edge were active and healthy during capture. Containerd was active. Other project roots and persistent machines remain separately owned.
+Baby Quirt, its socket, and its MCP edge were active and healthy during capture. Containerd, SSH socket activation, and Caddy were active. The obsolete local EHJINT workspaces and VM roots were retired before reboot after a verified compact recovery archive was created; Z has no EHJINT dependency. Two separately owned Fix execution units each used one configured automatic restart while `/run/user/987` was created, then remained active with `Result=success`; Z must not modify them.
 
 Z implementation must:
 
@@ -153,9 +155,8 @@ The host is ready for:
 The host is not yet ready for the first large image mutation until:
 
 1. the exact operation-specific capacity gate passes with bounded failure headroom;
-2. the pending reboot is resolved when loaded-kernel/package-state evidence would otherwise be invalid;
-3. the locked Rust, Cloud Hypervisor, firmware, `mmdebstrap`, and required builder closure are materialized and verified;
-4. dedicated Z roots and machine-scoped mutation/staging rules are installed.
+2. the locked Rust, Cloud Hypervisor, firmware, `mmdebstrap`, and required builder closure are materialized and verified;
+3. dedicated Z roots and machine-scoped mutation/staging rules are installed.
 
 This host is not automatically a release-certification host. Release certification must independently prove every Gate A host prerequisite and label nested evidence truthfully.
 
