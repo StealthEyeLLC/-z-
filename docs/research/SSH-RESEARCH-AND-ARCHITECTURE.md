@@ -2,7 +2,7 @@
 
 Status: **Canonical research synthesis for the SSH-native architecture**  
 Date: **2026-07-31**  
-Project: **Z / zssh (`StealthEyeLLC/zssh`)**
+Project: **-Z- / Z (`StealthEyeLLC/-z-`)**
 
 ## 1. Executive decision
 
