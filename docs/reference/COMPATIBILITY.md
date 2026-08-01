@@ -41,6 +41,12 @@ No client is described as supported merely because it implements an SSH protocol
 
 No tuple is certified. The exact initial candidate `z-debian-13.6-amd64-ch53-v1` is selected and locked, but remains an implementation target until complete evidence exists.
 
+## 5.1 Verified implementation-host observation
+
+The retained OVH implementation host is separately locked as `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`. It runs the exact patched Noble kernel and passed the real reboot and host-primitive checkpoint recorded under `evidence/checkpoints/host-kernel-transition-20260801/`.
+
+This is an implementation-host compatibility fact, not a certified release tuple. It proves neither the preserved Debian reference-host candidate nor Cloud Hypervisor, firmware, guest, SSH, persistence, lifecycle, networking, or ecosystem compatibility. Any drift in the implementation host creates a new host tuple before further evidence can rely on it.
+
 ## 6. Compatibility changes
 
 A component upgrade creates a new candidate tuple. It must not inherit certification automatically from an earlier tuple, especially for snapshots, credentials, SSH configuration, confinement, or serial recovery.

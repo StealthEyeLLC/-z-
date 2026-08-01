@@ -1,7 +1,8 @@
 # Certification — SSH-Native Z
 
-Status: **Normative certification plan**  
+Status: **Normative certification plan**
 Date: **2026-07-31**
+Operational status updated: **2026-08-01**
 
 ## 1. Certification rule
 
@@ -34,6 +35,12 @@ Every certification run MUST record:
 - Exact commands, exits, relevant logs, and retained evidence paths.
 
 A claim is scoped to that tuple unless wider compatibility is separately proven.
+
+## 2.1 Current non-release host checkpoint
+
+The checkpoint under `evidence/checkpoints/host-kernel-transition-20260801/` verifies the implementation host's exact fixed kernel, controlled reboot, KVM API and VM/vCPU creation, AF_VSOCK, TAP, Unix descriptor passing, transient systemd, loop, mount namespaces, Landlock ABI, seccomp availability, OpenSSH fd-passing support, rollback kernel, service recovery, package health, and cleanup.
+
+That checkpoint satisfies only the named implementation-host prerequisites. It does **not** complete release Gate A because the actual Z process confinement, exact pre-sandbox descriptor inventory, declared implementation roots, operation-specific capacity refusal, pinned Cloud Hypervisor effective `nested=off`, and complete positive and negative product tests do not yet exist. It also does not satisfy any guest, identity, SSH, persistence, lifecycle, portal, networking, snapshot, backup, update, or ecosystem gate.
 
 ## 3. Gate A — host prerequisites
 

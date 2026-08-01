@@ -13,9 +13,9 @@ CLI: **`z`**
 
 This repository contains the complete governing architecture and documentation system. Documentation initialization is complete. The initial Debian-host candidate tuple `z-debian-13.6-amd64-ch53-v1` remains preserved as an unmodified reference candidate and is not certified. The authoritative clean-room restart branch is `build/z-v1-cleanroom`.
 
-The same-VPS host-kernel gate is complete. The retained Ubuntu 24.04 OVH VPS is running verified kernel `6.8.0-9001-generic`, built from Ubuntu Noble `linux 6.8.0-136.136` with the applicable CVE-2026-53359 KVM fix. It passed the controlled reboot and runtime KVM/AF_VSOCK host gates, is the persistent boot default, and has the distinct locked implementation-host tuple `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`. Kernel `6.8.0-136-generic` remains installed as the tested rollback entry. No second server or VPS reimage was used, and Phase 0A has not started.
+The same-VPS host-kernel gate is complete. The retained Ubuntu 24.04 OVH VPS is running verified kernel `6.8.0-9001-generic`, built from Ubuntu Noble `linux 6.8.0-136.136` with the exact CVE-2026-53359 KVM fix. It passed the controlled reboot and runtime KVM/AF_VSOCK host gates, is the persistent boot default, and has the distinct locked implementation-host tuple `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`. Kernel `6.8.0-136-generic` remains installed as the tested rollback entry. The verified checkpoint is commit `96853e15f7a8cab1efc178d03a4d3e027b0b28cc`, tree `b4308f82a5329542450de3a4cbfabf3300414068`. No second server or VPS reimage was used.
 
-**Implementation has not started and no runtime capability is claimed.** The first valid implementation checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change.
+**The implementation host is ready; Z product implementation has not started.** Phase 0A remains the next mission, and no Z runtime capability is claimed. The first valid product checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change. The complete completed-work and next-step ledger is [`docs/STATUS.md`](docs/STATUS.md).
 
 ## Product contract
 
@@ -36,6 +36,7 @@ The baseline requires:
 - [`AGENTS.md`](AGENTS.md) — mandatory entry point for agents and implementers.
 - [`docs/INDEX.md`](docs/INDEX.md) — canonical documentation map.
 - [`docs/MANIFEST.md`](docs/MANIFEST.md) — document status and purpose.
+- [`docs/STATUS.md`](docs/STATUS.md) — complete verified host-transition result, boundaries, maintenance obligations, and recommended next mission.
 - [`docs/reference/SEARCH-INDEX.md`](docs/reference/SEARCH-INDEX.md) — aliases and question-to-document lookup.
 - [`docs/reference/DEPENDENCIES.md`](docs/reference/DEPENDENCIES.md) — official dependency authority, preserved release candidate, and verified implementation-host binding.
 - [`assets/dependencies.lock.json`](assets/dependencies.lock.json) — exact machine-readable release-candidate and implementation-host identities, sources, digests, packages, and configuration bindings.

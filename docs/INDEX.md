@@ -19,9 +19,10 @@ Read these in order. Earlier documents control later ones.
 | 9 | [BUILD.md](BUILD.md) | Mandatory implementation order and gates. |
 | 10 | [CERTIFICATION.md](CERTIFICATION.md) | Positive and negative proof required for release claims. |
 
-## 2. Supporting governance
+## 2. Supporting governance and current state
 
 - [MANIFEST.md](MANIFEST.md) — document inventory and authority classification.
+- [STATUS.md](STATUS.md) — canonical operational status, completed host-transition ledger, maintenance obligations, and next recommended mission; not an authority override.
 - [CHANGE-CONTROL.md](CHANGE-CONTROL.md) — procedure for amending architecture.
 
 ## 3. Reference
@@ -49,9 +50,9 @@ Research explains why decisions were made but does not override governing law.
 - [`../AGENTS.md`](../AGENTS.md) — agent entry point.
 - [`../CONTRIBUTING.md`](../CONTRIBUTING.md) — contribution and review rules.
 - [`../UPLOAD-TO-GITHUB.md`](../UPLOAD-TO-GITHUB.md) — completed documentation migration record.
-- [`../evidence/README.md`](../evidence/README.md) — evidence layout.
-- [`../assets/README.md`](../assets/README.md) — asset identity and provenance.
+- [`../evidence/README.md`](../evidence/README.md) — verified host checkpoint and future release-evidence layout.
+- [`../assets/README.md`](../assets/README.md) — release-candidate and implementation-host lock semantics.
 
 ## 6. State declaration
 
-Documentation initialization is not implementation. Until end-to-end certification exists under `evidence/`, Z has no certified runtime release.
+The same-VPS implementation-host kernel transition is complete and verified under `evidence/checkpoints/host-kernel-transition-20260801/`. That checkpoint proves only the named host claims. Phase 0A, Z product source, a guest image, a machine lifecycle, and release certification have not started. Until complete end-to-end release evidence exists under `evidence/releases/`, Z has no certified runtime release.

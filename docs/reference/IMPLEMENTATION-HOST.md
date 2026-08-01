@@ -121,6 +121,14 @@ The same-VPS host-kernel blocker is closed for implementation-host purposes. The
 
 This mission ends at that checkpoint. Phase 0A was not started. A later implementation mission must still perform its own dependency, capacity, provenance, cleanup, and compatibility gates before creating implementation roots or product source.
 
+## 8.1 Original-plan equivalence and maintenance decision
+
+The verified patched Noble kernel is accepted as the successful implementation of the original host plan. The plan required a fixed and compatible KVM isolation boundary, real reboot proof, required host primitives, reproducible provenance, persistent boot selection, and rollback—not an unrelated newer kernel for its own sake. The selected approach meets those requirements while minimizing unrelated kernel drift.
+
+Because the package is locally built rather than a stock Canonical binary, this tuple carries an explicit maintenance obligation. Do not silently replace, upgrade, or remove it. Do not remove `6.8.0-136-generic` as rollback. A later Canonical or other replacement kernel requires a new implementation-host tuple and equivalent evidence.
+
+The complete enumerated result and recommended Phase 0A mission are recorded in [`../STATUS.md`](../STATUS.md).
+
 ## 9. Refresh rule
 
 Recapture this record and create a new implementation-host tuple before relying on any changed kernel, package set, machine identity, CPU exposure, filesystem, boot policy, KVM behavior, Landlock ABI, seccomp behavior, OpenSSH behavior, or retained control-plane state.

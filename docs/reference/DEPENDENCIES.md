@@ -56,6 +56,8 @@ The controlled reboot, running module binding, KVM API 12, VM/vCPU creation, AF_
 
 This host verification does not certify the release tuple. Guest, Cloud Hypervisor, firmware, Rust, Debian snapshot, package closures, networking, persistence, recovery, and ecosystem compatibility remain subject to their later implementation and certification gates. Unchanged selections may be carried forward only after their exact digests and compatibility bindings are reverified.
 
+The locally built Ubuntu-compatible kernel is accepted as the original-plan implementation baseline for this tuple. It must remain pinned until an owner-approved host-tuple transition replaces it with equivalent source, package, boot, rollback, runtime, and cleanup evidence. The stock rollback kernel must not be removed merely because the patched kernel is the persistent default.
+
 A newer upstream component is not automatically better for either tuple. Coherence, stable security support, package layout, immutable provenance, and end-to-end certification outweigh mixing the newest release of every independent project.
 
 ## 3. Dependency classes

@@ -9,6 +9,7 @@ This file classifies documents. It cannot change their content or precedence.
 | `README.md` | Discovery | Current | Human landing page and repository state. |
 | `AGENTS.md` | Discovery | Current | Mandatory agent entry point. |
 | `llms.txt` | Discovery | Current | Compact machine-readable index. |
+| `docs/STATUS.md` | Operational status | Verified 2026-08-01; not release certification | Complete host-transition result, exact checkpoint identities, boundaries, maintenance duties, and next recommended mission. |
 | `docs/INVARIANTS.md` | Normative | Frozen until owner-approved change | Highest architectural law. |
 | `docs/ANTI-INVARIANTS.md` | Normative | Frozen until owner-approved change | Prohibited designs and claims. |
 | `docs/SACRIFICES.md` | Normative | Append or amend before accepting a loss | Intentional limitations. |
@@ -27,7 +28,8 @@ This file classifies documents. It cannot change their content or precedence.
 | `docs/research/FINAL-DELTA-RESEARCH-2026-07-31.md` | Research | Current dated audit | Final targeted upstream delta, corrections, and freeze recommendation; not independently normative. |
 | `docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md` | Research | Current dated strategy | Non-normative operational failure, update, backup, support, and device-upgrade strategy. |
 | `docs/research/*` | Research | Historical/current rationale | Source-backed reasoning; not normative. |
-| `evidence/*` | Evidence | Host-kernel checkpoint present; release evidence absent | Digest-verifiable checkpoint and future release proof. |
+| `evidence/checkpoints/host-kernel-transition-20260801/*` | Evidence | Verified immutable host checkpoint | Source, package, patch, runtime, rollback, cleanup, and host-tuple proof for the completed same-VPS transition. |
+| `evidence/releases/*` | Evidence | Absent | Future complete Z release proof. |
 | `.github/*` | Workflow | Current | Review and agent guidance. |
 
 ## Implementation status vocabulary
@@ -38,4 +40,4 @@ This file classifies documents. It cannot change their content or precedence.
 - **Certified:** passed the complete positive and negative requirements for an exact compatibility tuple.
 - **Released:** certified artifacts are published with immutable identity.
 
-These terms are not interchangeable. The implementation host is verified for the recorded kernel-transition claims; no Z runtime or release is implemented or certified.
+These terms are not interchangeable. The implementation host is verified for the recorded kernel-transition claims and is ready for a separately authorized Phase 0A mission. No Z product runtime, guest image, machine lifecycle, or release is implemented or certified.

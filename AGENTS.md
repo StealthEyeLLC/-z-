@@ -5,25 +5,27 @@ Product mark: `-Z-`
 Spoken name: `Z`  
 CLI: `z`
 
-Z is an SSH-native sovereign local Linux computer runtime. This repository currently contains its governing architecture; implementation capability must never be inferred from documentation alone.
+Z is an SSH-native sovereign local Linux computer runtime. This repository contains its governing architecture and a verified implementation-host kernel checkpoint; Z product capability must never be inferred from either documentation or host readiness alone.
 
 ## Required first reads
 
 1. `README.md`
 2. `docs/INDEX.md`
 3. `docs/MANIFEST.md`
-4. `docs/INVARIANTS.md`
-5. `docs/ANTI-INVARIANTS.md`
-6. `docs/SACRIFICES.md`
-7. `docs/SCOPE.md`
-8. `docs/ARCHITECTURE.md`
-9. `docs/VARIANTS.md`
-10. `docs/SECURITY.md`
-11. `docs/DECISIONS.md`
-12. `docs/BUILD.md`
-13. `docs/CERTIFICATION.md`
-14. `docs/reference/DEPENDENCIES.md`
-15. `assets/dependencies.lock.json`
+4. `docs/STATUS.md`
+5. `docs/INVARIANTS.md`
+6. `docs/ANTI-INVARIANTS.md`
+7. `docs/SACRIFICES.md`
+8. `docs/SCOPE.md`
+9. `docs/ARCHITECTURE.md`
+10. `docs/VARIANTS.md`
+11. `docs/SECURITY.md`
+12. `docs/DECISIONS.md`
+13. `docs/BUILD.md`
+14. `docs/CERTIFICATION.md`
+15. `docs/reference/DEPENDENCIES.md`
+16. `docs/reference/IMPLEMENTATION-HOST.md`
+17. `assets/dependencies.lock.json`
 
 Lower-precedence documents, tests, upstream defaults, implementation convenience, or prior chat summaries cannot override higher-precedence law.
 
@@ -43,7 +45,7 @@ Lower-precedence documents, tests, upstream defaults, implementation convenience
 
 ## Implementation rule
 
-The first checkpoint must boot the real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change. Repository structure, interfaces, schemas, protocols, mocks, and placeholder commands are not a product checkpoint.
+The verified host-kernel transition is an implementation-host checkpoint, not a product checkpoint. The next mission is Phase 0A only unless the owner explicitly authorizes a later phase. The first product checkpoint must boot the real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change. Repository structure, interfaces, schemas, protocols, mocks, and placeholder commands are not a product checkpoint.
 
 ## Implementation tooling boundary
 
@@ -51,7 +53,7 @@ Baby may be used as the private implementation executor for Z. Baby must never b
 
 Use the Z GitHub Authority application for authorized repository verification and Git object transport. It is implementation infrastructure, not product architecture.
 
-When working on the shared OVH host, read `docs/reference/IMPLEMENTATION-HOST.md` first. Do not clean storage, reboot, alter services, packages, networking, firewall, KVM settings, or other project state without a separately authorized, exact maintenance plan.
+When working on the shared OVH host, read `docs/STATUS.md` and `docs/reference/IMPLEMENTATION-HOST.md` first. Reconfirm the locked tuple `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1` before relying on host state. Do not clean storage, reboot, replace either kernel, alter services, packages, networking, firewall, KVM settings, or other project state without a separately authorized, exact maintenance plan.
 
 ## Indexing and search
 

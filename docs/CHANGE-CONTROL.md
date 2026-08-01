@@ -57,3 +57,17 @@ A change affecting concurrency, durable commit boundaries, disk-space preflight,
 - whether the claim is baseline, variant, research, or implementation-host-only.
 
 A point-in-time host or strategy document cannot amend normative law by itself.
+
+## 7. Completed implementation-host transitions
+
+A completed host transition that does not alter product architecture must still update, in one coherent checkpoint:
+
+1. `docs/STATUS.md` with the full result, boundaries, maintenance obligations, and next recommended mission.
+2. `docs/reference/IMPLEMENTATION-HOST.md` with exact point-in-time host facts and refresh rules.
+3. `docs/reference/DEPENDENCIES.md` and `assets/dependencies.lock.json` with distinct implementation-host identity.
+4. `docs/BUILD.md`, `docs/CERTIFICATION.md`, `docs/SECURITY.md`, and `docs/reference/COMPATIBILITY.md` with honest claim boundaries.
+5. `docs/DECISIONS.md` when the owner accepts a durable operational choice or maintenance obligation.
+6. `evidence/` with digest-verifiable proof and exact repository checkpoint identities.
+7. Discovery, search, manifest, folder-tree, and checksum documents whose prior state declarations became stale.
+
+Historical evidence is not rewritten merely to improve later prose. A later documentation checkpoint must point to it and preserve its original identities.

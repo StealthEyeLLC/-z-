@@ -2,10 +2,14 @@
 
 ```text
 .
+├── .gitattributes
 ├── README.md
 ├── AGENTS.md
 ├── CONTRIBUTING.md
 ├── FOLDER-TREE.md
+├── INDEX.md
+├── PACKAGE-VERIFICATION.md
+├── SHA256SUMS.txt
 ├── UPLOAD-TO-GITHUB.md
 ├── llms.txt
 ├── .github/
@@ -17,6 +21,7 @@
 ├── docs/
 │   ├── INDEX.md
 │   ├── MANIFEST.md
+│   ├── STATUS.md
 │   ├── INVARIANTS.md
 │   ├── ANTI-INVARIANTS.md
 │   ├── SACRIFICES.md
@@ -44,10 +49,26 @@
 ├── assets/
 │   ├── README.md
 │   └── dependencies.lock.json
-├── evidence/README.md
-├── scripts/README.md
-├── src/README.md
-└── tests/README.md
+├── evidence/
+│   ├── README.md
+│   └── checkpoints/
+│       └── host-kernel-transition-20260801/
+│           ├── CLEANUP.txt
+│           ├── ENVIRONMENT.md
+│           ├── HOST-TUPLE.json
+│           ├── MMU-FIX.diff
+│           ├── PACKAGE-SHA256SUMS.txt
+│           ├── RESULT.md
+│           ├── RUNTIME-PROOF.txt
+│           ├── SHA256SUMS.txt
+│           ├── SOURCE-SHA256SUMS.txt
+│           └── TESTS.md
+├── scripts/
+│   └── README.md
+├── src/
+│   └── README.md
+└── tests/
+    └── README.md
 ```
 
-The structure deliberately keeps governing documents shallow and searchable. Research and reference material are separated so they cannot be mistaken for higher-precedence law.
+The structure keeps governing law shallow and searchable, separates operational status from normative architecture, and stores host-transition evidence under an immutable checkpoint directory. Product source, build scripts, and product tests have not started.

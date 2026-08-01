@@ -1,7 +1,8 @@
 # -Z- Documentation Migration Record
 
-Target repository: `StealthEyeLLC/-z-`  
-Target branch: `main`
+Target repository: `StealthEyeLLC/-z-`
+Original target branch: `main`
+Current clean-room implementation branch: `build/z-v1-cleanroom`
 
 ## Completion status
 
@@ -24,7 +25,7 @@ The completed initialization requires:
 2. All six canonical paths above exist on `main`.
 3. No stale former repository or product identity remains.
 4. `StealthEyeLLC/-z-`, `-Z-`, `ProxyUseFdpass`, `AF_VSOCK`, `Network None`, and `zero Z processes` remain discoverable in the appropriate documents.
-5. `evidence/README.md` states that no implementation evidence exists yet.
-6. Every entry in `SHA256SUMS.txt` matches the normalized repository content.
+5. At initialization, `evidence/README.md` stated that no implementation evidence existed. That historical condition was superseded on 2026-08-01 by the verified host-kernel checkpoint; it did not create Z product evidence.
+6. Every entry in `SHA256SUMS.txt` matches the current normalized documentation and control-file set.
 
-Documentation initialization is complete. Implementation has not started.
+The initial documentation migration remains complete. The implementation host is now verified, while Phase 0A and Z product implementation have not started. Current status is recorded in `docs/STATUS.md`.

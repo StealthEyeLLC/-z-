@@ -28,11 +28,15 @@ Status: **Discovery aid; not normative authority**
 | Which exact versions, packages, sources, and hashes are selected? | `assets/dependencies.lock.json` |
 | What proves a release? | `docs/CERTIFICATION.md`, `evidence/README.md` |
 | How do I amend architecture? | `docs/CHANGE-CONTROL.md` |
-| Is this implemented? | `docs/MANIFEST.md`, `evidence/README.md` |
+| What is the exact current status? | `docs/STATUS.md` |
+| What kernel is running and why was it chosen? | `docs/STATUS.md`, `docs/reference/IMPLEMENTATION-HOST.md`, `docs/DECISIONS.md` |
+| What exactly was completed in the host transition? | `docs/STATUS.md`, `evidence/checkpoints/host-kernel-transition-20260801/RESULT.md` |
+| What should happen next? | `docs/STATUS.md`, `docs/BUILD.md` |
+| Is this implemented? | `docs/MANIFEST.md`, `docs/STATUS.md`, `evidence/README.md` |
 
 ## High-value keywords
 
-`dependency lock`, `candidate tuple`, `Debian Snapshot`, `Rust 1.97.1`, `Cloud Hypervisor v53.0`, `CLOUDHV.fd`, `OpenSSH`, `ProxyCommand`, `ProxyUseFdpass`, `HostKeyAlias`, `KnownHostsCommand`, `AF_VSOCK`, `vsock-mux`, `sshd -i`, `systemd socket activation`, `SMBIOS Type 11`, `ImportCredential`, `exact argv`, `SFTP`, `capability portal`, `Network None`, `passt`, `virtiofsd`, `Cloud Hypervisor`, `Landlock`, `seccomp`, `raw disk`, `reflink`, `cold snapshot`, `fork identity`, `unknown outcome`, `zero processes at rest`.
+`current status`, `Phase 0A`, `host kernel transition`, `CVE-2026-53359`, `Januscape`, `6.8.0-9001-generic`, `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`, `dependency lock`, `candidate tuple`, `Debian Snapshot`, `Rust 1.97.1`, `Cloud Hypervisor v53.0`, `CLOUDHV.fd`, `OpenSSH`, `ProxyCommand`, `ProxyUseFdpass`, `HostKeyAlias`, `KnownHostsCommand`, `AF_VSOCK`, `vsock-mux`, `sshd -i`, `systemd socket activation`, `SMBIOS Type 11`, `ImportCredential`, `exact argv`, `SFTP`, `capability portal`, `Network None`, `passt`, `virtiofsd`, `Cloud Hypervisor`, `Landlock`, `seccomp`, `raw disk`, `reflink`, `cold snapshot`, `fork identity`, `unknown outcome`, `zero processes at rest`.
 
 ## Indexing rule
 
@@ -42,6 +46,7 @@ When adding a new architectural term, capability, or variant, update this file a
 
 | Question or alias | Read |
 |---|---|
+| Complete current result, exact checkpoint, maintenance duties, recommended next mission | `../STATUS.md` |
 | OVH VPS settings, implementation host, host readiness, storage cleanup | `IMPLEMENTATION-HOST.md` |
 | competing operations, ENOSPC, OOM, interruption, crash consistency | `../INVARIANTS.md`, `../ARCHITECTURE.md`, `../CERTIFICATION.md` |
 | update, rollback, tuple transition, offline bundle | `../VARIANTS.md`, `../BUILD.md`, `../CERTIFICATION.md` |

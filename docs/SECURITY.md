@@ -78,6 +78,12 @@ Network None attaches no virtual NIC. AF_VSOCK SSH remains available.
 
 The host kernel and KVM are active isolation boundaries. Every certified tuple records the exact host kernel build and relevant security-fix state. For x86 KVM, certification must prove the host is not vulnerable to CVE-2026-53359 (Januscape), including the applicable upstream or distribution fix. Cloud Hypervisor's x86 `nested` CPU option defaults to `on` in current releases, so the baseline MUST set the pinned-version equivalent of `nested=off` explicitly and prove the effective guest CPU exposure. Nested virtualization requires a separate variant and security gate.
 
+## 9.2 Verified current implementation-host state
+
+The current implementation host is bound to tuple `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`. It runs `6.8.0-9001-generic`, built from Ubuntu Noble `linux 6.8.0-136.136` with exact CVE-2026-53359 fix commit `81ccda30b4e83d8f5cc4fd50503c44e3a33abfeb`. Source, patch, package, installed module, loaded module, boot, rollback, and runtime proofs are recorded under `evidence/checkpoints/host-kernel-transition-20260801/`.
+
+This closes the known implementation-host Januscape blocker for the recorded tuple. It is not a general claim about future kernels or a Z release. The locally built package remains a maintained security boundary until a later evidence-backed tuple transition replaces it. Host nested-KVM capability is present, but the Z baseline still requires the VMM's exact `nested=off` configuration and effective guest CPU proof before any guest claim.
+
 ## 10. Threat coverage by profile
 
 | Adversary or failure | Baseline | Hardened confinement | Encrypted storage | Confidential-computing variant |

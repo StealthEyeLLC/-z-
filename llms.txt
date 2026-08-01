@@ -5,13 +5,25 @@ Product mark: -Z-
 Spoken name: Z
 CLI: z
 Category: SSH-native sovereign local Linux computers
-Status: architecture documented; implementation not started
+Authoritative branch: build/z-v1-cleanroom
+Status: architecture documented; implementation host verified; Phase 0A and product implementation not started
+
+Current operational status:
+- docs/STATUS.md
+- Implementation-host tuple: z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1
+- Running/default kernel: 6.8.0-9001-generic
+- Tested rollback kernel: 6.8.0-136-generic
+- Host-transition commit: 96853e15f7a8cab1efc178d03a4d3e027b0b28cc
+- Host-transition tree: b4308f82a5329542450de3a4cbfabf3300414068
+- Evidence: evidence/checkpoints/host-kernel-transition-20260801/
+- Next recommended mission: Phase 0A only
 
 Primary entry points:
 - README.md
 - AGENTS.md
 - docs/INDEX.md
 - docs/MANIFEST.md
+- docs/STATUS.md
 
 Normative order:
 1. docs/INVARIANTS.md
@@ -27,15 +39,14 @@ Normative order:
 
 Core concepts: OpenSSH over AF_VSOCK; Cloud Hypervisor; descriptor handoff; native and compatibility SSH profiles; static sshd socket activation; SMBIOS system credentials; exact argv through guest systemd; SFTP; SSH capability portals; no guest agent; no custom protocol; no product database; zero Z processes at rest.
 
-Research: docs/research/SSH-RESEARCH-AND-ARCHITECTURE.md
-Search map: docs/reference/SEARCH-INDEX.md
+Preserved release candidate: z-debian-13.6-amd64-ch53-v1 (selected; not certified)
 Dependency authority: docs/reference/DEPENDENCIES.md
 Machine dependency lock: assets/dependencies.lock.json
-Initial candidate tuple: z-debian-13.6-amd64-ch53-v1 (selected; not certified)
+Implementation-host authority: docs/reference/IMPLEMENTATION-HOST.md
+Search map: docs/reference/SEARCH-INDEX.md
+Research: docs/research/SSH-RESEARCH-AND-ARCHITECTURE.md
 
-Operational references:
-- docs/reference/IMPLEMENTATION-HOST.md: sanitized shared OVH implementation-host settings; not certification evidence.
-- docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md: non-normative operational strategy.
-
-Implementation boundary:
-- Baby and the Z GitHub Authority application are implementation infrastructure only and are not Z components or runtime/offline dependencies.
+Claim boundary:
+- The host kernel transition and named host primitives are verified.
+- Z product source, guest image, machine lifecycle, SSH path, and release remain unimplemented and uncertified.
+- Baby and the Z GitHub Authority are implementation infrastructure only, not Z components or runtime/offline dependencies.

@@ -19,6 +19,8 @@ As of `2026-08-01T19:08:00Z`:
 - Transition-owned build helpers, temporary units, mounts, and large staging trees were removed after durable evidence and package preservation.
 - The preserved release candidate remains `z-debian-13.6-amd64-ch53-v1`; it is distinct from the Ubuntu implementation-host tuple.
 - Clean-room Phase 0A has not started.
+- The verified host-transition repository checkpoint is commit `96853e15f7a8cab1efc178d03a4d3e027b0b28cc`, tree `b4308f82a5329542450de3a4cbfabf3300414068`.
+- The complete current-state and next-step ledger is [`STATUS.md`](STATUS.md).
 
 Missing ambient binaries remain materialization work, not authority blockers. Implementation MUST use locked identities and MUST NOT silently inherit global host versions.
 
@@ -41,6 +43,12 @@ Completed proof:
 9. `6.8.0-9001-generic` is now the persistent default; kernel 136 remains the tested rollback entry.
 
 Passing this gate authorizes a later Phase 0A mission on the same VPS. It does not waive dependency verification, operation-specific capacity gates, Phase 0B semantic/negative gates, or release certification.
+
+## Next recommended mission
+
+The next mission SHOULD execute Phase 0A only and stop after the exact isolated inputs and build environment verify. Before mutation it MUST reconfirm the authoritative branch and source tree, a clean workspace, and an unchanged implementation-host tuple. It MUST NOT create a guest disk, create a machine, launch Cloud Hypervisor, or enter Phase 0B or Phase 1 without separate authorization.
+
+The full recommended sequence and fail-closed stop conditions are recorded in [`STATUS.md`](STATUS.md). That operational status document does not override the normative phase definitions below.
 
 ## Dependency gate
 

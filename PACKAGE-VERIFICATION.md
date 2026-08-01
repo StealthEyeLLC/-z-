@@ -1,15 +1,26 @@
-# Repository Initialization Verification
+# Repository Documentation and Checkpoint Verification
 
 - Canonical repository: `StealthEyeLLC/-z-`
+- Authoritative branch: `build/z-v1-cleanroom`
 - Product mark: **-Z-**
 - Spoken name: **Z**
 - CLI: `z`
-- Repository files including checksum manifest: **43**
-- Markdown documents including root `INDEX.md`: **40**
-- Checksum entries: **42**
+- Current repository files including checksum manifest: **55**
+- Markdown documents: **44**
+- Root checksum entries: **54**
 - Pending manual uploads: **0**
 - Documentation initialization: **complete**
 - Identity normalization: **complete**
-- Implementation status: **not started**
+- Same-VPS host-kernel transition: **verified**
+- Implementation-host tuple: `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`
+- Running/default kernel: `6.8.0-9001-generic`
+- Tested rollback kernel: `6.8.0-136-generic`
+- Host-transition checkpoint commit: `96853e15f7a8cab1efc178d03a4d3e027b0b28cc`
+- Host-transition checkpoint tree: `b4308f82a5329542450de3a4cbfabf3300414068`
+- Phase 0A status: **not started**
+- Z product implementation status: **not started**
+- Z release status: **not certified**
 
-`SHA256SUMS.txt` describes the complete normalized initialization tree. It must be regenerated after any later content change.
+`SHA256SUMS.txt` covers every current repository file except itself, including governing documents, operational status, the machine-readable lock, workflow documents, and the immutable host-transition evidence checkpoint.
+
+The complete current-state ledger is `docs/STATUS.md`. The root checksum manifest must be regenerated after any later content change.
