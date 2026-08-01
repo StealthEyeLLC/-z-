@@ -70,3 +70,8 @@ See [`FOLDER-TREE.md`](FOLDER-TREE.md). The major areas are:
 - `assets/` — exact dependency lock and Phase 0A materialization binding.
 - `src/`, `tests/` — later implementation areas; `scripts/` contains the read-only Phase 0A verifier.
 - `.github/` — agent instructions and change templates.
+
+<!-- phase-0b-checkpoint -->
+## Current implementation checkpoint
+
+Phase 0A is complete. Phase 0B implementation and 119 semantic tests are complete, but release certification is blocked by the running Ubuntu `6.8.0-136-generic` host kernel's unresolved CVE-2026-53359 status. See `evidence/phase-0b/RESULT.md`. Phase 1 has not started.

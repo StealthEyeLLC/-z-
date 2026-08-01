@@ -1,0 +1,67 @@
+{
+  "boundaries": {
+    "baby_in_product": false,
+    "custom_guest_protocol": false,
+    "data_plane_z_process_after_fd_handoff": false,
+    "guest_agent": false,
+    "permanent_controller": false
+  },
+  "candidate_tuple": {
+    "cloud_hypervisor": {
+      "commit": "9ed824d6d08df3e96f7d5f50795d9449ac99f431",
+      "sha256": "448af3d4e59b22c2987f7df94c213ad40fb53a10d437e42b5ee6c4fce7c29ecc",
+      "version": "53.0"
+    },
+    "cpu": {
+      "guest_kvm_available": false,
+      "nested": false,
+      "svm_count": 0,
+      "vmx_count": 0
+    },
+    "firmware": {
+      "file": "CLOUDHV.fd",
+      "sha256": "9fb511fc0dd423d90a79615a90a8ace9b9e078b4a115ea2c459e0ac2f4e60218"
+    },
+    "guest": {
+      "allocated_bytes": 691761152,
+      "distribution": "Debian 13.6",
+      "image_sha256": "c04c1971585c1a2931a5cfa472ef6c9bde1adfaa1757a48a6500742d318ceef0",
+      "kernel": "6.12.96+deb13-amd64",
+      "kernel_package_version": "6.12.96-1",
+      "logical_bytes": 6442450944,
+      "network_interfaces": [
+        "lo"
+      ],
+      "package_count": 188,
+      "reusable_identity": false
+    },
+    "name": "z-debian-13.6-amd64-ch53-v1",
+    "network": {
+      "nic_count": 0
+    }
+  },
+  "identity": {
+    "ambient_agent": false,
+    "bootstrap": "Cloud Hypervisor SMBIOS Type 11 systemd credentials",
+    "host_key_prebound": true,
+    "known_hosts": "read-only KnownHostsCommand",
+    "trust_on_first_use": false
+  },
+  "phase": "0B",
+  "planes": {
+    "compatibility_ssh": "connection-scoped opaque stdio relay for Dropbear dbclient",
+    "exact_execution": "finite files over SFTP plus transient systemd units and final property query",
+    "guest_ssh": "static AF_VSOCK systemd socket activation into stock sshd -i",
+    "native_ssh": "OpenSSH ProxyUseFdpass descriptor handoff; connector exits after SCM_RIGHTS transfer",
+    "serial": "bounded reconnecting Unix-socket collector"
+  },
+  "readiness_authority": "authenticated strict SSH handshake",
+  "result_authority": "systemd Result, ExecMainCode, ExecMainStatus, ActiveState, SubState, and InvocationID after output retrieval",
+  "schema_version": "1.0.0",
+  "source": {
+    "branch": "build/z-v1",
+    "commit": "685d7683be9ba60562d3b9eaed663608b8baa5ab",
+    "tree": "eabb67b3d58a2121cb99c6d02fda71c1bc64322c"
+  },
+  "title": "SSH and standard-system semantics gate"
+}

@@ -41,3 +41,11 @@ This file classifies documents. It cannot change their content or precedence.
 - **Released:** certified artifacts are published with immutable identity.
 
 These terms are not interchangeable. At initialization, the architecture is documented; no runtime is implemented or certified.
+
+<!-- phase-0b-checkpoint -->
+## Phase 0B records
+
+- `assets/phase-0b-semantics.json`
+- `evidence/phase-0b/CERTIFICATION.json`
+- `evidence/phase-0b/RESULT.md`
+- `scripts/verify-phase-0b.py`

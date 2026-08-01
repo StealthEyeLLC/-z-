@@ -1,0 +1,1370 @@
+{
+  "blockers": [
+    {
+      "authority_status": "Ubuntu 24.04 LTS noble is Vulnerable, work in progress for CVE-2026-53359",
+      "current_host": {
+        "distribution": "Ubuntu 24.04 LTS",
+        "kernel_release": "6.8.0-136-generic",
+        "package": "linux-image-6.8.0-136-generic",
+        "package_version": "6.8.0-136.136"
+      },
+      "id": "host-kernel-cve-2026-53359",
+      "mutation_performed": false,
+      "reason_not_mutated": "Phase 0B did not authorize an implementation-host distribution/kernel replacement and reboot.",
+      "required_state": "Run the certified computer on an exact host kernel proven fixed or unaffected for CVE-2026-53359; the locked Debian reference is 6.12.96-1.",
+      "severity": "release-blocking"
+    }
+  ],
+  "cleanup": {
+    "cleanup_execution": {
+      "deletion_completed_before_exit": true,
+      "diagnostic": "the original pgrep -af postcondition self-matched the cleanup shell argv",
+      "diagnostic_output_sha256": "ea192a20ff99b3f98fbc99b559d58eb28ac98cd4227fa60b442a807c8558c800",
+      "evidence_written_by_independent_readback": true,
+      "initial_job_exit": 1,
+      "initial_job_id": "87e1665d-1368-47c8-943f-2d44aae4a95f"
+    },
+    "positive_absence": {
+      "all_phase0b_runtime_entries": 0,
+      "all_phase0b_staging_entries": 0,
+      "cloud_hypervisor_processes": 0,
+      "current_marker": true,
+      "loop_devices": 0,
+      "machine_registry_entries": 0,
+      "mounts": 0,
+      "related_client_and_helper_processes": 0,
+      "runtime_tree": true,
+      "staging_tree": true,
+      "transient_vmm_unit": true
+    },
+    "preserved": {
+      "identity_free_proof_image": true,
+      "proof_image_sha256": "c04c1971585c1a2931a5cfa472ef6c9bde1adfaa1757a48a6500742d318ceef0",
+      "raw_evidence_tree": true
+    },
+    "result": "pass",
+    "run_id": "20260801T072630Z-aa8e85c693f2333c",
+    "schema_version": "1.0.0"
+  },
+  "facts": {
+    "cleanup_sha256": "f706aed32b4f93ecc030d94d4c40b7982afc0da05d1406cf4fbe94e552bdd7bf",
+    "proof_image_sha256": "c04c1971585c1a2931a5cfa472ef6c9bde1adfaa1757a48a6500742d318ceef0",
+    "reboot": {
+      "after_boot_id": "0557cf7d-b014-4207-9b6d-a75d44afebc7",
+      "before_boot_id": "988e556c-2b0c-48fe-b64a-2f719ae6527b",
+      "linux_banners": 2,
+      "serial_connects": 2,
+      "serial_eof": 1,
+      "serial_socket_recreated": 1
+    },
+    "systemd_matrix_sha256": "29fa988aaecb293b66863dc318ee0f93274d2756a9709f4094143312ef736e20",
+    "systemd_uncertainty_sha256": "6ede8671c5b7a02c18fb98dbf2c901cc935a8c5042af9aadae764cc8b5737213"
+  },
+  "gates": [
+    {
+      "evidence": "guest-image-independent-verification.json",
+      "id": "image",
+      "result": "pass"
+    },
+    {
+      "evidence": "guest-smbios-credentials.json",
+      "id": "smbios_credentials",
+      "result": "pass"
+    },
+    {
+      "evidence": "ssh-first-attempt.json",
+      "id": "static_vsock_sshd",
+      "result": "pass"
+    },
+    {
+      "evidence": "native-core-matrix.json",
+      "id": "native_fdpass_ssh",
+      "result": "pass"
+    },
+    {
+      "evidence": "dropbear-command.json",
+      "id": "compatibility_stdio_ssh",
+      "result": "pass"
+    },
+    {
+      "evidence": "negative-suite.json",
+      "id": "strict_host_identity",
+      "result": "pass"
+    },
+    {
+      "evidence": "systemd-matrix.json",
+      "id": "exact_systemd_execution",
+      "result": "pass"
+    },
+    {
+      "evidence": "systemd-uncertainty.json",
+      "id": "connection_loss_recovery",
+      "result": "pass"
+    },
+    {
+      "evidence": "serial-reboot-proof.json",
+      "id": "serial_reboot_reconnect",
+      "result": "pass"
+    },
+    {
+      "evidence": "fault-injection-matrix.json",
+      "id": "fault_injection",
+      "result": "pass"
+    },
+    {
+      "evidence": "vmm-abrupt-loss.json",
+      "id": "vmm_abrupt_loss",
+      "result": "pass"
+    },
+    {
+      "evidence": "final-cleanup.json",
+      "id": "zero_residue_cleanup",
+      "result": "pass"
+    },
+    {
+      "evidence": "prior kernel-security authoritative extract and current uname",
+      "id": "host_kernel_cve_2026_53359",
+      "result": "blocked"
+    }
+  ],
+  "kernel_security_sources": {
+    "debian-cve.html": {
+      "path": "/var/lib/z-implementation/evidence/phase-0b-20260801T050204Z-b4ad245dee047620/raw/debian-cve.html",
+      "sha256": "5f9a21bbcb4c0f1b4f48642bffbab8cf1a0cddb33162e3d8b226722370425605"
+    },
+    "implementation-host-kernel.txt": {
+      "path": "/var/lib/z-implementation/evidence/phase-0b-20260801T050204Z-b4ad245dee047620/raw/implementation-host-kernel.txt",
+      "sha256": "55bcd77be0898b26f39eab7ff555d556f9f2e3e23b07702984638e0eceb1bfa9"
+    },
+    "kernel-security-authoritative-extract.json": {
+      "path": "/var/lib/z-implementation/evidence/phase-0b-20260801T050204Z-b4ad245dee047620/raw/kernel-security-authoritative-extract.json",
+      "sha256": "367cf948786926f96452b9aab7e2052d831a23ba686ed82525d7991cc905b4a9"
+    },
+    "ubuntu-cve.html": {
+      "path": "/var/lib/z-implementation/evidence/phase-0b-20260801T050204Z-b4ad245dee047620/raw/ubuntu-cve.html",
+      "sha256": "f03c4785b598be195852e495df37bee99fa9683ac2a69e94693beb73ba4d12a1"
+    }
+  },
+  "phase": "0B",
+  "raw_evidence": {
+    "root": "/var/lib/z-implementation/evidence/phase-0b-20260801T072630Z-aa8e85c693f2333c/raw",
+    "sha256": {
+      "client-wrappers.json": "325641aa47fb412136d89ea7051198945b02f756941dfa4fc91c6ffffd1e03d1",
+      "dropbear-cancel.json": "c1d64bd3219285de002f5ac7612a5d2482ac0d712058ee8db779b0410a32c9bc",
+      "dropbear-command.json": "a7a7c9603752f3ab4493bbc81fa367ccbc5e7ab9db7775943769226ac77d19f9",
+      "dropbear-forward-result.json": "4b089bd585f5dde0a02181efdf7a9fcb0480c175dacdbdd16ba786e2ce4c04fb",
+      "dropbear-forward.json": "815c7563f07df324e665b39b3559dd6388a8f9aa5d0333b9d7832cab5befd57d",
+      "dropbear-large.json": "c78ec2e19de9879273021952d043f69fc676d8c4fd4fa6d6d7123692b0493ce0",
+      "dropbear-pty-sftp.json": "3361b9ff2ad085d46f19dccffe99e4f45194bb57c94f8f2a8b0a820217691f93",
+      "fault-injection-matrix.json": "5cc01c6347b68fb9854ff13f79a31039519b475f4da2820cc1135b5e4fb8099d",
+      "fdpass-helper-exit.json": "ce6c485533894e6556bc542ca0cb62ca729cdda6611c4a70f3eabd429a242008",
+      "fdpass-negative-matrix.json": "df9e7ae289151c99b33c1a744eba127f1274f0c890ea04c505f955363d9c7d65",
+      "final-cleanup.json": "f706aed32b4f93ecc030d94d4c40b7982afc0da05d1406cf4fbe94e552bdd7bf",
+      "guest-build-capacity.json": "4a0722e98352e5d469248fdcefc21212e2adc97ec4ab8b25255f5fec0d6b5bad",
+      "guest-image-independent-verification.json": "d0d059d4348a268008929037018aaf5fe12f9a897b6131e8dfcc4c272781e94b",
+      "guest-preterminal-cleanup.json": "8e728d059b88446f916426df8c723f8b0f6c0fc2c6f10e18fab4edb66ee52b3f",
+      "guest-smbios-credentials.json": "9d42d5c83cff4ac58ff654c14a00a1f309ba1b6e95b4156b8e987596a21e5746",
+      "helper-negative-matrix.json": "04d06321dcab4f45f1481f5d420bb566515df163fe65b51865f3b6e09eee8729",
+      "native-core-matrix.json": "2d7fb386c7711319960a76bf39ed8a0bf0b2ad59578d9b9947c7117f2f8b7318",
+      "native-forward-result.json": "10c913c474f88dc7769d45623341e58dd6832e11cbb537db5cb9d64810df2b56",
+      "native-sftp.json": "ba21562384297d074ed9e26189c9d0abfa25f278520b830ac2ec9ab7a488146e",
+      "negative-suite.json": "c3baf58afc601e3a684ea943209158ce8283c4ec62e6cd4c9e7385e7900fff7e",
+      "reboot-after.txt": "31f7ab5a998c54cb40193fecad2a7f805321f1a0c385d08d2ed700f5fee9403b",
+      "reboot-before.json": "47813328f1d083065cf796ac25cd39b2b0d0ff4ed9015f6b1fd4972b5f8a8a74",
+      "reboot-corrected-guest.txt": "b55ddada5dfb746248c4a55b1a3ffe0ce794d1ddf2e72c3fd7f4a485cf3c432e",
+      "reboot-definitive-before.txt": "f603abe03d6b333e9ff96e3e8e0689142c17b18625139e331e88d4ebdf04f4e4",
+      "serial-reboot-proof.json": "ab42af0073697e941d39e67d659bc37389c8f0bf9b47b5f65ba77a9268fb0efe",
+      "smbios-preflight.json": "5d3cd56a279f1cac3f69ccad3f48badef3277a2339e8d8cf79c204f42e9cb179",
+      "ssh-first-attempt.json": "35d0e5180dfecdbd8e3ae67e3e8121e4eb009d37385b836f7edadc83984bf731",
+      "ssh-profile.json": "fdf6c87bd5626e5ce2701459f548ff372fc1c89603736c670aa3035e348c0e89",
+      "systemd-matrix.json": "29fa988aaecb293b66863dc318ee0f93274d2756a9709f4094143312ef736e20",
+      "systemd-uncertainty-negative.json": "a0791e5f4f7982df8deca4dd985a7fd98c19d202c90767520273ba12b8108d67",
+      "systemd-uncertainty.json": "6ede8671c5b7a02c18fb98dbf2c901cc935a8c5042af9aadae764cc8b5737213",
+      "vm-info-sanitized.json": "4a07214f308da1a81c2976751451e9c043c7c02fc0de9e6ff5f802b8e6c21eda",
+      "vm-launch-capacity.json": "b31b2fc367b13238440f6148bceb390f484fe66931c15a353bfd58b65c53426c",
+      "vmm-abrupt-loss.json": "af3634d8abdb6fe55ce1e3ac2743d1aa1976ce15b2638f0358dc80fe3dded7a1",
+      "vmm-loss-active-session.json": "ec36ea412bdc1de0585b799549904e1cc3d5a9603f5fe1b3be58d81df49634b3",
+      "vmm-seccomp-postboot.json": "eee2321d0de08c385563c9cf2d4cdb356d67c3a54d1f4ee4f1e21be2779dc231",
+      "vmm-seccomp-preboot.json": "e5592c78c89c59e54b29b53e3090f23dd314e9ad45c71c068d1e72ef245d159f"
+    }
+  },
+  "release_ready": false,
+  "result": "blocked",
+  "run_id": "20260801T072630Z-aa8e85c693f2333c",
+  "schema_version": "1.0.0",
+  "scope": {
+    "baby_in_z": false,
+    "host_kernel_changed": false,
+    "phase_1_started": false,
+    "production_deployed": false
+  },
+  "source": {
+    "branch": "build/z-v1",
+    "commit": "685d7683be9ba60562d3b9eaed663608b8baa5ab",
+    "tree": "eabb67b3d58a2121cb99c6d02fda71c1bc64322c"
+  },
+  "test_ledger": [
+    {
+      "detail": "vsock connector refused: port not allowed",
+      "group": "helper",
+      "id": "helper.port_zero",
+      "name": "port_zero",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: port not allowed",
+      "group": "helper",
+      "id": "helper.port_negative",
+      "name": "port_negative",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: port not allowed",
+      "group": "helper",
+      "id": "helper.port_default_ssh",
+      "name": "port_default_ssh",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: port not allowed",
+      "group": "helper",
+      "id": "helper.port_unlisted",
+      "name": "port_unlisted",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: port not allowed",
+      "group": "helper",
+      "id": "helper.port_overflow",
+      "name": "port_overflow",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: binding schema/protocol mismatch",
+      "group": "helper",
+      "id": "helper.wrong_schema",
+      "name": "wrong_schema",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: binding schema/protocol mismatch",
+      "group": "helper",
+      "id": "helper.wrong_protocol",
+      "name": "wrong_protocol",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: [Errno 2] No such file or directory: '/proc/99999999/stat'",
+      "group": "helper",
+      "id": "helper.wrong_vmm_pid",
+      "name": "wrong_vmm_pid",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: VMM start identity mismatch",
+      "group": "helper",
+      "id": "helper.wrong_vmm_start",
+      "name": "wrong_vmm_start",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: VMM executable mismatch",
+      "group": "helper",
+      "id": "helper.wrong_vmm_executable",
+      "name": "wrong_vmm_executable",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: VMM executable mismatch",
+      "group": "helper",
+      "id": "helper.wrong_vmm_digest",
+      "name": "wrong_vmm_digest",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: API socket identity mismatch: ino",
+      "group": "helper",
+      "id": "helper.wrong_api_inode",
+      "name": "wrong_api_inode",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: API socket identity mismatch: dev",
+      "group": "helper",
+      "id": "helper.wrong_api_device",
+      "name": "wrong_api_device",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: mux socket identity mismatch: ino",
+      "group": "helper",
+      "id": "helper.wrong_mux_inode",
+      "name": "wrong_mux_inode",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: mux socket identity mismatch: dev",
+      "group": "helper",
+      "id": "helper.wrong_mux_device",
+      "name": "wrong_mux_device",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: mux socket path invalid",
+      "group": "helper",
+      "id": "helper.relative_mux_path",
+      "name": "relative_mux_path",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: mux socket path invalid",
+      "group": "helper",
+      "id": "helper.traversal_mux_path",
+      "name": "traversal_mux_path",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: unsafe binding manifest",
+      "group": "helper",
+      "id": "helper.binding_mode_0644",
+      "name": "binding_mode_0644",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: unsafe binding manifest",
+      "group": "helper",
+      "id": "helper.binding_symlink",
+      "name": "binding_symlink",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+      "group": "helper",
+      "id": "helper.binding_malformed_json",
+      "name": "binding_malformed_json",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: API socket not a direct socket",
+      "group": "helper",
+      "id": "helper.api_regular_file",
+      "name": "api_regular_file",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: mux socket not a direct socket",
+      "group": "helper",
+      "id": "helper.mux_regular_file",
+      "name": "mux_regular_file",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: [Errno 2] No such file or directory: '/var/lib/z-implementation/staging/phase-0b-20260801T072630Z-aa8e85c693f2333c/helper-negative-matrix/missing-api'",
+      "group": "helper",
+      "id": "helper.api_missing",
+      "name": "api_missing",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: [Errno 2] No such file or directory: '/var/lib/z-implementation/staging/phase-0b-20260801T072630Z-aa8e85c693f2333c/helper-negative-matrix/missing-mux'",
+      "group": "helper",
+      "id": "helper.mux_missing",
+      "name": "mux_missing",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: mux socket not a direct socket",
+      "group": "helper",
+      "id": "helper.mux_symlink_private",
+      "name": "mux_symlink_private",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "vsock connector refused: mux socket not root-owned",
+      "group": "helper",
+      "id": "helper.mux_nonroot_owner",
+      "name": "mux_nonroot_owner",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "mux socket replaced during connect",
+      "group": "helper",
+      "id": "helper.mux_replacement_race",
+      "name": "mux_replacement_race",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: invalid alias grammar",
+      "group": "helper",
+      "id": "helper.known_invalid_alias_upper",
+      "name": "known_invalid_alias_upper",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: invalid alias grammar",
+      "group": "helper",
+      "id": "helper.known_invalid_alias_shell",
+      "name": "known_invalid_alias_shell",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: invalid alias grammar",
+      "group": "helper",
+      "id": "helper.known_invalid_alias_short",
+      "name": "known_invalid_alias_short",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: unsupported lookup reason",
+      "group": "helper",
+      "id": "helper.known_unsupported_reason",
+      "name": "known_unsupported_reason",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: invalid key token",
+      "group": "helper",
+      "id": "helper.known_control_key",
+      "name": "known_control_key",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: invalid key token",
+      "group": "helper",
+      "id": "helper.known_nonascii_key",
+      "name": "known_nonascii_key",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: alias mismatch",
+      "group": "helper",
+      "id": "helper.known_alias_mismatch",
+      "name": "known_alias_mismatch",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: inventory digest mismatch",
+      "group": "helper",
+      "id": "helper.known_digest_mismatch",
+      "name": "known_digest_mismatch",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: malformed inventory line",
+      "group": "helper",
+      "id": "helper.known_newline_line",
+      "name": "known_newline_line",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: malformed inventory line",
+      "group": "helper",
+      "id": "helper.known_wrong_prefix",
+      "name": "known_wrong_prefix",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: unsafe inventory",
+      "group": "helper",
+      "id": "helper.known_mode_0644",
+      "name": "known_mode_0644",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: unsafe inventory",
+      "group": "helper",
+      "id": "helper.known_nonroot_owner",
+      "name": "known_nonroot_owner",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: unsafe inventory",
+      "group": "helper",
+      "id": "helper.known_symlink",
+      "name": "known_symlink",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "known-host lookup refused: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+      "group": "helper",
+      "id": "helper.known_malformed_json",
+      "name": "known_malformed_json",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "exact line returned",
+      "group": "helper",
+      "id": "helper.known_valid_order_1",
+      "name": "known_valid_order_1",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "exact line returned",
+      "group": "helper",
+      "id": "helper.known_valid_hostname_1",
+      "name": "known_valid_hostname_1",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "exact line returned",
+      "group": "helper",
+      "id": "helper.known_valid_address_1",
+      "name": "known_valid_address_1",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "exact line returned",
+      "group": "helper",
+      "id": "helper.known_valid_order_2",
+      "name": "known_valid_order_2",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "exact line returned",
+      "group": "helper",
+      "id": "helper.known_valid_hostname_2",
+      "name": "known_valid_hostname_2",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": "exact line returned",
+      "group": "helper",
+      "id": "helper.known_valid_address_2",
+      "name": "known_valid_address_2",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "detail": {
+        "after": [
+          1785569702075092427,
+          370,
+          "48f43d205f32e7dd618ac08f0d9650e5cdeeaf6c896e868e3b6041d182eaca2b"
+        ],
+        "before": [
+          1785569702075092427,
+          370,
+          "48f43d205f32e7dd618ac08f0d9650e5cdeeaf6c896e868e3b6041d182eaca2b"
+        ]
+      },
+      "group": "helper",
+      "id": "helper.known_repeated_read_only",
+      "name": "known_repeated_read_only",
+      "result": "pass",
+      "source": "helper-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.wrong_descriptor_refused",
+      "name": "wrong_descriptor_refused",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.missing_descriptor_refused",
+      "name": "missing_descriptor_refused",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.stdio_instead_of_descriptor_refused",
+      "name": "stdio_instead_of_descriptor_refused",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.fdpass_without_proxyusefdpass_refused",
+      "name": "fdpass_without_proxyusefdpass_refused",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.ambient_agent_and_user_config_ignored",
+      "name": "ambient_agent_and_user_config_ignored",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.effective_controlmaster_false",
+      "name": "effective_controlmaster_false",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.effective_identityagent_none",
+      "name": "effective_identityagent_none",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.effective_proxyusefdpass_yes",
+      "name": "effective_proxyusefdpass_yes",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.effective_stricthostkeychecking_true",
+      "name": "effective_stricthostkeychecking_true",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.effective_identitiesonly_yes",
+      "name": "effective_identitiesonly_yes",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.effective_userknownhosts_devnull",
+      "name": "effective_userknownhosts_devnull",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "group": "fdpass",
+      "id": "fdpass.effective_globalknownhosts_devnull",
+      "name": "effective_globalknownhosts_devnull",
+      "result": "pass",
+      "source": "fdpass-negative-matrix.json"
+    },
+    {
+      "detail": {
+        "content": "one",
+        "outcomes": [
+          [
+            "one",
+            "created"
+          ],
+          [
+            "two",
+            "exists"
+          ]
+        ]
+      },
+      "group": "fault",
+      "id": "fault.competing_writer_single_owner",
+      "name": "competing_writer_single_owner",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "exit": 73,
+        "published_unchanged": true
+      },
+      "group": "fault",
+      "id": "fault.memory_exhaustion_refused",
+      "name": "memory_exhaustion_refused",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "exit": -15,
+        "published_unchanged": true,
+        "stage_absent": true
+      },
+      "group": "fault",
+      "id": "fault.signal_before_publish_preserves_old",
+      "name": "signal_before_publish_preserves_old",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "digest_mismatch": true,
+        "expected_size": 1048576,
+        "partial_size": 131071,
+        "published_unchanged": true
+      },
+      "group": "fault",
+      "id": "fault.partial_copy_not_publishable",
+      "name": "partial_copy_not_publishable",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "exit": -15,
+        "expected_bytes": 1048576,
+        "partial_bytes": 65536,
+        "published_unchanged": true
+      },
+      "group": "fault",
+      "id": "fault.interrupted_copy_detected",
+      "name": "interrupted_copy_detected",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "exit": 1,
+        "published_unchanged": true,
+        "stage_bytes": 61440
+      },
+      "group": "fault",
+      "id": "fault.enospc_refused_preserves_old",
+      "name": "enospc_refused_preserves_old",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "exit": 1,
+        "published_unchanged": true,
+        "stage_retained": true
+      },
+      "group": "fault",
+      "id": "fault.failed_rename_preserves_old",
+      "name": "failed_rename_preserves_old",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "errno": 5,
+        "exit_path": "refused",
+        "published_unchanged": true,
+        "stage_absent": true
+      },
+      "group": "fault",
+      "id": "fault.failed_fsync_refuses_publish",
+      "name": "failed_fsync_refuses_publish",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "final_absent": true,
+        "first_exit": 1
+      },
+      "group": "fault",
+      "id": "fault.obstructed_cleanup_detected_then_removed",
+      "name": "obstructed_cleanup_detected_then_removed",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "expected_sha256": "fe0c6eb20dc6fc3ed90f93aa5d356cb167dceee4911e4b13eef40ab69ae4f06b",
+        "sha256": "fe0c6eb20dc6fc3ed90f93aa5d356cb167dceee4911e4b13eef40ab69ae4f06b"
+      },
+      "group": "fault",
+      "id": "fault.authoritative_object_unchanged",
+      "name": "authoritative_object_unchanged",
+      "result": "pass",
+      "source": "fault-injection-matrix.json"
+    },
+    {
+      "detail": {
+        "ActiveState": "active",
+        "Environment": "Z_PHASE0B_MODE=sleep_ms:10000",
+        "ExecMainCode": "2",
+        "ExecMainStatus": "15",
+        "InvocationID": "a572dd7b3a8a4609a1407bd8749332d1",
+        "LoadState": "loaded",
+        "Result": "success",
+        "SubState": "exited",
+        "UnsetEnvironment": "",
+        "WorkingDirectory": ""
+      },
+      "group": "systemd",
+      "id": "systemd.cancel",
+      "name": "cancel",
+      "result": "pass",
+      "source": "systemd-matrix.json"
+    },
+    {
+      "detail": {
+        "ActiveState": "active",
+        "Environment": "Z_PHASE0B_ENV=",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "0",
+        "InvocationID": "5981fa3c570146429de1348bbe6137f1",
+        "LoadState": "loaded",
+        "Result": "success",
+        "SubState": "exited",
+        "UnsetEnvironment": "",
+        "WorkingDirectory": ""
+      },
+      "group": "systemd",
+      "id": "systemd.envempty",
+      "name": "envempty",
+      "result": "pass",
+      "source": "systemd-matrix.json"
+    },
+    {
+      "detail": {
+        "ActiveState": "active",
+        "Environment": "",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "0",
+        "InvocationID": "87cf8af2e71c43f0addcae2584a460c5",
+        "LoadState": "loaded",
+        "Result": "success",
+        "SubState": "exited",
+        "UnsetEnvironment": "",
+        "WorkingDirectory": ""
+      },
+      "group": "systemd",
+      "id": "systemd.envunset",
+      "name": "envunset",
+      "result": "pass",
+      "source": "systemd-matrix.json"
+    },
+    {
+      "detail": {
+        "ActiveState": "active",
+        "Environment": "\"Z_PHASE0B_ENV=env value \\$ * ; & utf8-\u2713\" Z_PHASE0B_MODE=exit:0",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "0",
+        "InvocationID": "76f3c260c99d48c6b5f10bb9441202a4",
+        "LoadState": "loaded",
+        "Result": "success",
+        "SubState": "exited",
+        "UnsetEnvironment": "HOME",
+        "WorkingDirectory": "/root/z-phase0b-systemd/work dir"
+      },
+      "group": "systemd",
+      "id": "systemd.exact",
+      "name": "exact",
+      "result": "pass",
+      "source": "systemd-matrix.json"
+    },
+    {
+      "detail": {
+        "ActiveState": "failed",
+        "Environment": "Z_PHASE0B_MODE=exit:37",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "37",
+        "InvocationID": "07723e736c9f4f9cad96052bc5f0a200",
+        "LoadState": "loaded",
+        "Result": "exit-code",
+        "SubState": "failed",
+        "UnsetEnvironment": "",
+        "WorkingDirectory": ""
+      },
+      "group": "systemd",
+      "id": "systemd.exit37",
+      "name": "exit37",
+      "result": "pass",
+      "source": "systemd-matrix.json"
+    },
+    {
+      "detail": {
+        "ActiveState": "failed",
+        "Environment": "Z_PHASE0B_MODE=signal:15",
+        "ExecMainCode": "2",
+        "ExecMainStatus": "15",
+        "InvocationID": "f52c905a0d3e482aa56dc1fca1b29d5d",
+        "LoadState": "loaded",
+        "Result": "signal",
+        "SubState": "failed",
+        "UnsetEnvironment": "",
+        "WorkingDirectory": ""
+      },
+      "group": "systemd",
+      "id": "systemd.signal",
+      "name": "signal",
+      "result": "pass",
+      "source": "systemd-matrix.json"
+    },
+    {
+      "detail": {
+        "ActiveState": "failed",
+        "Environment": "Z_PHASE0B_MODE=sleep_ms:5000",
+        "ExecMainCode": "2",
+        "ExecMainStatus": "15",
+        "InvocationID": "bd4a1a49285343c5aef47cc0890e80ee",
+        "LoadState": "loaded",
+        "Result": "timeout",
+        "SubState": "failed",
+        "UnsetEnvironment": "",
+        "WorkingDirectory": ""
+      },
+      "group": "systemd",
+      "id": "systemd.timeout",
+      "name": "timeout",
+      "result": "pass",
+      "source": "systemd-matrix.json"
+    },
+    {
+      "detail": {
+        "ActiveState": "active",
+        "Environment": "",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "0",
+        "InvocationID": "8d75fbc088154f68b1c61cc077f7dc49",
+        "LoadState": "loaded",
+        "Result": "success",
+        "SubState": "exited",
+        "UnsetEnvironment": "",
+        "WorkingDirectory": ""
+      },
+      "group": "systemd",
+      "id": "systemd.zero",
+      "name": "zero",
+      "result": "pass",
+      "source": "systemd-matrix.json"
+    },
+    {
+      "group": "smbios",
+      "id": "smbios.positive_preflight",
+      "name": "positive_preflight",
+      "result": "pass",
+      "source": "smbios-preflight.json"
+    },
+    {
+      "group": "smbios",
+      "id": "smbios.count_overflow",
+      "name": "count_overflow",
+      "result": "pass",
+      "source": "smbios-preflight.json"
+    },
+    {
+      "group": "smbios",
+      "id": "smbios.duplicate_name",
+      "name": "duplicate_name",
+      "result": "pass",
+      "source": "smbios-preflight.json"
+    },
+    {
+      "group": "smbios",
+      "id": "smbios.encoded_size_overflow",
+      "name": "encoded_size_overflow",
+      "result": "pass",
+      "source": "smbios-preflight.json"
+    },
+    {
+      "group": "smbios",
+      "id": "smbios.malformed_base64",
+      "name": "malformed_base64",
+      "result": "pass",
+      "source": "smbios-preflight.json"
+    },
+    {
+      "group": "smbios",
+      "id": "smbios.omitted_credential",
+      "name": "omitted_credential",
+      "result": "pass",
+      "source": "smbios-preflight.json"
+    },
+    {
+      "group": "smbios",
+      "id": "smbios.truncated_value",
+      "name": "truncated_value",
+      "result": "pass",
+      "source": "smbios-preflight.json"
+    },
+    {
+      "detail": {
+        "exit": 255,
+        "refused": true
+      },
+      "group": "ssh_negative",
+      "id": "ssh_negative.wrong_host_key",
+      "name": "wrong_host_key",
+      "result": "pass",
+      "source": "negative-suite.json"
+    },
+    {
+      "detail": {
+        "exit": 255,
+        "refused": true
+      },
+      "group": "ssh_negative",
+      "id": "ssh_negative.wrong_owner_key",
+      "name": "wrong_owner_key",
+      "result": "pass",
+      "source": "negative-suite.json"
+    },
+    {
+      "detail": {
+        "exit": 70,
+        "refused": true
+      },
+      "group": "ssh_negative",
+      "id": "ssh_negative.wrong_mux_binding",
+      "name": "wrong_mux_binding",
+      "result": "pass",
+      "source": "negative-suite.json"
+    },
+    {
+      "detail": {
+        "exit": 70,
+        "refused": true
+      },
+      "group": "ssh_negative",
+      "id": "ssh_negative.symlink_mux_socket",
+      "name": "symlink_mux_socket",
+      "result": "pass",
+      "source": "negative-suite.json"
+    },
+    {
+      "detail": {
+        "exit": 71,
+        "refused": true
+      },
+      "group": "ssh_negative",
+      "id": "ssh_negative.known_host_alias_mismatch",
+      "name": "known_host_alias_mismatch",
+      "result": "pass",
+      "source": "negative-suite.json"
+    },
+    {
+      "detail": {
+        "exit": 71,
+        "refused": true
+      },
+      "group": "ssh_negative",
+      "id": "ssh_negative.unsafe_known_host_inventory_mode",
+      "name": "unsafe_known_host_inventory_mode",
+      "result": "pass",
+      "source": "negative-suite.json"
+    },
+    {
+      "detail": {
+        "result": true,
+        "stdout": "0"
+      },
+      "group": "ssh_negative",
+      "id": "ssh_negative.valid_profile_after_negatives",
+      "name": "valid_profile_after_negatives",
+      "result": "pass",
+      "source": "negative-suite.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.client_wrappers",
+      "name": "client_wrappers",
+      "result": "pass",
+      "source": "client-wrappers.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.guest_build_capacity",
+      "name": "guest_build_capacity",
+      "result": "pass",
+      "source": "guest-build-capacity.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.guest_image_independent",
+      "name": "guest_image_independent",
+      "result": "pass",
+      "source": "guest-image-independent-verification.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.guest_preterminal_cleanup",
+      "name": "guest_preterminal_cleanup",
+      "result": "pass",
+      "source": "guest-preterminal-cleanup.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.guest_smbios_credentials",
+      "name": "guest_smbios_credentials",
+      "result": "pass",
+      "source": "guest-smbios-credentials.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.native_core",
+      "name": "native_core",
+      "result": "pass",
+      "source": "native-core-matrix.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.native_forward",
+      "name": "native_forward",
+      "result": "pass",
+      "source": "native-forward-result.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.native_sftp",
+      "name": "native_sftp",
+      "result": "pass",
+      "source": "native-sftp.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.dropbear_command",
+      "name": "dropbear_command",
+      "result": "pass",
+      "source": "dropbear-command.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.dropbear_pty_sftp",
+      "name": "dropbear_pty_sftp",
+      "result": "pass",
+      "source": "dropbear-pty-sftp.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.dropbear_forward",
+      "name": "dropbear_forward",
+      "result": "pass",
+      "source": "dropbear-forward.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.dropbear_forward_result",
+      "name": "dropbear_forward_result",
+      "result": "pass",
+      "source": "dropbear-forward-result.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.dropbear_large",
+      "name": "dropbear_large",
+      "result": "pass",
+      "source": "dropbear-large.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.dropbear_cancel",
+      "name": "dropbear_cancel",
+      "result": "pass",
+      "source": "dropbear-cancel.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.fdpass_helper_exit",
+      "name": "fdpass_helper_exit",
+      "result": "pass",
+      "source": "fdpass-helper-exit.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.serial_reboot",
+      "name": "serial_reboot",
+      "result": "pass",
+      "source": "serial-reboot-proof.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.reboot_before",
+      "name": "reboot_before",
+      "result": "pass",
+      "source": "reboot-before.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.ssh_profile",
+      "name": "ssh_profile",
+      "result": "pass",
+      "source": "ssh-profile.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.ssh_first_attempt",
+      "name": "ssh_first_attempt",
+      "result": "pass",
+      "source": "ssh-first-attempt.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.vm_launch_capacity",
+      "name": "vm_launch_capacity",
+      "result": "pass",
+      "source": "vm-launch-capacity.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "preboot-pass"
+      },
+      "group": "major",
+      "id": "major.vmm_seccomp_preboot",
+      "name": "vmm_seccomp_preboot",
+      "result": "pass",
+      "source": "vmm-seccomp-preboot.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.vmm_seccomp_postboot",
+      "name": "vmm_seccomp_postboot",
+      "result": "pass",
+      "source": "vmm-seccomp-postboot.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.systemd_uncertainty",
+      "name": "systemd_uncertainty",
+      "result": "pass",
+      "source": "systemd-uncertainty.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.systemd_uncertainty_negative",
+      "name": "systemd_uncertainty_negative",
+      "result": "pass",
+      "source": "systemd-uncertainty-negative.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.vmm_abrupt_loss",
+      "name": "vmm_abrupt_loss",
+      "result": "pass",
+      "source": "vmm-abrupt-loss.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.vmm_loss_active_session",
+      "name": "vmm_loss_active_session",
+      "result": "pass",
+      "source": "vmm-loss-active-session.json"
+    },
+    {
+      "detail": {
+        "recorded_result": "pass"
+      },
+      "group": "major",
+      "id": "major.final_cleanup",
+      "name": "final_cleanup",
+      "result": "pass",
+      "source": "final-cleanup.json"
+    }
+  ],
+  "test_summary": {
+    "blocked_gates": 1,
+    "executed": 119,
+    "failed": 0,
+    "minimum_required": 115,
+    "passed": 119
+  }
+}
