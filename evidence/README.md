@@ -1,10 +1,14 @@
 # Evidence
 
-Status: **No implementation evidence exists at repository initialization.**
+Status: **Implementation-host checkpoint present; no Z release is certified.**
 
-This directory will hold immutable or digest-verifiable proof for implementation checkpoints and releases. Documentation, mocks, and planned tests are not evidence that Z works.
+This directory holds immutable or digest-verifiable proof for implementation checkpoints and releases. Documentation, mocks, selected dependencies, and planned tests are not evidence that Z works.
 
-## Proposed layout
+## Current checkpoints
+
+- [`checkpoints/host-kernel-transition-20260801/RESULT.md`](checkpoints/host-kernel-transition-20260801/RESULT.md) — verified same-VPS Ubuntu/Noble kernel transition, CVE-2026-53359 fix binding, runtime KVM/AF_VSOCK host primitives, rollback entry, cleanup, and implementation-host tuple.
+
+## Required layout
 
 ```text
 evidence/
@@ -19,4 +23,6 @@ evidence/
     SHA256SUMS.txt
 ```
 
-Every result must identify the source commit, source tree, artifact digests, exact environment, commands executed, exit statuses, positive proofs, negative proofs, cleanup state, and unresolved limitations.
+Every result must identify the source commit, source tree, artifact digests, exact environment, commands or equivalent durable operations, exit statuses, positive proofs, negative proofs, cleanup state, and unresolved limitations.
+
+A host checkpoint proves only the claims it names. It does not certify product source, a guest image, a machine lifecycle, or a release.

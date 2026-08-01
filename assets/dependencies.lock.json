@@ -1470,7 +1470,7 @@
       "size": 4194304
     }
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "selection_rules": {
     "archive_components": [
       "main"
@@ -1535,5 +1535,105 @@
     "lock_integrity": "the lock file SHA-256 is recorded by repository SHA256SUMS.txt and release evidence",
     "new_version_behavior": "create a new candidate lock and repeat all affected certification gates",
     "security_exception": "a vulnerable selected component blocks release; replace it in a new tuple rather than mutating this lock silently"
+  },
+  "implementation_host": {
+    "schema_version": "1.0.0",
+    "tuple_id": "z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1",
+    "status": "verified_implementation_host_not_release_certification",
+    "captured_at": "2026-08-01T19:08:00Z",
+    "provider_role": "OVH-hosted KVM VPS",
+    "hostname": "vps-c9f04f5e",
+    "machine_identity": {
+      "machine_id_sha256": "cd189817b39fea60d338b73878240a6fe7db71374c7a0f35ad60f8eb641e8817",
+      "machine_id_file_sha256": "e12bd35a8576ac2dfe2da93c2e827fa3a4efcf4285beecd961adefbe63e08f32",
+      "boot_id": "b6e10e21-9737-4ded-ad1e-a437eea41ace"
+    },
+    "operating_system": {
+      "id": "ubuntu",
+      "version_id": "24.04",
+      "pretty_name": "Ubuntu 24.04.4 LTS",
+      "architecture": "x86_64",
+      "systemd_version": "255",
+      "libc6_version": "2.39-0ubuntu8.8"
+    },
+    "cpu": {
+      "model": "Intel Core Processor (Haswell, no TSX)",
+      "vcpus": 6
+    },
+    "memory": {
+      "total_kb": 11956740,
+      "swap_total_kb": 0
+    },
+    "storage": {
+      "root_filesystem": "ext4",
+      "root_total_bytes": 102888095744,
+      "root_used_bytes": 11911262208,
+      "root_available_bytes": 90960056320,
+      "boot_available_bytes": 680804352,
+      "reflink": false
+    },
+    "kernel": {
+      "running_release": "6.8.0-9001-generic",
+      "running_version": "#1+zcve2026533591 SMP PREEMPT_DYNAMIC Sat Aug  1 17:33:19 UTC 20",
+      "package_version": "6.8.0-9001.1+zcve2026533591",
+      "base_source_package": "linux 6.8.0-136.136",
+      "source_orig_sha256": "26512115972bdf017a4ac826cc7d3e9b0ba397d4f85cd330e4e4ff54c78061c8",
+      "source_delta_sha256": "ccce6d47f36bc749d69a5faa41237c3269e5345d3852d6afe868a5629ac8c316",
+      "source_dsc_sha256": "9bf54e2fc501c2f37b48d03dc268ef601e911f9be15df5cfb1e5d9f8d6174fba",
+      "fix": {
+        "cve": "CVE-2026-53359",
+        "name": "Januscape",
+        "upstream_commit": "81ccda30b4e83d8f5cc4fd50503c44e3a33abfeb",
+        "patch_sha256": "84d5f450aaff799e1e7cf9392a137cb9afc9702baa3c6c5dbc9343e6d6c05c6c",
+        "source_reverse_apply_check": true,
+        "source_forward_reapply_rejected": true,
+        "exact_source_delta_match": true
+      },
+      "kvm_module": {
+        "package_sha256": "98f184d88d076c5d3458eb921a92a2ebb2c44119b71df3191b9607da13ea88ed",
+        "compressed_sha256": "27c53953087080c7baf9119d62f2e61ef3a81f2faed12eb086359b5cf40580b8",
+        "elf_sha256": "dc6faf80d06f5314c259b59c8be40faaf6d32449645d4110344a1379909ea7c9",
+        "build_id": "1a9bcf21095ea9daa3a8277907a9beddb9274273",
+        "srcversion": "403F1A311A13D8B84CC56BF",
+        "nested": "Y"
+      }
+    },
+    "runtime_primitives": {
+      "kvm_api_version": 12,
+      "kvm_create_vm": true,
+      "kvm_create_vcpu": true,
+      "af_vsock_bind_listen": true,
+      "tun_tap_create_cleanup": true,
+      "scm_rights": true,
+      "openssh_proxy_use_fdpass": true,
+      "transient_systemd": true,
+      "loop_attach_detach": true,
+      "mount_namespace": true,
+      "landlock_abi": 4,
+      "seccomp": true
+    },
+    "boot": {
+      "persistent_default_release": "6.8.0-9001-generic",
+      "persistent_default_id": "gnulinux-advanced-d77f6a25-e90f-4292-a85d-9bcc1cecf9e2>gnulinux-6.8.0-9001-generic-advanced-d77f6a25-e90f-4292-a85d-9bcc1cecf9e2",
+      "next_entry": "",
+      "rollback_installed": true,
+      "candidate_installed": true,
+      "rollback_release": "6.8.0-136-generic",
+      "rollback_id": "gnulinux-advanced-d77f6a25-e90f-4292-a85d-9bcc1cecf9e2>gnulinux-6.8.0-136-generic-advanced-d77f6a25-e90f-4292-a85d-9bcc1cecf9e2"
+    },
+    "health": {
+      "ntp_synchronized": "yes",
+      "reboot_required": false,
+      "system_state": "running",
+      "failed_units": 0,
+      "retained_services": {
+        "baby_quirt_socket": "active",
+        "baby_quirt_mcp": "active",
+        "ssh_socket": "active",
+        "caddy": "active"
+      }
+    },
+    "phase_0a_started": false,
+    "evidence_root": "/var/lib/z-kernel-transition/20260801"
   }
 }

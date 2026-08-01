@@ -1,0 +1,15 @@
+helper_packages_added=27
+helper_packages_remaining_installed=0
+transition_owned_transient_bytes_removed=39439724544
+transition_evidence_root=/var/lib/z-kernel-transition/20260801
+transition_evidence_root_bytes=968757248
+root_available_bytes=90960056320
+boot_available_bytes=680804352
+temporary_postboot_unit=removed
+mount_residue=zero
+candidate_kernel_installed=true
+candidate_kernel_persistent_default=true
+rollback_kernel_installed=true
+rollback_kernel_explicit_entry=true
+durable_manifest_files=208
+durable_manifest_sha256=696cd3dadebf8a4c25a77299091fde713de6ed26a105b4aa70e4f2cce9775db4

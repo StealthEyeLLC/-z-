@@ -20,14 +20,14 @@ This file classifies documents. It cannot change their content or precedence.
 | `docs/BUILD.md` | Normative | Current | Implementation sequence. |
 | `docs/CERTIFICATION.md` | Normative | Current | Release evidence requirements. |
 | `docs/CHANGE-CONTROL.md` | Governance | Current | Procedure for changes to normative law. |
-| `docs/reference/DEPENDENCIES.md` | Reference authority | Selected candidate; not certified | Official dependency roles, exclusions, selection rationale, and lock interpretation. |
-| `docs/reference/IMPLEMENTATION-HOST.md` | Operational reference | Point-in-time; not certification evidence | Sanitized OVH VPS settings, storage ownership, readiness, and remediation boundaries. |
-| `assets/dependencies.lock.json` | Machine-readable lock | Selected candidate; not certified | Exact tuple, archive metadata, packages, versions, sources, digests, and configuration bindings. |
+| `docs/reference/DEPENDENCIES.md` | Reference authority | Preserved release candidate plus verified implementation host; release not certified | Official dependency roles, exclusions, selection rationale, host binding, and lock interpretation. |
+| `docs/reference/IMPLEMENTATION-HOST.md` | Operational reference | Verified 2026-08-01 implementation-host tuple; not release certification | Sanitized OVH VPS identity, kernel/fix binding, runtime primitives, boot policy, storage, and readiness. |
+| `assets/dependencies.lock.json` | Machine-readable lock | Preserved release candidate plus verified implementation-host binding; release not certified | Exact release candidate, implementation host, archive metadata, packages, versions, sources, digests, and configuration bindings. |
 | `docs/reference/*` | Reference | Current | Terms, support policy, and search map. |
 | `docs/research/FINAL-DELTA-RESEARCH-2026-07-31.md` | Research | Current dated audit | Final targeted upstream delta, corrections, and freeze recommendation; not independently normative. |
 | `docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md` | Research | Current dated strategy | Non-normative operational failure, update, backup, support, and device-upgrade strategy. |
 | `docs/research/*` | Research | Historical/current rationale | Source-backed reasoning; not normative. |
-| `evidence/*` | Evidence | Empty at initialization | Future checkpoint and release proof. |
+| `evidence/*` | Evidence | Host-kernel checkpoint present; release evidence absent | Digest-verifiable checkpoint and future release proof. |
 | `.github/*` | Workflow | Current | Review and agent guidance. |
 
 ## Implementation status vocabulary
@@ -38,4 +38,4 @@ This file classifies documents. It cannot change their content or precedence.
 - **Certified:** passed the complete positive and negative requirements for an exact compatibility tuple.
 - **Released:** certified artifacts are published with immutable identity.
 
-These terms are not interchangeable. At initialization, the architecture is documented; no runtime is implemented or certified.
+These terms are not interchangeable. The implementation host is verified for the recorded kernel-transition claims; no Z runtime or release is implemented or certified.

@@ -1,0 +1,2 @@
+# Preserve byte-exact embedded upstream/source patch evidence.
+evidence/checkpoints/host-kernel-transition-20260801/MMU-FIX.diff -whitespace

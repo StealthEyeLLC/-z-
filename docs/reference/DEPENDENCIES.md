@@ -1,8 +1,9 @@
 # Official Dependencies and Initial Candidate Tuple
 
-Status: **Normative dependency authority for the initial candidate tuple; selected, pinned, and not yet certified**
+Status: **Preserved release candidate selected; implementation host verified; release not certified**
 Machine-readable authority: [`../../assets/dependencies.lock.json`](../../assets/dependencies.lock.json)
-Candidate tuple: `z-debian-13.6-amd64-ch53-v1`
+Preserved release candidate tuple: `z-debian-13.6-amd64-ch53-v1`
+Verified implementation-host tuple: `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`
 
 ## 1. Authority and honesty
 
@@ -29,13 +30,33 @@ The first candidate is deliberately one cohesive x86-64 stack:
 | Networking | Debian `passt` `0.0~git20250503.587980c-2+deb13u1` | Exact package and exact security-sensitive invocation; Network None remains the no-general-IP profile. |
 | Z implementation toolchain | Rust `1.97.1`, edition 2024, `x86_64-unknown-linux-gnu` | Current stable compiler manifest, strong systems support, direct Unix descriptor/socket access, and the least speculative path to one auditable binary. |
 
-### 2.1 Same-VPS clean-room host tuple
+### 2.1 Verified same-VPS implementation-host tuple
 
-The table above remains the preserved initial Debian reference candidate. The authoritative clean-room implementation will retain the existing Ubuntu 24.04 OVH VPS and install an exact Ubuntu/Noble-compatible kernel containing the applicable CVE-2026-53359 fix side-by-side with the current kernel. That actual host is not permitted to claim the Debian-host tuple identity.
+The preserved Debian table above remains the initial release/reference candidate. The actual clean-room implementation host is the retained Ubuntu 24.04.4 OVH VPS and has the distinct tuple `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`. The machine-readable lock stores it under `implementation_host`; the preserved release candidate remains under `tuple`.
 
-Before Phase 0A, the selected Ubuntu kernel source, patch, configuration, package files, digests, running identity, module identity, KVM fix state, and host prerequisites must be recorded under a new candidate tuple identifier in this document and `assets/dependencies.lock.json`. Unchanged guest, Cloud Hypervisor, firmware, Rust, and package selections may be carried into the new tuple only after their exact digests and compatibility bindings are reverified.
+The implementation host is bound to:
 
-A newer upstream component is not automatically better for this tuple. Coherence, stable security support, package layout, immutable provenance, and end-to-end certification outweigh mixing the newest release of every independent project.
+| Field | Exact value |
+|---|---|
+| Running kernel | `6.8.0-9001-generic` |
+| Kernel package | `6.8.0-9001.1+zcve2026533591` |
+| Ubuntu base source | `linux 6.8.0-136.136` |
+| CVE fix | `CVE-2026-53359`, commit `81ccda30b4e83d8f5cc4fd50503c44e3a33abfeb` |
+| Fix patch SHA-256 | `84d5f450aaff799e1e7cf9392a137cb9afc9702baa3c6c5dbc9343e6d6c05c6c` |
+| Source orig SHA-256 | `26512115972bdf017a4ac826cc7d3e9b0ba397d4f85cd330e4e4ff54c78061c8` |
+| Source delta SHA-256 | `ccce6d47f36bc749d69a5faa41237c3269e5345d3852d6afe868a5629ac8c316` |
+| Source DSC SHA-256 | `9bf54e2fc501c2f37b48d03dc268ef601e911f9be15df5cfb1e5d9f8d6174fba` |
+| KVM modules package SHA-256 | `98f184d88d076c5d3458eb921a92a2ebb2c44119b71df3191b9607da13ea88ed` |
+| Installed compressed `kvm.ko` SHA-256 | `27c53953087080c7baf9119d62f2e61ef3a81f2faed12eb086359b5cf40580b8` |
+| KVM ELF build ID | `1a9bcf21095ea9daa3a8277907a9beddb9274273` |
+| Persistent boot default | `6.8.0-9001-generic` |
+| Tested rollback entry | `6.8.0-136-generic` |
+
+The controlled reboot, running module binding, KVM API 12, VM/vCPU creation, AF_VSOCK, TAP, descriptor passing, transient systemd, loop, namespaces, Landlock, seccomp, OpenSSH fd-passing, retained services, package health, and cleanup state passed. The exact proof is in [`../../evidence/checkpoints/host-kernel-transition-20260801/RESULT.md`](../../evidence/checkpoints/host-kernel-transition-20260801/RESULT.md).
+
+This host verification does not certify the release tuple. Guest, Cloud Hypervisor, firmware, Rust, Debian snapshot, package closures, networking, persistence, recovery, and ecosystem compatibility remain subject to their later implementation and certification gates. Unchanged selections may be carried forward only after their exact digests and compatibility bindings are reverified.
+
+A newer upstream component is not automatically better for either tuple. Coherence, stable security support, package layout, immutable provenance, and end-to-end certification outweigh mixing the newest release of every independent project.
 
 ## 3. Dependency classes
 
@@ -177,6 +198,6 @@ The one-distribution x86-64 scope and absence of Secure Boot, measured boot, and
 
 ## 9. What remains unproved
 
-No dependency tuple is certified at repository initialization. The selection is complete; certification is not.
+No release dependency tuple is certified. The implementation-host kernel and applicable KVM fix state are verified, but selection is not release certification.
 
-Implementation must still prove the exact VMM/firmware/guest boot path, SMBIOS binary credentials, static AF_VSOCK `sshd -i`, descriptor handoff, KVM fix state, Landlock rights, `passt` behavior, persistence, reboot, recovery, and ecosystem clients. A failure changes the tuple or implementation—not the evidence standard.
+Implementation must still prove the exact VMM/firmware/guest boot path, SMBIOS binary credentials, static AF_VSOCK `sshd -i`, descriptor handoff, guest-side Landlock rights, `passt` behavior, persistence, reboot, recovery, and ecosystem clients. A failure changes the tuple or implementation—not the evidence standard.

@@ -6,40 +6,41 @@ Status: **Normative implementation order**
 
 Point-in-time host facts are recorded in [`reference/IMPLEMENTATION-HOST.md`](reference/IMPLEMENTATION-HOST.md). They route implementation work and do not certify the selected release tuple.
 
-As of `2026-07-31T20:07:01Z`:
+As of `2026-08-01T19:08:00Z`:
 
-- Z GitHub Authority has repository-wide write/admin authority for `StealthEyeLLC/-z-`, and an ordinary Git temporary branch create/read/delete cycle passed.
-- The implementation host has root, usable KVM API version 12, `/dev/vhost-vsock`, AF_VSOCK stream sockets, Unix descriptor passing, transient systemd units, TAP create/delete, loop attach/detach, mount namespaces, and OpenSSH `ProxyUseFdpass=yes` support.
-- No additional GitHub or host permission is required to begin Z implementation.
-- Repository-level commit and tag signing is intentionally not required. Account-level SSH signing-key registration is outside GitHub App repository authority and is not a build blocker.
-- The host has Rust/Cargo `1.88.0`, not the locked Rust `1.97.1`. Cloud Hypervisor, `passt`, `mmdebstrap`, and `qemu-img` are not globally installed.
-- Node `24.18.0` is retained as implementation infrastructure for Baby MCP and the Z GitHub App credential helper; global `node`, `npm`, and `npx` resolve into that exact retained runtime.
-- The root filesystem is ext4 and does not support reflink. Sparse-copy fallback is therefore the implementation-host baseline.
-- The host has `97,421,074,432` bytes available, which is `65,208,819,712` bytes above the provisional 30 GiB maintenance floor. The independent reclamation certification recorded `60,817,604,608` net bytes recovered from its pre-cleanup baseline. Every large image or clone mutation still MUST pass its exact operation-specific capacity and failure-headroom preflight immediately before mutation.
-- The authorized controlled host reboot completed successfully. The boot ID changed to `4f39061a-161e-434a-af57-a2554feb2207`, the `libc6` runtime is `2.39-0ubuntu8.8`, `/var/run/reboot-required` is absent, systemd reports zero failed units, and the host profile has been recaptured on the new boot.
-- The host is now a certified Baby-plus-Z implementation appliance. Baby Quirt, its socket, its MCP edge, the required `fix-mcp` runtime identity, the Baby-only Caddy route, SSH access, the base operating system, one authoritative Z workspace, and required build/virtualization primitives remain. SMP, the Fix execution/operator/OAuth stack, StealthEye Shell/Quirt/CI, Baby-X, EHJINT, Index, Docker, containerd, and snapd are absent.
+- The authoritative clean-room branch is `build/z-v1-cleanroom`; historical `build/z-v1` remains unchanged.
+- The verified implementation-host tuple is `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`.
+- The retained OVH VPS remains Ubuntu 24.04.4 LTS and is running `6.8.0-9001-generic` from package `6.8.0-9001.1+zcve2026533591`.
+- The kernel was built from Ubuntu Noble `linux 6.8.0-136.136` with CVE-2026-53359 fix commit `81ccda30b4e83d8f5cc4fd50503c44e3a33abfeb` and exact digest-bound source/package/module evidence.
+- KVM API 12, VM/vCPU creation, AF_VSOCK, TAP, Unix descriptor passing, transient systemd, loop devices, mount namespaces, Landlock ABI 4, seccomp, and OpenSSH fd-passing passed on the running kernel.
+- Baby, SSH, Caddy, package health, NTP, and systemd returned cleanly after the controlled reboot; failed units are zero.
+- `6.8.0-9001-generic` is the persistent GRUB default. `6.8.0-136-generic` remains installed as the tested explicit rollback entry.
+- The root filesystem is ext4 without reflink; `90,960,056,320` bytes are available on `/` and `680,804,352` bytes on `/boot`.
+- Transition-owned build helpers, temporary units, mounts, and large staging trees were removed after durable evidence and package preservation.
+- The preserved release candidate remains `z-debian-13.6-amd64-ch53-v1`; it is distinct from the Ubuntu implementation-host tuple.
+- Clean-room Phase 0A has not started.
 
-Missing ambient binaries are materialization work, not authority blockers. Implementation MUST use the locked candidate tuple and MUST NOT silently inherit global host versions.
+Missing ambient binaries remain materialization work, not authority blockers. Implementation MUST use locked identities and MUST NOT silently inherit global host versions.
 
-## Same-VPS host-kernel gate
+## Same-VPS host-kernel gate — PASSED
 
 Decision date: `2026-08-01`.
 
-The clean-room build remains on the existing OVH VPS. No second server purchase, VPS reimage, operating-system replacement, Baby migration, or control-plane relocation is authorized. Ubuntu 24.04 and the current `6.8.0-136-generic` kernel remain intact while the replacement kernel is prepared.
+The authorized gate completed on the existing OVH VPS without a reimage, operating-system replacement, second server, Baby migration, or control-plane relocation.
 
-Complete this hit list before Phase 0A:
+Completed proof:
 
-1. Reconfirm provider console or rescue access and record the exact current boot entry, running kernel, loaded KVM modules, initramfs, GRUB state, and Baby/Caddy/SSH health.
-2. Select an exact Ubuntu/Noble-compatible kernel source and package identity containing the applicable CVE-2026-53359 fix. Record source identity, patch identity, configuration, build inputs, package files, sizes, and SHA-256 digests.
-3. Verify the candidate kernel preserves every required Z host primitive, including KVM API 12, `/dev/kvm`, `/dev/vhost-vsock`, AF_VSOCK, `/dev/net/tun`, Unix descriptor passing, transient systemd units, loop devices, mount namespaces, seccomp, Landlock, and OpenSSH descriptor passing.
-4. Install the candidate kernel side-by-side. Do not remove or overwrite `6.8.0-136-generic`; retain it as the tested rollback entry.
-5. Verify initramfs generation, module availability, bootloader selection, fallback selection, and the exact rollback procedure before reboot.
-6. Perform one controlled reboot into the candidate kernel. Prove the exact running kernel and loaded KVM modules, the applicable KVM security-fix state, KVM API 12, all required host primitives, Baby/Caddy/SSH health, and zero failed systemd units.
-7. Recapture [`reference/IMPLEMENTATION-HOST.md`](reference/IMPLEMENTATION-HOST.md), create a new candidate host-tuple identity, and update the normative dependency record and machine-readable lock with the exact kernel and host facts. Do not reuse the Debian-host tuple identity.
-8. Reconfirm `build/z-v1-cleanroom` as the authoritative clean branch, preserve `build/z-v1` unchanged, and begin Phase 0A from a clean workspace and fresh implementation roots.
-9. Rerun the complete Phase 0B semantic and negative gates against the new running host before claiming the host-security blocker is closed.
+1. The exact pre-transition boot, GRUB, initramfs, KVM, Baby, Caddy, SSH, storage, and rollback state was captured.
+2. Ubuntu Noble `linux 6.8.0-136.136` and fix commit `81ccda30b4e83d8f5cc4fd50503c44e3a33abfeb` were source- and digest-bound.
+3. The candidate preserved the required Z host primitives and all modules loaded on the rollback boot.
+4. `6.8.0-9001-generic` was installed side-by-side; `6.8.0-136-generic` was not removed or overwritten.
+5. Initramfs, GRUB entries, package health, explicit rollback selection, and one-time candidate selection were verified before reboot.
+6. One controlled reboot returned the same VPS on `6.8.0-9001-generic` with boot ID `b6e10e21-9737-4ded-ad1e-a437eea41ace`.
+7. Runtime KVM, AF_VSOCK, TAP, descriptor passing, systemd, loop, namespace, Landlock, seccomp, OpenSSH, service, and cleanup gates passed.
+8. The actual host tuple was recorded in `assets/dependencies.lock.json` and the repository evidence checkpoint.
+9. `6.8.0-9001-generic` is now the persistent default; kernel 136 remains the tested rollback entry.
 
-Passing this gate authorizes full planned Z implementation on the same VPS. It does not waive any later build, security, compatibility, or release-certification gate.
+Passing this gate authorizes a later Phase 0A mission on the same VPS. It does not waive dependency verification, operation-specific capacity gates, Phase 0B semantic/negative gates, or release certification.
 
 ## Dependency gate
 
@@ -78,7 +79,7 @@ Phase 0A completion means the exact selected inputs and build environment exist 
 3. Prove strict prebound host-key lookup.
 4. Prove static AF_VSOCK `sshd -i` service.
 5. Prove SMBIOS system credentials through the private VMM API, including OEM-string count/size preflight and exact binary round-trip; do not depend on `vmm.notify_socket` for Cloud Hypervisor v52.0/v53.0.
-6. Prove the exact host kernel is patched for applicable KVM isolation advisories, including CVE-2026-53359 on x86; explicitly configure the pinned Cloud Hypervisor x86 equivalent of `nested=off` and prove the effective guest CPU exposure.
+6. Reverify that the running implementation host still matches the locked kernel/fix tuple for applicable KVM isolation advisories, including CVE-2026-53359 on x86; explicitly configure the pinned Cloud Hypervisor x86 equivalent of `nested=off` and prove the effective guest CPU exposure.
 7. Prove exact noninteractive systemd argv and result semantics.
 8. Prove serial reconnect across reboot.
 

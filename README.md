@@ -13,7 +13,7 @@ CLI: **`z`**
 
 This repository contains the complete governing architecture and documentation system. Documentation initialization is complete. The initial Debian-host candidate tuple `z-debian-13.6-amd64-ch53-v1` remains preserved as an unmodified reference candidate and is not certified. The authoritative clean-room restart branch is `build/z-v1-cleanroom`.
 
-The clean-room sequence keeps the existing OVH VPS and Ubuntu 24.04 host. Before Phase 0A, the host must receive an exact Ubuntu-compatible kernel containing the applicable CVE-2026-53359 KVM fix, installed side-by-side with `6.8.0-136-generic`, with the current kernel retained as rollback. The host must then reboot, prove the exact running kernel and KVM fix state, recapture the implementation-host profile, and lock the resulting host tuple. No second server purchase or VPS reimage is part of this plan.
+The same-VPS host-kernel gate is complete. The retained Ubuntu 24.04 OVH VPS is running verified kernel `6.8.0-9001-generic`, built from Ubuntu Noble `linux 6.8.0-136.136` with the applicable CVE-2026-53359 KVM fix. It passed the controlled reboot and runtime KVM/AF_VSOCK host gates, is the persistent boot default, and has the distinct locked implementation-host tuple `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`. Kernel `6.8.0-136-generic` remains installed as the tested rollback entry. No second server or VPS reimage was used, and Phase 0A has not started.
 
 **Implementation has not started and no runtime capability is claimed.** The first valid implementation checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change.
 
@@ -37,10 +37,10 @@ The baseline requires:
 - [`docs/INDEX.md`](docs/INDEX.md) — canonical documentation map.
 - [`docs/MANIFEST.md`](docs/MANIFEST.md) — document status and purpose.
 - [`docs/reference/SEARCH-INDEX.md`](docs/reference/SEARCH-INDEX.md) — aliases and question-to-document lookup.
-- [`docs/reference/DEPENDENCIES.md`](docs/reference/DEPENDENCIES.md) — official dependency authority and initial candidate tuple.
-- [`assets/dependencies.lock.json`](assets/dependencies.lock.json) — exact machine-readable versions, sources, digests, packages, and configuration bindings.
+- [`docs/reference/DEPENDENCIES.md`](docs/reference/DEPENDENCIES.md) — official dependency authority, preserved release candidate, and verified implementation-host binding.
+- [`assets/dependencies.lock.json`](assets/dependencies.lock.json) — exact machine-readable release-candidate and implementation-host identities, sources, digests, packages, and configuration bindings.
 
-- [`docs/reference/IMPLEMENTATION-HOST.md`](docs/reference/IMPLEMENTATION-HOST.md) — sanitized point-in-time OVH implementation-host settings and readiness.
+- [`docs/reference/IMPLEMENTATION-HOST.md`](docs/reference/IMPLEMENTATION-HOST.md) — verified point-in-time OVH implementation-host tuple, kernel/fix binding, boot policy, and readiness.
 - [`docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md`](docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md) — non-normative operational upgrade strategy.
 - [`llms.txt`](llms.txt) — compact machine-readable discovery surface.
 
@@ -70,7 +70,7 @@ See [`FOLDER-TREE.md`](FOLDER-TREE.md). The major areas are:
 - `docs/` — governing law and architecture.
 - `docs/research/` — non-normative research and source ledger.
 - `docs/reference/` — glossary, compatibility policy, and search map.
-- `evidence/` — future immutable checkpoint evidence.
+- `evidence/` — digest-verifiable implementation checkpoints and future release evidence.
 - `assets/` — future pinned asset manifests and provenance.
 - `src/`, `tests/`, `scripts/` — implementation areas, currently intentionally empty except for boundary documentation.
 - `.github/` — agent instructions and change templates.
