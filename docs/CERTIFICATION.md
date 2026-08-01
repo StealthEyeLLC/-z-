@@ -682,3 +682,7 @@ The release report MUST distinguish:
 - External compositions.
 - Known sacrifices.
 - Open upstream blockers.
+
+## 2.2 Phase 0A implementation-input checkpoint
+
+`evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/` proves exact implementation roots, supply-chain inputs, capacity, sparse-copy behavior, and negative gates. It is not a product or release certificate and does not satisfy any machine, SSH, persistence, lifecycle, confinement, or release gate.

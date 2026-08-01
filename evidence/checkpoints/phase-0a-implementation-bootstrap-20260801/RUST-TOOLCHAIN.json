@@ -1,0 +1,76 @@
+{
+  "allocated_bytes": 653103104,
+  "ambient_toolchain_accepted": false,
+  "cargo_lock_present": false,
+  "cargo_registry_present": false,
+  "cargo_toml_present": false,
+  "cargo_v": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "channel_manifest_sha256": "03569b1886ceb5c05276b50c8431ab111de944cd6140fe1fa7d821dd8e0f29cf",
+  "channel_manifest_url": "https://static.rust-lang.org/dist/channel-rust-1.97.1.toml",
+  "clippy_driver_v": "clippy 0.1.97 (8bab26f4f6 2026-07-14)",
+  "component_archives": [
+    {
+      "component": "cargo",
+      "filename": "cargo-1.97.1-x86_64-unknown-linux-gnu.tar.xz",
+      "manifest_package": "cargo",
+      "sha256": "e1be5f5ff7f7f80ca506fb65770b759edbdc6d303781ed71c5de8ec8a8394779",
+      "target": "x86_64-unknown-linux-gnu",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/cargo-1.97.1-x86_64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "component": "clippy",
+      "filename": "clippy-1.97.1-x86_64-unknown-linux-gnu.tar.xz",
+      "manifest_package": "clippy-preview",
+      "sha256": "3441df8fb54db985f8c8a3e8356b8874a3f92cc8cca8565cfe36f1dc15935e72",
+      "target": "x86_64-unknown-linux-gnu",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/clippy-1.97.1-x86_64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "component": "rustc",
+      "filename": "rustc-1.97.1-x86_64-unknown-linux-gnu.tar.xz",
+      "manifest_package": "rustc",
+      "sha256": "9819d0a32d56bd339585319c80260e332779f5541fd66838ab7e016d6c814819",
+      "target": "x86_64-unknown-linux-gnu",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/rustc-1.97.1-x86_64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "component": "rustfmt",
+      "filename": "rustfmt-1.97.1-x86_64-unknown-linux-gnu.tar.xz",
+      "manifest_package": "rustfmt-preview",
+      "sha256": "907fe97d6afbde1eca1b34c992c76e1406d422e2e6f137813d382acec7eb4d14",
+      "target": "x86_64-unknown-linux-gnu",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/rustfmt-1.97.1-x86_64-unknown-linux-gnu.tar.xz"
+    },
+    {
+      "component": "rust-std",
+      "filename": "rust-std-1.97.1-x86_64-unknown-linux-gnu.tar.xz",
+      "manifest_package": "rust-std",
+      "sha256": "1c1e704ae80126b7de34f72ea2825f7fd01736dec20732faed47374b95282fba",
+      "target": "x86_64-unknown-linux-gnu",
+      "url": "https://static.rust-lang.org/dist/2026-07-16/rust-std-1.97.1-x86_64-unknown-linux-gnu.tar.xz"
+    }
+  ],
+  "components": [
+    "cargo",
+    "clippy",
+    "rustc",
+    "rustfmt",
+    "rust-std"
+  ],
+  "edition": "2024",
+  "edition_2024_probe": "pass",
+  "format_probe": "pass",
+  "materialized_at": "2026-08-01T20:34:19Z",
+  "profile": "minimal",
+  "root": "/var/lib/z-implementation/phase-0a-v1/build/toolchains/rust-1.97.1-x86_64-unknown-linux-gnu",
+  "rustc_vv": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.97.1\nLLVM version: 22.1.6",
+  "rustfmt_v": "rustfmt 1.9.0-stable (8bab26f4f6 2026-07-14)",
+  "schema_version": "1.0.0",
+  "selected_linker_package": "gcc=4:14.2.0-1",
+  "selected_linker_path": "/var/lib/z-implementation/phase-0a-v1/build/debian-builder-20260731T120000Z-amd64/usr/bin/gcc",
+  "status": "materialized_and_verified",
+  "sysroot": "/var/lib/z-implementation/phase-0a-v1/build/toolchains/rust-1.97.1-x86_64-unknown-linux-gnu",
+  "target": "x86_64-unknown-linux-gnu",
+  "third_party_crates": 0,
+  "version": "1.97.1"
+}

@@ -1,7 +1,5 @@
 # Source
 
-Z product source has not started.
+Phase 0A is complete, but Z product implementation has not started. This directory intentionally contains no Z source.
 
-The same-VPS implementation-host gate is complete and recorded in `../docs/STATUS.md`, but Phase 0A has not yet materialized the isolated toolchain or implementation roots. No source should be added before the Phase 0A dependency and capacity checkpoint is complete.
-
-The first product checkpoint must implement the real end-to-end machine path defined by `../docs/BUILD.md`: boot a real KVM computer, open unrestricted root through authenticated SSH over AF_VSOCK, persist a filesystem change, reboot, reconnect, and preserve the change. Scaffolding, provider interfaces, schemas, protocol definitions, or placeholder commands do not satisfy that checkpoint.
+No `Cargo.toml`, `Cargo.lock`, executable, guest protocol, guest agent, controller, daemon, database, runtime listener, or service may be introduced until a separately authorized later mission. The next permitted mission is Phase 0B, which must prove semantic and negative gates and stop before Phase 1.

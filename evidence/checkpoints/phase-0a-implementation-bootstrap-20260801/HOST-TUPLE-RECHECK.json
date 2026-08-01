@@ -1,0 +1,31 @@
+{
+  "architecture": "x86_64",
+  "boot_id": "b6e10e21-9737-4ded-ad1e-a437eea41ace",
+  "captured_at": "2026-08-01T20:50:04Z",
+  "distribution": "Ubuntu 24.04.4 LTS",
+  "dpkg_audit_clean": true,
+  "failed_units": 0,
+  "host_label": "vps-c9f04f5e",
+  "kernel_package": "6.8.0-9001.1+zcve2026533591",
+  "libc6_version": "2.39-0ubuntu8.8",
+  "memory_kb": 11956740,
+  "ntp_synchronized": true,
+  "reboot_required": false,
+  "reflink": false,
+  "retained_services": {
+    "baby-quirt-mcp.service": "active",
+    "baby-quirt.socket": "active",
+    "caddy.service": "active",
+    "ssh.socket": "active"
+  },
+  "rollback_kernel": "6.8.0-136-generic",
+  "root_filesystem": "ext4",
+  "running_kernel": "6.8.0-9001-generic",
+  "schema_version": "1.0.0",
+  "status": "matched",
+  "swap_kb": 0,
+  "system_state": "running",
+  "systemd_version": 255,
+  "tuple": "z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1",
+  "vcpus": 6
+}

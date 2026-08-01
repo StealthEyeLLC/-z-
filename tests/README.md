@@ -1,7 +1,5 @@
 # Tests
 
-Tests must map to `../docs/CERTIFICATION.md` and cannot override governing law.
+Phase 0A dependency, provenance, root, capacity, sparse-copy, interruption, cleanup, negative, and absence tests are recorded in `../evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/`.
 
-The current evidence proves only the recorded implementation-host kernel transition and host primitives. It does not satisfy Z release certification.
-
-Unit tests may use mocks. Product certification must exercise a real KVM guest, pinned Cloud Hypervisor, authenticated SSH over AF_VSOCK, persistent disks, lifecycle recovery, confinement, and exact cleanup. Negative tests are required, not optional. Phase 0A should test dependency, provenance, root ownership, capacity, sparse-copy, interruption, and cleanup gates without claiming a product checkpoint.
+No product test suite exists because Z product source, a guest, and a machine do not exist. Phase 0B must add semantic and fail-closed tests without claiming a usable computer. Product certification must later exercise a real KVM guest, pinned Cloud Hypervisor, authenticated SSH over AF_VSOCK, persistent disks, lifecycle recovery, confinement, and exact cleanup. Negative tests remain mandatory.

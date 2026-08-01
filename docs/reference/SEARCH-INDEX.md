@@ -36,7 +36,7 @@ Status: **Discovery aid; not normative authority**
 
 ## High-value keywords
 
-`current status`, `Phase 0A`, `host kernel transition`, `CVE-2026-53359`, `Januscape`, `6.8.0-9001-generic`, `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`, `dependency lock`, `candidate tuple`, `Debian Snapshot`, `Rust 1.97.1`, `Cloud Hypervisor v53.0`, `CLOUDHV.fd`, `OpenSSH`, `ProxyCommand`, `ProxyUseFdpass`, `HostKeyAlias`, `KnownHostsCommand`, `AF_VSOCK`, `vsock-mux`, `sshd -i`, `systemd socket activation`, `SMBIOS Type 11`, `ImportCredential`, `exact argv`, `SFTP`, `capability portal`, `Network None`, `passt`, `virtiofsd`, `Cloud Hypervisor`, `Landlock`, `seccomp`, `raw disk`, `reflink`, `cold snapshot`, `fork identity`, `unknown outcome`, `zero processes at rest`.
+`current status`, `Phase 0A complete`, `Phase 0B next`, `implementation roots`, `sparse-copy fallback`, `host kernel transition`, `CVE-2026-53359`, `Januscape`, `6.8.0-9001-generic`, `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`, `dependency lock`, `candidate tuple`, `Debian Snapshot`, `Rust 1.97.1`, `Cloud Hypervisor v53.0`, `CLOUDHV.fd`, `OpenSSH`, `ProxyCommand`, `ProxyUseFdpass`, `HostKeyAlias`, `KnownHostsCommand`, `AF_VSOCK`, `vsock-mux`, `sshd -i`, `systemd socket activation`, `SMBIOS Type 11`, `ImportCredential`, `exact argv`, `SFTP`, `capability portal`, `Network None`, `passt`, `virtiofsd`, `Cloud Hypervisor`, `Landlock`, `seccomp`, `raw disk`, `reflink`, `cold snapshot`, `fork identity`, `unknown outcome`, `zero processes at rest`.
 
 ## Indexing rule
 
@@ -54,3 +54,8 @@ When adding a new architectural term, capability, or variant, update this file a
 | support bundle, diagnostics, telemetry | `../VARIANTS.md`, `../SECURITY.md`, `../CERTIFICATION.md` |
 | Baby boundary, GitHub authority, implementation tooling | `../../AGENTS.md`, `../ARCHITECTURE.md`, `../DECISIONS.md` |
 | operational upgrade strategy | `../research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md` |
+
+## Phase 0A lookups
+
+- Where are implementation roots defined? [`IMPLEMENTATION-ROOTS.md`](IMPLEMENTATION-ROOTS.md) and [`../../assets/implementation-roots.json`](../../assets/implementation-roots.json).
+- Where is Phase 0A proved? [`../../evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/`](../../evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/).

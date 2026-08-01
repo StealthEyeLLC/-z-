@@ -18,7 +18,9 @@ As of `2026-08-01T19:08:00Z`:
 - The root filesystem is ext4 without reflink; `90,960,056,320` bytes are available on `/` and `680,804,352` bytes on `/boot`.
 - Transition-owned build helpers, temporary units, mounts, and large staging trees were removed after durable evidence and package preservation.
 - The preserved release candidate remains `z-debian-13.6-amd64-ch53-v1`; it is distinct from the Ubuntu implementation-host tuple.
-- Clean-room Phase 0A has not started.
+- Clean-room Phase 0A is complete and verified.
+- Exact roots and materialized inputs are recorded in `reference/IMPLEMENTATION-ROOTS.md` and `../evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/`.
+- Phase 0B, Phase 1, and product source have not started.
 - The verified host-transition repository checkpoint is commit `96853e15f7a8cab1efc178d03a4d3e027b0b28cc`, tree `b4308f82a5329542450de3a4cbfabf3300414068`.
 - The complete current-state and next-step ledger is [`STATUS.md`](STATUS.md).
 
@@ -42,11 +44,11 @@ Completed proof:
 8. The actual host tuple was recorded in `assets/dependencies.lock.json` and the repository evidence checkpoint.
 9. `6.8.0-9001-generic` is now the persistent default; kernel 136 remains the tested rollback entry.
 
-Passing this gate authorizes a later Phase 0A mission on the same VPS. It does not waive dependency verification, operation-specific capacity gates, Phase 0B semantic/negative gates, or release certification.
+This gate authorized the now-complete Phase 0A mission on the same VPS. It does not waive Phase 0B semantic/negative gates, Phase 1 authorization, or release certification.
 
 ## Next recommended mission
 
-The next mission SHOULD execute Phase 0A only and stop after the exact isolated inputs and build environment verify. Before mutation it MUST reconfirm the authoritative branch and source tree, a clean workspace, and an unchanged implementation-host tuple. It MUST NOT create a guest disk, create a machine, launch Cloud Hypervisor, or enter Phase 0B or Phase 1 without separate authorization.
+The next permitted mission is Phase 0B only after separate authorization. It MUST begin from the exact Phase 0A checkpoint, reconfirm the authoritative branch, clean workspace, materialized inputs, roots, capacity reserve, and unchanged implementation-host tuple, and stop before Phase 1. Phase 0B may prove semantics but MUST NOT create the first real machine unless a later Phase 1 mission is separately authorized.
 
 The full recommended sequence and fail-closed stop conditions are recorded in [`STATUS.md`](STATUS.md). That operational status document does not override the normative phase definitions below.
 

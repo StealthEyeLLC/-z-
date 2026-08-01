@@ -1,6 +1,6 @@
 # Official Dependencies and Initial Candidate Tuple
 
-Status: **Preserved release candidate selected; implementation host verified; release not certified**
+Status: **Preserved release candidate selected; Phase 0A inputs materialized; release not certified**
 Machine-readable authority: [`../../assets/dependencies.lock.json`](../../assets/dependencies.lock.json)
 Preserved release candidate tuple: `z-debian-13.6-amd64-ch53-v1`
 Verified implementation-host tuple: `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`
@@ -203,3 +203,7 @@ The one-distribution x86-64 scope and absence of Secure Boot, measured boot, and
 No release dependency tuple is certified. The implementation-host kernel and applicable KVM fix state are verified, but selection is not release certification.
 
 Implementation must still prove the exact VMM/firmware/guest boot path, SMBIOS binary credentials, static AF_VSOCK `sshd -i`, descriptor handoff, guest-side Landlock rights, `passt` behavior, persistence, reboot, recovery, and ecosystem clients. A failure changes the tuple or implementation—not the evidence standard.
+
+## 10. Phase 0A materialization result
+
+The locked snapshot, exact 23-package direct image-builder set, exact 212-package closure, 212 package files, mmdebstrap 1.5.7-1+deb13u1, Rust 1.97.1, Cloud Hypervisor v53.0, and CLOUDHV.fd are materialized in the roots defined by [`IMPLEMENTATION-ROOTS.md`](IMPLEMENTATION-ROOTS.md). The builder dpkg database truthfully records `install ok unpacked`; no package was globally installed and no maintainer script was run. This result is selection and materialization, not release certification.

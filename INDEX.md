@@ -17,7 +17,10 @@ This file is the root navigation entry point for the repository.
 - Kernel `6.8.0-9001-generic` is the persistent boot default; `6.8.0-136-generic` remains the tested rollback entry.
 - The host-transition checkpoint is commit `96853e15f7a8cab1efc178d03a4d3e027b0b28cc`, tree `b4308f82a5329542450de3a4cbfabf3300414068`.
 - The preserved release/reference candidate remains `z-debian-13.6-amd64-ch53-v1` and is not certified.
-- Phase 0A and Z product implementation have not started.
+- Phase 0A implementation bootstrap is complete.
+- Phase 0B, Phase 1, and Z product implementation have not started.
+- Exact roots: [`docs/reference/IMPLEMENTATION-ROOTS.md`](docs/reference/IMPLEMENTATION-ROOTS.md).
+- Phase 0A evidence: [`evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/`](evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/).
 
 Read [`docs/STATUS.md`](docs/STATUS.md) for the complete enumerated result, boundaries, maintenance obligations, and recommended next mission.
 
@@ -63,4 +66,4 @@ Read the governing documents in the precedence order defined by [`docs/INDEX.md`
 
 ## Claim boundary
 
-The implementation host is verified for the recorded transition claims. Z itself is not implemented, certified, or released. The next recommended mission is Phase 0A only.
+The implementation host and exact Phase 0A inputs are verified for their recorded claims. Z itself is not implemented, certified, or released. The next permitted mission is Phase 0B only after separate authorization.

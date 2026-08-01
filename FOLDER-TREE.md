@@ -1,74 +1,100 @@
 # Repository Folder Tree
 
+Generated from the Phase 0A working tree. `.git/` is excluded.
 ```text
-.
-├── .gitattributes
-├── README.md
-├── AGENTS.md
-├── CONTRIBUTING.md
-├── FOLDER-TREE.md
-├── INDEX.md
-├── PACKAGE-VERIFICATION.md
-├── SHA256SUMS.txt
-├── UPLOAD-TO-GITHUB.md
-├── llms.txt
-├── .github/
-│   ├── copilot-instructions.md
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── ISSUE_TEMPLATE/
-│       ├── architecture-change.md
-│       └── implementation-defect.md
-├── docs/
-│   ├── INDEX.md
-│   ├── MANIFEST.md
-│   ├── STATUS.md
-│   ├── INVARIANTS.md
-│   ├── ANTI-INVARIANTS.md
-│   ├── SACRIFICES.md
-│   ├── SCOPE.md
-│   ├── ARCHITECTURE.md
-│   ├── VARIANTS.md
-│   ├── SECURITY.md
-│   ├── DECISIONS.md
-│   ├── BUILD.md
-│   ├── CERTIFICATION.md
-│   ├── CHANGE-CONTROL.md
-│   ├── reference/
-│   │   ├── GLOSSARY.md
-│   │   ├── COMPATIBILITY.md
-│   │   ├── DEPENDENCIES.md
-│   │   ├── IMPLEMENTATION-HOST.md
-│   │   └── SEARCH-INDEX.md
-│   └── research/
-│       ├── INDEX.md
-│       ├── SSH-RESEARCH-AND-ARCHITECTURE.md
-│       ├── FINAL-DELTA-RESEARCH-2026-07-31.md
-│       ├── OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md
-│       ├── SOURCES.md
-│       └── CHANGES-FROM-ORIGINAL.md
-├── assets/
-│   ├── README.md
-│   └── dependencies.lock.json
-├── evidence/
-│   ├── README.md
-│   └── checkpoints/
-│       └── host-kernel-transition-20260801/
-│           ├── CLEANUP.txt
-│           ├── ENVIRONMENT.md
-│           ├── HOST-TUPLE.json
-│           ├── MMU-FIX.diff
-│           ├── PACKAGE-SHA256SUMS.txt
-│           ├── RESULT.md
-│           ├── RUNTIME-PROOF.txt
-│           ├── SHA256SUMS.txt
-│           ├── SOURCE-SHA256SUMS.txt
-│           └── TESTS.md
-├── scripts/
-│   └── README.md
-├── src/
-│   └── README.md
-└── tests/
-    └── README.md
-```
 
-The structure keeps governing law shallow and searchable, separates operational status from normative architecture, and stores host-transition evidence under an immutable checkpoint directory. Product source, build scripts, and product tests have not started.
+.
+.gitattributes
+.github
+.github/ISSUE_TEMPLATE
+.github/ISSUE_TEMPLATE/architecture-change.md
+.github/ISSUE_TEMPLATE/implementation-defect.md
+.github/PULL_REQUEST_TEMPLATE.md
+.github/copilot-instructions.md
+AGENTS.md
+CONTRIBUTING.md
+FOLDER-TREE.md
+INDEX.md
+PACKAGE-VERIFICATION.md
+README.md
+SHA256SUMS.txt
+UPLOAD-TO-GITHUB.md
+assets
+assets/README.md
+assets/dependencies.lock.json
+assets/implementation-roots.json
+docs
+docs/ANTI-INVARIANTS.md
+docs/ARCHITECTURE.md
+docs/BUILD.md
+docs/CERTIFICATION.md
+docs/CHANGE-CONTROL.md
+docs/DECISIONS.md
+docs/INDEX.md
+docs/INVARIANTS.md
+docs/MANIFEST.md
+docs/SACRIFICES.md
+docs/SCOPE.md
+docs/SECURITY.md
+docs/STATUS.md
+docs/VARIANTS.md
+docs/reference
+docs/reference/COMPATIBILITY.md
+docs/reference/DEPENDENCIES.md
+docs/reference/GLOSSARY.md
+docs/reference/IMPLEMENTATION-HOST.md
+docs/reference/IMPLEMENTATION-ROOTS.md
+docs/reference/SEARCH-INDEX.md
+docs/research
+docs/research/CHANGES-FROM-ORIGINAL.md
+docs/research/FINAL-DELTA-RESEARCH-2026-07-31.md
+docs/research/INDEX.md
+docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md
+docs/research/SOURCES.md
+docs/research/SSH-RESEARCH-AND-ARCHITECTURE.md
+evidence
+evidence/README.md
+evidence/checkpoints
+evidence/checkpoints/host-kernel-transition-20260801
+evidence/checkpoints/host-kernel-transition-20260801/CLEANUP.txt
+evidence/checkpoints/host-kernel-transition-20260801/ENVIRONMENT.md
+evidence/checkpoints/host-kernel-transition-20260801/HOST-TUPLE.json
+evidence/checkpoints/host-kernel-transition-20260801/MMU-FIX.diff
+evidence/checkpoints/host-kernel-transition-20260801/PACKAGE-SHA256SUMS.txt
+evidence/checkpoints/host-kernel-transition-20260801/RESULT.md
+evidence/checkpoints/host-kernel-transition-20260801/RUNTIME-PROOF.txt
+evidence/checkpoints/host-kernel-transition-20260801/SHA256SUMS.txt
+evidence/checkpoints/host-kernel-transition-20260801/SOURCE-SHA256SUMS.txt
+evidence/checkpoints/host-kernel-transition-20260801/TESTS.md
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/CAPACITY.json
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/CLEANUP.txt
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/CLOUD-HYPERVISOR.json
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/DEBIAN-INDEX-SHA256SUMS.txt
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/DEBIAN-KEY-FINGERPRINTS.txt
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/DEBIAN-SNAPSHOT.json
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/ENVIRONMENT.md
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/FIRMWARE.json
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/HOST-TUPLE-RECHECK.json
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/IMAGE-BUILDER-CLOSURE.txt
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/IMAGE-BUILDER-DIRECT-PACKAGES.txt
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/IMAGE-BUILDER-PACKAGE-SHA256SUMS.txt
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/MMDEBSTRAP.json
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/NEGATIVE-TESTS.md
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/RESULT.md
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/ROOTS.json
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/RUST-COMPONENT-SHA256SUMS.txt
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/RUST-TOOLCHAIN.json
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/SHA256SUMS.txt
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/SPARSE-COPY-TEST.md
+evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/TESTS.md
+llms.txt
+scripts
+scripts/README.md
+scripts/check-phase-0a-capacity.sh
+scripts/verify-phase-0a.sh
+src
+src/README.md
+tests
+tests/README.md
+```

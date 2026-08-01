@@ -1,0 +1,26 @@
+# Phase 0A Environment
+
+- Implementation host tuple: `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`
+- Release candidate tuple: `z-debian-13.6-amd64-ch53-v1` — candidate, not certified
+- Host label: `vps-c9f04f5e`
+- Distribution: Ubuntu 24.04.4 LTS
+- Architecture: x86_64
+- vCPUs: 6
+- Memory: 11,956,740 kB
+- Swap: 0 kB
+- Kernel: `6.8.0-9001-generic`
+- Kernel package: `6.8.0-9001.1+zcve2026533591`
+- Rollback kernel: `6.8.0-136-generic`
+- Boot ID: `b6e10e21-9737-4ded-ad1e-a437eea41ace`
+- Root filesystem: ext4; reflink unsupported
+- System state: running; failed units: 0; NTP synchronized; dpkg audit clean
+- Retained services: baby-quirt.socket, baby-quirt-mcp.service, ssh.socket, caddy.service — active
+- Source root: `/var/lib/baby-quirt/workspaces/dash-z-build-plan-current-20260731`
+- Build root: `/var/lib/z-implementation/phase-0a-v1/build`
+- Rust root: `/var/lib/z-implementation/phase-0a-v1/build/toolchains/rust-1.97.1-x86_64-unknown-linux-gnu`
+- Builder root: `/var/lib/z-implementation/phase-0a-v1/build/debian-builder-20260731T120000Z-amd64`
+- Asset root: `/var/lib/z-implementation/phase-0a-v1/assets/z-debian-13.6-amd64-ch53-v1`
+- Reserved machine root: `/var/lib/z-implementation/phase-0a-v1/machines-reserved` — empty
+- Runtime root: `/run/z-implementation/phase-0a-v1` — empty
+- Host evidence: `/var/lib/z-implementation/phase-0a-v1/evidence`
+- Host evidence manifest SHA-256: `8be1e439c3bd93cb6a549df14b13bc8120410157c86d72914aac7af61cc14da2`

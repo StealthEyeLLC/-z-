@@ -1,0 +1,15 @@
+Phase 0A cleanup result: PASS
+staging root: /var/tmp/z-implementation/phase-0a-v1 — empty
+runtime root: /run/z-implementation/phase-0a-v1 — empty
+reserved machine root: /var/lib/z-implementation/phase-0a-v1/machines-reserved — empty
+synthetic sparse-copy artifacts: removed
+negative-test disposable roots: removed
+corrupt package/component/asset copies: removed
+Cloud Hypervisor processes: 0
+Z processes: 0
+new mounts: 0
+new TAP devices: 0
+new listeners: 0
+new systemd units: 0
+cleanup authority: exact-path and manifest based only
+unrelated sentinel preservation test: PASS

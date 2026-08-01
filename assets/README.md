@@ -14,3 +14,7 @@ Every certified asset requires an immutable source identity, digest, retrieval o
 The implementation-host object binds the running Ubuntu kernel, exact CVE-2026-53359 fix, source/package/module digests, boot policy, rollback kernel, runtime primitives, storage facts, and evidence checkpoint. It does not convert the Ubuntu host into the Debian release candidate or certify a Z release.
 
 Phase 0A must verify the lock before materializing any binary, toolchain, firmware, package closure, or build root. Any identity or digest change requires a new tuple rather than silent mutation.
+
+## Implementation roots
+
+`implementation-roots.json` records the exact Phase 0A implementation-only roots, ownership, modes, filesystem and device binding, reflink result, sparse-copy method, cleanup authorities, capacity reserve, empty-root completion states, and host-evidence manifest digest. It is not a release manifest.

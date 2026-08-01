@@ -55,4 +55,4 @@ Research explains why decisions were made but does not override governing law.
 
 ## 6. State declaration
 
-The same-VPS implementation-host kernel transition is complete and verified under `evidence/checkpoints/host-kernel-transition-20260801/`. That checkpoint proves only the named host claims. Phase 0A, Z product source, a guest image, a machine lifecycle, and release certification have not started. Until complete end-to-end release evidence exists under `evidence/releases/`, Z has no certified runtime release.
+The same-VPS implementation-host kernel transition remains verified under `evidence/checkpoints/host-kernel-transition-20260801/`. Phase 0A is complete under `evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/`, and the exact root authority is `reference/IMPLEMENTATION-ROOTS.md`. Z product source, Phase 0B, Phase 1, a guest image, a machine lifecycle, and release certification have not started. Until complete end-to-end release evidence exists under `evidence/releases/`, Z has no certified runtime release.

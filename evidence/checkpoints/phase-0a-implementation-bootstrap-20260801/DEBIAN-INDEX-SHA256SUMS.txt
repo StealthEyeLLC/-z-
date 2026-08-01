@@ -1,0 +1,3 @@
+3ab4e811cf4f3e5a335d382c58cc19d85f1abe7a4ef4689160ca1f637fa0e9b3  trixie-main-binary-amd64-Packages.xz
+10012cb384dc2613586d7b3d391d92a5637c9faa36017239739f2a6109a0d45f  trixie-updates-main-binary-amd64-Packages.xz
+55407fe52439a7195e75b72b948f6629e456e18ac51492f75b41fa21606b4241  trixie-security-main-binary-amd64-Packages.xz

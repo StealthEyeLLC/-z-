@@ -1,6 +1,6 @@
 # Evidence
 
-Status: **Implementation-host checkpoint present; no Z release is certified.**
+Status: **Implementation-host and Phase 0A checkpoints present; no Z release is certified.**
 
 This directory holds immutable or digest-verifiable proof for implementation checkpoints and releases. Documentation, mocks, selected dependencies, and planned tests are not evidence that Z works.
 
@@ -28,3 +28,5 @@ evidence/
 Every result must identify the source commit, source tree, artifact digests, exact environment, commands or equivalent durable operations, exit statuses, positive proofs, negative proofs, cleanup state, and unresolved limitations.
 
 A host checkpoint proves only the claims it names. It does not certify product source, a guest image, a machine lifecycle, or a release.
+
+- `checkpoints/phase-0a-implementation-bootstrap-20260801/` — exact implementation roots, Debian closure, Rust toolchain, Cloud Hypervisor, firmware, capacity, sparse-copy, negative, cleanup, and absence evidence. It is not product or release certification.

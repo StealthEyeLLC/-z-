@@ -14,7 +14,7 @@ Evidence checkpoint: [`../../evidence/checkpoints/host-kernel-transition-2026080
 
 This record binds Z implementation work to the actual retained OVH VPS after the authorized Ubuntu host-kernel transition. It is a point-in-time operational authority for implementation routing and reproducibility.
 
-It does not certify a Z release, a guest image, Cloud Hypervisor, firmware, networking, or the preserved Debian release candidate. Clean-room Phase 0A has not started.
+It does not certify a Z release, guest image, networking, or the preserved Debian release candidate. Clean-room Phase 0A is now complete and separately records exact Cloud Hypervisor, firmware, toolchain, builder, root, capacity, and negative-test claims; Phase 0B and product implementation have not started.
 
 Baby remains implementation infrastructure only. It is not a Z runtime component, dependency, guest service, protocol, or product surface.
 
@@ -119,7 +119,7 @@ The preserved release candidate remains `z-debian-13.6-amd64-ch53-v1`. The actua
 
 The same-VPS host-kernel blocker is closed for implementation-host purposes. The running kernel, applicable KVM fix state, rollback path, required host primitives, service recovery, storage headroom, and cleanup state are verified.
 
-This mission ends at that checkpoint. Phase 0A was not started. A later implementation mission must still perform its own dependency, capacity, provenance, cleanup, and compatibility gates before creating implementation roots or product source.
+The host-transition mission ended at that checkpoint. Phase 0A later completed its dependency, capacity, provenance, root, cleanup, and negative gates without creating product source. The next permitted mission is Phase 0B only after separate authorization.
 
 ## 8.1 Original-plan equivalence and maintenance decision
 
@@ -132,3 +132,7 @@ The complete enumerated result and recommended Phase 0A mission are recorded in 
 ## 9. Refresh rule
 
 Recapture this record and create a new implementation-host tuple before relying on any changed kernel, package set, machine identity, CPU exposure, filesystem, boot policy, KVM behavior, Landlock ABI, seccomp behavior, OpenSSH behavior, or retained control-plane state.
+
+## 10. Phase 0A relationship
+
+The exact implementation roots and post-materialization host binding are recorded in [`IMPLEMENTATION-ROOTS.md`](IMPLEMENTATION-ROOTS.md). The implementation host remains distinct from the Debian release candidate and does not confer certification inheritance.

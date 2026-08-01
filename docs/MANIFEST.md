@@ -40,4 +40,10 @@ This file classifies documents. It cannot change their content or precedence.
 - **Certified:** passed the complete positive and negative requirements for an exact compatibility tuple.
 - **Released:** certified artifacts are published with immutable identity.
 
-These terms are not interchangeable. The implementation host is verified for the recorded kernel-transition claims and is ready for a separately authorized Phase 0A mission. No Z product runtime, guest image, machine lifecycle, or release is implemented or certified.
+These terms are not interchangeable. The implementation host and Phase 0A materialized inputs are verified for their recorded claims. Phase 0B, Phase 1, Z product runtime, guest image, machine lifecycle, and release certification have not started.
+
+## Implementation root authority
+
+- `reference/IMPLEMENTATION-ROOTS.md` — human-readable Phase 0A root and cleanup authority.
+- `../assets/implementation-roots.json` — machine-readable authority.
+- `../evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/` — durable checkpoint evidence.
