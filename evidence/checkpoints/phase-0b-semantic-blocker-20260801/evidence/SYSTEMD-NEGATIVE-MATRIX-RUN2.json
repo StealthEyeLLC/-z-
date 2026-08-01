@@ -1,0 +1,55 @@
+{
+  "captured_at": "2026-08-01T23:34:48.012332+00:00",
+  "cleanup_failure": {
+    "decision": "failure",
+    "detected": true,
+    "repaired_by_authority": true,
+    "unprivileged_status": 1
+  },
+  "incomplete_input": {
+    "client_acceptance_status": 1,
+    "decision": "unknown",
+    "execution_record_absent": true,
+    "fabricated_success": false,
+    "manager_active_state": "failed",
+    "manager_load_state": "loaded",
+    "manager_properties": {
+      "ActiveState": "failed",
+      "ExecMainCode": "1",
+      "ExecMainStatus": "208",
+      "LoadState": "loaded",
+      "Result": "exit-code",
+      "SubState": "failed"
+    },
+    "manager_result": "exit-code"
+  },
+  "output_retrieval_incomplete": {
+    "acceptance_status": 0,
+    "decision": "unknown",
+    "fabricated_success": false,
+    "manager_properties": {
+      "ActiveState": "active",
+      "ExecMainCode": "1",
+      "ExecMainStatus": "0",
+      "LoadState": "loaded",
+      "Result": "success",
+      "SubState": "exited"
+    },
+    "sftp_status": 1
+  },
+  "remote_manager_unavailable": {
+    "client_status": 1,
+    "decision": "unknown",
+    "fabricated_success": false,
+    "unit_load_state": "not-found"
+  },
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "unit_vanished_before_query": {
+    "creator_status": 0,
+    "decision": "unknown",
+    "fabricated_success": false,
+    "load_state": "not-found"
+  }
+}

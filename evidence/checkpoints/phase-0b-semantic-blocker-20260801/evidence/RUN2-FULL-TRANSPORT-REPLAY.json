@@ -1,0 +1,27 @@
+{
+  "captured_at": "2026-08-01T23:38:22.659804+00:00",
+  "cid": 5002,
+  "embedded_libssh2": {
+    "connection_scoped_relay": true,
+    "ctrl_c_status": 130,
+    "forward_reply_hex": "5a30422d4657443a6c6962737368322d00ff",
+    "pty_initial": "24x80",
+    "pty_resize": "40x100",
+    "sftp_bytes": 1048576,
+    "sftp_sha256": "4147df77d7a5a7aa1173522e923301cf95770be2635630c8074e86d2198b2532"
+  },
+  "helper_count_after_tests": 0,
+  "native": {
+    "ctrl_c_status": 130,
+    "forward_reply_hex": "5a30422d4657443a72756e322d6e617469766500ff",
+    "pty_initial": "24x80",
+    "pty_resize": "40x100",
+    "sftp_bytes": 1048576,
+    "sftp_sha256": "4147df77d7a5a7aa1173522e923301cf95770be2635630c8074e86d2198b2532"
+  },
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "strict_native_reconnection": true,
+  "uuid": "e7abc59b-8f0a-4c46-a412-0c5f18370a5c"
+}

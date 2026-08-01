@@ -1,0 +1,630 @@
+{
+  "captured_at": "2026-08-01T23:13:34.527479+00:00",
+  "disk_absent": true,
+  "disk_path": "/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-run1-positive.raw",
+  "identity_absent": true,
+  "pre_removal_lab_manifest": [
+    {
+      "path": "libssh2-exec.stdout",
+      "sha256": "1cc8868dcdba0772c80593f5a77c046bf45eb61b3e7f3d29beec08911a895a3e",
+      "size": 15
+    },
+    {
+      "path": "chdir-create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "missing-create.err",
+      "sha256": "2b29f978f98d93cc5ae68f619c264a9f9332b5a126951f3129cea7ef5ffce394",
+      "size": 218
+    },
+    {
+      "path": "run1-vmm-shutdown.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-10.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "native.stdout.bin",
+      "sha256": "9930d229366ce28e956fac41b6f2c1f492b56bc2042a4d4912ac66ab75c1856f",
+      "size": 6
+    },
+    {
+      "path": "vm-reboot-before.json",
+      "sha256": "13138f7dd21cec17c9c26282138b65209b5d9a7531d9b931821cd6fb9952ede0",
+      "size": 3241
+    },
+    {
+      "path": "ssh_config",
+      "sha256": "938ef3b635c81db5d0f493bbf5422aa9fe8d972163203f5cfdb6dc7b2996e0c4",
+      "size": 1122
+    },
+    {
+      "path": "verbose.err",
+      "sha256": "4c6b6ca5af856f10c7088d5d84838c7b05207474847fdbc080fd32ed32d76809",
+      "size": 1050
+    },
+    {
+      "path": "native-37.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "concurrent-3.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "permission-create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "diagnose-ssh.err",
+      "sha256": "aeafb56e687ae48232039e6a4b81bd7162b44d0314172bddbe852464c6602c81",
+      "size": 995
+    },
+    {
+      "path": "matrix-health.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "reboot-ssh.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "boot-after-first-reboot",
+      "sha256": "b54248de32f7273d5c4f301b1a3c7a1d1626e4550a437f5bd266f687e47e54ec",
+      "size": 37
+    },
+    {
+      "path": "systemd-timeout.create-rc",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "size": 2
+    },
+    {
+      "path": "recovery-ssh-12.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "concurrent-7.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "verified-reboot.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-3.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-7.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-6.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "systemd-shim-ssh-version.txt",
+      "sha256": "1a254068c5966d987f341f0d0bee45407114457586da487a9a3f92a27af1ee09",
+      "size": 62
+    },
+    {
+      "path": "recovery-ssh-2.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-11.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "remote-system-state.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "libssh2-exec.stderr",
+      "sha256": "a1157d478c9791edbe358764966f1697201d33f0d82652bbe94f2b64e81d606e",
+      "size": 15
+    },
+    {
+      "path": "native-false.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-1.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "chdir-create.err",
+      "sha256": "0ec5405a3a27d689a4084265ee314286fe6652e2bfdb4f701400e97dbd13def1",
+      "size": 197
+    },
+    {
+      "path": "concurrent-7.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-1.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "session-survival.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "concurrent-8.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-7.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "verbose2.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "native.stderr.bin",
+      "sha256": "a4618fa26f57f49fb10800169edc14319651ac6324c5c845561ebbee41a92740",
+      "size": 6
+    },
+    {
+      "path": "post-reboot-ssh.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "reboot-ssh.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "inventory.json",
+      "sha256": "28b24ea6c2a44bcdeb4957cc73646b7ecc28233a7403f0ca84a692e7ebbfcf75",
+      "size": 2421
+    },
+    {
+      "path": "session-survival.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "libssh2-pty.bin",
+      "sha256": "c36f36f86944db265b00873286923e09b6b1427911c7f1475d8ad805c63fc054",
+      "size": 381
+    },
+    {
+      "path": "concurrent-1.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "readiness-attempts-stock",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "size": 2
+    },
+    {
+      "path": "remote-show.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "sftp.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "api-reboot-ssh.err",
+      "sha256": "ce35363a979c761baca3150148c4d76b8345284b4f2c559dcc6cdcc71b9f870c",
+      "size": 134
+    },
+    {
+      "path": "recovery-ssh-9.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "api-reboot-ssh.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "concurrent-6.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "early-ssh-1.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "timeout-create.err",
+      "sha256": "6265f272cc5b8b484ba83aaecebf96f1eec2ee5b81fdecfcaccc57585f7ad8ea",
+      "size": 183
+    },
+    {
+      "path": "vm-reboot-api.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-8.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-5.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-12.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-5.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "post-reboot-ssh.err",
+      "sha256": "ce35363a979c761baca3150148c4d76b8345284b4f2c559dcc6cdcc71b9f870c",
+      "size": 134
+    },
+    {
+      "path": "wrong-owner-3.err",
+      "sha256": "27a54aba4be2c943afa963cf5832063722ae7b39954cde5c3de81a91228395d3",
+      "size": 51
+    },
+    {
+      "path": "concurrent-5.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "readiness-errors.log",
+      "sha256": "00acf44833f79a31fdfb412a69a0197a2cf5642207bb9f7d38382a6b493f232d",
+      "size": 1071
+    },
+    {
+      "path": "concurrent-1.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "permission-create.err",
+      "sha256": "b7c511faa5321921543b510d9b7fe1e8c5c3a9d0d9ee717f40d9b4d2753aac94",
+      "size": 212
+    },
+    {
+      "path": "rebound-ssh.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "concurrent-6.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "readiness-errors-stock.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "missing-create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "concurrent-2.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "remote-system-state.txt",
+      "sha256": "d0a0394219015b3a1c97bb2f34db4c5c6655c358524265587cb89097006f9a9e",
+      "size": 9
+    },
+    {
+      "path": "systemd-ssh-wrapper",
+      "sha256": "367d828a00ee1788798cce2f29899fdd3a0623e20bd6daba0fc8680193e80784",
+      "size": 106
+    },
+    {
+      "path": "concurrent-2.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "wrong-owner-2.err",
+      "sha256": "27a54aba4be2c943afa963cf5832063722ae7b39954cde5c3de81a91228395d3",
+      "size": 51
+    },
+    {
+      "path": "zero.create.err",
+      "sha256": "798c77ed3f881ed5affca1ed2380ef9a19a4f2af45374796079df8ef04a7ae26",
+      "size": 96
+    },
+    {
+      "path": "host-nested-observation.txt",
+      "sha256": "ebd76d0530473aa3bd1f1efe5f05ebc3cac7ca2131e0e89adb5d628eeeb29019",
+      "size": 137
+    },
+    {
+      "path": "recovery-ssh-8.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-3.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-4.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "forward.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "run1-vm-delete.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "concurrent-4.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "libssh2-forward.bin",
+      "sha256": "1c16027bed68fea02a4161fbc6579d31fd2b8a435773f7adfcdbbd8ff3acc6a0",
+      "size": 18
+    },
+    {
+      "path": "bridge-smoke.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "systemd-primary.transient-unit",
+      "sha256": "ff77f248dba8a125a94d76cc96eb53ff6eb089e92b094724a8a4b59eda0836de",
+      "size": 66430
+    },
+    {
+      "path": "forward.err",
+      "sha256": "6324b1c737b6d30387df2af818511a0adfb006d934134a79fd4654c9aea030de",
+      "size": 43
+    },
+    {
+      "path": "systemd-primary-properties.txt",
+      "sha256": "6d3987bdbfd991508d32afbdf740d735b1c855d9f795489926b567efba94c2b6",
+      "size": 184
+    },
+    {
+      "path": "wrong-owner-1.err",
+      "sha256": "27a54aba4be2c943afa963cf5832063722ae7b39954cde5c3de81a91228395d3",
+      "size": 51
+    },
+    {
+      "path": "recovery-ssh-4.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "wrong-owner-5.err",
+      "sha256": "27a54aba4be2c943afa963cf5832063722ae7b39954cde5c3de81a91228395d3",
+      "size": 51
+    },
+    {
+      "path": "signal-create.err",
+      "sha256": "a1cc419b9111220738bf3ce1d37e4fa13686b052ab3f19f95bf754acf1458b58",
+      "size": 209
+    },
+    {
+      "path": "concurrent-8.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "concurrent-4.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "systemd-primary.create-rc",
+      "sha256": "b58a3da5fde2680191877ec88a1aa7d06927cc3b30cdf0d0db8c39b488891576",
+      "size": 3
+    },
+    {
+      "path": "signal-create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "zero.properties",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "native-pty-transcript.bin",
+      "sha256": "1a06cd89dec72849f5addb3357ff74ee9a42a3034180bb8942f794189965cb67",
+      "size": 181
+    },
+    {
+      "path": "recovery-ssh-6.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "zero.create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "concurrent-5.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "rebound-ssh.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "boot-stability-probes.json",
+      "sha256": "82c9376bd524b855666f178f2feedcc71a77c8fc651a372eb80d1abc803527e5",
+      "size": 2921
+    },
+    {
+      "path": "wrong-owner-6.err",
+      "sha256": "27a54aba4be2c943afa963cf5832063722ae7b39954cde5c3de81a91228395d3",
+      "size": 51
+    },
+    {
+      "path": "recovery-ssh-2.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "matrix-health.err",
+      "sha256": "6f34342dfe8da129685a05e9fd020219ff8b3c1ed39c34706a94439d7b8ba9f2",
+      "size": 62
+    },
+    {
+      "path": "recovery-ssh-10.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "host-key-blob.bin",
+      "sha256": "8f5ab9e5fe622af1f638eaa5bbc5c7b648c5f890a1fde77f72b6c63771efba78",
+      "size": 51
+    },
+    {
+      "path": "wrong-owner-7.err",
+      "sha256": "27a54aba4be2c943afa963cf5832063722ae7b39954cde5c3de81a91228395d3",
+      "size": 51
+    },
+    {
+      "path": "wrong-owner-4.err",
+      "sha256": "27a54aba4be2c943afa963cf5832063722ae7b39954cde5c3de81a91228395d3",
+      "size": 51
+    },
+    {
+      "path": "boot-stability-serial.bin",
+      "sha256": "2d17131d8fe9af4d8e96864917b0a754aa65259740db06d99d9b53f0f25673b4",
+      "size": 278
+    },
+    {
+      "path": "libssh2-relay.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "timeout-create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "bridge-smoke.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "systemd-signal.create-rc",
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "size": 2
+    },
+    {
+      "path": "recovery-ssh-9.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "recovery-ssh-11.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "serial-diagnose.bin",
+      "sha256": "fa6314d405c8c99bb48fdb37ea134b3fd177e90d8067e002b6c1edf29fe21eaa",
+      "size": 278
+    },
+    {
+      "path": "guest-core-observation.txt",
+      "sha256": "38c1453bb399aedc346b6dc0f1388d5b5d07b897071b499929daa58048f66e9a",
+      "size": 1577
+    },
+    {
+      "path": "concurrent-3.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "readiness-errors-runtimefix.log",
+      "sha256": "be7b883f7b4a60aed26f6543363b63720d242a41e5aa0d5adbd3040cf1c58d8a",
+      "size": 1521
+    },
+    {
+      "path": "verified-reboot.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "diagnose-ssh.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "sftp.out",
+      "sha256": "2a666a99aab699b752da5742dd0905ad13314b92dc6af7fa726bde5d9c31b160",
+      "size": 259
+    },
+    {
+      "path": "verbose2.err",
+      "sha256": "838f9a885f3c785ecd970fe3eb473569b4411815be91132dcf09dde67605bedd",
+      "size": 2172
+    }
+  ],
+  "process_absent": true,
+  "runtime_absent": true,
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "vm_delete_http": "204",
+  "vmm_pid": 49851,
+  "vmm_shutdown_http": "200"
+}

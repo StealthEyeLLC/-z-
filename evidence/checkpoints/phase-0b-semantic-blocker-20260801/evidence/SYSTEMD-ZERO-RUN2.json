@@ -1,0 +1,29 @@
+{
+  "captured_at": "2026-08-01T23:25:53.927335+00:00",
+  "cleanup_load_state": "not-found",
+  "creator_waiter_status": 143,
+  "creator_waiter_terminated_after_unit_reached_active_exited": true,
+  "exec_main_code": 1,
+  "exec_main_status": 0,
+  "guest_result": "success",
+  "manager_properties": {
+    "ActiveState": "active",
+    "CollectMode": "inactive",
+    "ExecMainCode": "1",
+    "ExecMainPID": "1550",
+    "ExecMainStatus": "0",
+    "Id": "z-phase0b-zero-r2.service",
+    "LoadState": "loaded",
+    "RemainAfterExit": "yes",
+    "Result": "success",
+    "SubState": "exited",
+    "Type": "exec"
+  },
+  "retrieved_before_cleanup": true,
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "stderr_hex": "5a30422d53544445525200fe0a",
+  "stdout_hex": "5a30422d5354444f555400ff0a",
+  "unit": "z-phase0b-zero-r2.service"
+}

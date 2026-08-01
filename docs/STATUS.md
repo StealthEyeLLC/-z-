@@ -1,4 +1,4 @@
-# Current Status — Phase 0A Implementation Bootstrap Complete
+# Current Status — Phase 0B Executed, Certification Blocked
 
 Status: **Canonical operational status; implementation-input checkpoint only; not product or release certification**
 
@@ -8,7 +8,7 @@ Phase 0A is complete. Exact implementation roots and locked supply-chain inputs 
 
 The preserved release candidate remains `z-debian-13.6-amd64-ch53-v1`, status candidate, certification inheritance false. The Ubuntu implementation host is not the Debian reference host.
 
-Phase 0B has not started. Phase 1 has not started. Z product source, a guest disk, a machine, a Z executable, runtime service, listener, and release do not exist.
+Phase 0B was executed in an isolated semantic lab but is not certified. The required same-machine persistent guest reboot and authenticated reconnect gate failed. Phase 1 has not started. Z product source, a product guest disk, a product machine, a Z executable, runtime service, listener, and release do not exist.
 
 ## 2. Repository checkpoint basis
 
@@ -49,6 +49,14 @@ All 35 required negative tests passed using disposable state. Runtime and reserv
 
 This checkpoint proves exact implementation inputs and environment materialization only. It does not prove machine semantics, confinement, SSH control paths, guest persistence, lifecycle recovery, product behavior, compatibility, or certification.
 
-## 8. Next permitted mission
+## 8. Phase 0B semantic checkpoint — blocked
 
-The next permitted mission is Phase 0B only after separate authorization. Phase 0B must prove semantic and negative gates before Phase 1 may create the first real machine. No release is certified and no Z product checkpoint is claimed.
+Phase 0B semantic and negative gates were executed on 2026-08-01. Native OpenSSH descriptor handoff, strict host-key trust, a connection-scoped libssh2 compatibility relay, exact remote-systemd `argv[]`, binary stdin and separate outputs, lifecycle recovery, cancellation, fail-closed negative states, clean replay, and complete teardown passed.
+
+Certification is withheld because persistence across reboot of the same guest identity did not pass. The reboot transition produced kernel command line `B` and no guest SSH listener. A second run with a fresh UUID, CID, keys, and disk copy proves reproducible non-reboot semantics only.
+
+Checkpoint: [`../evidence/checkpoints/phase-0b-semantic-blocker-20260801/`](../evidence/checkpoints/phase-0b-semantic-blocker-20260801/)
+
+## 9. Next permitted mission
+
+The next permitted mission is a bounded Phase 0B reboot-path repair and recertification only. Phase 1 may not start until the same-machine persistent reboot and authenticated reconnect gate passes. No release is certified and no Z product checkpoint is claimed.

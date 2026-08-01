@@ -1,0 +1,187 @@
+{
+  "config": {
+    "console": {
+      "mode": "Off",
+      "pci_segment": 0
+    },
+    "cpus": {
+      "boot_vcpus": 2,
+      "core_scheduling": "Vm",
+      "features": {
+        "amx": false
+      },
+      "kvm_hyperv": false,
+      "max_phys_bits": 46,
+      "max_vcpus": 2,
+      "nested": false,
+      "profile": "Host"
+    },
+    "debug_console": {
+      "iobase": 233,
+      "mode": "Off"
+    },
+    "disks": [
+      {
+        "backing_files": false,
+        "direct": false,
+        "disable_aio": false,
+        "disable_io_uring": false,
+        "id": "_disk0",
+        "image_type": "Raw",
+        "lock_granularity": "ByteRange",
+        "num_queues": 1,
+        "path": "/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-run2-replay.raw",
+        "pci_segment": 0,
+        "queue_size": 128,
+        "readonly": false,
+        "sparse": true,
+        "vhost_user": false
+      }
+    ],
+    "iommu": false,
+    "landlock_enable": false,
+    "memory": {
+      "hotplug_method": "Acpi",
+      "hugepages": false,
+      "mergeable": false,
+      "prefault": false,
+      "reserve": false,
+      "shared": false,
+      "size": 1073741824,
+      "thp": true
+    },
+    "net": [],
+    "payload": {
+      "firmware": "/var/lib/z-implementation/phase-0a-v1/assets/z-debian-13.6-amd64-ch53-v1/CLOUDHV.fd"
+    },
+    "platform": {
+      "iommu_address_width_bits": 64,
+      "iommufd": false,
+      "num_pci_segments": 1,
+      "oem_strings": [
+        {
+          "credential_name": "ssh.hostkey",
+          "decoded_length": 411,
+          "decoded_sha256": "025b0acd4ae92d7abc5d1c17ed6fd3df4a0d0278eb14e36160377f8d292b1f1e",
+          "encoding": "base64 removed"
+        },
+        {
+          "credential_name": "ssh.authorized_keys",
+          "decoded_length": 102,
+          "decoded_sha256": "1f91e31453d3e766c360ed93018182c6a769644e340f95ae9f9be8a310777ee5",
+          "encoding": "base64 removed"
+        }
+      ],
+      "system_uuid": "e7abc59b-8f0a-4c46-a412-0c5f18370a5c",
+      "vfio_p2p_dma": true
+    },
+    "pvpanic": false,
+    "rng": {
+      "pci_segment": 0,
+      "src": "/dev/urandom"
+    },
+    "serial": {
+      "mode": "Socket",
+      "socket": "/run/z-implementation/phase-0b-v1/run2-replay/serial/console.sock"
+    },
+    "vsock": {
+      "cid": 5002,
+      "id": "_vsock1",
+      "pci_segment": 0,
+      "socket": "/run/z-implementation/phase-0b-v1/run2-replay/vsock/mux.sock"
+    },
+    "watchdog": false
+  },
+  "device_tree": {
+    "__ioapic": {
+      "children": [],
+      "id": "__ioapic",
+      "resources": []
+    },
+    "__rng": {
+      "children": [],
+      "id": "__rng",
+      "parent": "_virtio-pci-__rng",
+      "resources": []
+    },
+    "__serial": {
+      "children": [],
+      "id": "__serial",
+      "resources": []
+    },
+    "_disk0": {
+      "children": [],
+      "id": "_disk0",
+      "parent": "_virtio-pci-_disk0",
+      "resources": []
+    },
+    "_virtio-pci-__rng": {
+      "children": [
+        "__rng"
+      ],
+      "id": "_virtio-pci-__rng",
+      "pci_bdf": "0000:00:02.0",
+      "resources": [
+        {
+          "PciBar": {
+            "base": 4295491584,
+            "index": 0,
+            "prefetchable": false,
+            "size": 524288,
+            "type_": "Mmio64"
+          }
+        }
+      ]
+    },
+    "_virtio-pci-_disk0": {
+      "children": [
+        "_disk0"
+      ],
+      "id": "_virtio-pci-_disk0",
+      "pci_bdf": "0000:00:01.0",
+      "resources": [
+        {
+          "PciBar": {
+            "base": 3221225472,
+            "index": 0,
+            "prefetchable": false,
+            "size": 524288,
+            "type_": "Mmio32"
+          }
+        }
+      ]
+    },
+    "_virtio-pci-_vsock1": {
+      "children": [
+        "_vsock1"
+      ],
+      "id": "_virtio-pci-_vsock1",
+      "pci_bdf": "0000:00:03.0",
+      "resources": [
+        {
+          "PciBar": {
+            "base": 4294967296,
+            "index": 0,
+            "prefetchable": false,
+            "size": 524288,
+            "type_": "Mmio64"
+          }
+        }
+      ]
+    },
+    "_vsock1": {
+      "children": [],
+      "id": "_vsock1",
+      "parent": "_virtio-pci-_vsock1",
+      "resources": []
+    }
+  },
+  "evidence_sanitization": {
+    "credential_bytes_retained_in_evidence": false,
+    "raw_file_sha256": "31810736ab1226cb7c19179d7cf205ef3477f6d641444a6f60809b28d6bc5118",
+    "raw_oem_credential_strings_removed": 2,
+    "sanitized_at": "2026-08-01T23:47:37.902018+00:00"
+  },
+  "memory_actual_size": 1073741824,
+  "state": "Running"
+}

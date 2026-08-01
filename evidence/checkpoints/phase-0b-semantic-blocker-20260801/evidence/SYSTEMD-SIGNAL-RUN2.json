@@ -1,0 +1,31 @@
+{
+  "acceptance_status": 0,
+  "captured_at": "2026-08-01T23:32:55.688786+00:00",
+  "cleanup_load_state": "not-found",
+  "manager_properties": {
+    "ActiveState": "active",
+    "CollectMode": "inactive",
+    "ExecMainCode": "2",
+    "ExecMainPID": "2783",
+    "ExecMainStatus": "15",
+    "Id": "z-phase0b-signal-final-r2.service",
+    "LoadState": "loaded",
+    "RemainAfterExit": "yes",
+    "Result": "success",
+    "RuntimeMaxUSec": "infinity",
+    "SubState": "exited"
+  },
+  "outcome": "terminated-by-signal-15",
+  "outcome_basis": [
+    "ExecMainCode=2",
+    "ExecMainStatus=15"
+  ],
+  "result_field_semantics": "Result=success under RemainAfterExit; process code/status preserve the signal outcome",
+  "retrieved_before_cleanup": true,
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "stderr_hex": "5a30422d53544445525200fe0a",
+  "stdout_hex": "5a30422d5354444f555400ff0a",
+  "unit": "z-phase0b-signal-final-r2.service"
+}

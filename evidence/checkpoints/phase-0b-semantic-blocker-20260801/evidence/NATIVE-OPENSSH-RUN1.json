@@ -1,0 +1,23 @@
+{
+  "binary_stdout_stderr_distinct": true,
+  "captured_at": "2026-08-01T22:39:21.578963+00:00",
+  "connector_count_while_session_active": 0,
+  "connector_exited_while_session_alive": true,
+  "connector_in_data_path": false,
+  "ctrl_c_status": 130,
+  "disconnect_preserves_guest": true,
+  "exit_zero": true,
+  "false_exit": 1,
+  "forwarding_listener_scope": "127.0.0.1 only",
+  "loopback_forward_reply_hex": "5a30422d4657443a666f72776172642d62696e61727900ff",
+  "proxy_use_fdpass": true,
+  "pty_initial_size": "24x80",
+  "pty_resize": "40x100",
+  "reconnection": true,
+  "relay_in_native_path": false,
+  "schema_version": "1.0.0",
+  "selected_nonzero_exit": 37,
+  "sftp_sha256": "c6a6905a88e45fba101ce223273a34ab71b2262723f6277e1eda12ac7d2246de",
+  "sftp_size_bytes": 8388608,
+  "status": "pass"
+}

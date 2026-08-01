@@ -1,0 +1,55 @@
+{
+  "acceptance_status": 0,
+  "cancel_outcome": "terminated-by-signal-15",
+  "cancelled_properties": {
+    "ActiveState": "active",
+    "CollectMode": "inactive",
+    "ExecMainCode": "2",
+    "ExecMainPID": "3034",
+    "ExecMainStatus": "15",
+    "Id": "z-phase0b-detached-final-r2.service",
+    "LoadState": "loaded",
+    "RemainAfterExit": "yes",
+    "Result": "success",
+    "RuntimeMaxUSec": "infinity",
+    "SubState": "exited"
+  },
+  "captured_at": "2026-08-01T23:33:59.527397+00:00",
+  "cleanup_load_state": "not-found",
+  "creator_process_absent": true,
+  "lost_query_decision": "unknown",
+  "lost_query_status": 1,
+  "outcome_basis": [
+    "ExecMainCode=2",
+    "ExecMainStatus=15"
+  ],
+  "outputs_retrieved_before_cancel": true,
+  "pre_cancel_properties": {
+    "ActiveState": "active",
+    "CollectMode": "inactive",
+    "ExecMainCode": "0",
+    "ExecMainPID": "3034",
+    "ExecMainStatus": "0",
+    "Id": "z-phase0b-detached-final-r2.service",
+    "LoadState": "loaded",
+    "RemainAfterExit": "yes",
+    "Result": "success",
+    "RuntimeMaxUSec": "infinity",
+    "SubState": "running"
+  },
+  "recovered_properties": {
+    "ActiveState": "active",
+    "ExecMainCode": "0",
+    "ExecMainPID": "3034",
+    "ExecMainStatus": "0",
+    "Id": "z-phase0b-detached-final-r2.service",
+    "LoadState": "loaded",
+    "RemainAfterExit": "yes",
+    "Result": "success",
+    "SubState": "running"
+  },
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "unit": "z-phase0b-detached-final-r2.service"
+}

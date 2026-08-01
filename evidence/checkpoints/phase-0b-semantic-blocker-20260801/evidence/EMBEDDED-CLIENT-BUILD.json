@@ -1,0 +1,15 @@
+{
+  "binary": "/var/lib/z-implementation/phase-0b-v1/build/embedded-client/z-phase0b-libssh2-client",
+  "build_flags": "-std=c11 -O2 -Wall -Wextra -Werror -Wno-error=misleading-indentation -static",
+  "builder_mutation": false,
+  "captured_at": "2026-08-01T22:54:02.562172+00:00",
+  "compiler": "Debian gcc-14 14.2.0-19 locked builder",
+  "fully_static": true,
+  "host_package_install": false,
+  "implementation": "libssh2 1.11.1-1+deb13u1 static harness",
+  "literal_lengths": "sizeof(literal)-1",
+  "schema_version": "1.0.0",
+  "sha256": "cb4fb2a0984f23f7d27518ab518633e8424941c81094bada54a35c1c3880763d",
+  "size": 7810256,
+  "status": "pass"
+}

@@ -1,0 +1,134 @@
+{
+  "files": [
+    {
+      "file": "VM-REBOOT-NEGATIVE-RUN1.json",
+      "sha256": "cafc2d35b8526af843440a01df965bcc734ca699be9793ddeb0ebf549e8725b2",
+      "size": 865
+    },
+    {
+      "file": "RUN1-DESTROY.json",
+      "sha256": "bbe319cb282f13983415949d5d123be8546f2f6782266b0fdba532dba2ae5a96",
+      "size": 18820
+    },
+    {
+      "file": "RUN2-LAUNCH.json",
+      "sha256": "f335fee022ccc8c143afabc23d24011b7e4737c82893c6af41d2bd0fb4d22bac",
+      "size": 893
+    },
+    {
+      "file": "RUN2-READINESS.json",
+      "sha256": "ab58c57e74f2ac8ddab76cc5380a380cead431296c9c6adfab7f94f3aa42a03d",
+      "size": 982
+    },
+    {
+      "file": "RUN2-TRANSPORT-REPLAY.json",
+      "sha256": "0adb98249938e6b93990dc4228fa6730b7519d0758677cc2c88c480c98bee572",
+      "size": 766
+    },
+    {
+      "file": "RUN2-FULL-TRANSPORT-REPLAY.json",
+      "sha256": "909a3b58a680209c8bf8d5e8a401b530db39044fd6564b1fbf48f602de12a76c",
+      "size": 880
+    },
+    {
+      "file": "SYSTEMD-EXACT-PRIMARY-RUN2.json",
+      "sha256": "0d8564e26a353bd46a29fa5a90c2addceee2bffdbc2bf77bfcb678f249f2a116",
+      "size": 1262
+    },
+    {
+      "file": "SYSTEMD-ZERO-RUN2.json",
+      "sha256": "626e61be3d920e90db8b928dd4c59606a76d7c7f85f505a2d0c8f7953adb7115",
+      "size": 852
+    },
+    {
+      "file": "SYSTEMD-SIGNAL-RUN2.json",
+      "sha256": "05f16af849fd24efb5afab0975fea424d945965941b0f5aa288d76b0e67f8a44",
+      "size": 959
+    },
+    {
+      "file": "SYSTEMD-TIMEOUT-RUN2.json",
+      "sha256": "976bf7d6ccbc510397d2705315d54b6d33247a25bee4b2fe33b9911302a49392",
+      "size": 876
+    },
+    {
+      "file": "SYSTEMD-DETACHED-CANCEL-RUN2.json",
+      "sha256": "d12d93099959af3b76ab310f002f2e67cb08d0096fd92adf7387a122636a0254",
+      "size": 1528
+    },
+    {
+      "file": "SYSTEMD-NEGATIVE-MATRIX-RUN2.json",
+      "sha256": "f394471654ce77b251a48dac9c4697dac9b5d0d6ac70479d4741cd2b00d015db",
+      "size": 1418
+    },
+    {
+      "file": "RUN2-FINAL-LIVE-SANITY.json",
+      "sha256": "849a6e12fd56002ca8c12ad7543ff7fa148849e05a1cd7725abf1ab7e14ca6bc",
+      "size": 860
+    },
+    {
+      "file": "RUN2-PRE-DESTROY-MANIFEST.json",
+      "sha256": "d85ff5cf9f45a19f477561be7037b3dc25f05cbc65bc4fe80084d2c2455f5d7d",
+      "size": 11298
+    },
+    {
+      "file": "RUN2-DESTROY.json",
+      "sha256": "dab9c654bcf48c36e0c895fa63549970f1541f39a91796967111c49149666247",
+      "size": 779
+    },
+    {
+      "file": "FINAL-CLEANUP.json",
+      "sha256": "e02573316350b2d68ecdfcb3593bc32cd3b23ae8251668debff58acdf3fae0eb",
+      "size": 3733
+    },
+    {
+      "file": "RUN2-FINAL-VM-INFO.json",
+      "sha256": "934aecdd21553843f05a935e308068542c9ff9817461b817ffcb38d17d07e991",
+      "size": 4513
+    },
+    {
+      "file": "C-FIXTURE-BUILD.json",
+      "sha256": "a4101799c3d219359219c2a64161789f0319c9afd9d292fd2a028b5b3d7b0335",
+      "size": 1070
+    },
+    {
+      "file": "EMBEDDED-CLIENT-BUILD.json",
+      "sha256": "e6ed3a8dcfa089f77cfac51d129105c6f0f867e1ca5879f6c796dacb13fd9687",
+      "size": 648
+    },
+    {
+      "file": "COMPATIBILITY-RELAY-RUN1.json",
+      "sha256": "d099fc00018551dfc2098c32271db4874e23639542353e8104dd34c8a0e53c0f",
+      "size": 2075
+    },
+    {
+      "file": "HOST-KEY-LOOKUP-RUN1.json",
+      "sha256": "df243b7ce5d9bbdf7cbf980ed2013e48e3cddea2dea8e1491be7d45ddd5d556e",
+      "size": 539
+    },
+    {
+      "file": "NATIVE-OPENSSH-RUN1.json",
+      "sha256": "5092bb360f64a3a1a8df75830b7cab8440652b4b28466673c4b1141165b0c7d2",
+      "size": 797
+    },
+    {
+      "file": "VSOCK-SSHD-RUN1.json",
+      "sha256": "c8ffec1eb4b91bd29acc7a5ba3a348f6e25253bf96889286cada8c984a9ac971",
+      "size": 1482
+    },
+    {
+      "file": "PHASE-0B-RESULT.json",
+      "sha256": "f1f9d2ccbb82cc6d4a7308fab2a755cdffa0566d68596079b9cb2920ba8bbd1e",
+      "size": 4186
+    },
+    {
+      "file": "PHASE-0B-RESULT.md",
+      "sha256": "6d64127bf054c64d2b56dfeddd9c37c9b51fe7119ec4344ba9b943d2ce9a7a37",
+      "size": 1278
+    }
+  ],
+  "phase": "0B",
+  "schema_version": "1.0.0",
+  "secret_payloads_included": false,
+  "status": "pass",
+  "verdict": "not-certified"
+}

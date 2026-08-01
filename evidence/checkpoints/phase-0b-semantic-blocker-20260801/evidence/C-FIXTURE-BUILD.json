@@ -1,0 +1,31 @@
+{
+  "build_flags": "-std=c11 -O2 -Wall -Wextra -Werror -fPIE -pie -Wl,-z,relro,-z,now",
+  "builder_bind_mount_removed": true,
+  "builder_root_mutation": false,
+  "captured_at": "2026-08-01T22:38:24.480443+00:00",
+  "classification": "test_only_guest_fixtures",
+  "compiler": "Debian gcc-14 14.2.0-19 from locked builder root",
+  "compiler_package_lock": "gcc-14=14.2.0-19",
+  "items": {
+    "argv_probe.c": {
+      "sha256": "e376b152ddb859aba2968c570901b23155087088182437a3e75fa1387db7ea17",
+      "size": 5594
+    },
+    "loopback_server.c": {
+      "sha256": "85addf037e215662fde33b625bcd46903609b3399aaac53d6c2171e5c429efba",
+      "size": 1733
+    },
+    "z-phase0b-argv-probe": {
+      "sha256": "683c00a1904f03ee560278345255b15a51865ee93f9a5c1fd00d1932ca49ae5b",
+      "size": 21328
+    },
+    "z-phase0b-loopback-server": {
+      "sha256": "fde9a6b99f6b6d7b8f5340715f2f13f3cc7315cb770f44668b9b7e632c0e460e",
+      "size": 16504
+    }
+  },
+  "libc_dev_package_lock": "libc6-dev=2.41-12+deb13u3",
+  "phase": "0B",
+  "schema_version": "1.0.0",
+  "status": "pass"
+}

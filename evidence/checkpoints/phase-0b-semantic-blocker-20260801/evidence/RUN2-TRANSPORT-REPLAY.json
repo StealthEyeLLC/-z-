@@ -1,0 +1,21 @@
+{
+  "captured_at": "2026-08-01T23:20:40.470302+00:00",
+  "cid": 5002,
+  "embedded_client": "libssh2 static harness",
+  "embedded_exact_host_key": true,
+  "embedded_exit_status": 23,
+  "embedded_owner_authentication": true,
+  "embedded_stderr_hex": "454d4245444445442d45525200fe0a",
+  "embedded_stdout_hex": "454d4245444445442d4f555400ff0a",
+  "helper_count_after_tests": 0,
+  "native_connector_count_during_session": 0,
+  "native_exit_status": 29,
+  "native_fdpass_connector_exited_while_session_alive": true,
+  "native_relay_count_during_session": 0,
+  "native_stderr_hex": "523245525200fe0a",
+  "native_stdout_hex": "52324f555400ff0a",
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "uuid": "e7abc59b-8f0a-4c46-a412-0c5f18370a5c"
+}

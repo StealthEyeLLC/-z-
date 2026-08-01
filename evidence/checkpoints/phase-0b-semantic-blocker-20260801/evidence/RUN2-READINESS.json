@@ -1,0 +1,23 @@
+{
+  "accept_per_connection": true,
+  "captured_at": "2026-08-01T23:19:57.886902+00:00",
+  "cid": 5002,
+  "credential_round_trip": true,
+  "generator_disabled": false,
+  "guest_boot_id": "f9206c24-a899-496c-b6d6-de7b512ae63a",
+  "guest_command_line": "BOOT_IMAGE=/boot/vmlinuz-6.12.96+deb13-amd64 root=LABEL=ZROOT ro console=ttyS0,115200n8 console=tty0 systemd.show_status=yes",
+  "guest_kvm_absent": true,
+  "guest_machine_id": "eac8ac13b27ac6738362193e6a6e6c09",
+  "guest_uuid": "e7abc59b-8f0a-4c46-a412-0c5f18370a5c",
+  "host_credential_sha256": "025b0acd4ae92d7abc5d1c17ed6fd3df4a0d0278eb14e36160377f8d292b1f1e",
+  "host_kvm_present": true,
+  "owner_credential_sha256": "1f91e31453d3e766c360ed93018182c6a769644e340f95ae9f9be8a310777ee5",
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "socket_active": true,
+  "socket_enabled": true,
+  "status": "pass",
+  "strict_ssh_attempt": 1,
+  "uuid": "e7abc59b-8f0a-4c46-a412-0c5f18370a5c",
+  "zero_non_loopback_links": true
+}

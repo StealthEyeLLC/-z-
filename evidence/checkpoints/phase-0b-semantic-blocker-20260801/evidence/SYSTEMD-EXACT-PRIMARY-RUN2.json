@@ -1,0 +1,32 @@
+{
+  "actual_sha256": "8147c1bc63725d42bdee7d28e335baed419a918f3554b278c922cda9d8e455fc",
+  "binary_stdin_bytes": 262144,
+  "boundary_argument_bytes": 8204,
+  "captured_at": "2026-08-01T23:21:47.430102+00:00",
+  "cleanup_load_state": "not-found",
+  "dynamic_fields_validated": [
+    "pid",
+    "INVOCATION_ID"
+  ],
+  "exact_argv_count": 13,
+  "exec_main_code": 1,
+  "exec_main_status": 31,
+  "expand_environment": false,
+  "expected_sha256": "fd7e5bd0742e7a963e82a99e11471d10c86f38722e35a2e11bb2f3da8dfc6278",
+  "manager_result": "exit-code",
+  "outputs_retrieved_before_cleanup": true,
+  "properties_retrieved_before_cleanup": true,
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "semantic_match": true,
+  "shell_interpretation": false,
+  "status": "pass",
+  "stderr_hex": "5a30422d53544445525200fe0a",
+  "stdin_sha256": "b2005fdc80dc9b6a04e24a24f3c06d8a6a47db79e3608be56da3ffe3ad41764c",
+  "stdout_hex": "5a30422d5354444f555400ff0a",
+  "stream_paths_verified_from_transient_unit": true,
+  "systemd_run_status": 31,
+  "transient_unit_sha256": "2f03c2ee567df3faea32c578a2c16cbb6948acb4630eb45682de9150fcc06640",
+  "transport": "systemd-run -H via private PATH ssh shim and strict generated SSH configuration",
+  "unit": "z-phase0b-exact-r2.service"
+}

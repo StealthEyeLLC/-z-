@@ -1,0 +1,19 @@
+{
+  "captured_at": "2026-08-01T22:40:07.394829+00:00",
+  "changed_key": "refused",
+  "correct_key": "pass",
+  "corrupt_output": "refused",
+  "guest_not_consulted_for_trust": true,
+  "helper_nonzero": "refused",
+  "host_key_bound_to_uuid": true,
+  "hostile_owner_state": "ignored",
+  "hostname_reason": true,
+  "missing_key": "refused",
+  "order_reason": true,
+  "read_only_lookup": true,
+  "repeated_lookup_stable": true,
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "strict_host_key_checking": true,
+  "trust_on_first_use": false
+}

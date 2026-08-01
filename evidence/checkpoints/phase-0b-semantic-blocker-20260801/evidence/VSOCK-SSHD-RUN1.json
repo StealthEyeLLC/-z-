@@ -1,0 +1,22 @@
+{
+  "accept": true,
+  "captured_at": "2026-08-01T22:40:07.394829+00:00",
+  "concurrent_connections": 10,
+  "credential_instance_hash_stable": "33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4\n33964ae39b7f51a56dfb93b116f27d29fc933d57a2eaa7ce15c2b6a248f3e6c4",
+  "generator_disabled": true,
+  "hostile_owner_state_ignored": true,
+  "listen": "vsock::2222 (Stream)",
+  "network_none": true,
+  "openssh_package": "openssh-server=1:10.0p1-7+deb13u4",
+  "repeated_failed_authentication_recovered": true,
+  "root_public_key_login": true,
+  "schema_version": "1.0.0",
+  "sftp": true,
+  "socket_active": true,
+  "sshd_version": "OpenSSH_10.0p2 Debian-7+deb13u4, OpenSSL 3.5.6 7 Apr 2026",
+  "status": "pass",
+  "stock_sshd_path": "/usr/sbin/sshd",
+  "systemd_package": "systemd=257.13-1~deb13u1",
+  "unrelated_unprivileged_read_refused": true,
+  "wrong_owner_key_refused": true
+}

@@ -1,0 +1,369 @@
+{
+  "captured_at": "2026-08-01T23:42:00.729125+00:00",
+  "cid": 5002,
+  "disk_path": "/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-run2-replay.raw",
+  "disk_sha256": "64ce7970c2e91aa778070304ca8c2542e3254d86162aac8b178e20ba5bed1879",
+  "lab_files": [
+    {
+      "path": "cleanup-failure.err",
+      "sha256": "dc1d770f159959ba3a4caa8f52afa8bc72e533d7fd2503524c7336764706795a",
+      "size": 81
+    },
+    {
+      "path": "cleanup-failure.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "detached-final.cancel.poll",
+      "sha256": "ad43f1614ea952d67388d3e5230a19fc6cc375d2e2127240a3ec262e97692b4d",
+      "size": 100
+    },
+    {
+      "path": "detached-final.cancelled.properties",
+      "sha256": "ed97e318087f0a6da125c21b1f84330b0304da470ef22713e9f1a8fba16603f4",
+      "size": 221
+    },
+    {
+      "path": "detached-final.lost.err",
+      "sha256": "6f34342dfe8da129685a05e9fd020219ff8b3c1ed39c34706a94439d7b8ba9f2",
+      "size": 62
+    },
+    {
+      "path": "detached-final.lost.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "detached-final.poll",
+      "sha256": "d82fcb06b9e9fbf4f90fafe401aaf46bab6c237817dfa0c0e1ee09ba3208db7c",
+      "size": 70
+    },
+    {
+      "path": "detached-final.pre.properties",
+      "sha256": "afa461c7a1f0969f224af13db87ba8fef9ee84b627576cd5b470fa9b91fc954a",
+      "size": 221
+    },
+    {
+      "path": "detached-final.recovered.properties",
+      "sha256": "fc3e7d2c0c932928f28cf632c35d4e708ba81abca7be73f168512bf2e7d0fbf5",
+      "size": 176
+    },
+    {
+      "path": "final-guest-sanity.txt",
+      "sha256": "365bfd5647dfd486f51e2917267fe01389c6aa8d7cbaf026fdae88c812080252",
+      "size": 378
+    },
+    {
+      "path": "final-vm-info.json",
+      "sha256": "31810736ab1226cb7c19179d7cf205ef3477f6d641444a6f60809b28d6bc5118",
+      "size": 3190
+    },
+    {
+      "path": "guest-readiness.txt",
+      "sha256": "93744325bc7b1c4e39fcc90ef366f470dc8edc96d422ae6394da3db2f0b5a00d",
+      "size": 724
+    },
+    {
+      "path": "host-key-blob.bin",
+      "sha256": "ed18e57b28c415a773c4be55e992ac8c1eaec261c3f29a7373102762a35e0a46",
+      "size": 51
+    },
+    {
+      "path": "inventory.json",
+      "sha256": "59d88e5c5088c558f13d789c767dab2b47d424fc5b1ccfef8787606b5a9663cf",
+      "size": 1554
+    },
+    {
+      "path": "knownhosts-hostname.out",
+      "sha256": "afdf5e0c735c401a604ddcfc5db045af5a1fb22c4113c8ebc9b0b55ff2d68162",
+      "size": 94
+    },
+    {
+      "path": "knownhosts-order.out",
+      "sha256": "afdf5e0c735c401a604ddcfc5db045af5a1fb22c4113c8ebc9b0b55ff2d68162",
+      "size": 94
+    },
+    {
+      "path": "libssh2-exec.stderr",
+      "sha256": "a1157d478c9791edbe358764966f1697201d33f0d82652bbe94f2b64e81d606e",
+      "size": 15
+    },
+    {
+      "path": "libssh2-exec.stdout",
+      "sha256": "1cc8868dcdba0772c80593f5a77c046bf45eb61b3e7f3d29beec08911a895a3e",
+      "size": 15
+    },
+    {
+      "path": "libssh2-relay.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "missing-final.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "missing-final.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "missing-final.properties",
+      "sha256": "08eac7ae81648a52c1ec23e5ca4dea98279b2fab915eccd3ff2f06299b98a450",
+      "size": 103
+    },
+    {
+      "path": "native-r2.stderr",
+      "sha256": "122b2fb1f8cc72de8e67ccc460fa039848432356c3d18ff6038e9faa3e3585b6",
+      "size": 8
+    },
+    {
+      "path": "native-r2.stdout",
+      "sha256": "299fc44bc150c64ff1c5bc8a5cff4daa27d524ee56c58d00527397fb3db395ba",
+      "size": 8
+    },
+    {
+      "path": "native-survival.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "native-survival.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "readiness.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "readiness.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "retain-experiment.log",
+      "sha256": "cff11f3447547aeff9c2bccdeb20e2a97737f2a5524b0bd434dd899115c47da3",
+      "size": 281
+    },
+    {
+      "path": "retrieval-final.create.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "retrieval-final.create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "retrieval-final.get.err",
+      "sha256": "d7590aabbc524fe5ad22961ad19955af68c6239d81c40037e0d8bb780ee2721d",
+      "size": 64
+    },
+    {
+      "path": "retrieval-final.get.out",
+      "sha256": "bf84efa0b56c31afe800dfed828e20a87bb63d9e04c2f503f07a7cda00e16d44",
+      "size": 138
+    },
+    {
+      "path": "retrieval-final.properties",
+      "sha256": "559c330b6581c59dda63ff1da2f3b4d885e6cf7ba5d82c4b6f7a0fb04f8b290b",
+      "size": 99
+    },
+    {
+      "path": "signal-final.properties",
+      "sha256": "e56340631b6cd9a7c6957e6ec68ccfe880db74a75db035d6cc5a0525ac77e2c0",
+      "size": 219
+    },
+    {
+      "path": "signal.create.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "signal.create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "signal2.actual.json",
+      "sha256": "e300228132dd9008b4af69b69b37245920b74584f79be196ae727e940191d343",
+      "size": 443
+    },
+    {
+      "path": "signal2.create.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "signal2.create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "signal2.properties",
+      "sha256": "45d57c20bdb1e23b8ccb665e56778b00cafba5ee9c2ea443963432dbb0b3ef13",
+      "size": 194
+    },
+    {
+      "path": "signal2.stderr.bin",
+      "sha256": "93b0db82316b7f2fedd65e303eb955ad6199694f90a2a8dd9dd0c1a56157c9b6",
+      "size": 13
+    },
+    {
+      "path": "signal2.stdout.bin",
+      "sha256": "4746441b620f921881c313e23cf6a009869e69013984ce0ec440585528b449c8",
+      "size": 13
+    },
+    {
+      "path": "ssh-effective.txt",
+      "sha256": "56af6bfd091294296f42243659e8f1641c0327e9163b9e7dda58983f3259df0e",
+      "size": 4451
+    },
+    {
+      "path": "ssh_config",
+      "sha256": "91f3de15c6904c2dcd8ada70fc963b7bb8f0014c7a044e08f2bf7510b8f12487",
+      "size": 1005
+    },
+    {
+      "path": "systemd-exact.create-rc",
+      "sha256": "32c2643e0dc65524c9f1f6f9f00937322fd68d59986bc381d9ff2285d23e353d",
+      "size": 3
+    },
+    {
+      "path": "systemd-exact.create.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "systemd-exact.create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "systemd-exact.properties",
+      "sha256": "f51ca3e01099c19b9793d4aaaf05525f9bf67864871de21c3ce5b43e0be95883",
+      "size": 301
+    },
+    {
+      "path": "systemd-exact.transient-unit",
+      "sha256": "2f03c2ee567df3faea32c578a2c16cbb6948acb4630eb45682de9150fcc06640",
+      "size": 17278
+    },
+    {
+      "path": "systemd-ssh-shim/ssh",
+      "sha256": "7c3c00ba01139f838de76c2feeb9a3971689a8c5ce422669f3088a7d0661359e",
+      "size": 97
+    },
+    {
+      "path": "systemd-ssh-wrapper",
+      "sha256": "1886ad3fa4d68580eed869a58b8247799361f0148178b77474d33d0e36e2921a",
+      "size": 104
+    },
+    {
+      "path": "timeout-final.poll",
+      "sha256": "53abca473d06c9a3e6455eec26d8e5a30e69c13489d7e4fbcae1f28dfa387fa5",
+      "size": 100
+    },
+    {
+      "path": "timeout-final.properties",
+      "sha256": "695a907cc6fa2b30648ef8be90d4510edebe8aecf37d1f1096829e4e4347047c",
+      "size": 214
+    },
+    {
+      "path": "unavailable-final.err",
+      "sha256": "49aec7ec9653e91690af56ccf766bf64600956d4b9b2ae444022d3bb6084825b",
+      "size": 76
+    },
+    {
+      "path": "unavailable-final.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "vanish-final.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "vanish-final.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "vm-boot.http",
+      "sha256": "d7e8500765bd1614fd80b297021a89a0311296f37726c145efaa641bb8de9f7e",
+      "size": 4
+    },
+    {
+      "path": "vm-boot.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "vm-create.http",
+      "sha256": "d7e8500765bd1614fd80b297021a89a0311296f37726c145efaa641bb8de9f7e",
+      "size": 4
+    },
+    {
+      "path": "vm-create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "vm-info.json",
+      "sha256": "a47f11f2aa5af7b702af6ee31b78e5a92b9b06262c47235e5fe681c20d052a4a",
+      "size": 3196
+    },
+    {
+      "path": "vmm-ping.json",
+      "sha256": "8b92174d040f96331ccc4e3bbd449329022306aa99b7551f8d9cc2de0af21807",
+      "size": 94
+    },
+    {
+      "path": "z-phase0b-retain-signal-r2.service.create.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "z-phase0b-retain-signal-r2.service.create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "z-phase0b-retain-timeout-r2.service.create.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "z-phase0b-retain-timeout-r2.service.create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "zero.create.err",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "zero.create.out",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "zero.properties",
+      "sha256": "dcfc7e7b7627de015c01479c6bd8e0630ec1e9eacf21f4c758ffc0ef6d24b2e4",
+      "size": 196
+    }
+  ],
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "uuid": "e7abc59b-8f0a-4c46-a412-0c5f18370a5c",
+  "vmm_pid": 58500,
+  "vmm_start_time": 1570523
+}

@@ -1,0 +1,90 @@
+{
+  "captured_at": "2026-08-01T23:45:03.914266+00:00",
+  "cloud_hypervisor_processes": 0,
+  "generic_image_path": "/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-generic.raw",
+  "generic_image_preserved": true,
+  "generic_image_sha256": "6ad28bd69f8bcbe8d32281f8e7f66cb11702b80057b75325d84b80bfa06423a3",
+  "generic_image_size": 8589934592,
+  "identity_entries_remaining": 0,
+  "implementation_mounts": 0,
+  "loop_devices": 0,
+  "pre_delete_items": [
+    {
+      "classification": "stale rejected-run disposable disk",
+      "mode": "0600",
+      "path": "/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-run-1.raw",
+      "sha256": "73419daa59b7fc7d35f8010fe9075a52582126362213166878a90d5314026762",
+      "size": 8589934592,
+      "type": "file"
+    },
+    {
+      "classification": "stale rejected-run private identity or launch material; bytes not retained",
+      "mode": "0600",
+      "path": "/var/lib/z-implementation/phase-0b-v1/lab/identity/run1/authorized_keys",
+      "sha256": "eb349a078e9efed21d05bef62e0edf755044a4acd5040b69f50769fcac449a9d",
+      "size": 103,
+      "type": "file"
+    },
+    {
+      "classification": "stale rejected-run private identity or launch material; bytes not retained",
+      "mode": "0600",
+      "path": "/var/lib/z-implementation/phase-0b-v1/lab/identity/run1/host_key",
+      "sha256": "76b1ab8e8e22fac2e9cbbabc5b44e3c16341bc392224c5940964279fd9036cf1",
+      "size": 411,
+      "type": "file"
+    },
+    {
+      "classification": "stale rejected-run private identity or launch material; bytes not retained",
+      "mode": "0644",
+      "path": "/var/lib/z-implementation/phase-0b-v1/lab/identity/run1/host_key.pub",
+      "sha256": "a4b1d98d923beda1c5339ae9aabb595168069bd3148c8672f49ffdead0e203c4",
+      "size": 101,
+      "type": "file"
+    },
+    {
+      "classification": "stale rejected-run private identity or launch material; bytes not retained",
+      "mode": "0600",
+      "path": "/var/lib/z-implementation/phase-0b-v1/lab/identity/run1/owner_key",
+      "sha256": "d70bbbe2c5620ed0e2b644507c544452a84f4af7e91e73f0e4d2ddff672eb7c5",
+      "size": 411,
+      "type": "file"
+    },
+    {
+      "classification": "stale rejected-run private identity or launch material; bytes not retained",
+      "mode": "0644",
+      "path": "/var/lib/z-implementation/phase-0b-v1/lab/identity/run1/owner_key.pub",
+      "sha256": "40da362052da047e146de9871676d575b3293b3bc243c5fef3d68869b8d1c39b",
+      "size": 102,
+      "type": "file"
+    },
+    {
+      "classification": "stale rejected-run private identity or launch material; bytes not retained",
+      "mode": "0600",
+      "path": "/var/lib/z-implementation/phase-0b-v1/lab/identity/run1/uuid",
+      "sha256": "8f8ee4cdbae8ee9fbe1af325a9968218ed50030a0ceb311f9aaebc5cbf17748a",
+      "size": 37,
+      "type": "file"
+    },
+    {
+      "classification": "stale rejected-run private identity or launch material; bytes not retained",
+      "mode": "0600",
+      "path": "/var/lib/z-implementation/phase-0b-v1/lab/identity/run1/vm-create.json",
+      "sha256": "49ae69a02b1d89e9045310d5936a90ddbed3fc2630dc39d24f4b3503524df500",
+      "size": 1353,
+      "type": "file"
+    }
+  ],
+  "pre_delete_runtime_paths": [
+    "/run/z-implementation/phase-0b-v1/api",
+    "/run/z-implementation/phase-0b-v1/serial",
+    "/run/z-implementation/phase-0b-v1/vsock"
+  ],
+  "reason": "remove stale artifacts from the rejected UUID-mismatch run after all VMMs, units, loop devices, mounts, and open descriptors were verified absent",
+  "run_disks_remaining": 0,
+  "runtime_root_absent": true,
+  "schema_version": "1.0.0",
+  "secret_bytes_retained": false,
+  "stale_disk_absent": true,
+  "stale_identity_absent": true,
+  "status": "pass"
+}

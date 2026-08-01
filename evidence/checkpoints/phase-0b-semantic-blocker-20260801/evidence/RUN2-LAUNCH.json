@@ -1,0 +1,23 @@
+{
+  "api_boot_http": 204,
+  "api_create_http": 204,
+  "captured_at": "2026-08-01T23:16:16.900350+00:00",
+  "credential_api_body_removed": true,
+  "credential_api_body_sha256": "cdfa59660a0c55c0f84413355b09a0fb123a28f41da4ffceed34da1c1e352811",
+  "credentials_absent_from_vmm_argv": true,
+  "fresh_cid": 5002,
+  "fresh_host_key": true,
+  "fresh_owner_key": true,
+  "fresh_uuid": "e7abc59b-8f0a-4c46-a412-0c5f18370a5c",
+  "generic_disk_sha256": "6ad28bd69f8bcbe8d32281f8e7f66cb11702b80057b75325d84b80bfa06423a3",
+  "nested": false,
+  "network_devices": 0,
+  "run_disk_sha256_at_launch": "922b1b6e9f18ed6ec3f43b47a9e8342ef3edb3454741a6670117d5f3d29107d7",
+  "run_id": "run-2-replay",
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "uuid_bound_in_api": true,
+  "vmm_pid": 58500,
+  "vmm_sha256": "448af3d4e59b22c2987f7df94c213ad40fb53a10d437e42b5ee6c4fce7c29ecc",
+  "vmm_start_time": 1570523
+}

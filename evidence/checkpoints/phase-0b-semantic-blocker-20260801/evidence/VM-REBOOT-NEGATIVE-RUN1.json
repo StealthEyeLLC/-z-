@@ -1,0 +1,20 @@
+{
+  "captured_at": "2026-08-01T23:13:06.340001+00:00",
+  "cid": 5001,
+  "decision": "failure",
+  "kernel_command_line_observed": "B",
+  "mux_connections_closed_without_banner": true,
+  "recovery_policy": "destroy disposable run and replay from generic image; do not fabricate reboot success",
+  "run_disk_sha256_before_destroy": "e6ca39b4f1cd04fb93a1a354482646c3491c8785a789f02e6d234121abf4f945",
+  "run_id": "run-1-positive",
+  "runtime_binding_revalidated": true,
+  "schema_version": "1.0.0",
+  "serial_sha256": "2d17131d8fe9af4d8e96864917b0a754aa65259740db06d99d9b53f0f25673b4",
+  "ssh_listener_absent_for_seconds": 76.016,
+  "stale_vsock_inode_refused": true,
+  "status": "pass",
+  "trigger": "Cloud Hypervisor vm.reboot after a prior guest reboot transition",
+  "uuid": "f3204325-1a20-4d8a-944f-08dd9e0d0915",
+  "vmm_pid": 49851,
+  "vmm_start_time": 1297074
+}

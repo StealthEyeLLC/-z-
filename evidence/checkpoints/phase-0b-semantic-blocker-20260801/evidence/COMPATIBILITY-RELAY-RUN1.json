@@ -1,0 +1,59 @@
+{
+  "captured_at": "2026-08-01T22:54:33.296759+00:00",
+  "client": {
+    "binary": "/var/lib/z-implementation/phase-0b-v1/build/embedded-client/z-phase0b-libssh2-client",
+    "build_flags": "-std=c11 -O2 -Wall -Wextra -Werror -Wno-error=misleading-indentation -static",
+    "builder_mutation": false,
+    "captured_at": "2026-08-01T22:54:02.562172+00:00",
+    "compiler": "Debian gcc-14 14.2.0-19 locked builder",
+    "fully_static": true,
+    "host_package_install": false,
+    "implementation": "libssh2 1.11.1-1+deb13u1 static harness",
+    "literal_lengths": "sizeof(literal)-1",
+    "schema_version": "1.0.0",
+    "sha256": "cb4fb2a0984f23f7d27518ab518633e8424941c81094bada54a35c1c3880763d",
+    "size": 7810256,
+    "status": "pass"
+  },
+  "ctrl_c_status": 130,
+  "direct_tcpip_reply_hex": "5a30422d4657443a6c6962737368322d00ff",
+  "exec_exit_status": 23,
+  "exec_stderr_hex": "454d4245444445442d45525200fe0a",
+  "exec_stdout_hex": "454d4245444445442d4f555400ff0a",
+  "host_key": "exact Ed25519 blob matched before authentication",
+  "native_path_reverified": true,
+  "owner_authentication": true,
+  "pty_initial_size": "24x80",
+  "pty_resize": "40x100",
+  "relay_count_after_tests": 0,
+  "relay_lifetime": {
+    "active_during_connection": true,
+    "argv": [
+      "/usr/bin/python3",
+      "/var/lib/z-implementation/phase-0b-v1/build/test-tools/phase0b-src/relay.py",
+      "/var/lib/z-implementation/phase-0b-v1/lab/run-1-positive/inventory.json",
+      "z-phase0b-r1",
+      "2222"
+    ],
+    "exit_status": 0,
+    "exited_after_connection_close": true,
+    "relay_pid": 52113
+  },
+  "relay_validation": [
+    "inventory ownership and mode",
+    "VMM PID/executable/cgroup",
+    "API and vsock socket inode identity",
+    "UUID",
+    "CID",
+    "nested=false",
+    "zero NICs",
+    "disk path",
+    "alias",
+    "port"
+  ],
+  "schema_version": "1.0.0",
+  "sftp_sha256": "296a3b8b7cfe3f5115dae26a1d506a7f7103207ac95d77b56ada57f47d315efd",
+  "sftp_size_bytes": 2097152,
+  "status": "pass",
+  "transport": "connection-scoped stdio compatibility relay to AF_VSOCK"
+}
