@@ -1,9 +1,8 @@
 # Assets
 
-This directory will contain manifests and provenance for pinned Cloud Hypervisor, firmware, base-image, kernel, and helper assets. Large binaries should not be committed casually.
+This directory contains machine-readable authority and provenance for selected dependencies. Large binaries are not committed to Git.
 
-Every certified asset requires an immutable source identity, digest, retrieval or build provenance, license information, and exact compatibility-tuple binding. A mismatched asset must fail closed.
+- `dependencies.lock.json` is the exact candidate dependency lock.
+- `phase-0a-materialization.json` binds that lock to the verified host-side Debian closure, isolated builder root, Rust toolchain, Cloud Hypervisor, firmware, filesystem behavior, and protected cleanup evidence.
 
-## Dependency lock
-
-`dependencies.lock.json` is the exact machine-readable authority for the initial candidate tuple. It records immutable source identities, package records, asset digests, toolchain identity, required configuration, exclusions, and upgrade rules. It does not contain binary assets and does not claim certification.
+The Phase 0A manifest records candidate materialization, not runtime or release certification. A mismatched asset must fail closed.

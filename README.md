@@ -11,7 +11,7 @@ CLI: **`z`**
 
 ## Current state
 
-This repository contains the complete governing architecture and documentation system. Documentation initialization is complete. Initial candidate dependency tuple `z-debian-13.6-amd64-ch53-v1` is selected and locked, but is not certified. **Implementation has not started and no runtime capability is claimed.** The first valid implementation checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change.
+This repository contains the governing architecture and the first implementation checkpoint. Phase 0A implementation bootstrap and supply-chain materialization are complete for candidate tuple `z-debian-13.6-amd64-ch53-v1` on the designated host. The exact Debian builder closure, isolated Rust toolchain, Cloud Hypervisor, firmware, root authority, and filesystem behavior are bound by [`assets/phase-0a-materialization.json`](assets/phase-0a-materialization.json) and re-verifiable with [`scripts/verify-phase-0a.py`](scripts/verify-phase-0a.py). The candidate is **not** runtime- or release-certified: no VM has been booted, no machine exists, and Phase 0B and Phase 1 have not started.
 
 ## Product contract
 
@@ -66,7 +66,7 @@ See [`FOLDER-TREE.md`](FOLDER-TREE.md). The major areas are:
 - `docs/` — governing law and architecture.
 - `docs/research/` — non-normative research and source ledger.
 - `docs/reference/` — glossary, compatibility policy, and search map.
-- `evidence/` — future immutable checkpoint evidence.
-- `assets/` — future pinned asset manifests and provenance.
-- `src/`, `tests/`, `scripts/` — implementation areas, currently intentionally empty except for boundary documentation.
+- `evidence/` — Phase 0A checkpoint result and machine-readable certification.
+- `assets/` — exact dependency lock and Phase 0A materialization binding.
+- `src/`, `tests/` — later implementation areas; `scripts/` contains the read-only Phase 0A verifier.
 - `.github/` — agent instructions and change templates.

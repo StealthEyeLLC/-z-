@@ -1,0 +1,40 @@
+{
+  "candidate_tuple": "z-debian-13.6-amd64-ch53-v1",
+  "gates": {
+    "builder_closure_212": "pass",
+    "capacity": "pass",
+    "cleanup": "pass",
+    "cloud_hypervisor_v53": "pass",
+    "corrected_preflight": "pass",
+    "debian_signed_snapshot": "pass",
+    "filesystem_semantics": "pass",
+    "final_host_state": "pass",
+    "firewall_policy_structure": "pass",
+    "firmware": "pass",
+    "isolated_builder_root": "pass",
+    "retained_reclamation_checksum_chain": "pass",
+    "retained_reclamation_evidence": "pass",
+    "rust_1_97_1_offline_probe": "pass"
+  },
+  "host_final_certification_sha256": "686c69f126fde46f8901622eda1638c4b9d2ce42b447d44b481a97e8ff88cd7e",
+  "host_runtime_note": "Fail2Ban dynamic ban-set membership changed independently; exact firewall policy structure remained unchanged.",
+  "limitations": [
+    "No VM was booted.",
+    "No machine was created.",
+    "No runtime or release capability is certified.",
+    "Phase 0B and Phase 1 were not entered.",
+    "passt remains deferred to the connected-profile implementation."
+  ],
+  "materialization_manifest_sha256": "5e48843be0bfd14a01cc72660e6e8ee49a7ac7c7ca19ea528a34dc829c5810c0",
+  "phase": "0A",
+  "release_claim": false,
+  "result": "pass",
+  "runtime_capability_claim": false,
+  "schema_version": "1.0.0",
+  "source": {
+    "branch": "build/z-v1",
+    "commit": "a9be2fac599bb6112f610bb58e8f6916972d372a",
+    "origin": "https://github.com/StealthEyeLLC/-z-.git",
+    "tree": "5d5f6b9c8423e309b4e55186ac97628e8fa0c7a8"
+  }
+}

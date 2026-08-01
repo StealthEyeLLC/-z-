@@ -23,11 +23,13 @@ This file classifies documents. It cannot change their content or precedence.
 | `docs/reference/DEPENDENCIES.md` | Reference authority | Selected candidate; not certified | Official dependency roles, exclusions, selection rationale, and lock interpretation. |
 | `docs/reference/IMPLEMENTATION-HOST.md` | Operational reference | Point-in-time; not certification evidence | Sanitized OVH VPS settings, storage ownership, readiness, and remediation boundaries. |
 | `assets/dependencies.lock.json` | Machine-readable lock | Selected candidate; not certified | Exact tuple, archive metadata, packages, versions, sources, digests, and configuration bindings. |
+| `assets/phase-0a-materialization.json` | Machine-readable host binding | Phase 0A complete | Exact roots, host-side inputs, evidence digests, protected cleanup evidence, deferred scope, and explicit absence of runtime/release claims. |
+| `scripts/verify-phase-0a.py` | Verification helper | Phase 0A current | Read-only re-verification of the designated host materialization. |
 | `docs/reference/*` | Reference | Current | Terms, support policy, and search map. |
 | `docs/research/FINAL-DELTA-RESEARCH-2026-07-31.md` | Research | Current dated audit | Final targeted upstream delta, corrections, and freeze recommendation; not independently normative. |
 | `docs/research/OPERATIONAL-COMPLETENESS-STRATEGY-2026-07-31.md` | Research | Current dated strategy | Non-normative operational failure, update, backup, support, and device-upgrade strategy. |
 | `docs/research/*` | Research | Historical/current rationale | Source-backed reasoning; not normative. |
-| `evidence/*` | Evidence | Empty at initialization | Future checkpoint and release proof. |
+| `evidence/phase-0a/*` | Evidence | Phase 0A current | Materialization gate result and concise handoff; not runtime or release certification. |
 | `.github/*` | Workflow | Current | Review and agent guidance. |
 
 ## Implementation status vocabulary

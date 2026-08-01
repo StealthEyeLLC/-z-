@@ -1,5 +1,5 @@
 # Scripts
 
-No scripts are present at documentation initialization.
+`verify-phase-0a.py` is a read-only verifier for the designated Phase 0A implementation host. It checks repository ancestry, root authority, the signed Debian closure and package cache, the isolated builder root, Rust, runtime assets, filesystem evidence, protected reclamation evidence, protected services, and the maintenance capacity floor.
 
-Future scripts must remain thin, inspectable helpers for deterministic build, validation, packaging, or evidence capture. Scripts cannot become a hidden controller, policy authority, or substitute for the Z executable.
+It is an inspectable verification helper, not a controller, daemon, scheduler, installer, or product API.

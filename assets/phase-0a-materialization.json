@@ -1,0 +1,229 @@
+{
+  "candidate_tuple": "z-debian-13.6-amd64-ch53-v1",
+  "capacity": {
+    "maintenance_floor_bytes": 32212254720,
+    "whole_phase_gate": "pass"
+  },
+  "debian": {
+    "architecture": "amd64",
+    "builder_root": {
+      "logical_bytes": 613266501,
+      "package_count": 212,
+      "path": "/var/lib/z-implementation/build/debian-builder-root",
+      "tree_sha256": "8f29b6a75b325102c318fd81a5df685ce4b57a9cdeb05022ba779d27eb424219"
+    },
+    "builder_root_verification": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-debian/builder-root-verification.json",
+      "sha256": "ea15ee6cfbeb5775c8aa2eaeade3bd6a35cb7ccee80b8e610f4fbb510f77d9e6"
+    },
+    "closure_manifest": {
+      "path": "/var/cache/z-implementation/debian/20260731T120000Z/closure-manifest.json",
+      "sha256": "9114305716235fc1184fd3fef0f741f91fa7432dbe04d53416023c467c9298bf"
+    },
+    "distribution": "Debian",
+    "live_mirror_used": false,
+    "maintainer_scripts_executed": false,
+    "metadata_verification": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-debian/metadata-verification.json",
+      "sha256": "28182b73d4ec5d063087cc335457c8a2c7da7ab175e6bfaf1f4c4ea25f2a177d"
+    },
+    "mmdebstrap_version": "mmdebstrap 1.5.7",
+    "package_bytes": 154077372,
+    "package_cache": "/var/cache/z-implementation/debian/20260731T120000Z/packages",
+    "package_count": 212,
+    "package_download_verification": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-debian/package-download-verification.json",
+      "sha256": "36b2b2293798febfec7828f50611887520fb6f9d3651a648716b488cc09f97bf"
+    },
+    "qemu_img_version": "qemu-img version 10.0.11 (Debian 1:10.0.11+ds-0+deb13u1)",
+    "release": "13.6",
+    "snapshot_timestamp": "20260731T120000Z"
+  },
+  "deferred": {
+    "machine_creation": true,
+    "passt_connected_profile": true,
+    "phase_0b": true,
+    "phase_1": true,
+    "vm_boot": true
+  },
+  "empty_roots": [
+    "/var/lib/z-implementation/machines",
+    "/var/lib/z-implementation/staging",
+    "/run/z-implementation"
+  ],
+  "filesystem": {
+    "interrupted_copy_cleanup": "pass",
+    "reflink_supported": false,
+    "sparse_fallback": "pass",
+    "verification_evidence": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-filesystem/filesystem-behavior.json",
+      "sha256": "2222377ed06e0957ea6cd27f70f769a73970bf52a43e899f0fec740ea3a7d674"
+    }
+  },
+  "final_host_certification": {
+    "path": "/var/lib/z-implementation/evidence/phase-0a-final/host-final.json",
+    "sha256": "686c69f126fde46f8901622eda1638c4b9d2ce42b447d44b481a97e8ff88cd7e"
+  },
+  "firewall_policy_result": "pass",
+  "firewall_runtime_note": "Fail2Ban dynamic ban-set membership changed during elapsed wall time; policy structure remained identical to retained post-reclamation evidence.",
+  "host_baseline": {
+    "path": "/var/lib/z-implementation/evidence/phase-0a-baseline/host-before.txt",
+    "sha256": "5322b6a12c92af67475e16685daf6eaa41904e04774fcba9c9da13c48798dd00"
+  },
+  "host_evidence": {
+    "builder_root": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-debian/builder-root-verification.json",
+      "sha256": "ea15ee6cfbeb5775c8aa2eaeade3bd6a35cb7ccee80b8e610f4fbb510f77d9e6"
+    },
+    "closure_resolution": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-debian/closure-resolution.json",
+      "sha256": "9114305716235fc1184fd3fef0f741f91fa7432dbe04d53416023c467c9298bf"
+    },
+    "debian_metadata": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-debian/metadata-verification.json",
+      "sha256": "28182b73d4ec5d063087cc335457c8a2c7da7ab175e6bfaf1f4c4ea25f2a177d"
+    },
+    "filesystem_behavior": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-filesystem/filesystem-behavior.json",
+      "sha256": "2222377ed06e0957ea6cd27f70f769a73970bf52a43e899f0fec740ea3a7d674"
+    },
+    "final_host_certification": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-final/host-final.json",
+      "sha256": "686c69f126fde46f8901622eda1638c4b9d2ce42b447d44b481a97e8ff88cd7e"
+    },
+    "package_download": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-debian/package-download-verification.json",
+      "sha256": "36b2b2293798febfec7828f50611887520fb6f9d3651a648716b488cc09f97bf"
+    },
+    "runtime_assets": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-runtime-assets/runtime-assets-verification.json",
+      "sha256": "6843a9cee231de814301b8d7adfa06b5e9433b72187022e0059069236743412b"
+    },
+    "rust_manifest_selection": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-rust/manifest-selection.json",
+      "sha256": "73a8d132210bac632afe59cfd2dbce19b41b0fab942c268de7ded384a2837670"
+    },
+    "rust_toolchain": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-rust/toolchain-verification.json",
+      "sha256": "a61f6c26b3e8859028d5400657a33cbe00a6b5faddfa27d58683edec622407ed"
+    }
+  },
+  "host_state_result": "pass",
+  "mission": "Z Build Mission 1",
+  "phase": "0A",
+  "protected_reclamation_evidence": {
+    "certification_marker": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/final-current/CERTIFICATION-PASSED",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "completion_checksums": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/COMPLETION-SHA256SUMS",
+      "sha256": "7dcf8277b206c991743293694a91a0ff52071f85428e58acf0836628431282a7"
+    },
+    "completion_result": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/COMPLETION-RESULT.txt",
+      "sha256": "9b73cdff7926fb6f43e910a5b6caad6cdbd6b1c7c88a3614c7039c9929a604e4"
+    },
+    "deletion_manifest": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/wave4/final-delete-manifest.txt",
+      "sha256": "ee418da088940506e8c615053a03583dd7c7cf07866737a8e63ee10d12036b5f"
+    },
+    "deletion_sizes": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/wave4/final-delete-sizes.tsv",
+      "sha256": "7b909a2260ae454d60caf2dd99dd214762d4390e88eec27092b9eead6d9b11d0"
+    },
+    "final_certification": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/final-current/FINAL-RESULT.txt",
+      "sha256": "488925174147cbb12f601bbf85f1be519cf63f57ffe57463f32c5bfb90184e9d"
+    },
+    "final_certification_sha256": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/final-current/FINAL-RESULT.sha256",
+      "sha256": "2a9643b952f3c2b32fa3c9662b2450e41be0832e5ea678b627aa29a4a0d4c8ce"
+    },
+    "final_checksums": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/FINAL-SHA256SUMS",
+      "sha256": "0829a4d1fc6916dd82b4fc76269676b589ff534f42c0b87788a66a763214bc26"
+    },
+    "final_current_checksums": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/FINAL-CURRENT-SHA256SUMS",
+      "sha256": "bb49c7b97e909ce330aeeea295a334648171331229b4b53df297b4ca1cfa34cf"
+    },
+    "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731",
+    "tree_sha256": "f0307afa2422f6c442cdc406266af374442a6658b62dfc881af16f919112df5a",
+    "wave5_checksums": {
+      "path": "/var/lib/baby-quirt/preservations/minimal-baby-z-reclaim-20260731/WAVE5-SHA256SUMS",
+      "sha256": "7a34a0c65cd0d5fe50ee157a364491d63f02dfe755bf701c5a53cc837ec0a694"
+    }
+  },
+  "protected_units": [
+    "baby-quirt.service",
+    "baby-quirt.socket",
+    "baby-quirt-mcp.service",
+    "caddy.service",
+    "ssh.socket"
+  ],
+  "release_claim": false,
+  "root_authority": {
+    "cleanup_manifest": {
+      "path": "/var/lib/z-implementation/CLEANUP-AUTHORITY.json",
+      "sha256": "0d716adfaff2fd8f4c9b171bcac84d3db0a9748805e6112661a3b2fbf52b5fc1"
+    },
+    "roots_manifest": {
+      "path": "/var/lib/z-implementation/ROOTS.json",
+      "sha256": "12402f2d8df187662b55c828dadaa437618f5c3037b8bd3ccacb874013da8853"
+    }
+  },
+  "runtime_assets": {
+    "cloud_hypervisor": {
+      "commit_sha": "9ed824d6d08df3e96f7d5f50795d9449ac99f431",
+      "mode": "0555",
+      "path": "/var/lib/z-implementation/assets/cloud-hypervisor-v53.0",
+      "sha256": "448af3d4e59b22c2987f7df94c213ad40fb53a10d437e42b5ee6c4fce7c29ecc",
+      "size": 7062256,
+      "version": "v53.0"
+    },
+    "firmware": {
+      "commit_sha": "1e1b96f1264a9c9532cbeb053c8c05885a7d2c78",
+      "mode": "0444",
+      "path": "/var/lib/z-implementation/assets/CLOUDHV.fd",
+      "release_tag": "ch-1e1b96f126",
+      "sha256": "9fb511fc0dd423d90a79615a90a8ace9b9e078b4a115ea2c459e0ac2f4e60218",
+      "size": 4194304
+    },
+    "verification_evidence": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-runtime-assets/runtime-assets-verification.json",
+      "sha256": "6843a9cee231de814301b8d7adfa06b5e9433b72187022e0059069236743412b"
+    },
+    "vm_launched": false
+  },
+  "runtime_capability_claim": false,
+  "rust": {
+    "channel_manifest": {
+      "path": "/var/cache/z-implementation/rust/1.97.1/channel-rust-1.97.1.toml",
+      "sha256": "03569b1886ceb5c05276b50c8431ab111de944cd6140fe1fa7d821dd8e0f29cf"
+    },
+    "component_cache": "/var/cache/z-implementation/rust/1.97.1/components",
+    "edition": "2024",
+    "floating_rustup_script_used": false,
+    "host_target": "x86_64-unknown-linux-gnu",
+    "offline_edition_2024_probe": "pass",
+    "profile": "minimal",
+    "toolchain_root": {
+      "logical_bytes": 652644102,
+      "path": "/var/lib/z-implementation/toolchains/rust-1.97.1-x86_64-unknown-linux-gnu",
+      "tree_sha256": "6777d44ecb4ced564126cd1af025c0d5170dd5d87ab30ac41bc6f774c6e13360"
+    },
+    "verification_evidence": {
+      "path": "/var/lib/z-implementation/evidence/phase-0a-rust/toolchain-verification.json",
+      "sha256": "a61f6c26b3e8859028d5400657a33cbe00a6b5faddfa27d58683edec622407ed"
+    },
+    "version": "1.97.1"
+  },
+  "schema_version": "1.0.0",
+  "source": {
+    "branch": "build/z-v1",
+    "commit": "a9be2fac599bb6112f610bb58e8f6916972d372a",
+    "origin": "https://github.com/StealthEyeLLC/-z-.git",
+    "tree": "5d5f6b9c8423e309b4e55186ac97628e8fa0c7a8"
+  }
+}

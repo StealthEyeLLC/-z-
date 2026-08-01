@@ -43,9 +43,16 @@
 │       └── CHANGES-FROM-ORIGINAL.md
 ├── assets/
 │   ├── README.md
-│   └── dependencies.lock.json
-├── evidence/README.md
-├── scripts/README.md
+│   ├── dependencies.lock.json
+│   └── phase-0a-materialization.json
+├── evidence/
+│   ├── README.md
+│   └── phase-0a/
+│       ├── CERTIFICATION.json
+│       └── RESULT.md
+├── scripts/
+│   ├── README.md
+│   └── verify-phase-0a.py
 ├── src/README.md
 └── tests/README.md
 ```
