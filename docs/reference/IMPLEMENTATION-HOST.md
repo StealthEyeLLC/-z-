@@ -18,6 +18,18 @@ This host profile does not certify Z. Release claims remain bound to the exact h
 
 Baby and GitHub applications may implement and publish Z, but they are implementation infrastructure only. They are not Z components, release dependencies, guest contents, runtime authority, update authority, or offline-operation dependencies.
 
+## 1.1 Authorized same-VPS kernel transition
+
+Decision date: `2026-08-01`.
+
+The authorized clean-room path retains this VPS, Ubuntu 24.04, Baby, GitHub authority support, Caddy, SSH, and unrelated host state. It does not purchase a second server, reimage the VPS, replace the operating system, or migrate Baby.
+
+Before Phase 0A, an exact Ubuntu/Noble-compatible kernel containing the applicable CVE-2026-53359 KVM fix will be installed side-by-side with the observed `6.8.0-136-generic` kernel. The observed kernel remains installed as the rollback entry. Provider recovery access, boot selection, source and patch provenance, configuration, packages, modules, initramfs, and rollback procedure must verify before reboot.
+
+After the controlled reboot, the host profile must be recaptured and must prove the exact running kernel, loaded KVM modules, KVM API 12, all required Z host primitives, Baby/Caddy/SSH health, zero failed units, and the applicable KVM security-fix state. The resulting host state is a new candidate host tuple and must receive a new tuple identity and machine-readable lock. It does not inherit the Debian reference-host tuple identity `z-debian-13.6-amd64-ch53-v1`.
+
+The observations below remain the authority for the current boot until that transition completes.
+
 ## 2. Authority verdict
 
 **No additional authority or permission is required to begin implementation.**
@@ -148,21 +160,25 @@ Z implementation must:
 
 ## 9. Readiness decision
 
-The host is ready for:
+On the current `6.8.0-136-generic` boot, the host is ready only for bounded repository work, dependency verification, and preparation of the authorized kernel transition. Clean-room Phase 0A, Phase 0B, large image mutation, and full planned Z implementation remain gated on the same-VPS kernel transition.
+
+After the candidate kernel is installed, booted, verified, locked as a new host tuple, and this profile is recaptured, the host may proceed with:
 
 - source implementation;
 - dependency and supply-chain verification;
 - bounded materialization after capacity preflight;
-- unit, integration, and negative tests scoped honestly to this host;
-- nested-KVM development and smoke evidence explicitly labelled as nested.
+- unit, integration, and negative tests scoped honestly to the new host tuple;
+- full Phase 0A and Phase 0B execution;
+- later Z phases only after their own gates pass.
 
-The host is not yet ready for the first large image mutation until:
+The host is not ready for the first large image mutation until:
 
-1. the exact operation-specific capacity gate passes with bounded failure headroom;
-2. the locked Rust, Cloud Hypervisor, firmware, `mmdebstrap`, and required builder closure are materialized and verified;
-3. dedicated Z roots and machine-scoped mutation/staging rules are installed.
+1. the same-VPS host-kernel gate in [`../BUILD.md`](../BUILD.md) passes;
+2. the exact operation-specific capacity gate passes with bounded failure headroom;
+3. the locked Rust, Cloud Hypervisor, firmware, `mmdebstrap`, and required builder closure are materialized and verified;
+4. dedicated Z roots and machine-scoped mutation/staging rules are installed.
 
-This host is not automatically a release-certification host. Release certification must independently prove every Gate A host prerequisite and label nested evidence truthfully.
+A successful kernel transition removes the current host-kernel blocker but does not make certification automatic. Release certification must independently prove every Gate A prerequisite against the exact new host tuple.
 
 ## 10. Refresh rule
 

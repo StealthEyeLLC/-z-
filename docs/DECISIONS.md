@@ -107,3 +107,11 @@ Support collection is a foreground, read-only, redacted local bundle. It uploads
 ## D026 — Implementation-host profile does not confer certification
 
 The current OVH VPS is a shared implementation host. Its observed settings are recorded in `docs/reference/IMPLEMENTATION-HOST.md`. Successful work on that host is scoped to its exact profile and does not certify the selected Debian reference-host tuple or bare-metal properties.
+
+## D027 — Same-VPS clean-room host transition
+
+The clean-room restart uses the existing OVH VPS. It does not purchase a second server or reimage the current VPS. Ubuntu 24.04, Baby, GitHub authority support, Caddy, SSH, and unrelated retained host state remain in place.
+
+Before Phase 0A, an exact Ubuntu/Noble-compatible kernel containing the applicable CVE-2026-53359 KVM fix is installed side-by-side with `6.8.0-136-generic`. The current kernel remains an intact rollback entry. Provider recovery access, boot selection, package/source/patch/configuration provenance, module set, initramfs, and rollback procedure are verified before reboot. After reboot, certification proves the exact running kernel, loaded KVM modules, KVM API 12, required Z host primitives, zero failed units, and the applicable security-fix state.
+
+That kernel and host state form a new candidate host tuple. The tuple receives a new identity and exact machine-readable lock before release certification; it does not inherit the Debian-host identity `z-debian-13.6-amd64-ch53-v1`. Unchanged guest, VMM, firmware, Rust, and package pins may carry forward only after digest and compatibility verification. Once the host gate passes, Z may proceed at full planned authority on `build/z-v1-cleanroom`. The historical `build/z-v1` branch remains frozen evidence.

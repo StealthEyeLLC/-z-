@@ -21,6 +21,26 @@ As of `2026-07-31T20:07:01Z`:
 
 Missing ambient binaries are materialization work, not authority blockers. Implementation MUST use the locked candidate tuple and MUST NOT silently inherit global host versions.
 
+## Same-VPS host-kernel gate
+
+Decision date: `2026-08-01`.
+
+The clean-room build remains on the existing OVH VPS. No second server purchase, VPS reimage, operating-system replacement, Baby migration, or control-plane relocation is authorized. Ubuntu 24.04 and the current `6.8.0-136-generic` kernel remain intact while the replacement kernel is prepared.
+
+Complete this hit list before Phase 0A:
+
+1. Reconfirm provider console or rescue access and record the exact current boot entry, running kernel, loaded KVM modules, initramfs, GRUB state, and Baby/Caddy/SSH health.
+2. Select an exact Ubuntu/Noble-compatible kernel source and package identity containing the applicable CVE-2026-53359 fix. Record source identity, patch identity, configuration, build inputs, package files, sizes, and SHA-256 digests.
+3. Verify the candidate kernel preserves every required Z host primitive, including KVM API 12, `/dev/kvm`, `/dev/vhost-vsock`, AF_VSOCK, `/dev/net/tun`, Unix descriptor passing, transient systemd units, loop devices, mount namespaces, seccomp, Landlock, and OpenSSH descriptor passing.
+4. Install the candidate kernel side-by-side. Do not remove or overwrite `6.8.0-136-generic`; retain it as the tested rollback entry.
+5. Verify initramfs generation, module availability, bootloader selection, fallback selection, and the exact rollback procedure before reboot.
+6. Perform one controlled reboot into the candidate kernel. Prove the exact running kernel and loaded KVM modules, the applicable KVM security-fix state, KVM API 12, all required host primitives, Baby/Caddy/SSH health, and zero failed systemd units.
+7. Recapture [`reference/IMPLEMENTATION-HOST.md`](reference/IMPLEMENTATION-HOST.md), create a new candidate host-tuple identity, and update the normative dependency record and machine-readable lock with the exact kernel and host facts. Do not reuse the Debian-host tuple identity.
+8. Reconfirm `build/z-v1-cleanroom` as the authoritative clean branch, preserve `build/z-v1` unchanged, and begin Phase 0A from a clean workspace and fresh implementation roots.
+9. Rerun the complete Phase 0B semantic and negative gates against the new running host before claiming the host-security blocker is closed.
+
+Passing this gate authorizes full planned Z implementation on the same VPS. It does not waive any later build, security, compatibility, or release-certification gate.
+
 ## Dependency gate
 
 Before source implementation or asset construction:

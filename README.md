@@ -11,7 +11,11 @@ CLI: **`z`**
 
 ## Current state
 
-This repository contains the complete governing architecture and documentation system. Documentation initialization is complete. Initial candidate dependency tuple `z-debian-13.6-amd64-ch53-v1` is selected and locked, but is not certified. **Implementation has not started and no runtime capability is claimed.** The first valid implementation checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change.
+This repository contains the complete governing architecture and documentation system. Documentation initialization is complete. The initial Debian-host candidate tuple `z-debian-13.6-amd64-ch53-v1` remains preserved as an unmodified reference candidate and is not certified. The authoritative clean-room restart branch is `build/z-v1-cleanroom`.
+
+The clean-room sequence keeps the existing OVH VPS and Ubuntu 24.04 host. Before Phase 0A, the host must receive an exact Ubuntu-compatible kernel containing the applicable CVE-2026-53359 KVM fix, installed side-by-side with `6.8.0-136-generic`, with the current kernel retained as rollback. The host must then reboot, prove the exact running kernel and KVM fix state, recapture the implementation-host profile, and lock the resulting host tuple. No second server purchase or VPS reimage is part of this plan.
+
+**Implementation has not started and no runtime capability is claimed.** The first valid implementation checkpoint is defined by [`docs/BUILD.md`](docs/BUILD.md): boot a real machine, open unrestricted root, persist a filesystem change, reboot, reconnect through authenticated SSH, and preserve the change.
 
 ## Product contract
 

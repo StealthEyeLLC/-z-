@@ -29,6 +29,12 @@ The first candidate is deliberately one cohesive x86-64 stack:
 | Networking | Debian `passt` `0.0~git20250503.587980c-2+deb13u1` | Exact package and exact security-sensitive invocation; Network None remains the no-general-IP profile. |
 | Z implementation toolchain | Rust `1.97.1`, edition 2024, `x86_64-unknown-linux-gnu` | Current stable compiler manifest, strong systems support, direct Unix descriptor/socket access, and the least speculative path to one auditable binary. |
 
+### 2.1 Same-VPS clean-room host tuple
+
+The table above remains the preserved initial Debian reference candidate. The authoritative clean-room implementation will retain the existing Ubuntu 24.04 OVH VPS and install an exact Ubuntu/Noble-compatible kernel containing the applicable CVE-2026-53359 fix side-by-side with the current kernel. That actual host is not permitted to claim the Debian-host tuple identity.
+
+Before Phase 0A, the selected Ubuntu kernel source, patch, configuration, package files, digests, running identity, module identity, KVM fix state, and host prerequisites must be recorded under a new candidate tuple identifier in this document and `assets/dependencies.lock.json`. Unchanged guest, Cloud Hypervisor, firmware, Rust, and package selections may be carried into the new tuple only after their exact digests and compatibility bindings are reverified.
+
 A newer upstream component is not automatically better for this tuple. Coherence, stable security support, package layout, immutable provenance, and end-to-end certification outweigh mixing the newest release of every independent project.
 
 ## 3. Dependency classes
