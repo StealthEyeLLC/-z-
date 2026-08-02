@@ -39,7 +39,7 @@ No client is described as supported merely because it implements an SSH protocol
 
 ## 5. Initial state
 
-No tuple is certified. The exact initial candidate `z-debian-13.6-amd64-ch53-v1` is selected and locked, but remains an implementation target until complete evidence exists.
+No release tuple is certified. The exact initial candidate `z-debian-13.6-amd64-ch53-v1` is selected and locked. Phase 0B certifies only the named disposable semantic-lab behavior for that candidate and implementation-host binding; it does not confer product or release support.
 
 ## 5.1 Verified implementation-host observation
 
@@ -53,7 +53,7 @@ A component upgrade creates a new candidate tuple. It must not inherit certifica
 
 ## 7. Current candidate observations
 
-As of 2026-07-31, no tuple is certified. The locked initial candidate uses Debian 13.6 for the reference host and guest, Cloud Hypervisor v53.0, Cloud Hypervisor EDK2 `CLOUDHV.fd`, Debian systemd 257.13, Debian OpenSSH 10.0p1 security packages, and Rust 1.97.1.
+As of 2026-08-02, no release tuple is certified. The Phase 0B disposable semantic-lab checkpoint is certified, without certification inheritance to a product or release. The locked initial candidate uses Debian 13.6 for the reference host and guest, Cloud Hypervisor v53.0, Cloud Hypervisor EDK2 `CLOUDHV.fd`, Debian systemd 257.13, Debian OpenSSH 10.0p1 security packages, and Rust 1.97.1.
 
 - OpenSSH 10.4/10.4p1 is the current upstream release observed by this audit. Its Linux sandbox, packaging, forwarding, rekey, SFTP, and SCP fixes make the exact patched host/client and guest/server packages part of the tuple.
 - Cloud Hypervisor v53.0 is the current upstream release observed by this audit. It is a new candidate, not an inherited certification from v52.0.

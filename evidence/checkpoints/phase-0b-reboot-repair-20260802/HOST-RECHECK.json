@@ -1,0 +1,22 @@
+{
+  "af_vsock_available": false,
+  "boot_id": "b6e10e21-9737-4ded-ad1e-a437eea41ace",
+  "captured_at": "2026-08-02T06:59:31.020149+00:00",
+  "cloud_hypervisor_sha256": "448af3d4e59b22c2987f7df94c213ad40fb53a10d437e42b5ee6c4fce7c29ecc",
+  "dpkg_audit_line_count": 0,
+  "failed_units": "",
+  "failure_reserve_bytes": 21474836480,
+  "firmware_sha256": "9fb511fc0dd423d90a79615a90a8ace9b9e078b4a115ea2c459e0ac2f4e60218",
+  "free_bytes": 87163826176,
+  "free_inodes": 12529061,
+  "generic_image_sha256": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697",
+  "host_evidence_manifest_sha256": "649753288b69c1d12df0928ba72c07d642adfe36ac4182fd4036564e58be83bf",
+  "host_evidence_path": "/var/lib/z-implementation/phase-0b-v1/evidence/reboot-repair-20260802",
+  "implementation_host_tuple": "z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1",
+  "kernel": "6.8.0-9001-generic",
+  "kvm_available": true,
+  "reboot_required": true,
+  "schema_version": 1,
+  "status": "pass",
+  "system_state": "running"
+}

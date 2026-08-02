@@ -1,0 +1,700 @@
+{
+  "canonical_assets_mutated": false,
+  "captured_at": "2026-08-02T06:53:09.452970+00:00",
+  "cases": [
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual canonical file hash comparison",
+      "name": "wrong_generic_image_digest",
+      "observed": {
+        "actual": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697",
+        "expected": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224690"
+      },
+      "reason": "SHA-256 mismatch",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable file hash comparison",
+      "name": "wrong_run_disk_digest",
+      "observed": {
+        "actual": "33225382cfb2115a6fc3514e786830f8439fb35844f188ad998005e31d7bdb0f",
+        "expected": "760eda65418a1b2d98dfc3f3f366e44c744b1dd79b3e63da32f3240296db9fb7"
+      },
+      "reason": "run-disk SHA-256 mismatch",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "run_disk_attached_read_only",
+      "observed": {
+        "readonly": true
+      },
+      "reason": "writable-disk policy requires readonly=false",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable inode comparison",
+      "name": "run_disk_replaced_before_reboot",
+      "observed": {
+        "actual_inode": 3216,
+        "expected_inode": 3215
+      },
+      "reason": "disk inode changed before trigger",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable inode comparison",
+      "name": "run_disk_replaced_after_reboot",
+      "observed": {
+        "actual_inode": 3216,
+        "expected_inode": 3215
+      },
+      "reason": "disk inode changed after transition",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "root_filesystem_uuid_mismatch",
+      "observed": [
+        "root_uuid"
+      ],
+      "reason": "root filesystem UUID continuity failure",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "efi_system_partition_uuid_mismatch",
+      "observed": [
+        "esp_uuid"
+      ],
+      "reason": "ESP UUID continuity failure",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable ESP tree",
+      "name": "missing_primary_efi_loader",
+      "observed": "/run/zp0bn-_qclbl2j/esp/EFI/BOOT/BOOTX64.EFI",
+      "reason": "declared primary loader missing",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable loader hash",
+      "name": "corrupt_primary_efi_loader",
+      "observed": {
+        "actual": "11d510e067d2cdcd7559bd86d27a2f4c20babd43670346b97af99b522c1f0075",
+        "expected": "9a994000be642104035b63820df7344527e74a8146b4f2067fbe3d8678fe93ef"
+      },
+      "reason": "primary loader digest mismatch",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "fallback_loader_selected",
+      "observed": {
+        "approved": "/EFI/BOOT/BOOTX64.EFI",
+        "selected": "/EFI/debian/grubx64.efi"
+      },
+      "reason": "unapproved alternate loader selected; canonical fallback path remains the approved primary",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "wrong_boot_entry",
+      "observed": {
+        "actual": "rescue",
+        "expected": "Z Debian 13.6"
+      },
+      "reason": "selected boot entry differs from declared single entry",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "unexpected_BootNext",
+      "observed": {
+        "BootNext": "0002"
+      },
+      "reason": "BootNext must be absent for this stateless fallback design",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable boot tree",
+      "name": "missing_kernel",
+      "observed": "/run/zp0bn-_qclbl2j/boot/vmlinuz-6.12.96+deb13-amd64",
+      "reason": "declared kernel path missing",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable boot tree",
+      "name": "missing_initramfs",
+      "observed": "/run/zp0bn-_qclbl2j/boot/initrd.img-6.12.96+deb13-amd64",
+      "reason": "declared initramfs path missing",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "wrong_root_cmdline",
+      "observed": "BOOT_IMAGE=/boot/vmlinuz-6.12.96+deb13-amd64 root=LABEL=WRONG ro console=ttyS0,115200n8 console=tty0 systemd.show_status=yes",
+      "reason": "root selector differs from locked command line",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "malformed_cmdline",
+      "observed": "root=",
+      "reason": "command line lacks complete locked tokens",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "one_shot_boot_entry_consumed",
+      "observed": {
+        "next_entry": "rescue",
+        "saved_entry": "one-shot"
+      },
+      "reason": "one-shot state is forbidden; grubenv must remain empty",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "persistent_var_store_absent_when_required",
+      "observed": {
+        "requires_var_store": true,
+        "var_store_present": false
+      },
+      "reason": "declared writable variable store absent",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "var_store_read_only_when_required",
+      "observed": {
+        "requires_var_store": true,
+        "writable": false
+      },
+      "reason": "required variable store not writable",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "SMBIOS_credential_absent_after_reboot",
+      "observed": {
+        "ssh.authorized_keys": null,
+        "ssh.hostkey": null
+      },
+      "reason": "credential set missing after transition",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "host_key_changed_after_reboot",
+      "observed": [
+        "host_key"
+      ],
+      "reason": "host credential digest changed",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "authorized_key_changed_after_reboot",
+      "observed": [
+        "authorized_key"
+      ],
+      "reason": "owner authorization digest changed",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "static_socket_unit_disabled",
+      "observed": {
+        "active": false,
+        "enabled": false
+      },
+      "reason": "AF_VSOCK socket must be enabled and active",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual AF_UNIX bind failure",
+      "name": "static_socket_bind_failure",
+      "observed": "/run/zp0bn-_qclbl2j/bind/mux.sock",
+      "reason": "socket path collision prevents bind",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual AF_UNIX socket stat",
+      "name": "stale_vsock_inode",
+      "observed": {
+        "actual": 3228,
+        "expected": 3229
+      },
+      "reason": "recorded inode no longer matches",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual symlink lstat",
+      "name": "vsock_symlink",
+      "observed": "symlink",
+      "reason": "symlink socket paths are forbidden",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual unlink/rebind race",
+      "name": "vsock_replacement_race",
+      "observed": {
+        "after": 3230,
+        "before": 3228
+      },
+      "reason": "inode changed between validation and handoff",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable socketpair plus generation validator",
+      "name": "stale_connected_descriptor",
+      "observed": {
+        "current_generation": 2,
+        "descriptor_generation": 1
+      },
+      "reason": "connected descriptors are invalid across generation change",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "wrong_VMM_PID",
+      "observed": {
+        "actual": 89680,
+        "expected": 89679
+      },
+      "reason": "runtime binding PID mismatch",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "PID_reuse_simulation",
+      "observed": {
+        "actual_start": 4251053,
+        "expected_start": 4251052,
+        "pid": 89679
+      },
+      "reason": "same PID with different process-start identity",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "wrong_VMM_executable_digest",
+      "observed": {
+        "actual": "0000000000000000000000000000000000000000000000000000000000000000",
+        "expected": "448af3d4e59b22c2987f7df94c213ad40fb53a10d437e42b5ee6c4fce7c29ecc"
+      },
+      "reason": "VMM executable SHA-256 mismatch",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "wrong_API_socket",
+      "observed": {
+        "actual": "/run/wrong/vmm.sock",
+        "expected": "/run/z-implementation/phase-0b-v1/same-machine-run1-cert/api/vmm.sock"
+      },
+      "reason": "API socket path/inode differs from runtime binding",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "wrong_disk_reported_by_API",
+      "observed": {
+        "actual": "/var/lib/z/other.raw",
+        "expected": "/var/lib/z/run.raw"
+      },
+      "reason": "VMM API disk path differs from bound run disk",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "wrong_CID",
+      "observed": [
+        "cid"
+      ],
+      "reason": "guest CID differs from machine binding",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "missing_nested_off",
+      "observed": {
+        "nested": null
+      },
+      "reason": "effective configuration omitted nested=false",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "guest_vmx_or_svm",
+      "observed": {
+        "svm": 0,
+        "vmx": 1
+      },
+      "reason": "nested virtualization feature visible in guest",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "guest_dev_kvm",
+      "observed": {
+        "dev_kvm": true
+      },
+      "reason": "guest /dev/kvm unexpectedly present",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual symlink lstat",
+      "name": "serial_socket_symlink",
+      "observed": "symlink",
+      "reason": "serial socket symlink rejected",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual unlink/rebind",
+      "name": "serial_socket_replacement",
+      "observed": {
+        "after": 3233,
+        "before": 3231
+      },
+      "reason": "serial inode changed across validation",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "serial_output_without_SSH_readiness",
+      "observed": {
+        "authenticated_ssh": false,
+        "serial_bytes": 1024
+      },
+      "reason": "serial output is observational and cannot authorize readiness",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "SSH_listener_absent",
+      "observed": {
+        "banner": null,
+        "listener": false
+      },
+      "reason": "no SSH banner/listener after bounded readiness window",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "wrong_host_key",
+      "observed": {
+        "actual": "changed",
+        "expected": "2a282aef835924d9144c3f6760bf0db58323bc5237af0405ee7adcf67616d1e0"
+      },
+      "reason": "strict known-host key comparison failed",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "unauthorized_owner_key",
+      "observed": {
+        "authorized_digest": "b67c1fa1250d84690aa07516d62895bd210dc96fffd27753d8311cc884b05360",
+        "offered_digest": "changed"
+      },
+      "reason": "public-key authentication rejected unbound owner key",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "reboot_timeout",
+      "observed": {
+        "authenticated": false,
+        "deadline_seconds": 90
+      },
+      "reason": "new boot did not reach authenticated readiness before deadline",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "guest_emergency_mode",
+      "observed": {
+        "system_state": "emergency"
+      },
+      "reason": "system state is emergency, not running",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "root_mounted_read_only",
+      "observed": {
+        "root_options": [
+          "ro",
+          "relatime"
+        ]
+      },
+      "reason": "root mount lacks rw option",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "fsck_failure_simulation",
+      "observed": {
+        "classification": "errors-left-uncorrected",
+        "fsck_exit": 4
+      },
+      "reason": "filesystem verifier returned non-success",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable marker parse",
+      "name": "incomplete_persistent_marker",
+      "observed": [
+        "created=",
+        "pre_reboot_boot_id=",
+        "machine_uuid=",
+        "host_fingerprint="
+      ],
+      "reason": "required marker fields missing",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable file hash",
+      "name": "marker_checksum_mismatch",
+      "observed": {
+        "actual": "e509e628e470d6d6c8e646579b93e712b6249c3201c89e14e576e90a2d6525da",
+        "expected": "fe4acd301bebe33dae9aca4f721864fe26d824f87802398ab92a43c5b35495d0"
+      },
+      "reason": "marker SHA-256 differs from recorded value",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable directory",
+      "name": "cleanup_obstruction",
+      "observed": "/run/zp0bn-_qclbl2j/cleanup-obstruction",
+      "reason": "exact cleanup target is unexpectedly nonempty",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "actual disposable ownership",
+      "name": "unowned_cleanup_target",
+      "observed": {
+        "gid": 65534,
+        "uid": 65534
+      },
+      "reason": "cleanup authority does not own target",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "insufficient_byte_capacity_simulation",
+      "observed": {
+        "free": 30064771071,
+        "required": 8589934592,
+        "reserve": 21474836480
+      },
+      "reason": "free bytes below required plus failure reserve",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "insufficient_inode_capacity_simulation",
+      "observed": {
+        "free": 999,
+        "required": 1000
+      },
+      "reason": "free inodes below required count",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "remote_branch_movement",
+      "observed": {
+        "actual": "1111111111111111111111111111111111111111",
+        "expected": "98cef29d6acbde532bfd1387b8c00d034dcc3962"
+      },
+      "reason": "remote authoritative HEAD differs from locked publication base",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "historical_branch_movement",
+      "observed": {
+        "actual": "2222222222222222222222222222222222222222",
+        "expected": "4e17ead436949b32d245c15df5bcf2418f2f8968"
+      },
+      "reason": "historical branch differs from immutable identity",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "non_fast_forward_push",
+      "observed": {
+        "candidate_parent": "3333333333333333333333333333333333333333",
+        "remote": "98cef29d6acbde532bfd1387b8c00d034dcc3962"
+      },
+      "reason": "candidate parent does not equal current remote HEAD",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "dirty_worktree",
+      "observed": {
+        "porcelain": "?? unexpected"
+      },
+      "reason": "repository has staged/untracked mutation before controlled commit",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "dependency_identity_drift",
+      "observed": {
+        "firmware_actual": "9fb511fc0dd423d90a79615a90a8ace9b9e078b4a115ea2c459e0ac2f4e60218",
+        "firmware_expected": "9fb511fc0dd423d90a79615a90a8ace9b9e078b4a115ea2c459e0ac2f4e60218",
+        "vmm_actual": "4444444444444444444444444444444444444444444444444444444444444444",
+        "vmm_expected": "448af3d4e59b22c2987f7df94c213ad40fb53a10d437e42b5ee6c4fce7c29ecc"
+      },
+      "reason": "locked VMM or firmware digest differs",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "host_tuple_drift",
+      "observed": {
+        "actual": "other-host-tuple",
+        "expected": "z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1"
+      },
+      "reason": "implementation host tuple differs from lock",
+      "status": "pass"
+    },
+    {
+      "decision": "rejected",
+      "expected": "reject",
+      "method": "test-only fail-closed validator",
+      "name": "phase0a_verifier_failure",
+      "observed": {
+        "exit_status": 1
+      },
+      "reason": "Phase 0A read-only verifier nonzero",
+      "status": "pass"
+    }
+  ],
+  "failed": 0,
+  "passed": 60,
+  "schema_version": 1,
+  "status": "pass",
+  "total": 60
+}

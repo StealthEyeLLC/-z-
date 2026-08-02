@@ -1,0 +1,46 @@
+{
+  "after": {
+    "api_inode": 3203,
+    "boot_id": "73e7fdd3-e80b-4ecf-9d2e-87adfbe47f6d",
+    "cid": 5404,
+    "disk_inode": 1334961,
+    "host_fingerprint": "256 SHA256:DSDpJysIILCwsSHgnbusPfu6NoQ1nLScj1XdHupqIk4 z-p0b-same-identity-stop-start-host (ED25519)",
+    "pid": 91057,
+    "serial_inode": 3204,
+    "start": 4286370,
+    "uuid": "7b9ae3eb-00c0-4165-b36a-33e8408c6aa9",
+    "vsock_inode": 3207
+  },
+  "before": {
+    "api_inode": 3193,
+    "boot_id": "1a48357c-383f-4fa4-9eb8-8389a661128f",
+    "cid": 5404,
+    "disk_inode": 1334961,
+    "host_fingerprint": "256 SHA256:DSDpJysIILCwsSHgnbusPfu6NoQ1nLScj1XdHupqIk4 z-p0b-same-identity-stop-start-host (ED25519)",
+    "pid": 90948,
+    "serial_inode": 3194,
+    "start": 4285119,
+    "uuid": "7b9ae3eb-00c0-4165-b36a-33e8408c6aa9",
+    "vsock_inode": 3197
+  },
+  "checks": {
+    "new_api_inode": true,
+    "new_boot_id": true,
+    "new_serial_inode": true,
+    "new_vmm_pid": true,
+    "new_vmm_process_start": true,
+    "new_vsock_inode": true,
+    "persistence_after_restart": true,
+    "same_cid": true,
+    "same_disk_inode": true,
+    "same_host_fingerprint": true,
+    "same_uuid": true,
+    "strict_ssh_after_restart": true
+  },
+  "classification": "clean_vmm_stop_start_same_identity_distinct_from_guest_reboot",
+  "completed_at": "2026-08-02T06:48:34.605171+00:00",
+  "marker_sha256": "8a256c9fac868d9701b9790a290cdb02f3835af9be6f00cca47ab23c85e9c8b0",
+  "run_id": "same-identity-stop-start",
+  "started_at": "2026-08-02T06:47:24.679759+00:00",
+  "status": "pass"
+}

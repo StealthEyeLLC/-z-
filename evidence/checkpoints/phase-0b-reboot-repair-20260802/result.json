@@ -1,0 +1,243 @@
+{
+  "captured_at": "2026-08-02T06:59:31.020149+00:00",
+  "clean_stop_start": {
+    "after": {
+      "api_inode": 3203,
+      "boot_id": "73e7fdd3-e80b-4ecf-9d2e-87adfbe47f6d",
+      "cid": 5404,
+      "disk_inode": 1334961,
+      "host_fingerprint": "256 SHA256:DSDpJysIILCwsSHgnbusPfu6NoQ1nLScj1XdHupqIk4 z-p0b-same-identity-stop-start-host (ED25519)",
+      "pid": 91057,
+      "serial_inode": 3204,
+      "start": 4286370,
+      "uuid": "7b9ae3eb-00c0-4165-b36a-33e8408c6aa9",
+      "vsock_inode": 3207
+    },
+    "before": {
+      "api_inode": 3193,
+      "boot_id": "1a48357c-383f-4fa4-9eb8-8389a661128f",
+      "cid": 5404,
+      "disk_inode": 1334961,
+      "host_fingerprint": "256 SHA256:DSDpJysIILCwsSHgnbusPfu6NoQ1nLScj1XdHupqIk4 z-p0b-same-identity-stop-start-host (ED25519)",
+      "pid": 90948,
+      "serial_inode": 3194,
+      "start": 4285119,
+      "uuid": "7b9ae3eb-00c0-4165-b36a-33e8408c6aa9",
+      "vsock_inode": 3197
+    },
+    "checks": {
+      "new_api_inode": true,
+      "new_boot_id": true,
+      "new_serial_inode": true,
+      "new_vmm_pid": true,
+      "new_vmm_process_start": true,
+      "new_vsock_inode": true,
+      "persistence_after_restart": true,
+      "same_cid": true,
+      "same_disk_inode": true,
+      "same_host_fingerprint": true,
+      "same_uuid": true,
+      "strict_ssh_after_restart": true
+    },
+    "classification": "clean_vmm_stop_start_same_identity_distinct_from_guest_reboot",
+    "completed_at": "2026-08-02T06:48:34.605171+00:00",
+    "marker_sha256": "8a256c9fac868d9701b9790a290cdb02f3835af9be6f00cca47ab23c85e9c8b0",
+    "run_id": "same-identity-stop-start",
+    "started_at": "2026-08-02T06:47:24.679759+00:00",
+    "status": "pass"
+  },
+  "cleanup": {
+    "canonical_generic_image": {
+      "path": "/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-generic.raw",
+      "sha256": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697"
+    },
+    "captured_at": "2026-08-02T06:56:57.838550+00:00",
+    "cloud_hypervisor_process_count": 0,
+    "disposable_run_disk_count": 0,
+    "dpkg_audit_line_count": 0,
+    "failed_units": "",
+    "firewall_mutation": "none_performed",
+    "free_bytes": 87163826176,
+    "free_inodes": 12529061,
+    "global_package_mutation": "none",
+    "global_rust_mutation": "none",
+    "host_apt_mutation": "none",
+    "implementation_loop_device_count": 0,
+    "implementation_mount_count": 0,
+    "kernel_mutation": "none",
+    "persistent_boot_policy_mutation": "none",
+    "pre_repair_backup_retired": true,
+    "private_identity_entry_count": 0,
+    "private_key_file_count": 0,
+    "reboot_required": true,
+    "route_mutation": "none_performed",
+    "runtime_entry_count": 0,
+    "status": "pass",
+    "system_state": "running",
+    "tap_count": 0
+  },
+  "generic_image": {
+    "changed": true,
+    "final_sha256": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697",
+    "original_sha256": "6ad28bd69f8bcbe8d32281f8e7f66cb11702b80057b75325d84b80bfa06423a3"
+  },
+  "historical_branch_commit": "4e17ead436949b32d245c15df5bcf2418f2f8968",
+  "host_evidence_manifest_sha256": "649753288b69c1d12df0928ba72c07d642adfe36ac4182fd4036564e58be83bf",
+  "host_evidence_path": "/var/lib/z-implementation/phase-0b-v1/evidence/reboot-repair-20260802",
+  "negative_tests": {
+    "failed": 0,
+    "passed": 60,
+    "total": 60
+  },
+  "next_permitted_mission": "Phase 1 only after separate authorization",
+  "phase_0a_status": "complete",
+  "phase_0b_status": "certified",
+  "phase_1_started": false,
+  "product_machine_created": false,
+  "regression_status": "pass",
+  "release_certified": false,
+  "remaining_limitations": [
+    "Phase 1 has not started",
+    "no durable product machine exists",
+    "no release is certified",
+    "Cloud Hypervisor vm.reboot is not the supported orderly reboot contract for this credential and persistence design"
+  ],
+  "repair": {
+    "candidate_tuple_changed": false,
+    "changes": [
+      {
+        "change": "replace signal() handlers with sigaction() handlers without SA_RESTART",
+        "new_sha256": "338b69a878852e23b12ccb465d703927587af952a5d3ba8327985a48dbc914c3",
+        "path": "/usr/local/libexec/z-phase0b-loopback-server"
+      },
+      {
+        "change": "add TimeoutStopSec=5s",
+        "new_sha256": "081dde01c4147545f6f5c95413f79d2f54e704de8f4606c4325f475024009184",
+        "path": "/etc/systemd/system/z-phase0b-loopback.service"
+      },
+      {
+        "change": "add SuccessExitStatus=255",
+        "new_sha256": "e39ad91129f5ef3814a3ae44cc5174447e256e0edfe139bf44b0a14107ce2abd",
+        "path": "/etc/systemd/system/z-phase0b-vsock-sshd@.service"
+      },
+      {
+        "change": "remove exact generic-image enablement symlink",
+        "path": "/etc/systemd/system/multi-user.target.wants/ssh.service"
+      }
+    ],
+    "control_plane_correction": "use guest systemctl reboot --no-block for orderly same-machine reboot; require three consecutive strict authenticated SSH sessions on the new boot before readiness",
+    "custom_protocol_added": false,
+    "firmware_changed": false,
+    "generic_image_new_sha256": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697",
+    "generic_image_old_sha256": "6ad28bd69f8bcbe8d32281f8e7f66cb11702b80057b75325d84b80bfa06423a3",
+    "guest_agent_added": false,
+    "host_kernel_changed": false,
+    "loopback_sigterm_exit_nanoseconds": 1986924,
+    "schema_version": 1,
+    "smallest_supported_repair": true,
+    "status": "pass",
+    "vmm_changed": false
+  },
+  "repository_checkpoint_parent": "98cef29d6acbde532bfd1387b8c00d034dcc3962",
+  "root_cause": {
+    "cloud_hypervisor_api_reboot": {
+      "observed": "firmware, fallback loader, kernel, root, SMBIOS credentials, CID and vsock returned, but the abrupt reset dirtied mounted filesystems and did not provide stable orderly-reboot readiness",
+      "supported_contract": false,
+      "v53_semantics": "destroys and recreates the VM object from saved configuration within the same VMM process"
+    },
+    "first_divergent_stage": "guest service shutdown before firmware re-entry",
+    "primary": {
+      "component": "z-phase0b-loopback-server",
+      "defect": "signal() installed a restarting SIGTERM handler while the process blocked in accept4(); the stop flag was never rechecked until systemd killed the service after its default 90-second stop timeout",
+      "evidence": [
+        "previous-boot-B.log",
+        "previous-boot-C.log",
+        "SIGTERM exit micro-test"
+      ]
+    },
+    "ruled_out": [
+      "firmware digest drift",
+      "EFI variable persistence dependency",
+      "BootNext or saved-entry state",
+      "alternate bootloader selection",
+      "kernel or initramfs absence",
+      "root UUID drift",
+      "read-only run disk",
+      "disk replacement",
+      "SMBIOS credential loss",
+      "CID drift",
+      "host-key rotation",
+      "VMM tuple drift"
+    ],
+    "schema_version": 1,
+    "secondary": [
+      {
+        "component": "z-phase0b-vsock-sshd@.service",
+        "defect": "stock sshd -i session close status 255 was not declared successful, creating false failed-unit state"
+      },
+      {
+        "component": "generic rootfs enablement",
+        "defect": "regular ssh.service was enabled despite no generic on-disk host keys, creating an unrelated failed unit"
+      },
+      {
+        "component": "historical evidence generator",
+        "defect": "recorded one-character B although the corresponding post-API-reboot serial capture was empty"
+      }
+    ],
+    "status": "confirmed"
+  },
+  "run_1": {
+    "boot_ids": [
+      "82243259-fcad-4f11-8dd2-f9fc91457581",
+      "4800bb80-724b-4d00-aa3c-828d402c17b3",
+      "bcf942fa-b1ab-403d-8c87-778f462ec4c1"
+    ],
+    "cid": 5402,
+    "disk_inode": 1334961,
+    "disk_sha256_at_launch": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697",
+    "host_fingerprint": "256 SHA256:DDSE1aLQ7UGxbrugfHyCFSfa6oPV5FEKMVItKzCmHv0 z-p0b-same-machine-run1-cert-host (ED25519)",
+    "owner_fingerprint": "256 SHA256:5ys/t9he7yU+E2DRzmyNwxRyjW5iUIc2AAf7Kr6L580 z-p0b-same-machine-run1-cert-owner (ED25519)",
+    "persistence_marker_sha256": "2ae58d17a0fea89ac8b5830c5d990f6d627a1560fa7af6e3d5b2e05a7e6966f6",
+    "run_id": "same-machine-run1-cert",
+    "status": "pass",
+    "uuid": "725dcc1b-1f18-465b-a12c-07a06b98102c"
+  },
+  "run_2": {
+    "boot_ids": [
+      "5ab9f437-d4a3-42d7-a772-25215f50a465",
+      "74738c61-1769-46e3-ba52-380bd8642cb4",
+      "562dcb4b-3e40-4b0b-9f0a-2b57003b41cd"
+    ],
+    "cid": 5403,
+    "disk_inode": 1334961,
+    "disk_sha256_at_launch": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697",
+    "host_fingerprint": "256 SHA256:k5hjn1LauvlT6SqI3PtKhZOPTCGCFb8d4ne/ywSq4dc z-p0b-same-machine-run2-cert-host (ED25519)",
+    "owner_fingerprint": "256 SHA256:wGl+6YijNTMEbiVYfcmkUYmb8cP/yM/nb5GEECLmKDA z-p0b-same-machine-run2-cert-owner (ED25519)",
+    "persistence_marker_sha256": "b23273eb5705bfa96603c586edc2f545a75a53522c0bc390cc6021be3a687af5",
+    "run_id": "same-machine-run2-cert",
+    "status": "pass",
+    "uuid": "4994fc7c-2536-4aa7-9997-9a25a89e5f27"
+  },
+  "run_identity_uniqueness": true,
+  "schema_version": 1,
+  "source": {
+    "branch": "build/z-v1-cleanroom",
+    "candidate_tuple": "z-debian-13.6-amd64-ch53-v1",
+    "captured_at": "2026-08-02T06:59:31.020149+00:00",
+    "checkpoint_parent_commit": "98cef29d6acbde532bfd1387b8c00d034dcc3962",
+    "checkpoint_parent_parent": "065371a1c36de4dd0dfbf4e8ef456461b2e381ae",
+    "checkpoint_parent_tree": "19ba515e5f5960179c3a96d3b346ce565ec0ffb3",
+    "historical_branch": "build/z-v1",
+    "historical_branch_commit": "4e17ead436949b32d245c15df5bcf2418f2f8968",
+    "implementation_host_tuple": "z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1",
+    "origin": "https://github.com/StealthEyeLLC/-z-.git",
+    "phase_1_started": false,
+    "product_machine_created": false,
+    "release_certified": false,
+    "repository": "StealthEyeLLC/-z-",
+    "schema_version": 1,
+    "workspace": "/var/lib/baby-quirt/workspaces/dash-z-build-plan-current-20260731"
+  },
+  "status": "pass",
+  "verdict": "PHASE_0B_CERTIFIED"
+}

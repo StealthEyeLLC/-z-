@@ -1,0 +1,275 @@
+{
+  "fresh_reboot_dependent_evidence": true,
+  "historical_non_reboot_evidence_referenced": true,
+  "run_1": {
+    "boot_id": "bcf942fa-b1ab-403d-8c87-778f462ec4c1",
+    "captured_at": "2026-08-02T06:43:02.402137+00:00",
+    "completed_at": "2026-08-02T06:43:25.866503+00:00",
+    "post_regression_failed_units": "0",
+    "run_id": "same-machine-run1-cert",
+    "status": "pass",
+    "systemd": {
+      "accepted_then_transport_lost_and_recovered": {
+        "recovered_outcome": "success",
+        "recovered_properties": {
+          "ActiveState": "active",
+          "CollectMode": "inactive",
+          "ExecMainCode": "1",
+          "ExecMainPID": "855",
+          "ExecMainStatus": "0",
+          "Id": "z-p0b-accepted-lost-same-machine-run1-cert.service",
+          "LoadState": "loaded",
+          "Result": "success",
+          "SubState": "exited"
+        },
+        "status": "pass",
+        "unknown_phase": {
+          "decision": "unknown",
+          "fabricated_success": false,
+          "query_status": 72,
+          "stale_binding_refused": true
+        }
+      },
+      "cancellation": {
+        "outcome": "explicit-signal-15",
+        "post": {
+          "ActiveState": "active",
+          "CollectMode": "inactive",
+          "ExecMainCode": "2",
+          "ExecMainPID": "796",
+          "ExecMainStatus": "15",
+          "Id": "z-p0b-cancel-same-machine-run1-cert.service",
+          "LoadState": "loaded",
+          "Result": "success",
+          "SubState": "exited"
+        },
+        "pre": {
+          "ActiveState": "active",
+          "CollectMode": "inactive",
+          "ExecMainCode": "0",
+          "ExecMainPID": "796",
+          "ExecMainStatus": "0",
+          "Id": "z-p0b-cancel-same-machine-run1-cert.service",
+          "LoadState": "loaded",
+          "Result": "success",
+          "SubState": "running"
+        },
+        "status": "pass"
+      },
+      "exact_argv_cwd_environment_binary_stdin_outputs_nonzero": {
+        "argc": 5,
+        "exit_status": 37,
+        "status": "pass",
+        "stderr_hex": "5a30422d53544445525200fe0a",
+        "stdin_bytes": 1048576,
+        "stdin_sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+        "stdout_hex": "5a30422d5354444f555400ff0a",
+        "unit": "z-p0b-exact-same-machine-run1-cert.service"
+      },
+      "signal": {
+        "outcome": "signal-15",
+        "properties": {
+          "ActiveState": "active",
+          "CollectMode": "inactive",
+          "ExecMainCode": "2",
+          "ExecMainPID": "695",
+          "ExecMainStatus": "15",
+          "Id": "z-p0b-signal-same-machine-run1-cert.service",
+          "LoadState": "loaded",
+          "Result": "success",
+          "SubState": "exited"
+        },
+        "status": "pass"
+      },
+      "timeout": {
+        "outcome": "timeout-signal-15",
+        "properties": {
+          "ActiveState": "failed",
+          "CollectMode": "inactive",
+          "ExecMainCode": "2",
+          "ExecMainPID": "736",
+          "ExecMainStatus": "15",
+          "Id": "z-p0b-timeout-same-machine-run1-cert.service",
+          "LoadState": "loaded",
+          "Result": "timeout",
+          "SubState": "failed"
+        },
+        "status": "pass"
+      },
+      "zero_exit": {
+        "exit_status": 0,
+        "status": "pass"
+      }
+    },
+    "transport": {
+      "binary_nonpty_stream": {
+        "bytes": 1048576,
+        "sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+        "status": "pass"
+      },
+      "interactive_pty": {
+        "status": "pass",
+        "stdout_sha256": "17678fcb99addbbda0a09c214f67207a6fa24b40371f509b6c1cebabd72a2607"
+      },
+      "libssh2_compatibility_relay": {
+        "client_sha256": "cb4fb2a0984f23f7d27518ab518633e8424941c81094bada54a35c1c3880763d",
+        "ctrl_c": 130,
+        "exec_exit": 23,
+        "exec_stderr_hex": "454d4245444445442d45525200fe0a",
+        "exec_stdout_hex": "454d4245444445442d4f555400ff0a",
+        "forward_reply_hex": "5a30422d4657443a6c6962737368322d00ff",
+        "forwarding": true,
+        "fully_static": true,
+        "half_close": true,
+        "host_key_bound_before_auth": true,
+        "owner_authentication": true,
+        "pty": true,
+        "relay_count_after_modes": 0,
+        "resize": true,
+        "sftp": true,
+        "sftp_bytes": 524288,
+        "status": "pass"
+      },
+      "native_fdpass_survival": {
+        "connector_count_while_session_active": 0,
+        "session_alive_after_connector_exit": true,
+        "status": "pass"
+      },
+      "native_forwarding": {
+        "half_close": true,
+        "reply_hex": "5a30422d4657443a6e61746976652d666f727761726400ff",
+        "request_hex": "6e61746976652d666f727761726400ff",
+        "status": "pass"
+      },
+      "native_sftp": {
+        "bytes": 262144,
+        "sha256": "2312394bd99545d9de131c24efb781e765ac1aec243f2ed9347597a793a415e9",
+        "status": "pass"
+      },
+      "noninteractive_ssh": {
+        "owner_authentication": true,
+        "status": "pass",
+        "strict_host_key": true
+      },
+      "relay_cancellation": {
+        "active_before_cancel": true,
+        "exit_status": -15,
+        "relay_count_after": 0,
+        "status": "pass"
+      },
+      "stdout_stderr_nonzero_exit": {
+        "exit": 37,
+        "status": "pass",
+        "stderr_hex": "455252",
+        "stdout_hex": "4f5554"
+      }
+    }
+  },
+  "run_2_replay": {
+    "captured_at": "2026-08-02T06:46:14.678842+00:00",
+    "run_id": "same-machine-run2-cert",
+    "status": "pass",
+    "transport": {
+      "binary_nonpty_stream": {
+        "bytes": 1048576,
+        "sha256": "fbbab289f7f94b25736c58be46a994c441fd02552cc6022352e3d86d2fab7c83",
+        "status": "pass"
+      },
+      "interactive_pty": {
+        "status": "pass",
+        "stdout_sha256": "17678fcb99addbbda0a09c214f67207a6fa24b40371f509b6c1cebabd72a2607"
+      },
+      "libssh2_compatibility_relay": {
+        "client_sha256": "cb4fb2a0984f23f7d27518ab518633e8424941c81094bada54a35c1c3880763d",
+        "ctrl_c": 130,
+        "exec_exit": 23,
+        "exec_stderr_hex": "454d4245444445442d45525200fe0a",
+        "exec_stdout_hex": "454d4245444445442d4f555400ff0a",
+        "forward_reply_hex": "5a30422d4657443a6c6962737368322d00ff",
+        "forwarding": true,
+        "fully_static": true,
+        "half_close": true,
+        "host_key_bound_before_auth": true,
+        "owner_authentication": true,
+        "pty": true,
+        "relay_count_after_modes": 0,
+        "resize": true,
+        "sftp": true,
+        "sftp_bytes": 524288,
+        "status": "pass"
+      },
+      "native_fdpass_survival": {
+        "connector_count_while_session_active": 0,
+        "session_alive_after_connector_exit": true,
+        "status": "pass"
+      },
+      "native_forwarding": {
+        "half_close": true,
+        "reply_hex": "5a30422d4657443a6e61746976652d666f727761726400ff",
+        "request_hex": "6e61746976652d666f727761726400ff",
+        "status": "pass"
+      },
+      "native_sftp": {
+        "bytes": 262144,
+        "sha256": "2312394bd99545d9de131c24efb781e765ac1aec243f2ed9347597a793a415e9",
+        "status": "pass"
+      },
+      "noninteractive_ssh": {
+        "owner_authentication": true,
+        "status": "pass",
+        "strict_host_key": true
+      },
+      "relay_cancellation": {
+        "active_before_cancel": true,
+        "exit_status": -15,
+        "relay_count_after": 0,
+        "status": "pass"
+      },
+      "stdout_stderr_nonzero_exit": {
+        "exit": 37,
+        "status": "pass",
+        "stderr_hex": "455252",
+        "stdout_hex": "4f5554"
+      }
+    }
+  },
+  "schema_version": 1,
+  "security_critical_gates": {
+    "accepted_then_transport_lost": true,
+    "binary_stdin": true,
+    "binary_stream": true,
+    "cancellation": true,
+    "cleanup": true,
+    "connector_exit_session_survival": true,
+    "exact_cwd": true,
+    "exact_environment": true,
+    "exact_systemd_argv": true,
+    "exit_status": true,
+    "firmware_digest": true,
+    "forwarding": true,
+    "implementation_host_tuple": true,
+    "libssh2_relay": true,
+    "native_fdpass": true,
+    "nested_off": true,
+    "nonzero_exit": true,
+    "persistence": true,
+    "pty": true,
+    "relay_cancellation": true,
+    "relay_half_close": true,
+    "separate_stdout_stderr": true,
+    "serial_reconnect": true,
+    "sftp": true,
+    "signal": true,
+    "smbios_binary_credentials": true,
+    "static_af_vsock_sshd_i": true,
+    "strict_prebound_host_key": true,
+    "strict_ssh_reconnect": true,
+    "timeout": true,
+    "unknown_outcome": true,
+    "vmm_digest": true,
+    "zero_exit": true,
+    "zero_guest_nics": true,
+    "zero_tap": true
+  },
+  "status": "pass"
+}

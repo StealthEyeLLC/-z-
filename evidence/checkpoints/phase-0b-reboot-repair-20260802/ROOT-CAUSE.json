@@ -1,0 +1,47 @@
+{
+  "cloud_hypervisor_api_reboot": {
+    "observed": "firmware, fallback loader, kernel, root, SMBIOS credentials, CID and vsock returned, but the abrupt reset dirtied mounted filesystems and did not provide stable orderly-reboot readiness",
+    "supported_contract": false,
+    "v53_semantics": "destroys and recreates the VM object from saved configuration within the same VMM process"
+  },
+  "first_divergent_stage": "guest service shutdown before firmware re-entry",
+  "primary": {
+    "component": "z-phase0b-loopback-server",
+    "defect": "signal() installed a restarting SIGTERM handler while the process blocked in accept4(); the stop flag was never rechecked until systemd killed the service after its default 90-second stop timeout",
+    "evidence": [
+      "previous-boot-B.log",
+      "previous-boot-C.log",
+      "SIGTERM exit micro-test"
+    ]
+  },
+  "ruled_out": [
+    "firmware digest drift",
+    "EFI variable persistence dependency",
+    "BootNext or saved-entry state",
+    "alternate bootloader selection",
+    "kernel or initramfs absence",
+    "root UUID drift",
+    "read-only run disk",
+    "disk replacement",
+    "SMBIOS credential loss",
+    "CID drift",
+    "host-key rotation",
+    "VMM tuple drift"
+  ],
+  "schema_version": 1,
+  "secondary": [
+    {
+      "component": "z-phase0b-vsock-sshd@.service",
+      "defect": "stock sshd -i session close status 255 was not declared successful, creating false failed-unit state"
+    },
+    {
+      "component": "generic rootfs enablement",
+      "defect": "regular ssh.service was enabled despite no generic on-disk host keys, creating an unrelated failed unit"
+    },
+    {
+      "component": "historical evidence generator",
+      "defect": "recorded one-character B although the corresponding post-API-reboot serial capture was empty"
+    }
+  ],
+  "status": "confirmed"
+}

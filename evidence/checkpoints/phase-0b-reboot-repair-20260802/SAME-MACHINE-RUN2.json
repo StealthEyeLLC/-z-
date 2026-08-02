@@ -1,0 +1,67 @@
+{
+  "boot_ids": [
+    "5ab9f437-d4a3-42d7-a772-25215f50a465",
+    "74738c61-1769-46e3-ba52-380bd8642cb4",
+    "562dcb4b-3e40-4b0b-9f0a-2b57003b41cd"
+  ],
+  "cid": 5403,
+  "cmdlines": [
+    "BOOT_IMAGE=/boot/vmlinuz-6.12.96+deb13-amd64 root=LABEL=ZROOT ro console=ttyS0,115200n8 console=tty0 systemd.show_status=yes",
+    "BOOT_IMAGE=/boot/vmlinuz-6.12.96+deb13-amd64 root=LABEL=ZROOT ro console=ttyS0,115200n8 console=tty0 systemd.show_status=yes",
+    "BOOT_IMAGE=/boot/vmlinuz-6.12.96+deb13-amd64 root=LABEL=ZROOT ro console=ttyS0,115200n8 console=tty0 systemd.show_status=yes"
+  ],
+  "completed_at": "2026-08-02T06:46:25.075840+00:00",
+  "credential_continuity_pass": true,
+  "credential_sha256": {
+    "authorized_keys": "6519d6126018381b2ef5bd8944fc4bb9a6fe519f2e52c728fcb40cacd315a9b3",
+    "host": "53807b7a693dda15ee5e18300aa26a968e823c30b1946d5e9597236906436f57"
+  },
+  "disk_continuity_pass": true,
+  "disk_inode": 1334961,
+  "disk_sha256_at_launch": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697",
+  "efi_filesystem": "/dev/vda1 vfat rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro 0B0B-0001",
+  "full_regression": false,
+  "host_fingerprint": "256 SHA256:k5hjn1LauvlT6SqI3PtKhZOPTCGCFb8d4ne/ywSq4dc z-p0b-same-machine-run2-cert-host (ED25519)",
+  "identity_continuity_pass": true,
+  "owner_fingerprint": "256 SHA256:wGl+6YijNTMEbiVYfcmkUYmb8cP/yM/nb5GEECLmKDA z-p0b-same-machine-run2-cert-owner (ED25519)",
+  "persistence_marker_sha256": "b23273eb5705bfa96603c586edc2f545a75a53522c0bc390cc6021be3a687af5",
+  "regression_status": "pass",
+  "repository_evidence_name": "SAME-MACHINE-RUN2.json",
+  "root_filesystem": "/dev/vda2 ext4 rw,relatime,errors=remount-ro 0b0b0000-0000-4000-8000-000000000004",
+  "run_id": "same-machine-run2-cert",
+  "sequence": [
+    "guest",
+    "guest"
+  ],
+  "serial_reconnect_pass": true,
+  "started_at": "2026-08-02T06:44:57.915414+00:00",
+  "status": "pass",
+  "strict_ssh_after_first_reboot": true,
+  "strict_ssh_after_second_reboot": true,
+  "transitions": [
+    {
+      "new_serial_inode": 3173,
+      "new_vsock_inode": 3176,
+      "old_serial_inode": 3167,
+      "old_vsock_inode": 3170,
+      "ready_at": "2026-08-02T06:46:03.967226+00:00",
+      "stale_refused": true,
+      "to_boot": "B",
+      "trigger_at": "2026-08-02T06:45:56.152756+00:00"
+    },
+    {
+      "new_serial_inode": 3179,
+      "new_vsock_inode": 3182,
+      "old_serial_inode": 3173,
+      "old_vsock_inode": 3176,
+      "ready_at": "2026-08-02T06:46:13.261280+00:00",
+      "stale_refused": true,
+      "to_boot": "C",
+      "trigger_at": "2026-08-02T06:46:05.791757+00:00"
+    }
+  ],
+  "uuid": "4994fc7c-2536-4aa7-9997-9a25a89e5f27",
+  "vmm_pid": 90426,
+  "vmm_start": 4270313,
+  "vsock_reconnect_pass": true
+}

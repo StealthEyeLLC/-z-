@@ -1,0 +1,18 @@
+{
+  "branch": "build/z-v1-cleanroom",
+  "candidate_tuple": "z-debian-13.6-amd64-ch53-v1",
+  "captured_at": "2026-08-02T06:59:31.020149+00:00",
+  "checkpoint_parent_commit": "98cef29d6acbde532bfd1387b8c00d034dcc3962",
+  "checkpoint_parent_parent": "065371a1c36de4dd0dfbf4e8ef456461b2e381ae",
+  "checkpoint_parent_tree": "19ba515e5f5960179c3a96d3b346ce565ec0ffb3",
+  "historical_branch": "build/z-v1",
+  "historical_branch_commit": "4e17ead436949b32d245c15df5bcf2418f2f8968",
+  "implementation_host_tuple": "z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1",
+  "origin": "https://github.com/StealthEyeLLC/-z-.git",
+  "phase_1_started": false,
+  "product_machine_created": false,
+  "release_certified": false,
+  "repository": "StealthEyeLLC/-z-",
+  "schema_version": 1,
+  "workspace": "/var/lib/baby-quirt/workspaces/dash-z-build-plan-current-20260731"
+}

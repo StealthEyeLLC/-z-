@@ -1,0 +1,3 @@
+# Phase 0B Regression
+
+Fresh post-repair evidence passed implementation-host and dependency checks, nested-off guest proof, zero NIC/TAP, SMBIOS credentials, static AF_VSOCK `sshd -i`, strict host-key lookup, native OpenSSH fd passing, connector exit with session survival, PTY, binary stream, separate stdout/stderr, exit status, SFTP, forwarding, fully static libssh2 relay compatibility, half-close, relay cancellation, exact systemd arguments/cwd/environment/binary stdin, zero/nonzero/signal/timeout/cancellation outcomes, accepted-then-transport-lost UNKNOWN handling with durable recovery, serial reconnect, strict SSH reconnect, persistence, replay, and cleanup.

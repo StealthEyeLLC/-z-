@@ -1,0 +1,22 @@
+{
+  "conclusion": "image boot media was stable; the disposable guest shutdown fixture and evidence/readiness logic were defective",
+  "diagnostic_orderly_run": {
+    "boot_A_B_C": "pass",
+    "confirmed_stop_job": "z-phase0b-loopback.service",
+    "reboot_delay_seconds_approx": 90,
+    "run_id": "diagnostic-noblock-guest-guest"
+  },
+  "fresh_forensic_run": {
+    "boot_A": "pass",
+    "cid": 5102,
+    "cloud_hypervisor_api_reboot_boot_C": "firmware and kernel booted but stable readiness failed",
+    "guest_reboot_boot_B": "pass",
+    "post_api_filesystem_observation": "unclean FAT ESP and ext4 journal recovery",
+    "run_id": "forensic-exact-guest-api-r2",
+    "serial_claim_B": "not present",
+    "uuid": "a25944a1-f691-47b5-a1b4-be3dfd3a8bb2"
+  },
+  "schema_version": 1,
+  "source_generic_sha256": "6ad28bd69f8bcbe8d32281f8e7f66cb11702b80057b75325d84b80bfa06423a3",
+  "status": "complete"
+}

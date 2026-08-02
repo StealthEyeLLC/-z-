@@ -686,3 +686,7 @@ The release report MUST distinguish:
 ## 2.2 Phase 0A implementation-input checkpoint
 
 `evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/` proves exact implementation roots, supply-chain inputs, capacity, sparse-copy behavior, and negative gates. It is not a product or release certificate and does not satisfy any machine, SSH, persistence, lifecycle, confinement, or release gate.
+
+## 2.3 Phase 0B semantic-lab checkpoint
+
+`evidence/checkpoints/phase-0b-reboot-repair-20260802/` certifies the named disposable semantic-lab gates: real KVM execution, pinned VMM/firmware, nested-off and zero-NIC state, SMBIOS credentials, strict SSH over AF_VSOCK, native and compatibility transports, exact systemd execution truth, Boot A-B-C identity continuity, persistence, replay, negative states, and cleanup. It is not a product or release certificate and does not satisfy product source, durable product-machine, confinement, networking, update, backup, ecosystem, or release gates.

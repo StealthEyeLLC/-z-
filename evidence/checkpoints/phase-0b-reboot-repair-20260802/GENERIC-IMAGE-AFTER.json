@@ -1,0 +1,46 @@
+{
+  "bootloader_changed": false,
+  "candidate_tuple_changed": false,
+  "certification_runs": [
+    "same-machine-run1-cert",
+    "same-machine-run2-cert"
+  ],
+  "changed_guest_files": [
+    {
+      "mode": "0755",
+      "new_sha256": "338b69a878852e23b12ccb465d703927587af952a5d3ba8327985a48dbc914c3",
+      "old_sha256": "fde9a6b99f6b6d7b8f5340715f2f13f3cc7315cb770f44668b9b7e632c0e460e",
+      "path": "/usr/local/libexec/z-phase0b-loopback-server"
+    },
+    {
+      "mode": "0644",
+      "new_sha256": "081dde01c4147545f6f5c95413f79d2f54e704de8f4606c4325f475024009184",
+      "old_sha256": "324eeeae7b506036afb68ffeef05c8646189728874e5eb6ea5f2125514f77d28",
+      "path": "/etc/systemd/system/z-phase0b-loopback.service"
+    },
+    {
+      "mode": "0644",
+      "new_sha256": "e39ad91129f5ef3814a3ae44cc5174447e256e0edfe139bf44b0a14107ce2abd",
+      "old_sha256": "3b6a4826d521a36ab56397a64ebb57d51589718b2f8f4151d5b2a2aab16f4a18",
+      "path": "/etc/systemd/system/z-phase0b-vsock-sshd@.service"
+    },
+    {
+      "action": "removed_exact_symlink",
+      "old_target": "/usr/lib/systemd/system/ssh.service",
+      "path": "/etc/systemd/system/multi-user.target.wants/ssh.service"
+    }
+  ],
+  "classification": "semantic-lab test-infrastructure repair",
+  "firmware_changed": false,
+  "first_candidate_proof": "candidate-repair-proof",
+  "initramfs_changed": false,
+  "kernel_changed": false,
+  "logical_size_bytes": 8589934592,
+  "old_image_retired": true,
+  "old_sha256": "6ad28bd69f8bcbe8d32281f8e7f66cb11702b80057b75325d84b80bfa06423a3",
+  "package_closure_changed": false,
+  "path": "/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-generic.raw",
+  "schema_version": 1,
+  "sha256": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697",
+  "status": "pass"
+}

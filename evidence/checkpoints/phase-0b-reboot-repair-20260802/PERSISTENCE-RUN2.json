@@ -1,0 +1,30 @@
+{
+  "boot_B": {
+    "inventory": "binary|f|644|root|root|12|1785653154.8352416610|263877\ndir|d|700|root|root|4096|1785653154.8272416610|263870\ndpkg-status.sha256|f|644|root|root|65|1785653154.8432416610|263880\nfile with spaces|f|644|root|root|13|1785653154.8352416610|263876\nlink|l|777|root|root|7|1785653154.8352416610|263875\nmarker.sha256|f|644|root|root|65|1785653154.8312416610|263872\nmarker|f|644|root|root|318|1785653154.8312416610|263871\nregular|f|644|root|root|14|1785653154.8312416610|263873\nrestricted|f|600|root|root|11|1785653154.8352416610|263878\ntimestamped|f|644|root|root|0|1785628800.0000000000|263879\nzero|f|644|root|root|0|1785653154.8312416610|263874\n|d|755|root|root|4096|1785653154.8392416610|263869\nmarker_sha=b23273eb5705bfa96603c586edc2f545a75a53522c0bc390cc6021be3a687af5\nunit_enabled=enabled\njournal_count=1\n",
+    "marker_sha256": "b23273eb5705bfa96603c586edc2f545a75a53522c0bc390cc6021be3a687af5",
+    "status": "pass"
+  },
+  "boot_C": {
+    "inventory": "binary|f|644|root|root|12|1785653154.8352416610|263877\ndir|d|700|root|root|4096|1785653154.8272416610|263870\ndpkg-status.sha256|f|644|root|root|65|1785653154.8432416610|263880\nfile with spaces|f|644|root|root|13|1785653154.8352416610|263876\nlink|l|777|root|root|7|1785653154.8352416610|263875\nmarker.sha256|f|644|root|root|65|1785653154.8312416610|263872\nmarker|f|644|root|root|318|1785653154.8312416610|263871\nregular|f|644|root|root|14|1785653154.8312416610|263873\nrestricted|f|600|root|root|11|1785653154.8352416610|263878\ntimestamped|f|644|root|root|0|1785628800.0000000000|263879\nzero|f|644|root|root|0|1785653154.8312416610|263874\n|d|755|root|root|4096|1785653154.8392416610|263869\nmarker_sha=b23273eb5705bfa96603c586edc2f545a75a53522c0bc390cc6021be3a687af5\nunit_enabled=enabled\njournal_count=1\n",
+    "marker_sha256": "b23273eb5705bfa96603c586edc2f545a75a53522c0bc390cc6021be3a687af5",
+    "status": "pass"
+  },
+  "broad_persistence_proven": true,
+  "created_at": "2026-08-02T06:45:55.743637+00:00",
+  "marker_sha256": "b23273eb5705bfa96603c586edc2f545a75a53522c0bc390cc6021be3a687af5",
+  "objects": [
+    "regular file",
+    "zero-length file",
+    "directory",
+    "symlink",
+    "file with spaces",
+    "binary file",
+    "0600 file",
+    "explicit timestamp",
+    "enabled disposable systemd unit",
+    "dpkg status observation",
+    "journal marker"
+  ],
+  "pre_reboot_boot_id": "5ab9f437-d4a3-42d7-a772-25215f50a465",
+  "status": "pass"
+}

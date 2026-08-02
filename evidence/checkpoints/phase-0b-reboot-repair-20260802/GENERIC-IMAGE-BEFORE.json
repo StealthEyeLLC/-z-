@@ -1,0 +1,15 @@
+{
+  "bootloader": "GRUB x86_64 EFI fallback path",
+  "disk_guid": "0B0B0000-0000-4000-8000-000000000001",
+  "esp_uuid": "0B0B-0001",
+  "grub_entries": 1,
+  "grubenv_state": "empty",
+  "logical_size_bytes": 8589934592,
+  "nvram_dependency": false,
+  "path": "/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-generic.raw",
+  "primary_efi_loader": "/EFI/BOOT/BOOTX64.EFI",
+  "root_uuid": "0b0b0000-0000-4000-8000-000000000004",
+  "schema_version": 1,
+  "sha256": "6ad28bd69f8bcbe8d32281f8e7f66cb11702b80057b75325d84b80bfa06423a3",
+  "status": "historical_verified_input"
+}

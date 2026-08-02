@@ -1,6 +1,6 @@
 # Evidence
 
-Status: **Implementation-host and Phase 0A checkpoints present; no Z release is certified.**
+Status: **Implementation-host, Phase 0A, and Phase 0B semantic-lab checkpoints present; no Z release is certified.**
 
 This directory holds immutable or digest-verifiable proof for implementation checkpoints and releases. Documentation, mocks, selected dependencies, and planned tests are not evidence that Z works.
 
@@ -30,3 +30,5 @@ Every result must identify the source commit, source tree, artifact digests, exa
 A host checkpoint proves only the claims it names. It does not certify product source, a guest image, a machine lifecycle, or a release.
 
 - `checkpoints/phase-0a-implementation-bootstrap-20260801/` — exact implementation roots, Debian closure, Rust toolchain, Cloud Hypervisor, firmware, capacity, sparse-copy, negative, cleanup, and absence evidence. It is not product or release certification.
+- `checkpoints/phase-0b-semantic-blocker-20260801/` — immutable historical blocker evidence.
+- `checkpoints/phase-0b-reboot-repair-20260802/` — repaired real-KVM Boot A-B-C identity continuity, strict reconnect, persistence, replay, regressions, 60 negative tests, and exact cleanup. It is semantic-lab certification, not product or release certification.

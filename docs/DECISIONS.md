@@ -125,3 +125,9 @@ The verified `6.8.0-9001-generic` result is accepted as the successful realizati
 The decision is based on the properties the plan actually required: exact KVM security-fix state, compatibility with the retained VPS, source and package provenance, a real controlled reboot, required host primitives, service recovery, persistent boot selection, explicit rollback, cleanup, and a locked host tuple. Retaining the proven Noble 6.8 source family and applying only the required upstream fix minimizes unrelated kernel drift while preserving the capability ceiling needed by Z.
 
 The locally built Ubuntu-compatible package creates an explicit maintenance duty. It must not be silently replaced, upgraded, or removed. A future fixed Canonical binary or different kernel may replace it only through a new owner-approved implementation-host tuple with equivalent provenance, boot, rollback, runtime, and cleanup evidence. Availability of nested KVM on the host does not authorize nested virtualization in the Z baseline; Cloud Hypervisor must still be configured and verified with `nested=off`.
+
+## D029 — Orderly reboot is guest-originated; VMM API reboot remains distinct
+
+Phase 0B uses guest `systemctl reboot --no-block` as the supported same-machine orderly reboot contract. Readiness requires replacement runtime-socket validation and repeated strict authenticated SSH on the new boot. Cloud Hypervisor v53 `vm.reboot` destroys and recreates the VM object from saved configuration inside the same VMM process; it is recorded as an abrupt reset semantic and is not substituted for an orderly guest reboot. Clean VMM stop/start is separately supported and separately classified.
+
+This decision follows the 2026-08-02 repair evidence. It does not add a guest agent, custom protocol, resident controller, or product lifecycle implementation.

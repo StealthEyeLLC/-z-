@@ -20,7 +20,7 @@ As of `2026-08-01T19:08:00Z`:
 - The preserved release candidate remains `z-debian-13.6-amd64-ch53-v1`; it is distinct from the Ubuntu implementation-host tuple.
 - Clean-room Phase 0A is complete and verified.
 - Exact roots and materialized inputs are recorded in `reference/IMPLEMENTATION-ROOTS.md` and `../evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/`.
-- Phase 0B, Phase 1, and product source have not started.
+- Phase 0B is certified in the disposable semantic lab; Phase 1 and product source have not started.
 - The verified host-transition repository checkpoint is commit `96853e15f7a8cab1efc178d03a4d3e027b0b28cc`, tree `b4308f82a5329542450de3a4cbfabf3300414068`.
 - The complete current-state and next-step ledger is [`STATUS.md`](STATUS.md).
 
@@ -48,9 +48,9 @@ This gate authorized the now-complete Phase 0A mission on the same VPS. It does 
 
 ## Next recommended mission
 
-The next permitted mission is Phase 0B only after separate authorization. It MUST begin from the exact Phase 0A checkpoint, reconfirm the authoritative branch, clean workspace, materialized inputs, roots, capacity reserve, and unchanged implementation-host tuple, and stop before Phase 1. Phase 0B may prove semantics but MUST NOT create the first real machine unless a later Phase 1 mission is separately authorized.
+Phase 0B is complete at [`../evidence/checkpoints/phase-0b-reboot-repair-20260802/`](../evidence/checkpoints/phase-0b-reboot-repair-20260802/). The next permitted mission is Phase 1 only after separate authorization. It MUST reconfirm the authoritative branch, clean workspace, Phase 0A inputs, repaired Phase 0B semantic-lab checkpoint, roots, capacity reserve, and unchanged implementation-host tuple before creating the first durable product machine.
 
-The full recommended sequence and fail-closed stop conditions are recorded in [`STATUS.md`](STATUS.md). That operational status document does not override the normative phase definitions below.
+The full current-state and fail-closed boundaries are recorded in [`STATUS.md`](STATUS.md). That operational status document does not override the normative phase definitions below.
 
 ## Dependency gate
 
@@ -92,6 +92,10 @@ Phase 0A completion means the exact selected inputs and build environment exist 
 6. Reverify that the running implementation host still matches the locked kernel/fix tuple for applicable KVM isolation advisories, including CVE-2026-53359 on x86; explicitly configure the pinned Cloud Hypervisor x86 equivalent of `nested=off` and prove the effective guest CPU exposure.
 7. Prove exact noninteractive systemd argv and result semantics.
 8. Prove serial reconnect across reboot.
+9. Prove one machine identity through Boot A, Boot B, and Boot C with strict SSH and broad persistent state after both reboots.
+10. Replay the same sequence under a fresh UUID, CID, disk, host key, owner key, and runtime root.
+
+Completed 2026-08-02 at [`../evidence/checkpoints/phase-0b-reboot-repair-20260802/`](../evidence/checkpoints/phase-0b-reboot-repair-20260802/). The supported orderly contract is guest `systemctl reboot --no-block`; Cloud Hypervisor `vm.reboot` is an abrupt VM-object recreation and is not substituted for orderly reboot.
 
 No architecture scaffold counts as completion without a real booted computer.
 

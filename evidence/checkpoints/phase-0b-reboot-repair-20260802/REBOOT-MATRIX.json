@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "variants": [
+    {
+      "classification": "supported same-machine reboot contract",
+      "run1": "A-B-C pass",
+      "run2": "A-B-C pass",
+      "variant": "guest orderly reboot via systemctl reboot --no-block"
+    },
+    {
+      "classification": "diagnostic only",
+      "result": "eventual reboot with 90-second loopback stop timeout",
+      "variant": "historical blocking systemctl reboot over socket-activated SSH"
+    },
+    {
+      "classification": "abrupt VM object recreation; not supported orderly contract",
+      "result": "firmware/kernel/credentials returned; stable authenticated readiness failed and filesystems required recovery",
+      "variant": "Cloud Hypervisor vm.reboot after guest reboot"
+    },
+    {
+      "classification": "distinct stop/start semantic",
+      "result": "pass with new VMM process and sockets, same disk/UUID/CID/key/marker",
+      "variant": "clean guest poweroff and VMM stop/start with same disk and identity"
+    },
+    {
+      "classification": "observed during both certified reboots",
+      "result": "pass",
+      "variant": "firmware re-entry without disk replacement"
+    }
+  ]
+}

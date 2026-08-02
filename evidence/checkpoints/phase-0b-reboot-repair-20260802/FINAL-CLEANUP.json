@@ -1,0 +1,30 @@
+{
+  "canonical_generic_image": {
+    "path": "/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-generic.raw",
+    "sha256": "a6f60c4d3a060305ff710c3bee4f3ee33f11dfcdd4e3ec87d9ebabd17f224697"
+  },
+  "captured_at": "2026-08-02T06:56:57.838550+00:00",
+  "cloud_hypervisor_process_count": 0,
+  "disposable_run_disk_count": 0,
+  "dpkg_audit_line_count": 0,
+  "failed_units": "",
+  "firewall_mutation": "none_performed",
+  "free_bytes": 87163826176,
+  "free_inodes": 12529061,
+  "global_package_mutation": "none",
+  "global_rust_mutation": "none",
+  "host_apt_mutation": "none",
+  "implementation_loop_device_count": 0,
+  "implementation_mount_count": 0,
+  "kernel_mutation": "none",
+  "persistent_boot_policy_mutation": "none",
+  "pre_repair_backup_retired": true,
+  "private_identity_entry_count": 0,
+  "private_key_file_count": 0,
+  "reboot_required": true,
+  "route_mutation": "none_performed",
+  "runtime_entry_count": 0,
+  "status": "pass",
+  "system_state": "running",
+  "tap_count": 0
+}

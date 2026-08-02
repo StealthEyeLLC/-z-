@@ -1,0 +1,22 @@
+{
+  "commit": "98cef29d6acbde532bfd1387b8c00d034dcc3962",
+  "historical_claims": {
+    "cid": 5001,
+    "decision": "failure",
+    "machine_uuid": "f3204325-1a20-4d8a-944f-08dd9e0d0915",
+    "post_transition_kernel_command_line": "B",
+    "run_id": "run-1-positive",
+    "ssh_listener_absent_seconds": 9.016
+  },
+  "repair_mission_correction": {
+    "blocker_checkpoint_rewritten": false,
+    "classification": "evidence-generation artifact; not an observed kernel command line",
+    "one_character_B_supported_by_raw_serial": false,
+    "serial_capture_bytes_after_api_reboot": 0
+  },
+  "result_blob": "aa42a8bbc41ec7ac8850e1077f40753c274d3aa0",
+  "result_markdown_blob": "d03090b02f7dc89cb8f346a8b2e1f3182f7acf82",
+  "schema_version": 1,
+  "status": "historical_input_preserved",
+  "tree": "19ba515e5f5960179c3a96d3b346ce565ec0ffb3"
+}
