@@ -23,12 +23,17 @@ PY
 )
 source_root=${values[0]}; durable=${values[1]}; build=${values[2]}; rust=${values[3]}; builder=${values[4]}; assets=${values[5]}; machines=${values[6]}; host_evidence=${values[7]}; cache=${values[8]}; packages=${values[9]}; downloads=${values[10]}; staging=${values[11]}; runtime=${values[12]}
 
-for p in "$source_root" "$durable" "$build" "$rust" "$builder" "$assets" "$machines" "$host_evidence" "$cache" "$packages" "$downloads" "$staging" "$runtime"; do
+for p in "$source_root" "$durable" "$build" "$rust" "$builder" "$assets" "$machines" "$host_evidence" "$cache" "$packages" "$downloads" "$staging"; do
     [[ $p == /* && -d $p && ! -L $p ]] || fail "invalid root: $p"
     [[ $(realpath -e -- "$p") == "$p" ]] || fail "root escapes through symlink: $p"
 done
+[[ $runtime == /* ]] || fail "invalid runtime root path: $runtime"
+if [[ -e $runtime || -L $runtime ]]; then
+    [[ -d $runtime && ! -L $runtime ]] || fail "invalid runtime root: $runtime"
+    [[ $(realpath -e -- "$runtime") == "$runtime" ]] || fail "runtime root escapes through symlink: $runtime"
+    [[ -z $(find "$runtime" -mindepth 1 -print -quit) ]] || fail 'runtime root is not empty'
+fi
 [[ -z $(find "$machines" -mindepth 1 -print -quit) ]] || fail 'reserved machine root is not empty'
-[[ -z $(find "$runtime" -mindepth 1 -print -quit) ]] || fail 'runtime root is not empty'
 
 ch=$assets/cloud-hypervisor-static
 fw=$assets/CLOUDHV.fd
@@ -48,6 +53,7 @@ fw=$assets/CLOUDHV.fd
 [[ -z $(find "$rust" \( -name Cargo.toml -o -name Cargo.lock -o -name registry -o -name .git \) -print -quit) ]] || fail 'undeclared Rust state present'
 
 [[ $(chroot "$builder" /usr/bin/mmdebstrap --version) == 'mmdebstrap 1.5.7' ]] || fail 'isolated mmdebstrap mismatch'
+# shellcheck disable=SC2016 # dpkg-query expands this format string, not the shell
 count=$(chroot "$builder" /usr/bin/dpkg-query -W -f='${binary:Package}=${Version}\n' | sed 's/:amd64=\([^=]*\)$/=\1/; s/:all=\([^=]*\)$/=\1/' | sort -u | wc -l)
 [[ $count == 212 ]] || fail "builder package count mismatch: $count"
 python3 - "$lock" "$builder" <<'PY'

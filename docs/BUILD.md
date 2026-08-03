@@ -14,6 +14,8 @@ As of `2026-08-01T19:08:00Z`:
 - The kernel was built from Ubuntu Noble `linux 6.8.0-136.136` with CVE-2026-53359 fix commit `81ccda30b4e83d8f5cc4fd50503c44e3a33abfeb` and exact digest-bound source/package/module evidence.
 - KVM API 12, VM/vCPU creation, AF_VSOCK, TAP, Unix descriptor passing, transient systemd, loop devices, mount namespaces, Landlock ABI 4, seccomp, and OpenSSH fd-passing passed on the running kernel.
 - Baby, SSH, Caddy, package health, NTP, and systemd returned cleanly after the controlled reboot; failed units are zero.
+- A separate 2026-08-02 maintenance continuation completed exactly one controlled host reboot, returned the same host on kernel `6.8.0-9001-generic` with boot ID `68eb2755-8adb-4b54-91c5-8609a0cb1e67`, consumed the pending reboot marker, repeated the required host primitives, and preserved zero Z runtime residue; see [`../evidence/checkpoints/host-maintenance-reboot-20260802/`](../evidence/checkpoints/host-maintenance-reboot-20260802/).
+- A later owner-initiated reboot was independently read back on 2026-08-03 with boot ID `6931af4d-d605-4743-a34c-abfcb59af94e`; the same locked kernel, rollback, services, primitives, package health, and zero-residue state remained intact; see [`../evidence/checkpoints/host-reboot-readback-20260803/`](../evidence/checkpoints/host-reboot-readback-20260803/).
 - `6.8.0-9001-generic` is the persistent GRUB default. `6.8.0-136-generic` remains installed as the tested explicit rollback entry.
 - The root filesystem is ext4 without reflink; `90,960,056,320` bytes are available on `/` and `680,804,352` bytes on `/boot`.
 - Transition-owned build helpers, temporary units, mounts, and large staging trees were removed after durable evidence and package preservation.
@@ -48,7 +50,7 @@ This gate authorized the now-complete Phase 0A mission on the same VPS. It does 
 
 ## Next recommended mission
 
-Phase 0B is complete at [`../evidence/checkpoints/phase-0b-reboot-repair-20260802/`](../evidence/checkpoints/phase-0b-reboot-repair-20260802/). The next permitted mission is Phase 1 only after separate authorization. It MUST reconfirm the authoritative branch, clean workspace, Phase 0A inputs, repaired Phase 0B semantic-lab checkpoint, roots, capacity reserve, and unchanged implementation-host tuple before creating the first durable product machine.
+Phase 0B is complete at [`../evidence/checkpoints/phase-0b-reboot-repair-20260802/`](../evidence/checkpoints/phase-0b-reboot-repair-20260802/), and the implementation-host maintenance continuation is complete at [`../evidence/checkpoints/host-maintenance-reboot-20260802/`](../evidence/checkpoints/host-maintenance-reboot-20260802/). The next permitted mission is Phase 1 only after separate authorization. It MUST reconfirm the authoritative branch, clean workspace, Phase 0A inputs, repaired Phase 0B semantic-lab checkpoint, host-maintenance checkpoint, roots, capacity reserve, and unchanged implementation-host tuple before creating the first durable product machine.
 
 The full current-state and fail-closed boundaries are recorded in [`STATUS.md`](STATUS.md). That operational status document does not override the normative phase definitions below.
 

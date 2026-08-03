@@ -1,0 +1,30 @@
+{
+  "active_work_sessions": 0,
+  "allowed_mutations": [
+    "one host reboot",
+    "post-return evidence and current-status synchronization"
+  ],
+  "captured_at": "2026-08-02T21:41:41Z",
+  "decision": "one_controlled_reboot_authorized",
+  "failed_unit_count": 0,
+  "forbidden_mutations_preserved": true,
+  "hostname": "vps-c9f04f5e",
+  "kernel": "6.8.0-9001-generic",
+  "machine_id_file_sha256": "e12bd35a8576ac2dfe2da93c2e827fa3a4efcf4285beecd961adefbe63e08f32",
+  "package_state_clean": true,
+  "phase_1_started": false,
+  "pre_boot_id": "b6e10e21-9737-4ded-ad1e-a437eea41ace",
+  "primitive_residue_zero": true,
+  "product_machine_created": false,
+  "reboot_required_before": true,
+  "reboot_required_packages": [
+    "dbus-broker"
+  ],
+  "release_certified": false,
+  "required_primitives_pass": true,
+  "schema_version": "1.0.0",
+  "source_commit": "86c7623277be8734b89dc5bdf874620e33744a26",
+  "source_tree": "c479417e841667dc981dfc7eff7b5c42212f3284",
+  "status": "pass",
+  "z_runtime_residue_zero": true
+}

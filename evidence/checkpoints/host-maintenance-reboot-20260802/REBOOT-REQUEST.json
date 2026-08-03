@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "status": "issued",
+  "issued_at": "2026-08-02T21:42:19Z",
+  "hostname": "vps-c9f04f5e",
+  "machine_id_file_sha256": "e12bd35a8576ac2dfe2da93c2e827fa3a4efcf4285beecd961adefbe63e08f32",
+  "pre_boot_id": "b6e10e21-9737-4ded-ad1e-a437eea41ace",
+  "kernel": "6.8.0-9001-generic",
+  "mechanism": "transient systemd timer invoking /usr/bin/systemctl reboot",
+  "timer_unit": "z-host-maintenance-reboot-20260802.timer",
+  "service_unit": "z-host-maintenance-reboot-20260802.service",
+  "requested_reboot_count": 1
+}

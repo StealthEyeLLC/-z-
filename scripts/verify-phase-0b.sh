@@ -3,21 +3,24 @@ set -Eeuo pipefail
 export LC_ALL=C
 repo=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)
 checkpoint=$repo/evidence/checkpoints/phase-0b-reboot-repair-20260802
-base=98cef29d6acbde532bfd1387b8c00d034dcc3962
+maintenance=$repo/evidence/checkpoints/host-maintenance-reboot-20260802
+base=86c7623277be8734b89dc5bdf874620e33744a26
 fail(){ printf 'phase-0b-verify: FAIL: %s\n' "$*" >&2; exit 1; }
 pass(){ printf 'phase-0b-verify: PASS: %s\n' "$*"; }
 [[ -d $checkpoint && ! -L $checkpoint ]] || fail 'checkpoint missing or linked'
+[[ -d $maintenance && ! -L $maintenance ]] || fail 'host-maintenance checkpoint missing or linked'
 head=$(git -C "$repo" rev-parse HEAD)
-if [[ $head != $base ]]; then [[ $(git -C "$repo" rev-parse HEAD^) == $base ]] || fail 'checkpoint parent mismatch'; fi
+if [[ $head != "$base" ]]; then [[ $(git -C "$repo" rev-parse HEAD^) == "$base" ]] || fail 'checkpoint parent mismatch'; fi
 [[ $(git -C "$repo" rev-parse --abbrev-ref HEAD) == build/z-v1-cleanroom ]] || fail 'branch mismatch'
 [[ $(git -C "$repo" remote get-url origin) == https://github.com/StealthEyeLLC/-z-.git ]] || fail 'origin mismatch'
 ( cd "$checkpoint" && sha256sum -c SHA256SUMS.txt >/dev/null ) || fail 'checkpoint checksum mismatch'
+( cd "$maintenance" && sha256sum -c SHA256SUMS.txt >/dev/null ) || fail 'host-maintenance checkpoint checksum mismatch'
 for cp in phase-0a-implementation-bootstrap-20260801 phase-0b-semantic-blocker-20260801 host-kernel-transition-20260801; do
   ( cd "$repo/evidence/checkpoints/$cp" && sha256sum -c SHA256SUMS.txt >/dev/null ) || fail "$cp checksum mismatch"
 done
 "$repo/scripts/verify-phase-0a.sh" >/dev/null || fail 'Phase 0A verifier failed'
+"$repo/scripts/verify-host-maintenance-reboot.sh" >/dev/null || fail 'host-maintenance verifier failed'
 [[ $(uname -r) == 6.8.0-9001-generic ]] || fail 'host kernel mismatch'
-[[ $(cat /proc/sys/kernel/random/boot_id) == b6e10e21-9737-4ded-ad1e-a437eea41ace ]] || fail 'host boot ID mismatch'
 vmm=/var/lib/z-implementation/phase-0a-v1/assets/z-debian-13.6-amd64-ch53-v1/cloud-hypervisor-static
 fw=/var/lib/z-implementation/phase-0a-v1/assets/z-debian-13.6-amd64-ch53-v1/CLOUDHV.fd
 img=/var/lib/z-implementation/phase-0b-v1/lab/disks/probe-generic.raw
@@ -51,8 +54,8 @@ PYV
 [[ $(find /var/lib/z-implementation/phase-0b-v1/lab/disks -maxdepth 1 -type f ! -name probe-generic.raw -print -quit | wc -l) == 0 ]] || fail 'disposable run disk remains'
 [[ $(find /var/lib/z-implementation/phase-0b-v1/lab/identity -mindepth 1 -print -quit 2>/dev/null | wc -l) == 0 ]] || fail 'private identity remains'
 [[ $(find /run/z-implementation/phase-0b-v1 -mindepth 1 -print -quit 2>/dev/null | wc -l) == 0 ]] || fail 'runtime entry remains'
-[[ $(losetup -a | grep -F /var/lib/z-implementation/phase-0b-v1 | wc -l || true) == 0 ]] || fail 'loop remains'
-[[ $(findmnt -rn | grep -F /var/lib/z-implementation/phase-0b-v1 | wc -l || true) == 0 ]] || fail 'mount remains'
+[[ $(losetup -a | grep -Fc /var/lib/z-implementation/phase-0b-v1 || true) == 0 ]] || fail 'loop remains'
+[[ $(findmnt -rn | grep -Fc /var/lib/z-implementation/phase-0b-v1 || true) == 0 ]] || fail 'mount remains'
 [[ $(ip -o link show | awk -F': ' '$2 ~ /^(tap|ztap)/{n++} END{print n+0}') == 0 ]] || fail 'TAP remains'
 [[ ! -e $repo/Cargo.toml && ! -e $repo/Cargo.lock ]] || fail 'root Cargo metadata exists'
 [[ -z $(find "$repo/src" -type f ! -name README.md -print -quit) ]] || fail 'product source exists'

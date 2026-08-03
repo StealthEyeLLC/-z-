@@ -1,0 +1,67 @@
+captured_utc=2026-08-02T21:46:34Z
+hostname=vps-c9f04f5e
+machine_id_sha256=cd189817b39fea60d338b73878240a6fe7db71374c7a0f35ad60f8eb641e8817
+machine_id_file_sha256=e12bd35a8576ac2dfe2da93c2e827fa3a4efcf4285beecd961adefbe63e08f32
+pre_boot_id=b6e10e21-9737-4ded-ad1e-a437eea41ace
+post_boot_id=68eb2755-8adb-4b54-91c5-8609a0cb1e67
+boot_id_changed=true
+kernel=6.8.0-9001-generic
+kernel_version=#1+zcve2026533591 SMP PREEMPT_DYNAMIC Sat Aug  1 17:33:19 UTC 20
+boot_time=2026-08-02 21:42:28
+uptime_seconds=245
+systemd_state=running
+ntp_synchronized=yes
+failed_units=0
+systemd_jobs=0
+systemd_transitions=0
+reboot_required=false
+reboot_required_pkgs_present=false
+dpkg_audit_lines=0
+active_package_transactions=0
+package_lock_holders=
+package=linux-image-unsigned-6.8.0-9001-generic status=install ok installed version=6.8.0-9001.1+zcve2026533591
+package_verify=linux-image-unsigned-6.8.0-9001-generic PASS
+package=linux-modules-6.8.0-9001-generic status=install ok installed version=6.8.0-9001.1+zcve2026533591
+package_verify=linux-modules-6.8.0-9001-generic PASS
+package=linux-image-6.8.0-136-generic status=install ok installed version=6.8.0-136.136
+package_verify=linux-image-6.8.0-136-generic PASS
+package=linux-modules-6.8.0-136-generic status=install ok installed version=6.8.0-136.136
+package_verify=linux-modules-6.8.0-136-generic PASS
+grub_default="gnulinux-advanced-d77f6a25-e90f-4292-a85d-9bcc1cecf9e2>gnulinux-6.8.0-9001-generic-advanced-d77f6a25-e90f-4292-a85d-9bcc1cecf9e2"
+grub_script_check=PASS
+unit=baby-quirt.socket enabled=enabled active=active sub=running
+unit=baby-quirt.service enabled=disabled active=active sub=running
+unit=baby-quirt-mcp.service enabled=enabled active=active sub=running
+unit=caddy.service enabled=enabled active=active sub=running
+unit=ssh.socket enabled=enabled active=active sub=running
+unit=unattended-upgrades.service enabled=enabled active=active sub=running
+runtime_root_state=absent-permitted
+root=/var/lib/z-implementation/phase-0a-v1 type=directory owner=root:root mode=750 dev=2049 entries=4
+root=/var/cache/z-implementation/phase-0a-v1 type=directory owner=root:root mode=750 dev=2049 entries=2
+root=/var/tmp/z-implementation/phase-0a-v1 type=directory owner=root:root mode=700 dev=2049 entries=0
+root=/var/lib/z-implementation/phase-0a-v1/machines-reserved type=directory owner=root:root mode=750 dev=2049 entries=0
+z_processes=0
+cloud_hypervisor_processes=0
+passt_processes=0
+virtiofsd_processes=0
+implementation_mounts=0
+implementation_loops=0
+z_taps=0
+reboot_transient_units=0
+branch=build/z-v1-cleanroom
+head=86c7623277be8734b89dc5bdf874620e33744a26
+tree=c479417e841667dc981dfc7eff7b5c42212f3284
+remote_head=86c7623277be8734b89dc5bdf874620e33744a26
+protected_untracked_path=.predecessor-source-docs-corpus.txt
+Filesystem     Type    1B-blocks        Used       Avail Use% Mounted on
+/dev/sda1      ext4 102888095744 23017046016 79854272512  23% /
+/dev/sda16     ext4    923156480   177709056   680804352  21% /boot
+Filesystem       Inodes  IUsed    IFree IUse% Mounted on
+/dev/sda1      12976128 506666 12469462    4% /
+/dev/sda16        58496    608    57888    2% /boot
+MemTotal:       11956744 kB
+MemAvailable:   11148300 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+1308905472	/var/lib/z-implementation/phase-0a-v1
+307789824	/var/cache/z-implementation/phase-0a-v1

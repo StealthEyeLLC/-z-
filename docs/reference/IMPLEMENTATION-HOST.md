@@ -14,7 +14,7 @@ Evidence checkpoint: [`../../evidence/checkpoints/host-kernel-transition-2026080
 
 This record binds Z implementation work to the actual retained OVH VPS after the authorized Ubuntu host-kernel transition. It is a point-in-time operational authority for implementation routing and reproducibility.
 
-It does not certify a Z release, guest image, networking, or the preserved Debian release candidate. Clean-room Phase 0A is now complete and separately records exact Cloud Hypervisor, firmware, toolchain, builder, root, capacity, and negative-test claims; Phase 0B and product implementation have not started.
+It does not certify a Z release, guest image, networking, or the preserved Debian release candidate. Clean-room Phase 0A is complete and separately records exact Cloud Hypervisor, firmware, toolchain, builder, root, capacity, and negative-test claims. Phase 0B is certified in its separate disposable semantic-lab checkpoint; Phase 1 and product implementation have not started.
 
 Baby remains implementation infrastructure only. It is not a Z runtime component, dependency, guest service, protocol, or product surface.
 
@@ -109,6 +109,20 @@ These checks prove host capability only. They do not prove Z product behavior or
 
 Temporary build helpers, temporary proof units, transition mounts, and large transition-owned build trees were removed after evidence preservation.
 
+## 6.1 Maintenance continuation — 2026-08-02
+
+The exact identity table above remains the point-in-time record of the original transition boot and is not rewritten. A later authorized maintenance continuation performed exactly one additional controlled reboot of the same retained VPS. Machine identity remained unchanged, kernel `6.8.0-9001-generic` remained the persistent default, rollback kernel `6.8.0-136-generic` remained installed, and boot ID changed from `b6e10e21-9737-4ded-ad1e-a437eea41ace` to `68eb2755-8adb-4b54-91c5-8609a0cb1e67`.
+
+The previous boot reached `reboot.target` cleanly. The pending `/run/reboot-required` marker was absent after return; package audit and locks were clean; Baby Quirt, Baby MCP, Caddy, SSH socket, and systemd recovered with zero failed units. KVM VM/vCPU creation, vhost-vsock, AF_VSOCK, TAP cleanup, `SCM_RIGHTS`, Landlock ABI 4, transient systemd, loop attach/detach, mount namespace, seccomp, and OpenSSH fd-passing all passed again with zero residue. Phase 0A and repaired Phase 0B checkpoint checksums remained valid.
+
+Repository-safe evidence is [`../../evidence/checkpoints/host-maintenance-reboot-20260802/`](../../evidence/checkpoints/host-maintenance-reboot-20260802/). This continuation is implementation-host maintenance only. It does not create product source or a product machine, start Phase 1, or certify a release.
+
+## 6.2 Later owner-initiated reboot readback — 2026-08-03
+
+A subsequent owner-initiated reboot changed the live boot ID again from the maintenance checkpoint value `68eb2755-8adb-4b54-91c5-8609a0cb1e67` to `6931af4d-d605-4743-a34c-abfcb59af94e`. Read-only signed verification confirmed the same host identity, locked kernel and GRUB default, rollback kernel, clean package state, recovered Baby/Caddy/SSH services, KVM/vsock/TUN and descriptor-passing primitives, Landlock/seccomp/OpenSSH prerequisites, and zero Z runtime residue. Evidence is [`../../evidence/checkpoints/host-reboot-readback-20260803/`](../../evidence/checkpoints/host-reboot-readback-20260803/).
+
+This follow-up does not supersede the earlier checkpoint; it demonstrates continuity across a later reboot.
+
 ## 7. Repository authority
 
 The authoritative implementation branch is `build/z-v1-cleanroom`. The historical `build/z-v1` branch remains unchanged and must not be rewritten or reused as the clean-room implementation branch.
@@ -119,7 +133,7 @@ The preserved release candidate remains `z-debian-13.6-amd64-ch53-v1`. The actua
 
 The same-VPS host-kernel blocker is closed for implementation-host purposes. The running kernel, applicable KVM fix state, rollback path, required host primitives, service recovery, storage headroom, and cleanup state are verified.
 
-The host-transition mission ended at that checkpoint. Phase 0A later completed its dependency, capacity, provenance, root, cleanup, and negative gates without creating product source. The next permitted mission is Phase 0B only after separate authorization.
+The host-transition mission ended at that checkpoint. Phase 0A later completed its dependency, capacity, provenance, root, cleanup, and negative gates without creating product source. Phase 0B later completed its separate semantic-lab certification, and the 2026-08-02 maintenance continuation reconfirmed the retained host. The next permitted mission is Phase 1 only after separate authorization.
 
 ## 8.1 Original-plan equivalence and maintenance decision
 
@@ -127,7 +141,7 @@ The verified patched Noble kernel is accepted as the successful implementation o
 
 Because the package is locally built rather than a stock Canonical binary, this tuple carries an explicit maintenance obligation. Do not silently replace, upgrade, or remove it. Do not remove `6.8.0-136-generic` as rollback. A later Canonical or other replacement kernel requires a new implementation-host tuple and equivalent evidence.
 
-The complete enumerated result and recommended Phase 0A mission are recorded in [`../STATUS.md`](../STATUS.md).
+The complete current result and next permitted mission are recorded in [`../STATUS.md`](../STATUS.md).
 
 ## 9. Refresh rule
 

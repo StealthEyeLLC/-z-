@@ -31,12 +31,15 @@ Status: **Discovery aid; not normative authority**
 | What is the exact current status? | `docs/STATUS.md` |
 | What kernel is running and why was it chosen? | `docs/STATUS.md`, `docs/reference/IMPLEMENTATION-HOST.md`, `docs/DECISIONS.md` |
 | What exactly was completed in the host transition? | `docs/STATUS.md`, `evidence/checkpoints/host-kernel-transition-20260801/RESULT.md` |
+| What proves the later implementation-host maintenance reboot? | `docs/STATUS.md`, `docs/reference/IMPLEMENTATION-HOST.md`, `evidence/checkpoints/host-maintenance-reboot-20260802/RESULT.md` |
+| What proves continuity after the subsequent owner-initiated reboot? | `docs/STATUS.md`, `docs/reference/IMPLEMENTATION-HOST.md`, `evidence/checkpoints/host-reboot-readback-20260803/RESULT.md` |
+| What does Phase 0B certify? | `docs/STATUS.md`, `docs/BUILD.md`, `evidence/checkpoints/phase-0b-reboot-repair-20260802/RESULT.md` |
 | What should happen next? | `docs/STATUS.md`, `docs/BUILD.md` |
 | Is this implemented? | `docs/MANIFEST.md`, `docs/STATUS.md`, `evidence/README.md` |
 
 ## High-value keywords
 
-`current status`, `Phase 0A complete`, `Phase 0B next`, `implementation roots`, `sparse-copy fallback`, `host kernel transition`, `CVE-2026-53359`, `Januscape`, `6.8.0-9001-generic`, `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`, `dependency lock`, `candidate tuple`, `Debian Snapshot`, `Rust 1.97.1`, `Cloud Hypervisor v53.0`, `CLOUDHV.fd`, `OpenSSH`, `ProxyCommand`, `ProxyUseFdpass`, `HostKeyAlias`, `KnownHostsCommand`, `AF_VSOCK`, `vsock-mux`, `sshd -i`, `systemd socket activation`, `SMBIOS Type 11`, `ImportCredential`, `exact argv`, `SFTP`, `capability portal`, `Network None`, `passt`, `virtiofsd`, `Cloud Hypervisor`, `Landlock`, `seccomp`, `raw disk`, `reflink`, `cold snapshot`, `fork identity`, `unknown outcome`, `zero processes at rest`.
+`current status`, `Phase 0A complete`, `Phase 0B certified`, `Phase 1 next`, `host maintenance reboot`, `implementation roots`, `sparse-copy fallback`, `host kernel transition`, `CVE-2026-53359`, `Januscape`, `6.8.0-9001-generic`, `z-impl-ovh-noble-amd64-k6.8.0-9001-januscape-v1`, `dependency lock`, `candidate tuple`, `Debian Snapshot`, `Rust 1.97.1`, `Cloud Hypervisor v53.0`, `CLOUDHV.fd`, `OpenSSH`, `ProxyCommand`, `ProxyUseFdpass`, `HostKeyAlias`, `KnownHostsCommand`, `AF_VSOCK`, `vsock-mux`, `sshd -i`, `systemd socket activation`, `SMBIOS Type 11`, `ImportCredential`, `exact argv`, `SFTP`, `capability portal`, `Network None`, `passt`, `virtiofsd`, `Cloud Hypervisor`, `Landlock`, `seccomp`, `raw disk`, `reflink`, `cold snapshot`, `fork identity`, `unknown outcome`, `zero processes at rest`.
 
 ## Indexing rule
 
@@ -47,7 +50,7 @@ When adding a new architectural term, capability, or variant, update this file a
 | Question or alias | Read |
 |---|---|
 | Complete current result, exact checkpoint, maintenance duties, recommended next mission | `../STATUS.md` |
-| OVH VPS settings, implementation host, host readiness, storage cleanup | `IMPLEMENTATION-HOST.md` |
+| OVH VPS settings, implementation host, host readiness, maintenance reboot, storage cleanup | `IMPLEMENTATION-HOST.md`, `../../evidence/checkpoints/host-maintenance-reboot-20260802/RESULT.md` |
 | competing operations, ENOSPC, OOM, interruption, crash consistency | `../INVARIANTS.md`, `../ARCHITECTURE.md`, `../CERTIFICATION.md` |
 | update, rollback, tuple transition, offline bundle | `../VARIANTS.md`, `../BUILD.md`, `../CERTIFICATION.md` |
 | backup, disaster recovery, independent restore | `../INVARIANTS.md`, `../VARIANTS.md`, `../CERTIFICATION.md` |
@@ -59,3 +62,9 @@ When adding a new architectural term, capability, or variant, update this file a
 
 - Where are implementation roots defined? [`IMPLEMENTATION-ROOTS.md`](IMPLEMENTATION-ROOTS.md) and [`../../assets/implementation-roots.json`](../../assets/implementation-roots.json).
 - Where is Phase 0A proved? [`../../evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/`](../../evidence/checkpoints/phase-0a-implementation-bootstrap-20260801/).
+
+## Phase 0B and host-maintenance lookups
+
+- Where is Phase 0B semantic-lab certification proved? [`../../evidence/checkpoints/phase-0b-reboot-repair-20260802/`](../../evidence/checkpoints/phase-0b-reboot-repair-20260802/).
+- Where is the retained-host maintenance reboot proved? [`../../evidence/checkpoints/host-maintenance-reboot-20260802/`](../../evidence/checkpoints/host-maintenance-reboot-20260802/).
+- Where is the later owner-initiated reboot readback proved? [`../../evidence/checkpoints/host-reboot-readback-20260803/`](../../evidence/checkpoints/host-reboot-readback-20260803/).

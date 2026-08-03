@@ -1,0 +1,4 @@
+zrp_tap_count=0
+preflight_temp_count=0
+preflight_unit_count=0
+loop_preflight_count=0

@@ -1,0 +1,10 @@
+{
+  "branch": "build/z-v1-cleanroom",
+  "commit": "86c7623277be8734b89dc5bdf874620e33744a26",
+  "tree": "c479417e841667dc981dfc7eff7b5c42212f3284",
+  "remote": "https://github.com/StealthEyeLLC/-z-.git",
+  "remote_branch_commit": "86c7623277be8734b89dc5bdf874620e33744a26",
+  "historical_branch_preserved": true,
+  "protected_untracked_path": ".predecessor-source-docs-corpus.txt",
+  "protected_untracked_path_preserved": true
+}

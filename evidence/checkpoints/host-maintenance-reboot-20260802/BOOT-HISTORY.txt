@@ -1,0 +1,67 @@
+IDX BOOT ID                          FIRST ENTRY                 LAST ENTRY
+ -3 2e0ca0f8fd5540b0abfae3a54169c562 Sat 2026-07-25 00:04:44 UTC Fri 2026-07-31 19:05:12 UTC
+ -2 4f39061a161e434aaf57a2554feb2207 Fri 2026-07-31 19:05:23 UTC Sat 2026-08-01 18:53:57 UTC
+ -1 b6e10e2197374dedad1ea437eea41ace Sat 2026-08-01 18:54:05 UTC Sun 2026-08-02 21:42:24 UTC
+  0 68eb27558adb4b5491c58609a0cb1e67 Sun 2026-08-02 21:42:31 UTC Sun 2026-08-02 21:47:30 UTC
+--previous-shutdown-final--
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Unmounted boot.mount - /boot.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Reached target umount.target - Unmount All Filesystems.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: systemd-fsck@dev-disk-by\x2dlabel-BOOT.service: Deactivated successfully.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Stopped systemd-fsck@dev-disk-by\x2dlabel-BOOT.service - File System Check on /dev/disk/by-label/BOOT.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Removed slice system-systemd\x2dfsck.slice - Slice /system/systemd-fsck.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Stopped target local-fs-pre.target - Preparation for Local File Systems.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Stopping lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Stopping multipathd.service - Device-Mapper Multipath Device Controller...
+2026-08-02T21:42:24+00:00 vps-c9f04f5e multipathd[422]: multipathd: shut down
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: systemd-tmpfiles-setup-dev.service: Deactivated successfully.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Stopped systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: systemd-tmpfiles-setup-dev-early.service: Deactivated successfully.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Stopped systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: multipathd.service: Deactivated successfully.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Stopped multipathd.service - Device-Mapper Multipath Device Controller.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: multipathd.service: Consumed 9.315s CPU time, 22.1M memory peak, 0B memory swap peak.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: systemd-remount-fs.service: Deactivated successfully.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Stopped systemd-remount-fs.service - Remount Root and Kernel File Systems.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: lvm2-monitor.service: Deactivated successfully.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Stopped lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Reached target shutdown.target - System Shutdown.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Reached target final.target - Late Shutdown Services.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: systemd-reboot.service: Deactivated successfully.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Finished systemd-reboot.service - System Reboot.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Reached target reboot.target - System Reboot.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd[1]: Shutting down.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd-shutdown[1]: Syncing filesystems and block devices.
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd-shutdown[1]: Sending SIGTERM to remaining processes...
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd-journald[370]: Received SIGTERM from PID 1 (systemd-shutdow).
+2026-08-02T21:42:24+00:00 vps-c9f04f5e systemd-journald[370]: Journal stopped
+--current-boot-first--
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: Linux version 6.8.0-9001-generic (root@build-root) (x86_64-linux-gnu-gcc-13 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #1+zcve2026533591 SMP PREEMPT_DYNAMIC Sat Aug  1 17:33:19 UTC 20 (Ubuntu 6.8.0-9001.1+zcve2026533591-generic 6.8.12)
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: Command line: BOOT_IMAGE=/vmlinuz-6.8.0-9001-generic root=UUID=d77f6a25-e90f-4292-a85d-9bcc1cecf9e2 ro console=tty1 console=ttyS0
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: KERNEL supported cpus:
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel:   Intel GenuineIntel
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel:   AMD AuthenticAMD
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel:   Hygon HygonGenuine
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel:   Centaur CentaurHauls
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel:   zhaoxin   Shanghai
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: BIOS-provided physical RAM map:
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000bffdafff] usable
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: BIOS-e820: [mem 0x00000000bffdb000-0x00000000bfffffff] reserved
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: BIOS-e820: [mem 0x0000000100000000-0x000000032dffffff] usable
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: NX (Execute Disable) protection: active
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: APIC: Static calls initialized
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: SMBIOS 2.8 present.
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: DMI: OpenStack Foundation OpenStack Nova, BIOS 1.16.3-debian-1.16.3-2~bpo12+1 04/01/2014
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: Hypervisor detected: KVM
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: kvm-clock: using sched offset of 2118505150589203 cycles
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: tsc: Detected 3099.996 MHz processor
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: last_pfn = 0x32e000 max_arch_pfn = 0x400000000
+2026-08-02T21:42:31+00:00 vps-c9f04f5e kernel: MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
